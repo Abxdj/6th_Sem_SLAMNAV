@@ -1,6 +1,15 @@
 #!/usr/bin/env python3
+"""
+ResNet18 loop closure candidate proposer with adaptive percentile thresholding.
+
+Instead of a fixed cosine threshold (which does not transfer across
+sequences), this maintains a history of observed best-match scores and
+only proposes a candidate when the current score exceeds a high
+percentile of that history.
+"""
 
 import rospy
+import numpy as np
 from sensor_msgs.msg import Image
 from std_msgs.msg import Int32, Int32MultiArray
 from cv_bridge import CvBridge
@@ -10,7 +19,6 @@ import torchvision.transforms as transforms
 import torch.nn.functional as F
 import cv2
 
-# Load ResNet18, remove classification head
 model = models.resnet18(pretrained=True)
 model = torch.nn.Sequential(*list(model.children())[:-1])
 model.eval()
@@ -25,10 +33,14 @@ transform = transforms.Compose([
 ])
 
 bridge = CvBridge()
-descriptor_db = []   # list of (real_kf_id, descriptor)
-latest_frame = None  # buffered latest camera image
-THRESHOLD = 0.85
-SKIP_RECENT = 10
+descriptor_db = []
+score_history = []
+latest_frame = None
+
+SKIP_RECENT = 100        # keyframes excluded as trivially recent
+PERCENTILE = 98.0        # inject only scores above this percentile of history
+WARMUP = 60              # min score samples before we trust the percentile
+ABS_FLOOR = 0.80         # never inject below this regardless of percentile
 
 def extract_descriptor(frame_grey):
     frame_rgb = cv2.cvtColor(frame_grey, cv2.COLOR_GRAY2RGB)
@@ -51,7 +63,7 @@ def keyframe_id_callback(msg):
     real_kf_id = msg.data
     desc = extract_descriptor(latest_frame)
 
-    best_score, best_id = 0, -1
+    best_score, best_id = -1.0, -1
     if len(descriptor_db) > SKIP_RECENT:
         for (kid, kd) in descriptor_db[:-SKIP_RECENT]:
             score = torch.dot(desc, kd).item()
@@ -60,17 +72,32 @@ def keyframe_id_callback(msg):
 
     descriptor_db.append((real_kf_id, desc))
 
-    if best_score > THRESHOLD:
-        rospy.logwarn(f"LOOP CLOSURE: KF {real_kf_id} matches KF {best_id} | score={best_score:.3f}")
-        candidate_msg = Int32MultiArray()
-        candidate_msg.data = [real_kf_id, best_id]
-        candidate_pub.publish(candidate_msg)
+    if best_id < 0:
+        rospy.loginfo(f"KF {real_kf_id} | warmup, db_size={len(descriptor_db)}")
+        return
+
+    score_history.append(best_score)
+
+    if len(score_history) < WARMUP:
+        rospy.loginfo(f"KF {real_kf_id} | best={best_score:.3f} "
+                      f"| collecting stats ({len(score_history)}/{WARMUP})")
+        return
+
+    thresh = max(np.percentile(score_history, PERCENTILE), ABS_FLOOR)
+
+    if best_score >= thresh:
+        rospy.logwarn(f"LOOP CLOSURE: KF {real_kf_id} matches KF {best_id} "
+                      f"| score={best_score:.3f} | adaptive_thresh={thresh:.3f}")
+        m = Int32MultiArray()
+        m.data = [real_kf_id, best_id]
+        candidate_pub.publish(m)
     else:
-        rospy.loginfo(f"KF {real_kf_id} processed | best_score={best_score:.3f} | db_size={len(descriptor_db)}")
+        rospy.loginfo(f"KF {real_kf_id} | best={best_score:.3f} "
+                      f"| thresh={thresh:.3f} | no proposal")
 
 rospy.init_node('loop_closure_resnet18')
 img_sub = rospy.Subscriber('/camera/image_raw', Image, image_callback)
 kf_sub = rospy.Subscriber('/orb_slam3/new_keyframe_id', Int32, keyframe_id_callback)
 candidate_pub = rospy.Publisher('/loop_closure/candidate_kfids', Int32MultiArray, queue_size=10)
-rospy.loginfo("ResNet18 loop closure node started — synced to real ORB-SLAM3 keyframe IDs")
+rospy.loginfo(f"ResNet18 loop closure node started - adaptive P{PERCENTILE} thresholding")
 rospy.spin()

@@ -92,9 +92,13 @@ void LoopClosing::ExternalCandidateCallback(const std_msgs::Int32MultiArray::Con
         return;
 
     unique_lock<mutex> lock(mMutexExternalCand);
-    mnExternalCandCurrentKFId = (long unsigned int)msg->data[0];
-    mnExternalCandMatchKFId   = (long unsigned int)msg->data[1];
-    mbHasExternalCand = true;
+    mExternalCandQueue.push_back(
+        std::make_pair((long unsigned int)msg->data[0],
+                       (long unsigned int)msg->data[1]));
+
+    // bound the queue so a stalled consumer can't grow it without limit
+    while(mExternalCandQueue.size() > 50)
+        mExternalCandQueue.pop_front();
 }
 
 KeyFrame* LoopClosing::GetKeyFrameById(long unsigned int id)
@@ -513,6 +517,8 @@ bool LoopClosing::NewDetectCommonRegions()
 
     // Extract candidates from the bag of words
     vector<KeyFrame*> vpMergeBowCand, vpLoopBowCand;
+    bool bInjectedThisPass = false;
+    KeyFrame* pInjectedThisPass = nullptr;
     if(!bMergeDetectedInKF || !bLoopDetectedInKF)
     {
         // Search in BoW
@@ -521,25 +527,39 @@ bool LoopClosing::NewDetectCommonRegions()
 #endif
         mpKeyFrameDB->DetectNBestCandidates(mpCurrentKF, vpLoopBowCand, vpMergeBowCand,3);
 
-	// --- External CNN/ViT loop closure candidate injection ---
+        // --- External CNN/ViT loop closure candidate injection ---
         {
             unique_lock<mutex> lock(mMutexExternalCand);
-            if(mbHasExternalCand && mpCurrentKF->mnId >= mnExternalCandCurrentKFId)
+            while(!mExternalCandQueue.empty())
             {
-                KeyFrame* pExtCand = GetKeyFrameById(mnExternalCandMatchKFId);
-                if(pExtCand && pExtCand != mpCurrentKF)
+                long unsigned int matchId = mExternalCandQueue.front().second;
+                mExternalCandQueue.pop_front();
+
+                KeyFrame* pExtCand = GetKeyFrameById(matchId);
+                if(!pExtCand || pExtCand == mpCurrentKF)
+                    continue;
+
+                bool alreadyPresent = false;
+                for(KeyFrame* pKF : vpLoopBowCand)
+                    if(pKF == pExtCand) { alreadyPresent = true; break; }
+                if(alreadyPresent)
+                    continue;
+
+                vpLoopBowCand.push_back(pExtCand);
+                mnInjectedCount++;
+                bInjectedThisPass = true;
+                pInjectedThisPass = pExtCand;
+                cout << "LoopClosing: injected external candidate KF "
+                     << pExtCand->mnId << " for current KF " << mpCurrentKF->mnId << endl;
+                cout << "[STATS] injected=" << mnInjectedCount
+                     << " verified=" << mnInjectedVerified
+                     << " abortedByNearKF=" << mnAbortedByNearKF << endl;
                 {
-                    bool alreadyPresent = false;
-                    for(KeyFrame* pKF : vpLoopBowCand)
-                        if(pKF == pExtCand) { alreadyPresent = true; break; }
-                    if(!alreadyPresent)
-                    {
-                        vpLoopBowCand.push_back(pExtCand);
-                        cout << "LoopClosing: injected external candidate KF "
-                             << pExtCand->mnId << " for current KF " << mpCurrentKF->mnId << endl;
-                    }
+                    vector<KeyFrame*> vpCovExt = pExtCand->GetBestCovisibilityKeyFrames(10);
+                    cout << "  neighbours:";
+                    for(KeyFrame* k : vpCovExt) cout << " " << k->mnId;
+                    cout << endl;
                 }
-                mbHasExternalCand = false;
             }
         }
 #ifdef REGISTER_TIMES
@@ -558,6 +578,8 @@ bool LoopClosing::NewDetectCommonRegions()
     if(!bLoopDetectedInKF && !vpLoopBowCand.empty())
     {
         mbLoopDetected = DetectCommonRegionsFromBoW(vpLoopBowCand, mpLoopMatchedKF, mpLoopLastCurrentKF, mg2oLoopSlw, mnLoopNumCoincidences, mvpLoopMPs, mvpLoopMatchedMPs);
+	if(mbLoopDetected && bInjectedThisPass && mpLoopMatchedKF == pInjectedThisPass)
+            mnInjectedVerified++;
     }
     // Merge candidates
     if(!bMergeDetectedInKF && !vpMergeBowCand.empty())
@@ -689,7 +711,9 @@ bool LoopClosing::DetectCommonRegionsFromBoW(std::vector<KeyFrame*> &vpBowCand, 
         }
         if(bAbortByNearKF)
         {
-            //std::cout << "Check BoW aborted because is close to the matched one " << std::endl;
+            mnAbortedByNearKF++;
+	    cout << "[ABORT-NEAR] candidate KF " << pKFi->mnId
+                 << " vs current KF " << mpCurrentKF->mnId << endl;
             continue;
         }
         //std::cout << "Check BoW continue because is far to the matched one " << std::endl;
@@ -1021,6 +1045,13 @@ int LoopClosing::FindMatchesByProjection(KeyFrame* pCurrentKF, KeyFrame* pMatche
 
 void LoopClosing::CorrectLoop()
 {
+    mnCorrectLoopCalls++;
+    cout << "[STATS] injected=" << mnInjectedCount
+         << " verified=" << mnInjectedVerified
+         << " corrections=" << mnCorrectLoopCalls
+         << " matchedKF=" << mpLoopMatchedKF->mnId
+         << " currentKF=" << mpCurrentKF->mnId << endl;
+
     //cout << "Loop detected!" << endl;
 
     // Send a stop signal to Local Mapping
@@ -2578,6 +2609,10 @@ bool LoopClosing::CheckFinish()
 
 void LoopClosing::SetFinish()
 {
+    cout << "[FINAL STATS] injected=" << mnInjectedCount
+         << " verified=" << mnInjectedVerified
+         << " corrections=" << mnCorrectLoopCalls
+         << " abortedByNearKF=" << mnAbortedByNearKF << endl;
     unique_lock<mutex> lock(mMutexFinish);
     mbFinished = true;
 }

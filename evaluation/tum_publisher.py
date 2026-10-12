@@ -55,7 +55,7 @@ def main():
         pub.publish(msg)
 
         # Pace playback to match TUM's recorded timing
-        target_wall = start_wall + (t - start_tum) * 2.0
+        target_wall = start_wall + (t - start_tum)
         sleep_time = target_wall - time.time()
         if sleep_time > 0:
             time.sleep(sleep_time)

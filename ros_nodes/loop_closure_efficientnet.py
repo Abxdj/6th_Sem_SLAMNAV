@@ -25,8 +25,8 @@ transform = transforms.Compose([
 bridge = CvBridge()
 descriptor_db = []
 latest_frame = None
-THRESHOLD = 0.85
-SKIP_RECENT = 10
+THRESHOLD = 0.730
+SKIP_RECENT = 100
 
 def extract_descriptor(frame_grey):
     frame_rgb = cv2.cvtColor(frame_grey, cv2.COLOR_GRAY2RGB)

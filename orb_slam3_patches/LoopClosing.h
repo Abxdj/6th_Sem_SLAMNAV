@@ -34,6 +34,7 @@
 #include "Thirdparty/g2o/g2o/types/types_seven_dof_expmap.h"
 #include <ros/ros.h>
 #include <std_msgs/Int32MultiArray.h>
+#include <deque>
 
 namespace ORB_SLAM3
 {
@@ -139,9 +140,13 @@ protected:
 
     ros::Subscriber mExternalCandSub;
     std::mutex mMutexExternalCand;
-    long unsigned int mnExternalCandCurrentKFId = 0;
-    long unsigned int mnExternalCandMatchKFId = 0;
-    bool mbHasExternalCand = false;
+    std::deque<std::pair<long unsigned int, long unsigned int>> mExternalCandQueue;
+    int mnAbortedByNearKF = 0;
+    
+    // --- Injection instrumentation ---
+    int mnInjectedCount = 0;
+    int mnInjectedVerified = 0;
+    int mnCorrectLoopCalls = 0;
 
     bool DetectCommonRegionsFromLastKF(KeyFrame* pCurrentKF, KeyFrame* pMatchedKF, g2o::Sim3 &gScw, int &nNumProjMatches,
                                             std::vector<MapPoint*> &vpMPs, std::vector<MapPoint*> &vpMatchedMPs);
