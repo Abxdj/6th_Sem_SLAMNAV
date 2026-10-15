@@ -1,0 +1,19 @@
+[0m[INFO] [1792052490.340620437]: Opening /home/anish/mono-slam-cnn-loop-closure/bags/drive1.bag[0m
+Waiting 0.2 seconds after advertising topics... done.
+
+Hit space to toggle paused, or 's' to step.
+
+Done.
+./scripts/replay_bag.sh: line 87:  8567 Segmentation fault      (core dumped) rosrun ORB_SLAM3 Mono ~/ORB_SLAM3/Vocabulary/ORBvoc.txt "$YAML" > "$OUT/mono.log" 2>&1
+=== diag_full_ctrl / none ===
+[FINAL STATS] injected=0 verified=0 corrections=4 abortedByNearKF=121
+maps created: 6
+merges: 1
+proposals: 0  injections: 0
+[STATS] injected=0 verified=0 corrections=1 matchedKF=240 currentKF=2149
+[STATS] injected=0 verified=0 corrections=2 matchedKF=1 currentKF=2174
+[STATS] injected=0 verified=0 corrections=3 matchedKF=2250 currentKF=2689
+[STATS] injected=0 verified=0 corrections=4 matchedKF=2251 currentKF=2698
+-rw-rw-r-- 1 anish anish 4449 Oct 15 14:45 /home/anish/mono-slam-cnn-loop-closure/results/gazebo_ab/diag_full_ctrl_none/KeyFrameTrajectory.txt
+{"run": "diag_full_ctrl_none", "meta": {"mode": "none", "rate": "0.5", "start": "0", "duration": "full", "yaml": "/home/anish/mono-slam-cnn-loop-closure/config/turtlebot3_waffle.yaml", "relay": "none", "mono_exit": "139"}, "counts_log": {"new_map": 6, "merge": 1, "loop_detected": 4, "fail_track_local_map": 1010, "injected": 0, "abort_near": 121, "sophus_crash": 0, "final_stats_printed": 1}, "kfs_per_map": [2250, 451, 728, 1366, 599, 619], "kf_total": 6001, "mono_image_delivered": 107892, "mono_image_dropped": 2860, "mono_drop_pct": 2.58, "cpu_mean": {"gpu_util_mean": 27.3, "Mono": 227.7, "rosbag_play": 1.4}, "gpu_mem_max_mb": 604.0, "counts_events": {"new_map": 6, "merge": 1, "loop_detected": 4, "correction": 4, "injected": 0, "abort_near": 121, "proposal": 0, "sophus_crash": 0, "lost": 1010, "reset_map": 0}, "traj_kfs_final_map": 52}
+PHASE2_DONE
