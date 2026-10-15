@@ -19,7 +19,7 @@ YAML=$(realpath "${YAML:-$REPO/config/turtlebot3_waffle.yaml}")
 [ -f "$YAML" ] || { echo "yaml not found: $YAML"; exit 1; }
 OUT=$REPO/results/gazebo_ab/${TAG}_${MODE}
 if [ -e "$OUT" ]; then echo "$OUT already exists; use a new tag."; exit 1; fi
-if pgrep -f rosmaster > /dev/null; then echo "A ROS master is already running. Close Gazebo and other ROS terminals first."; exit 1; fi
+if pgrep -x rosmaster > /dev/null; then echo "A ROS master is already running. Close Gazebo and other ROS terminals first."; exit 1; fi
 mkdir -p "$OUT"
 
 source /opt/ros/noetic/setup.bash
