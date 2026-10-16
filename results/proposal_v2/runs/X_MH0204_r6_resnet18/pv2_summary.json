@@ -1,0 +1,102 @@
+{
+ "run": "X_MH0204_r6_resnet18",
+ "meta": {
+  "mode": "resnet18",
+  "rate": null,
+  "start": null,
+  "duration": null,
+  "yaml": "/home/anish/ORB_SLAM3/Examples/Monocular/EuRoC.yaml",
+  "relay": null,
+  "mono_exit": "0"
+ },
+ "counts_log": {
+  "new_map": 2,
+  "merge": 1,
+  "loop_detected": 0,
+  "fail_track_local_map": 0,
+  "injected": 24,
+  "abort_near": 326,
+  "sophus_crash": 0,
+  "final_stats_printed": 1
+ },
+ "kfs_per_map": [
+  489,
+  408
+ ],
+ "kf_total": 897,
+ "mono_image_delivered": 5047,
+ "mono_image_dropped": 0,
+ "mono_drop_pct": 0.0,
+ "cpu_mean": {
+  "gpu_util_mean": 0.6,
+  "Mono": 115.1,
+  "desc": 4.5
+ },
+ "gpu_mem_max_mb": 863.0,
+ "counts_events": {
+  "new_map": 2,
+  "merge": 1,
+  "loop_detected": 0,
+  "correction": 0,
+  "injected": 24,
+  "abort_near": 326,
+  "proposal": 0,
+  "sophus_crash": 0,
+  "lost": 0,
+  "reset_map": 0
+ },
+ "traj_kfs_final_map": 620,
+ "prop_src": "final",
+ "prop": {
+  "abort_near": 4,
+  "abort_near_dbow2": 322,
+  "accepted_merge": 1,
+  "geom_pass_best": 1,
+  "received": 24,
+  "redirect_hops": 13,
+  "redirected": 9,
+  "sim3_fail": 19,
+  "to_loop_list": 4,
+  "to_merge_list": 20,
+  "queued": 0,
+  "pending_loop": 0,
+  "pending_merge": 0
+ },
+ "accepted": [
+  {
+   "list": "merge",
+   "src": "ext",
+   "ext_cand": "207",
+   "matchedKF": "207",
+   "curKF": "609",
+   "t": "1403638158.9950972"
+  }
+ ],
+ "session_events": [
+  "[SESSION] ChangeDataset requested"
+ ],
+ "session_bounds": [
+  [
+   1403636858.651666,
+   1403637010.601666
+  ],
+  [
+   1403638127.245097,
+   1403638228.845097
+  ]
+ ],
+ "live_maps": [
+  {
+   "map_id": 1,
+   "kfs": 620,
+   "t0": 1403636858.65,
+   "t1": 1403638226.55,
+   "kfs_per_session": [
+    318,
+    302
+   ],
+   "ate_sim3_m": 0.1185,
+   "ate_n": 611
+  }
+ ]
+}
