@@ -105,4 +105,6 @@ for name, rs in (('all', rows), ('premerge', [r for r in rows if r['pre']]), ('p
                  'learned_R@3_dbowsubset': frac(sub, 'r3'), 'dbow2_R@3_dbowsubset': frac(sub, 'dbow'),
                  'queries_whose_truth_survives': sum(r['alive_truth'] for r in rs)}
 print(json.dumps(out, indent=1))
-json.dump(out, open(f'{run}/recall_t4.json', 'w'), indent=1)
+suffix = '' if (POS, ANG) == (0.5, 45.0) else f'_{POS:g}m_{ANG:g}deg'
+out['rows'] = rows
+json.dump(out, open(f'{run}/recall_t4{suffix}.json', 'w'), indent=1)

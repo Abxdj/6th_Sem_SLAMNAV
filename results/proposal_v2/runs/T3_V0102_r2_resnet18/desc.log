@@ -1,0 +1,680 @@
+/home/anish/.local/lib/python3.8/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/anish/.local/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+[INFO] [1792114723.388987]: ResNet18 proposer v2 started - adaptive P98.0, exclude_recent_s=30.0, keyframe-image matching
+[WARN] [1792114745.300608]: KF 0 | NO_FRAME for stamp 1403715273.262143 (buffer miss #1)
+[INFO] [1792114745.477236]: KF 1 | t=1403715279.012 | no eligible keyframe yet, db_size=1
+[INFO] [1792114745.493428]: KF 2 | t=1403715279.062 | no eligible keyframe yet, db_size=2
+[INFO] [1792114745.509418]: KF 3 | t=1403715279.162 | no eligible keyframe yet, db_size=3
+[INFO] [1792114745.516357]: KF 4 | t=1403715279.212 | no eligible keyframe yet, db_size=4
+[INFO] [1792114745.522013]: KF 5 | t=1403715279.262 | no eligible keyframe yet, db_size=5
+[INFO] [1792114745.527418]: KF 6 | t=1403715279.312 | no eligible keyframe yet, db_size=6
+[INFO] [1792114745.532439]: KF 7 | t=1403715279.362 | no eligible keyframe yet, db_size=7
+[INFO] [1792114745.539271]: KF 8 | t=1403715279.462 | no eligible keyframe yet, db_size=8
+[INFO] [1792114745.544533]: KF 9 | t=1403715279.562 | no eligible keyframe yet, db_size=9
+[INFO] [1792114745.550974]: KF 10 | t=1403715279.712 | no eligible keyframe yet, db_size=10
+[INFO] [1792114745.558046]: KF 11 | t=1403715279.812 | no eligible keyframe yet, db_size=11
+[INFO] [1792114745.608046]: KF 12 | t=1403715279.862 | no eligible keyframe yet, db_size=12
+[INFO] [1792114745.716095]: KF 13 | t=1403715279.962 | no eligible keyframe yet, db_size=13
+[INFO] [1792114745.810926]: KF 14 | t=1403715280.062 | no eligible keyframe yet, db_size=14
+[INFO] [1792114745.853320]: KF 15 | t=1403715280.112 | no eligible keyframe yet, db_size=15
+[INFO] [1792114745.904851]: KF 16 | t=1403715280.162 | no eligible keyframe yet, db_size=16
+[INFO] [1792114746.014585]: KF 17 | t=1403715280.262 | no eligible keyframe yet, db_size=17
+[INFO] [1792114746.057242]: KF 18 | t=1403715280.312 | no eligible keyframe yet, db_size=18
+[INFO] [1792114746.107604]: KF 19 | t=1403715280.362 | no eligible keyframe yet, db_size=19
+[INFO] [1792114746.156360]: KF 20 | t=1403715280.412 | no eligible keyframe yet, db_size=20
+[INFO] [1792114746.261149]: KF 21 | t=1403715280.512 | no eligible keyframe yet, db_size=21
+[INFO] [1792114746.304641]: KF 22 | t=1403715280.562 | no eligible keyframe yet, db_size=22
+[INFO] [1792114746.353359]: KF 23 | t=1403715280.612 | no eligible keyframe yet, db_size=23
+[INFO] [1792114746.405322]: KF 24 | t=1403715280.662 | no eligible keyframe yet, db_size=24
+[INFO] [1792114746.455411]: KF 25 | t=1403715280.712 | no eligible keyframe yet, db_size=25
+[INFO] [1792114746.505111]: KF 26 | t=1403715280.762 | no eligible keyframe yet, db_size=26
+[INFO] [1792114746.606343]: KF 27 | t=1403715280.862 | no eligible keyframe yet, db_size=27
+[INFO] [1792114746.711582]: KF 28 | t=1403715280.962 | no eligible keyframe yet, db_size=28
+[INFO] [1792114746.756896]: KF 29 | t=1403715281.012 | no eligible keyframe yet, db_size=29
+[INFO] [1792114746.917466]: KF 30 | t=1403715281.162 | no eligible keyframe yet, db_size=30
+[INFO] [1792114747.004296]: KF 31 | t=1403715281.262 | no eligible keyframe yet, db_size=31
+[INFO] [1792114747.110631]: KF 32 | t=1403715281.362 | no eligible keyframe yet, db_size=32
+[INFO] [1792114747.203739]: KF 33 | t=1403715281.462 | no eligible keyframe yet, db_size=33
+[INFO] [1792114747.306762]: KF 34 | t=1403715281.562 | no eligible keyframe yet, db_size=34
+[INFO] [1792114747.404421]: KF 35 | t=1403715281.662 | no eligible keyframe yet, db_size=35
+[INFO] [1792114747.508405]: KF 36 | t=1403715281.762 | no eligible keyframe yet, db_size=36
+[INFO] [1792114747.606580]: KF 37 | t=1403715281.862 | no eligible keyframe yet, db_size=37
+[INFO] [1792114747.755661]: KF 38 | t=1403715282.012 | no eligible keyframe yet, db_size=38
+[INFO] [1792114747.854459]: KF 39 | t=1403715282.112 | no eligible keyframe yet, db_size=39
+[INFO] [1792114747.955997]: KF 40 | t=1403715282.212 | no eligible keyframe yet, db_size=40
+[INFO] [1792114748.056901]: KF 41 | t=1403715282.312 | no eligible keyframe yet, db_size=41
+[INFO] [1792114748.155008]: KF 42 | t=1403715282.412 | no eligible keyframe yet, db_size=42
+[INFO] [1792114748.255380]: KF 43 | t=1403715282.512 | no eligible keyframe yet, db_size=43
+[INFO] [1792114748.354511]: KF 44 | t=1403715282.612 | no eligible keyframe yet, db_size=44
+[INFO] [1792114748.457844]: KF 45 | t=1403715282.712 | no eligible keyframe yet, db_size=45
+[INFO] [1792114748.607411]: KF 46 | t=1403715282.862 | no eligible keyframe yet, db_size=46
+[INFO] [1792114748.710770]: KF 47 | t=1403715282.962 | no eligible keyframe yet, db_size=47
+[INFO] [1792114748.806320]: KF 48 | t=1403715283.062 | no eligible keyframe yet, db_size=48
+[INFO] [1792114748.905725]: KF 49 | t=1403715283.162 | no eligible keyframe yet, db_size=49
+[INFO] [1792114749.006631]: KF 50 | t=1403715283.262 | no eligible keyframe yet, db_size=50
+[INFO] [1792114749.107833]: KF 51 | t=1403715283.362 | no eligible keyframe yet, db_size=51
+[INFO] [1792114749.264384]: KF 52 | t=1403715283.512 | no eligible keyframe yet, db_size=52
+[INFO] [1792114749.355289]: KF 53 | t=1403715283.612 | no eligible keyframe yet, db_size=53
+[INFO] [1792114749.455436]: KF 54 | t=1403715283.712 | no eligible keyframe yet, db_size=54
+[INFO] [1792114749.555288]: KF 55 | t=1403715283.812 | no eligible keyframe yet, db_size=55
+[INFO] [1792114749.758118]: KF 56 | t=1403715284.012 | no eligible keyframe yet, db_size=56
+[INFO] [1792114749.856534]: KF 57 | t=1403715284.112 | no eligible keyframe yet, db_size=57
+[INFO] [1792114749.956834]: KF 58 | t=1403715284.212 | no eligible keyframe yet, db_size=58
+[INFO] [1792114750.055905]: KF 59 | t=1403715284.312 | no eligible keyframe yet, db_size=59
+[INFO] [1792114750.215142]: KF 60 | t=1403715284.462 | no eligible keyframe yet, db_size=60
+[INFO] [1792114750.359061]: KF 61 | t=1403715284.612 | no eligible keyframe yet, db_size=61
+[INFO] [1792114750.507104]: KF 62 | t=1403715284.762 | no eligible keyframe yet, db_size=62
+[INFO] [1792114750.656803]: KF 63 | t=1403715284.912 | no eligible keyframe yet, db_size=63
+[INFO] [1792114750.811299]: KF 64 | t=1403715285.062 | no eligible keyframe yet, db_size=64
+[INFO] [1792114750.959009]: KF 65 | t=1403715285.212 | no eligible keyframe yet, db_size=65
+[INFO] [1792114751.110227]: KF 66 | t=1403715285.362 | no eligible keyframe yet, db_size=66
+[INFO] [1792114751.257557]: KF 67 | t=1403715285.512 | no eligible keyframe yet, db_size=67
+[INFO] [1792114751.409362]: KF 68 | t=1403715285.662 | no eligible keyframe yet, db_size=68
+[INFO] [1792114751.556244]: KF 69 | t=1403715285.812 | no eligible keyframe yet, db_size=69
+[INFO] [1792114751.706666]: KF 70 | t=1403715285.962 | no eligible keyframe yet, db_size=70
+[INFO] [1792114751.861298]: KF 71 | t=1403715286.112 | no eligible keyframe yet, db_size=71
+[INFO] [1792114752.007308]: KF 72 | t=1403715286.262 | no eligible keyframe yet, db_size=72
+[INFO] [1792114752.157002]: KF 73 | t=1403715286.412 | no eligible keyframe yet, db_size=73
+[INFO] [1792114752.311543]: KF 74 | t=1403715286.562 | no eligible keyframe yet, db_size=74
+[INFO] [1792114752.456877]: KF 75 | t=1403715286.712 | no eligible keyframe yet, db_size=75
+[INFO] [1792114752.611604]: KF 76 | t=1403715286.862 | no eligible keyframe yet, db_size=76
+[INFO] [1792114752.805412]: KF 77 | t=1403715287.062 | no eligible keyframe yet, db_size=77
+[INFO] [1792114752.907233]: KF 78 | t=1403715287.162 | no eligible keyframe yet, db_size=78
+[INFO] [1792114753.008304]: KF 79 | t=1403715287.262 | no eligible keyframe yet, db_size=79
+[INFO] [1792114753.106648]: KF 80 | t=1403715287.362 | no eligible keyframe yet, db_size=80
+[INFO] [1792114753.259441]: KF 81 | t=1403715287.512 | no eligible keyframe yet, db_size=81
+[INFO] [1792114753.407666]: KF 82 | t=1403715287.662 | no eligible keyframe yet, db_size=82
+[INFO] [1792114753.563075]: KF 83 | t=1403715287.812 | no eligible keyframe yet, db_size=83
+[INFO] [1792114753.656200]: KF 84 | t=1403715287.912 | no eligible keyframe yet, db_size=84
+[INFO] [1792114753.755857]: KF 85 | t=1403715288.012 | no eligible keyframe yet, db_size=85
+[INFO] [1792114753.905479]: KF 86 | t=1403715288.162 | no eligible keyframe yet, db_size=86
+[INFO] [1792114754.056437]: KF 87 | t=1403715288.312 | no eligible keyframe yet, db_size=87
+[INFO] [1792114754.217258]: KF 88 | t=1403715288.462 | no eligible keyframe yet, db_size=88
+[INFO] [1792114754.667603]: KF 89 | t=1403715288.912 | no eligible keyframe yet, db_size=89
+[INFO] [1792114754.805560]: KF 90 | t=1403715289.062 | no eligible keyframe yet, db_size=90
+[INFO] [1792114754.957494]: KF 91 | t=1403715289.212 | no eligible keyframe yet, db_size=91
+[INFO] [1792114755.057118]: KF 92 | t=1403715289.312 | no eligible keyframe yet, db_size=92
+[INFO] [1792114755.156918]: KF 93 | t=1403715289.412 | no eligible keyframe yet, db_size=93
+[INFO] [1792114755.256272]: KF 94 | t=1403715289.512 | no eligible keyframe yet, db_size=94
+[INFO] [1792114755.411511]: KF 95 | t=1403715289.662 | no eligible keyframe yet, db_size=95
+[INFO] [1792114755.556136]: KF 96 | t=1403715289.812 | no eligible keyframe yet, db_size=96
+[INFO] [1792114755.764001]: KF 97 | t=1403715290.012 | no eligible keyframe yet, db_size=97
+[INFO] [1792114755.961017]: KF 98 | t=1403715290.212 | no eligible keyframe yet, db_size=98
+[INFO] [1792114756.108000]: KF 99 | t=1403715290.362 | no eligible keyframe yet, db_size=99
+[INFO] [1792114756.257219]: KF 100 | t=1403715290.512 | no eligible keyframe yet, db_size=100
+[INFO] [1792114756.412999]: KF 101 | t=1403715290.662 | no eligible keyframe yet, db_size=101
+[INFO] [1792114756.560187]: KF 102 | t=1403715290.812 | no eligible keyframe yet, db_size=102
+[INFO] [1792114756.705251]: KF 103 | t=1403715290.962 | no eligible keyframe yet, db_size=103
+[INFO] [1792114756.860164]: KF 104 | t=1403715291.112 | no eligible keyframe yet, db_size=104
+[INFO] [1792114757.067521]: KF 105 | t=1403715291.312 | no eligible keyframe yet, db_size=105
+[INFO] [1792114757.205715]: KF 106 | t=1403715291.462 | no eligible keyframe yet, db_size=106
+[INFO] [1792114757.358229]: KF 107 | t=1403715291.612 | no eligible keyframe yet, db_size=107
+[INFO] [1792114757.506075]: KF 108 | t=1403715291.762 | no eligible keyframe yet, db_size=108
+[INFO] [1792114757.656230]: KF 109 | t=1403715291.912 | no eligible keyframe yet, db_size=109
+[INFO] [1792114757.806616]: KF 110 | t=1403715292.062 | no eligible keyframe yet, db_size=110
+[INFO] [1792114758.110848]: KF 111 | t=1403715292.362 | no eligible keyframe yet, db_size=111
+[INFO] [1792114758.256291]: KF 112 | t=1403715292.512 | no eligible keyframe yet, db_size=112
+[INFO] [1792114758.404923]: KF 113 | t=1403715292.662 | no eligible keyframe yet, db_size=113
+[INFO] [1792114758.557268]: KF 114 | t=1403715292.812 | no eligible keyframe yet, db_size=114
+[INFO] [1792114758.707573]: KF 115 | t=1403715292.962 | no eligible keyframe yet, db_size=115
+[INFO] [1792114758.857387]: KF 116 | t=1403715293.112 | no eligible keyframe yet, db_size=116
+[INFO] [1792114759.005637]: KF 117 | t=1403715293.262 | no eligible keyframe yet, db_size=117
+[INFO] [1792114759.156014]: KF 118 | t=1403715293.412 | no eligible keyframe yet, db_size=118
+[INFO] [1792114759.306475]: KF 119 | t=1403715293.562 | no eligible keyframe yet, db_size=119
+[INFO] [1792114759.457195]: KF 120 | t=1403715293.712 | no eligible keyframe yet, db_size=120
+[INFO] [1792114759.656926]: KF 121 | t=1403715293.912 | no eligible keyframe yet, db_size=121
+[INFO] [1792114759.805558]: KF 122 | t=1403715294.062 | no eligible keyframe yet, db_size=122
+[INFO] [1792114759.955318]: KF 123 | t=1403715294.212 | no eligible keyframe yet, db_size=123
+[INFO] [1792114760.106837]: KF 124 | t=1403715294.362 | no eligible keyframe yet, db_size=124
+[INFO] [1792114760.256647]: KF 125 | t=1403715294.512 | no eligible keyframe yet, db_size=125
+[INFO] [1792114760.406663]: KF 126 | t=1403715294.662 | no eligible keyframe yet, db_size=126
+[INFO] [1792114760.556238]: KF 127 | t=1403715294.812 | no eligible keyframe yet, db_size=127
+[INFO] [1792114760.755769]: KF 128 | t=1403715295.012 | no eligible keyframe yet, db_size=128
+[INFO] [1792114760.908755]: KF 129 | t=1403715295.162 | no eligible keyframe yet, db_size=129
+[INFO] [1792114761.108538]: KF 130 | t=1403715295.362 | no eligible keyframe yet, db_size=130
+[INFO] [1792114761.305627]: KF 131 | t=1403715295.562 | no eligible keyframe yet, db_size=131
+[INFO] [1792114761.455258]: KF 132 | t=1403715295.712 | no eligible keyframe yet, db_size=132
+[INFO] [1792114761.656336]: KF 133 | t=1403715295.912 | no eligible keyframe yet, db_size=133
+[INFO] [1792114761.855591]: KF 134 | t=1403715296.112 | no eligible keyframe yet, db_size=134
+[INFO] [1792114762.111396]: KF 135 | t=1403715296.362 | no eligible keyframe yet, db_size=135
+[INFO] [1792114762.357777]: KF 136 | t=1403715296.612 | no eligible keyframe yet, db_size=136
+[INFO] [1792114762.658559]: KF 137 | t=1403715296.912 | no eligible keyframe yet, db_size=137
+[INFO] [1792114762.906389]: KF 138 | t=1403715297.162 | no eligible keyframe yet, db_size=138
+[INFO] [1792114763.156133]: KF 139 | t=1403715297.412 | no eligible keyframe yet, db_size=139
+[INFO] [1792114763.406440]: KF 140 | t=1403715297.662 | no eligible keyframe yet, db_size=140
+[INFO] [1792114763.608857]: KF 141 | t=1403715297.862 | no eligible keyframe yet, db_size=141
+[INFO] [1792114763.858324]: KF 142 | t=1403715298.112 | no eligible keyframe yet, db_size=142
+[INFO] [1792114764.058787]: KF 143 | t=1403715298.312 | no eligible keyframe yet, db_size=143
+[INFO] [1792114764.207291]: KF 144 | t=1403715298.462 | no eligible keyframe yet, db_size=144
+[INFO] [1792114764.405016]: KF 145 | t=1403715298.662 | no eligible keyframe yet, db_size=145
+[INFO] [1792114764.663546]: KF 146 | t=1403715298.912 | no eligible keyframe yet, db_size=146
+[INFO] [1792114764.863703]: KF 147 | t=1403715299.112 | no eligible keyframe yet, db_size=147
+[INFO] [1792114765.008941]: KF 148 | t=1403715299.262 | no eligible keyframe yet, db_size=148
+[INFO] [1792114765.207376]: KF 149 | t=1403715299.462 | no eligible keyframe yet, db_size=149
+[INFO] [1792114765.407502]: KF 150 | t=1403715299.662 | no eligible keyframe yet, db_size=150
+[INFO] [1792114765.605169]: KF 151 | t=1403715299.862 | no eligible keyframe yet, db_size=151
+[INFO] [1792114765.856967]: KF 152 | t=1403715300.112 | no eligible keyframe yet, db_size=152
+[INFO] [1792114766.056057]: KF 153 | t=1403715300.312 | no eligible keyframe yet, db_size=153
+[INFO] [1792114766.255063]: KF 154 | t=1403715300.512 | no eligible keyframe yet, db_size=154
+[INFO] [1792114766.611010]: KF 155 | t=1403715300.862 | no eligible keyframe yet, db_size=155
+[INFO] [1792114766.804232]: KF 156 | t=1403715301.062 | no eligible keyframe yet, db_size=156
+[INFO] [1792114767.006591]: KF 157 | t=1403715301.262 | no eligible keyframe yet, db_size=157
+[INFO] [1792114767.207579]: KF 158 | t=1403715301.462 | no eligible keyframe yet, db_size=158
+[INFO] [1792114767.658986]: KF 159 | t=1403715301.912 | no eligible keyframe yet, db_size=159
+[INFO] [1792114768.359107]: KF 160 | t=1403715302.612 | no eligible keyframe yet, db_size=160
+[INFO] [1792114768.608270]: KF 161 | t=1403715302.862 | no eligible keyframe yet, db_size=161
+[INFO] [1792114768.809255]: KF 162 | t=1403715303.062 | no eligible keyframe yet, db_size=162
+[INFO] [1792114769.056160]: KF 163 | t=1403715303.312 | no eligible keyframe yet, db_size=163
+[INFO] [1792114769.256236]: KF 164 | t=1403715303.512 | no eligible keyframe yet, db_size=164
+[INFO] [1792114769.457355]: KF 165 | t=1403715303.712 | no eligible keyframe yet, db_size=165
+[INFO] [1792114769.608282]: KF 166 | t=1403715303.862 | no eligible keyframe yet, db_size=166
+[INFO] [1792114769.754637]: KF 167 | t=1403715304.012 | no eligible keyframe yet, db_size=167
+[INFO] [1792114769.905112]: KF 168 | t=1403715304.162 | no eligible keyframe yet, db_size=168
+[INFO] [1792114770.157116]: KF 169 | t=1403715304.412 | no eligible keyframe yet, db_size=169
+[INFO] [1792114770.458508]: KF 170 | t=1403715304.712 | no eligible keyframe yet, db_size=170
+[INFO] [1792114770.654846]: KF 171 | t=1403715304.912 | no eligible keyframe yet, db_size=171
+[INFO] [1792114771.065318]: KF 172 | t=1403715305.312 | no eligible keyframe yet, db_size=172
+[INFO] [1792114771.309257]: KF 173 | t=1403715305.562 | no eligible keyframe yet, db_size=173
+[INFO] [1792114771.456565]: KF 174 | t=1403715305.712 | no eligible keyframe yet, db_size=174
+[INFO] [1792114771.559532]: KF 175 | t=1403715305.812 | no eligible keyframe yet, db_size=175
+[INFO] [1792114771.711160]: KF 176 | t=1403715305.962 | no eligible keyframe yet, db_size=176
+[INFO] [1792114771.807655]: KF 177 | t=1403715306.062 | no eligible keyframe yet, db_size=177
+[INFO] [1792114771.959753]: KF 178 | t=1403715306.212 | no eligible keyframe yet, db_size=178
+[INFO] [1792114772.157079]: KF 179 | t=1403715306.412 | no eligible keyframe yet, db_size=179
+[INFO] [1792114772.306652]: KF 180 | t=1403715306.562 | no eligible keyframe yet, db_size=180
+[INFO] [1792114772.563955]: KF 181 | t=1403715306.812 | no eligible keyframe yet, db_size=181
+[INFO] [1792114772.759241]: KF 182 | t=1403715307.012 | no eligible keyframe yet, db_size=182
+[INFO] [1792114773.308762]: KF 183 | t=1403715307.562 | no eligible keyframe yet, db_size=183
+[INFO] [1792114773.606393]: KF 184 | t=1403715307.862 | no eligible keyframe yet, db_size=184
+[INFO] [1792114773.857177]: KF 185 | t=1403715308.112 | no eligible keyframe yet, db_size=185
+[INFO] [1792114774.156762]: KF 186 | t=1403715308.412 | no eligible keyframe yet, db_size=186
+[INFO] [1792114774.508821]: KF 187 | t=1403715308.762 | no eligible keyframe yet, db_size=187
+[INFO] [1792114774.866466]: KF 188 | best=0.802 | collecting stats (1/60)
+[INFO] [1792114775.517100]: KF 189 | best=0.817 | collecting stats (2/60)
+[INFO] [1792114775.810625]: KF 190 | best=0.836 | collecting stats (3/60)
+[INFO] [1792114776.057336]: KF 191 | best=0.840 | collecting stats (4/60)
+[INFO] [1792114776.412253]: KF 192 | best=0.847 | collecting stats (5/60)
+[INFO] [1792114776.661597]: KF 193 | best=0.849 | collecting stats (6/60)
+[INFO] [1792114776.907906]: KF 194 | best=0.842 | collecting stats (7/60)
+[INFO] [1792114777.159308]: KF 195 | best=0.831 | collecting stats (8/60)
+[INFO] [1792114777.405053]: KF 196 | best=0.832 | collecting stats (9/60)
+[INFO] [1792114777.656079]: KF 197 | best=0.822 | collecting stats (10/60)
+[INFO] [1792114777.856613]: KF 198 | best=0.817 | collecting stats (11/60)
+[INFO] [1792114778.054996]: KF 199 | best=0.846 | collecting stats (12/60)
+[INFO] [1792114778.255919]: dumped 200 descriptors to /home/anish/mono-slam-cnn-loop-closure/results/proposal_v2/runs/T3_V0102_r2_resnet18/descs.npz
+[INFO] [1792114778.256873]: KF 200 | best=0.796 | collecting stats (13/60)
+[INFO] [1792114778.457489]: KF 201 | best=0.791 | collecting stats (14/60)
+[INFO] [1792114778.661038]: KF 202 | best=0.767 | collecting stats (15/60)
+[INFO] [1792114778.863146]: KF 203 | best=0.771 | collecting stats (16/60)
+[INFO] [1792114779.264694]: KF 204 | best=0.771 | collecting stats (17/60)
+[INFO] [1792114779.460618]: KF 205 | best=0.780 | collecting stats (18/60)
+[INFO] [1792114779.604469]: KF 206 | best=0.780 | collecting stats (19/60)
+[INFO] [1792114779.754486]: KF 207 | best=0.765 | collecting stats (20/60)
+[INFO] [1792114779.953621]: KF 208 | best=0.768 | collecting stats (21/60)
+[INFO] [1792114780.108356]: KF 209 | best=0.747 | collecting stats (22/60)
+[INFO] [1792114780.304207]: KF 210 | best=0.745 | collecting stats (23/60)
+[INFO] [1792114780.503547]: KF 211 | best=0.746 | collecting stats (24/60)
+[INFO] [1792114780.704796]: KF 212 | best=0.747 | collecting stats (25/60)
+[INFO] [1792114780.854496]: KF 213 | best=0.754 | collecting stats (26/60)
+[INFO] [1792114781.054710]: KF 214 | best=0.735 | collecting stats (27/60)
+[INFO] [1792114781.256849]: KF 215 | best=0.740 | collecting stats (28/60)
+[INFO] [1792114781.505177]: KF 216 | best=0.756 | collecting stats (29/60)
+[INFO] [1792114781.705416]: KF 217 | best=0.754 | collecting stats (30/60)
+[INFO] [1792114781.906973]: KF 218 | best=0.741 | collecting stats (31/60)
+[INFO] [1792114782.106036]: KF 219 | best=0.760 | collecting stats (32/60)
+[INFO] [1792114782.361588]: KF 220 | best=0.791 | collecting stats (33/60)
+[INFO] [1792114782.657359]: KF 221 | best=0.801 | collecting stats (34/60)
+[INFO] [1792114782.909227]: KF 222 | best=0.804 | collecting stats (35/60)
+[INFO] [1792114783.205401]: KF 223 | best=0.839 | collecting stats (36/60)
+[INFO] [1792114783.557312]: KF 224 | best=0.835 | collecting stats (37/60)
+[INFO] [1792114783.858449]: KF 225 | best=0.834 | collecting stats (38/60)
+[INFO] [1792114784.105826]: KF 226 | best=0.836 | collecting stats (39/60)
+[INFO] [1792114784.408894]: KF 227 | best=0.826 | collecting stats (40/60)
+[INFO] [1792114784.658398]: KF 228 | best=0.823 | collecting stats (41/60)
+[INFO] [1792114784.911914]: KF 229 | best=0.815 | collecting stats (42/60)
+[INFO] [1792114785.157808]: KF 230 | best=0.821 | collecting stats (43/60)
+[INFO] [1792114785.408276]: KF 231 | best=0.806 | collecting stats (44/60)
+[INFO] [1792114785.659418]: KF 232 | best=0.780 | collecting stats (45/60)
+[INFO] [1792114785.912658]: KF 233 | best=0.745 | collecting stats (46/60)
+[INFO] [1792114786.160020]: KF 234 | best=0.741 | collecting stats (47/60)
+[INFO] [1792114786.357923]: KF 235 | best=0.752 | collecting stats (48/60)
+[INFO] [1792114786.556235]: KF 236 | best=0.779 | collecting stats (49/60)
+[INFO] [1792114786.756943]: KF 237 | best=0.772 | collecting stats (50/60)
+[INFO] [1792114787.208441]: KF 238 | best=0.780 | collecting stats (51/60)
+[INFO] [1792114787.515153]: KF 239 | best=0.772 | collecting stats (52/60)
+[INFO] [1792114787.709386]: KF 240 | best=0.780 | collecting stats (53/60)
+[INFO] [1792114787.908125]: KF 241 | best=0.776 | collecting stats (54/60)
+[INFO] [1792114788.158460]: KF 242 | best=0.762 | collecting stats (55/60)
+[INFO] [1792114788.409195]: KF 243 | best=0.766 | collecting stats (56/60)
+[INFO] [1792114788.605662]: KF 244 | best=0.777 | collecting stats (57/60)
+[INFO] [1792114788.805437]: KF 245 | best=0.764 | collecting stats (58/60)
+[INFO] [1792114789.005892]: KF 246 | best=0.785 | collecting stats (59/60)
+[INFO] [1792114789.208106]: KF 247 | best=0.781 | thresh=0.846 | no proposal
+[INFO] [1792114789.411475]: KF 248 | best=0.765 | thresh=0.846 | no proposal
+[INFO] [1792114789.557047]: KF 249 | best=0.753 | thresh=0.846 | no proposal
+[INFO] [1792114789.756489]: KF 250 | best=0.762 | thresh=0.846 | no proposal
+[INFO] [1792114790.307672]: KF 251 | best=0.781 | thresh=0.846 | no proposal
+[INFO] [1792114790.859334]: KF 252 | best=0.792 | thresh=0.846 | no proposal
+[INFO] [1792114792.109236]: KF 253 | best=0.764 | thresh=0.846 | no proposal
+[INFO] [1792114792.305606]: KF 254 | best=0.779 | thresh=0.846 | no proposal
+[INFO] [1792114792.506195]: KF 255 | best=0.789 | thresh=0.846 | no proposal
+[INFO] [1792114792.706634]: KF 256 | best=0.794 | thresh=0.846 | no proposal
+[INFO] [1792114792.959040]: KF 257 | best=0.800 | thresh=0.846 | no proposal
+[INFO] [1792114793.157948]: KF 258 | best=0.802 | thresh=0.846 | no proposal
+[INFO] [1792114793.407041]: KF 259 | best=0.796 | thresh=0.846 | no proposal
+[INFO] [1792114793.608917]: KF 260 | best=0.826 | thresh=0.846 | no proposal
+[INFO] [1792114793.860275]: KF 261 | best=0.810 | thresh=0.846 | no proposal
+[INFO] [1792114794.107814]: KF 262 | best=0.818 | thresh=0.846 | no proposal
+[INFO] [1792114794.356131]: KF 263 | best=0.808 | thresh=0.846 | no proposal
+[INFO] [1792114794.612708]: KF 264 | best=0.819 | thresh=0.846 | no proposal
+[WARN] [1792114794.857048]: LOOP CLOSURE: KF 265 matches KF 118 | score=0.861 | adaptive_thresh=0.847 | dt=35.7s
+[WARN] [1792114796.060081]: LOOP CLOSURE: KF 266 matches KF 119 | score=0.882 | adaptive_thresh=0.854 | dt=36.8s
+[WARN] [1792114796.509171]: LOOP CLOSURE: KF 267 matches KF 119 | score=0.884 | adaptive_thresh=0.870 | dt=37.2s
+[WARN] [1792114797.309445]: LOOP CLOSURE: KF 268 matches KF 118 | score=0.897 | adaptive_thresh=0.883 | dt=38.2s
+[WARN] [1792114797.716526]: LOOP CLOSURE: KF 269 matches KF 117 | score=0.896 | adaptive_thresh=0.888 | dt=38.7s
+[INFO] [1792114798.110177]: KF 270 | best=0.870 | thresh=0.888 | no proposal
+[INFO] [1792114798.511102]: KF 271 | best=0.855 | thresh=0.888 | no proposal
+[INFO] [1792114798.909367]: KF 272 | best=0.857 | thresh=0.888 | no proposal
+[INFO] [1792114799.308233]: KF 273 | best=0.853 | thresh=0.887 | no proposal
+[INFO] [1792114799.761588]: KF 274 | best=0.851 | thresh=0.887 | no proposal
+[INFO] [1792114800.157323]: KF 275 | best=0.842 | thresh=0.887 | no proposal
+[INFO] [1792114800.561246]: KF 276 | best=0.839 | thresh=0.887 | no proposal
+[INFO] [1792114801.011796]: KF 277 | best=0.796 | thresh=0.886 | no proposal
+[INFO] [1792114801.411312]: KF 278 | best=0.829 | thresh=0.886 | no proposal
+[INFO] [1792114801.807247]: KF 279 | best=0.821 | thresh=0.886 | no proposal
+[INFO] [1792114802.157615]: KF 280 | best=0.819 | thresh=0.886 | no proposal
+[INFO] [1792114802.606896]: KF 281 | best=0.819 | thresh=0.885 | no proposal
+[INFO] [1792114802.957507]: KF 282 | best=0.814 | thresh=0.885 | no proposal
+[INFO] [1792114803.356391]: KF 283 | best=0.815 | thresh=0.885 | no proposal
+[INFO] [1792114803.706639]: KF 284 | best=0.825 | thresh=0.885 | no proposal
+[INFO] [1792114804.116961]: KF 285 | best=0.814 | thresh=0.884 | no proposal
+[INFO] [1792114804.405599]: KF 286 | best=0.825 | thresh=0.884 | no proposal
+[INFO] [1792114804.759184]: KF 287 | best=0.825 | thresh=0.884 | no proposal
+[INFO] [1792114805.057102]: KF 288 | best=0.820 | thresh=0.884 | no proposal
+[INFO] [1792114805.357030]: KF 289 | best=0.814 | thresh=0.883 | no proposal
+[INFO] [1792114805.606073]: KF 290 | best=0.832 | thresh=0.883 | no proposal
+[INFO] [1792114805.856820]: KF 291 | best=0.825 | thresh=0.883 | no proposal
+[INFO] [1792114806.113896]: KF 292 | best=0.828 | thresh=0.883 | no proposal
+[INFO] [1792114806.415837]: KF 293 | best=0.824 | thresh=0.883 | no proposal
+[INFO] [1792114806.657416]: KF 294 | best=0.830 | thresh=0.883 | no proposal
+[INFO] [1792114807.010685]: KF 295 | best=0.815 | thresh=0.883 | no proposal
+[INFO] [1792114807.307391]: KF 296 | best=0.795 | thresh=0.883 | no proposal
+[INFO] [1792114807.607655]: KF 297 | best=0.817 | thresh=0.883 | no proposal
+[INFO] [1792114807.915763]: KF 298 | best=0.819 | thresh=0.883 | no proposal
+[INFO] [1792114808.269756]: KF 299 | best=0.813 | thresh=0.883 | no proposal
+[INFO] [1792114808.664899]: KF 300 | best=0.879 | thresh=0.883 | no proposal
+[WARN] [1792114809.058613]: LOOP CLOSURE: KF 301 matches KF 123 | score=0.885 | adaptive_thresh=0.885 | dt=49.1s
+[INFO] [1792114809.409055]: KF 302 | best=0.876 | thresh=0.885 | no proposal
+[INFO] [1792114809.810199]: KF 303 | best=0.867 | thresh=0.885 | no proposal
+[INFO] [1792114810.158161]: KF 304 | best=0.876 | thresh=0.885 | no proposal
+[WARN] [1792114811.211912]: LOOP CLOSURE: KF 305 matches KF 199 | score=0.898 | adaptive_thresh=0.892 | dt=33.1s
+[WARN] [1792114811.759827]: LOOP CLOSURE: KF 306 matches KF 132 | score=0.901 | adaptive_thresh=0.897 | dt=50.3s
+[WARN] [1792114812.307790]: LOOP CLOSURE: KF 307 matches KF 131 | score=0.904 | adaptive_thresh=0.898 | dt=51.0s
+[WARN] [1792114812.757398]: LOOP CLOSURE: KF 308 matches KF 131 | score=0.933 | adaptive_thresh=0.900 | dt=51.5s
+[INFO] [1792114813.207307]: KF 309 | best=0.882 | thresh=0.900 | no proposal
+[INFO] [1792114813.708487]: KF 310 | best=0.875 | thresh=0.899 | no proposal
+[INFO] [1792114814.209582]: KF 311 | best=0.871 | thresh=0.899 | no proposal
+[INFO] [1792114814.764208]: KF 312 | best=0.886 | thresh=0.899 | no proposal
+[INFO] [1792114815.208351]: KF 313 | best=0.888 | thresh=0.899 | no proposal
+[WARN] [1792114815.660486]: LOOP CLOSURE: KF 314 matches KF 191 | score=0.904 | adaptive_thresh=0.902 | dt=39.6s
+[WARN] [1792114816.060189]: LOOP CLOSURE: KF 315 matches KF 144 | score=0.914 | adaptive_thresh=0.904 | dt=51.9s
+[WARN] [1792114816.408730]: LOOP CLOSURE: KF 316 matches KF 157 | score=0.907 | adaptive_thresh=0.905 | dt=49.4s
+[INFO] [1792114816.859073]: KF 317 | best=0.900 | thresh=0.905 | no proposal
+[WARN] [1792114817.259316]: LOOP CLOSURE: KF 318 matches KF 158 | score=0.914 | adaptive_thresh=0.910 | dt=50.1s
+[INFO] [1792114817.659442]: KF 319 | best=0.910 | thresh=0.912 | no proposal
+[INFO] [1792114818.059640]: KF 320 | best=0.899 | thresh=0.912 | no proposal
+[INFO] [1792114818.510219]: KF 321 | best=0.897 | thresh=0.912 | no proposal
+[INFO] [1792114818.956261]: KF 322 | best=0.895 | thresh=0.911 | no proposal
+[INFO] [1792114819.362710]: KF 323 | best=0.878 | thresh=0.911 | no proposal
+[INFO] [1792114819.759097]: KF 324 | best=0.882 | thresh=0.911 | no proposal
+[INFO] [1792114820.115098]: KF 325 | best=0.912 | thresh=0.912 | no proposal
+[INFO] [1792114820.808875]: KF 326 | best=0.904 | thresh=0.912 | no proposal
+[INFO] [1792114821.156528]: KF 327 | best=0.887 | thresh=0.912 | no proposal
+[INFO] [1792114821.455819]: KF 328 | best=0.878 | thresh=0.912 | no proposal
+[INFO] [1792114821.757711]: KF 329 | best=0.873 | thresh=0.912 | no proposal
+[INFO] [1792114822.005646]: KF 330 | best=0.876 | thresh=0.912 | no proposal
+[INFO] [1792114822.257787]: KF 331 | best=0.879 | thresh=0.912 | no proposal
+[INFO] [1792114822.557350]: KF 332 | best=0.871 | thresh=0.912 | no proposal
+[INFO] [1792114822.804546]: KF 333 | best=0.857 | thresh=0.912 | no proposal
+[INFO] [1792114823.112040]: KF 334 | best=0.863 | thresh=0.912 | no proposal
+[INFO] [1792114823.356503]: KF 335 | best=0.845 | thresh=0.912 | no proposal
+[INFO] [1792114823.655188]: KF 336 | best=0.849 | thresh=0.912 | no proposal
+[INFO] [1792114823.907213]: KF 337 | best=0.851 | thresh=0.912 | no proposal
+[INFO] [1792114824.104514]: KF 338 | best=0.864 | thresh=0.912 | no proposal
+[INFO] [1792114824.304331]: KF 339 | best=0.873 | thresh=0.912 | no proposal
+[INFO] [1792114824.505926]: KF 340 | best=0.842 | thresh=0.912 | no proposal
+[INFO] [1792114824.755675]: KF 341 | best=0.819 | thresh=0.912 | no proposal
+[INFO] [1792114825.004567]: KF 342 | best=0.807 | thresh=0.912 | no proposal
+[INFO] [1792114825.205288]: KF 343 | best=0.807 | thresh=0.912 | no proposal
+[INFO] [1792114825.406951]: KF 344 | best=0.802 | thresh=0.912 | no proposal
+[INFO] [1792114825.604584]: KF 345 | best=0.810 | thresh=0.912 | no proposal
+[INFO] [1792114825.755972]: KF 346 | best=0.804 | thresh=0.912 | no proposal
+[INFO] [1792114825.906593]: KF 347 | best=0.812 | thresh=0.912 | no proposal
+[INFO] [1792114826.057286]: KF 348 | best=0.809 | thresh=0.912 | no proposal
+[INFO] [1792114826.207789]: KF 349 | best=0.820 | thresh=0.912 | no proposal
+[INFO] [1792114826.357311]: KF 350 | best=0.821 | thresh=0.912 | no proposal
+[INFO] [1792114826.506742]: KF 351 | best=0.825 | thresh=0.912 | no proposal
+[INFO] [1792114826.756193]: KF 352 | best=0.830 | thresh=0.912 | no proposal
+[INFO] [1792114827.006543]: KF 353 | best=0.850 | thresh=0.911 | no proposal
+[INFO] [1792114827.253348]: KF 354 | best=0.837 | thresh=0.911 | no proposal
+[INFO] [1792114827.664039]: KF 355 | best=0.852 | thresh=0.911 | no proposal
+[INFO] [1792114827.959207]: KF 356 | best=0.869 | thresh=0.911 | no proposal
+[INFO] [1792114828.209539]: KF 357 | best=0.887 | thresh=0.911 | no proposal
+[INFO] [1792114828.405331]: KF 358 | best=0.909 | thresh=0.911 | no proposal
+[WARN] [1792114828.656246]: LOOP CLOSURE: KF 359 matches KF 20 | score=0.917 | adaptive_thresh=0.913 | dt=82.5s
+[INFO] [1792114829.005747]: KF 360 | best=0.912 | thresh=0.913 | no proposal
+[INFO] [1792114829.511819]: KF 361 | best=0.910 | thresh=0.913 | no proposal
+[INFO] [1792114829.907951]: KF 362 | best=0.905 | thresh=0.913 | no proposal
+[WARN] [1792114830.312097]: LOOP CLOSURE: KF 363 matches KF 38 | score=0.917 | adaptive_thresh=0.914 | dt=82.5s
+[WARN] [1792114830.908473]: LOOP CLOSURE: KF 364 matches KF 38 | score=0.915 | adaptive_thresh=0.914 | dt=83.1s
+[INFO] [1792114831.509006]: KF 365 | best=0.871 | thresh=0.914 | no proposal
+[INFO] [1792114832.215899]: KF 366 | best=0.876 | thresh=0.914 | no proposal
+[INFO] [1792114833.062366]: KF 367 | best=0.858 | thresh=0.914 | no proposal
+[INFO] [1792114833.860575]: KF 368 | best=0.868 | thresh=0.914 | no proposal
+[INFO] [1792114834.711831]: KF 369 | best=0.885 | thresh=0.914 | no proposal
+[INFO] [1792114835.411938]: KF 370 | best=0.888 | thresh=0.914 | no proposal
+[INFO] [1792114836.313655]: KF 371 | best=0.876 | thresh=0.914 | no proposal
+[INFO] [1792114837.260607]: KF 372 | best=0.874 | thresh=0.914 | no proposal
+[INFO] [1792114838.159042]: KF 373 | best=0.890 | thresh=0.914 | no proposal
+[INFO] [1792114838.917263]: KF 374 | best=0.874 | thresh=0.914 | no proposal
+[INFO] [1792114839.760012]: KF 375 | best=0.884 | thresh=0.914 | no proposal
+[WARN] [1792114840.612896]: LOOP CLOSURE: KF 376 matches KF 199 | score=0.918 | adaptive_thresh=0.915 | dt=62.5s
+[INFO] [1792114841.405838]: KF 377 | best=0.885 | thresh=0.915 | no proposal
+[INFO] [1792114841.808408]: KF 378 | best=0.896 | thresh=0.915 | no proposal
+[INFO] [1792114842.154611]: KF 379 | best=0.895 | thresh=0.915 | no proposal
+[INFO] [1792114842.507015]: KF 380 | best=0.912 | thresh=0.915 | no proposal
+[INFO] [1792114842.853755]: KF 381 | best=0.892 | thresh=0.915 | no proposal
+[INFO] [1792114843.205490]: KF 382 | best=0.899 | thresh=0.915 | no proposal
+[INFO] [1792114843.659154]: KF 383 | best=0.860 | thresh=0.915 | no proposal
+[INFO] [1792114844.211888]: KF 384 | best=0.912 | thresh=0.915 | no proposal
+[WARN] [1792114845.060583]: LOOP CLOSURE: KF 385 matches KF 310 | score=0.931 | adaptive_thresh=0.917 | dt=31.4s
+[WARN] [1792114845.761228]: LOOP CLOSURE: KF 386 matches KF 310 | score=0.931 | adaptive_thresh=0.917 | dt=32.1s
+[INFO] [1792114846.310429]: KF 387 | best=0.905 | thresh=0.917 | no proposal
+[INFO] [1792114846.810485]: KF 388 | best=0.893 | thresh=0.917 | no proposal
+[INFO] [1792114847.259866]: KF 389 | best=0.887 | thresh=0.917 | no proposal
+[INFO] [1792114848.115571]: KF 390 | best=0.910 | thresh=0.917 | no proposal
+[INFO] [1792114849.011624]: KF 391 | best=0.904 | thresh=0.917 | no proposal
+[INFO] [1792114849.609303]: KF 392 | best=0.893 | thresh=0.917 | no proposal
+[WARN] [1792114850.715839]: LOOP CLOSURE: KF 393 matches KF 75 | score=0.921 | adaptive_thresh=0.918 | dt=98.2s
+[INFO] [1792114851.663852]: KF 394 | best=0.896 | thresh=0.918 | no proposal
+[INFO] [1792114852.461091]: KF 395 | best=0.899 | thresh=0.918 | no proposal
+[WARN] [1792114853.159162]: LOOP CLOSURE: KF 396 matches KF 81 | score=0.931 | adaptive_thresh=0.920 | dt=99.9s
+[INFO] [1792114853.862141]: KF 397 | best=0.915 | thresh=0.920 | no proposal
+[INFO] [1792114854.760411]: KF 398 | best=0.899 | thresh=0.920 | no proposal
+[INFO] [1792114855.664019]: KF 399 | best=0.888 | thresh=0.920 | no proposal
+[INFO] [1792114856.618020]: dumped 400 descriptors to /home/anish/mono-slam-cnn-loop-closure/results/proposal_v2/runs/T3_V0102_r2_resnet18/descs.npz
+[INFO] [1792114856.619236]: KF 400 | best=0.908 | thresh=0.920 | no proposal
+[INFO] [1792114857.462938]: KF 401 | best=0.916 | thresh=0.920 | no proposal
+[WARN] [1792114858.408030]: LOOP CLOSURE: KF 402 matches KF 307 | score=0.942 | adaptive_thresh=0.928 | dt=46.1s
+[INFO] [1792114859.061083]: KF 403 | best=0.906 | thresh=0.928 | no proposal
+[INFO] [1792114859.862710]: KF 404 | best=0.918 | thresh=0.928 | no proposal
+[INFO] [1792114860.560271]: KF 405 | best=0.916 | thresh=0.927 | no proposal
+[INFO] [1792114861.159368]: KF 406 | best=0.907 | thresh=0.927 | no proposal
+[INFO] [1792114861.711877]: KF 407 | best=0.883 | thresh=0.927 | no proposal
+[INFO] [1792114862.112068]: KF 408 | best=0.902 | thresh=0.927 | no proposal
+[INFO] [1792114862.561852]: KF 409 | best=0.885 | thresh=0.927 | no proposal
+[INFO] [1792114862.808464]: KF 410 | best=0.878 | thresh=0.926 | no proposal
+[INFO] [1792114863.059887]: KF 411 | best=0.897 | thresh=0.926 | no proposal
+[INFO] [1792114863.357583]: KF 412 | best=0.900 | thresh=0.926 | no proposal
+[INFO] [1792114863.609647]: KF 413 | best=0.911 | thresh=0.926 | no proposal
+[INFO] [1792114863.856854]: KF 414 | best=0.911 | thresh=0.926 | no proposal
+[INFO] [1792114864.113035]: KF 415 | best=0.919 | thresh=0.925 | no proposal
+[INFO] [1792114864.513634]: KF 416 | best=0.920 | thresh=0.925 | no proposal
+[WARN] [1792114865.611293]: LOOP CLOSURE: KF 417 matches KF 178 | score=0.931 | adaptive_thresh=0.931 | dt=93.6s
+[INFO] [1792114865.861594]: KF 418 | best=0.924 | thresh=0.931 | no proposal
+[INFO] [1792114866.109390]: KF 419 | best=0.906 | thresh=0.931 | no proposal
+[INFO] [1792114866.357588]: KF 420 | best=0.910 | thresh=0.931 | no proposal
+[INFO] [1792114866.658750]: KF 421 | best=0.902 | thresh=0.931 | no proposal
+[INFO] [1792114867.007995]: KF 422 | best=0.858 | thresh=0.931 | no proposal
+[INFO] [1792114867.414342]: KF 423 | best=0.869 | thresh=0.931 | no proposal
+[INFO] [1792114867.809051]: KF 424 | best=0.856 | thresh=0.931 | no proposal
+[INFO] [1792114868.316617]: KF 425 | best=0.875 | thresh=0.931 | no proposal
+[INFO] [1792114868.707672]: KF 426 | best=0.877 | thresh=0.931 | no proposal
+[INFO] [1792114869.155571]: KF 427 | best=0.849 | thresh=0.931 | no proposal
+[INFO] [1792114869.506850]: KF 428 | best=0.843 | thresh=0.931 | no proposal
+[INFO] [1792114869.807775]: KF 429 | best=0.825 | thresh=0.931 | no proposal
+[INFO] [1792114870.207111]: KF 430 | best=0.849 | thresh=0.931 | no proposal
+[INFO] [1792114870.707724]: KF 431 | best=0.847 | thresh=0.931 | no proposal
+[INFO] [1792114871.158900]: KF 432 | best=0.852 | thresh=0.931 | no proposal
+[INFO] [1792114871.607581]: KF 433 | best=0.841 | thresh=0.931 | no proposal
+[INFO] [1792114872.155723]: KF 434 | best=0.831 | thresh=0.931 | no proposal
+[INFO] [1792114872.756646]: KF 435 | best=0.756 | thresh=0.931 | no proposal
+[INFO] [1792114873.356424]: KF 436 | best=0.770 | thresh=0.931 | no proposal
+[INFO] [1792114873.962829]: KF 437 | best=0.812 | thresh=0.931 | no proposal
+[INFO] [1792114874.508926]: KF 438 | best=0.890 | thresh=0.931 | no proposal
+[INFO] [1792114875.261424]: KF 439 | best=0.898 | thresh=0.931 | no proposal
+[INFO] [1792114875.911150]: KF 440 | best=0.900 | thresh=0.930 | no proposal
+[INFO] [1792114878.013267]: KF 441 | best=0.905 | thresh=0.930 | no proposal
+[INFO] [1792114878.609462]: KF 442 | best=0.920 | thresh=0.930 | no proposal
+[INFO] [1792114879.261547]: KF 443 | best=0.899 | thresh=0.930 | no proposal
+[INFO] [1792114879.912199]: KF 444 | best=0.838 | thresh=0.930 | no proposal
+[INFO] [1792114880.408012]: KF 445 | best=0.837 | thresh=0.930 | no proposal
+[INFO] [1792114880.909534]: KF 446 | best=0.845 | thresh=0.930 | no proposal
+[INFO] [1792114881.314181]: KF 447 | best=0.803 | thresh=0.929 | no proposal
+[INFO] [1792114881.610644]: KF 448 | best=0.788 | thresh=0.929 | no proposal
+[INFO] [1792114881.959008]: KF 449 | best=0.806 | thresh=0.929 | no proposal
+[INFO] [1792114882.213701]: KF 450 | best=0.789 | thresh=0.929 | no proposal
+[INFO] [1792114883.161314]: KF 451 | best=0.778 | thresh=0.929 | no proposal
+[WARN] [1792114895.589424]: KF 452 | NO_FRAME for stamp 1403715523.912143 (buffer miss #2)
+[WARN] [1792114895.595891]: LOOP CLOSURE: KF 453 matches KF 450 | score=0.991 | adaptive_thresh=0.931 | dt=111.9s
+[WARN] [1792114895.611061]: LOOP CLOSURE: KF 454 matches KF 451 | score=0.990 | adaptive_thresh=0.931 | dt=111.0s
+[WARN] [1792114895.617546]: LOOP CLOSURE: KF 455 matches KF 451 | score=0.988 | adaptive_thresh=0.931 | dt=111.0s
+[WARN] [1792114895.623638]: LOOP CLOSURE: KF 456 matches KF 451 | score=0.977 | adaptive_thresh=0.933 | dt=111.1s
+[WARN] [1792114895.629410]: LOOP CLOSURE: KF 457 matches KF 451 | score=0.969 | adaptive_thresh=0.939 | dt=111.2s
+[WARN] [1792114895.635807]: LOOP CLOSURE: KF 458 matches KF 448 | score=0.960 | adaptive_thresh=0.953 | dt=112.8s
+[INFO] [1792114895.642663]: KF 459 | best=0.960 | thresh=0.960 | no proposal
+[WARN] [1792114895.649115]: LOOP CLOSURE: KF 460 matches KF 448 | score=0.965 | adaptive_thresh=0.963 | dt=112.9s
+[INFO] [1792114895.655077]: KF 461 | best=0.948 | thresh=0.963 | no proposal
+[INFO] [1792114895.660932]: KF 462 | best=0.937 | thresh=0.963 | no proposal
+[INFO] [1792114895.667450]: KF 463 | best=0.934 | thresh=0.963 | no proposal
+[INFO] [1792114895.673685]: KF 464 | best=0.956 | thresh=0.962 | no proposal
+[INFO] [1792114895.679821]: KF 465 | best=0.955 | thresh=0.962 | no proposal
+[INFO] [1792114895.729398]: KF 466 | best=0.958 | thresh=0.962 | no proposal
+[INFO] [1792114895.775642]: KF 467 | best=0.939 | thresh=0.962 | no proposal
+[INFO] [1792114895.826835]: KF 468 | best=0.937 | thresh=0.962 | no proposal
+[INFO] [1792114895.933412]: KF 469 | best=0.945 | thresh=0.962 | no proposal
+[INFO] [1792114896.028048]: KF 470 | best=0.939 | thresh=0.962 | no proposal
+[INFO] [1792114896.124757]: KF 471 | best=0.944 | thresh=0.962 | no proposal
+[INFO] [1792114896.227866]: KF 472 | best=0.924 | thresh=0.962 | no proposal
+[INFO] [1792114896.325663]: KF 473 | best=0.934 | thresh=0.962 | no proposal
+[INFO] [1792114896.524661]: KF 474 | best=0.929 | thresh=0.961 | no proposal
+[INFO] [1792114896.727419]: KF 475 | best=0.924 | thresh=0.961 | no proposal
+[INFO] [1792114896.827144]: KF 476 | best=0.943 | thresh=0.961 | no proposal
+[INFO] [1792114897.029838]: KF 477 | best=0.944 | thresh=0.961 | no proposal
+[INFO] [1792114897.127993]: KF 478 | best=0.948 | thresh=0.961 | no proposal
+[INFO] [1792114897.226246]: KF 479 | best=0.935 | thresh=0.961 | no proposal
+[INFO] [1792114897.327997]: KF 480 | best=0.934 | thresh=0.961 | no proposal
+[INFO] [1792114897.732273]: KF 481 | best=0.930 | thresh=0.961 | no proposal
+[INFO] [1792114898.827739]: KF 482 | best=0.847 | thresh=0.961 | no proposal
+[INFO] [1792114899.480824]: KF 483 | best=0.858 | thresh=0.961 | no proposal
+[INFO] [1792114900.183211]: KF 484 | best=0.877 | thresh=0.961 | no proposal
+[INFO] [1792114900.779210]: KF 485 | best=0.918 | thresh=0.960 | no proposal
+[INFO] [1792114901.430418]: KF 486 | best=0.895 | thresh=0.960 | no proposal
+[INFO] [1792114902.532865]: KF 487 | best=0.925 | thresh=0.960 | no proposal
+[INFO] [1792114903.429608]: KF 488 | best=0.935 | thresh=0.960 | no proposal
+[INFO] [1792114904.080390]: KF 489 | best=0.885 | thresh=0.960 | no proposal
+[INFO] [1792114904.478290]: KF 490 | best=0.932 | thresh=0.960 | no proposal
+[INFO] [1792114904.880038]: KF 491 | best=0.935 | thresh=0.960 | no proposal
+[INFO] [1792114905.328339]: KF 492 | best=0.893 | thresh=0.960 | no proposal
+[INFO] [1792114905.985275]: KF 493 | best=0.912 | thresh=0.960 | no proposal
+[INFO] [1792114906.886039]: KF 494 | best=0.908 | thresh=0.960 | no proposal
+[INFO] [1792114907.688979]: KF 495 | best=0.895 | thresh=0.960 | no proposal
+[INFO] [1792114908.380999]: KF 496 | best=0.899 | thresh=0.960 | no proposal
+[INFO] [1792114908.927072]: KF 497 | best=0.917 | thresh=0.960 | no proposal
+[INFO] [1792114909.333441]: KF 498 | best=0.908 | thresh=0.960 | no proposal
+[INFO] [1792114910.183987]: KF 499 | best=0.900 | thresh=0.960 | no proposal
+[INFO] [1792114910.629078]: KF 500 | best=0.905 | thresh=0.960 | no proposal
+[INFO] [1792114911.078788]: KF 501 | best=0.907 | thresh=0.960 | no proposal
+[INFO] [1792114911.327509]: KF 502 | best=0.879 | thresh=0.960 | no proposal
+[INFO] [1792114911.578669]: KF 503 | best=0.877 | thresh=0.960 | no proposal
+[INFO] [1792114911.833945]: KF 504 | best=0.865 | thresh=0.960 | no proposal
+[INFO] [1792114912.027510]: KF 505 | best=0.857 | thresh=0.960 | no proposal
+[INFO] [1792114912.227004]: KF 506 | best=0.832 | thresh=0.960 | no proposal
+[INFO] [1792114912.483490]: KF 507 | best=0.846 | thresh=0.960 | no proposal
+[INFO] [1792114912.727284]: KF 508 | best=0.833 | thresh=0.960 | no proposal
+[INFO] [1792114912.981781]: KF 509 | best=0.838 | thresh=0.960 | no proposal
+[INFO] [1792114913.529560]: KF 510 | best=0.866 | thresh=0.960 | no proposal
+[INFO] [1792114914.130858]: KF 511 | best=0.864 | thresh=0.960 | no proposal
+[INFO] [1792114914.829307]: KF 512 | best=0.942 | thresh=0.960 | no proposal
+[INFO] [1792114915.531778]: KF 513 | best=0.917 | thresh=0.960 | no proposal
+[INFO] [1792114916.330172]: KF 514 | best=0.923 | thresh=0.960 | no proposal
+[INFO] [1792114916.980033]: KF 515 | best=0.906 | thresh=0.960 | no proposal
+[INFO] [1792114917.583288]: KF 516 | best=0.920 | thresh=0.960 | no proposal
+[INFO] [1792114918.382251]: KF 517 | best=0.926 | thresh=0.960 | no proposal
+[INFO] [1792114919.180111]: KF 518 | best=0.848 | thresh=0.960 | no proposal
+[INFO] [1792114919.826831]: KF 519 | best=0.833 | thresh=0.960 | no proposal
+[INFO] [1792114920.029405]: KF 520 | best=0.844 | thresh=0.960 | no proposal
+[INFO] [1792114920.227937]: KF 521 | best=0.826 | thresh=0.960 | no proposal
+[INFO] [1792114920.428178]: KF 522 | best=0.826 | thresh=0.960 | no proposal
+[INFO] [1792114920.628105]: KF 523 | best=0.833 | thresh=0.960 | no proposal
+[INFO] [1792114920.735939]: KF 524 | best=0.823 | thresh=0.960 | no proposal
+[INFO] [1792114920.823926]: KF 525 | best=0.836 | thresh=0.960 | no proposal
+[INFO] [1792114920.932181]: KF 526 | best=0.838 | thresh=0.960 | no proposal
+[INFO] [1792114921.032167]: KF 527 | best=0.856 | thresh=0.960 | no proposal
+[INFO] [1792114921.188627]: KF 528 | best=0.811 | thresh=0.960 | no proposal
+[INFO] [1792114921.224863]: KF 529 | best=0.799 | thresh=0.960 | no proposal
+[INFO] [1792114921.379992]: KF 530 | best=0.797 | thresh=0.960 | no proposal
+[INFO] [1792114921.985958]: KF 531 | best=0.839 | thresh=0.960 | no proposal
+[INFO] [1792114922.028849]: KF 532 | best=0.854 | thresh=0.960 | no proposal
+[INFO] [1792114922.226804]: KF 533 | best=0.862 | thresh=0.960 | no proposal
+[INFO] [1792114922.328894]: KF 534 | best=0.857 | thresh=0.960 | no proposal
+[INFO] [1792114922.488555]: KF 535 | best=0.843 | thresh=0.960 | no proposal
+[INFO] [1792114922.784736]: KF 536 | best=0.840 | thresh=0.960 | no proposal
+[INFO] [1792114923.730685]: KF 537 | best=0.844 | thresh=0.960 | no proposal
+[INFO] [1792114923.978408]: KF 538 | best=0.843 | thresh=0.960 | no proposal
+[INFO] [1792114924.228756]: KF 539 | best=0.838 | thresh=0.960 | no proposal
+[INFO] [1792114924.481370]: KF 540 | best=0.845 | thresh=0.960 | no proposal
+[INFO] [1792114924.579273]: KF 541 | best=0.860 | thresh=0.960 | no proposal
+[INFO] [1792114924.729690]: KF 542 | best=0.850 | thresh=0.960 | no proposal
+[INFO] [1792114924.879169]: KF 543 | best=0.840 | thresh=0.960 | no proposal
+[INFO] [1792114925.033528]: KF 544 | best=0.850 | thresh=0.960 | no proposal
+[INFO] [1792114925.127858]: KF 545 | best=0.847 | thresh=0.960 | no proposal
+[INFO] [1792114925.229032]: KF 546 | best=0.845 | thresh=0.960 | no proposal
+[INFO] [1792114925.326873]: KF 547 | best=0.837 | thresh=0.960 | no proposal
+[INFO] [1792114925.428846]: KF 548 | best=0.839 | thresh=0.960 | no proposal
+[INFO] [1792114925.527055]: KF 549 | best=0.838 | thresh=0.959 | no proposal
+[INFO] [1792114925.682273]: KF 550 | best=0.838 | thresh=0.959 | no proposal
+[INFO] [1792114925.776753]: KF 551 | best=0.843 | thresh=0.959 | no proposal
+[INFO] [1792114925.935685]: KF 552 | best=0.844 | thresh=0.959 | no proposal
+[INFO] [1792114926.028279]: KF 553 | best=0.830 | thresh=0.959 | no proposal
+[INFO] [1792114926.181043]: KF 554 | best=0.834 | thresh=0.959 | no proposal
+[INFO] [1792114926.279979]: KF 555 | best=0.836 | thresh=0.959 | no proposal
+[INFO] [1792114926.432490]: KF 556 | best=0.852 | thresh=0.959 | no proposal
+[INFO] [1792114926.578831]: KF 557 | best=0.859 | thresh=0.959 | no proposal
+[INFO] [1792114926.730680]: KF 558 | best=0.835 | thresh=0.959 | no proposal
+[INFO] [1792114926.928914]: KF 559 | best=0.841 | thresh=0.959 | no proposal
+[INFO] [1792114927.132335]: KF 560 | best=0.843 | thresh=0.959 | no proposal
+[INFO] [1792114927.379506]: KF 561 | best=0.838 | thresh=0.959 | no proposal
+[INFO] [1792114927.677403]: KF 562 | best=0.842 | thresh=0.959 | no proposal
+[INFO] [1792114928.037501]: KF 563 | best=0.850 | thresh=0.959 | no proposal
+[INFO] [1792114928.528345]: KF 564 | best=0.871 | thresh=0.959 | no proposal
+[INFO] [1792114929.139660]: KF 565 | best=0.909 | thresh=0.959 | no proposal
+[INFO] [1792114929.833323]: KF 566 | best=0.913 | thresh=0.959 | no proposal
+[INFO] [1792114930.631447]: KF 567 | best=0.932 | thresh=0.959 | no proposal
+[INFO] [1792114931.436645]: KF 568 | best=0.936 | thresh=0.959 | no proposal
+[INFO] [1792114932.228897]: KF 569 | best=0.916 | thresh=0.959 | no proposal
+[INFO] [1792114932.976572]: KF 570 | best=0.872 | thresh=0.959 | no proposal
+[INFO] [1792114933.330265]: KF 571 | best=0.858 | thresh=0.959 | no proposal
+[INFO] [1792114933.630790]: KF 572 | best=0.861 | thresh=0.959 | no proposal
+[INFO] [1792114933.881423]: KF 573 | best=0.857 | thresh=0.959 | no proposal
+[INFO] [1792114933.976869]: KF 574 | best=0.844 | thresh=0.959 | no proposal
+[INFO] [1792114934.075705]: KF 575 | best=0.865 | thresh=0.959 | no proposal
+[INFO] [1792114934.276657]: KF 576 | best=0.870 | thresh=0.959 | no proposal
+[INFO] [1792114934.377019]: KF 577 | best=0.836 | thresh=0.959 | no proposal
+[INFO] [1792114934.425158]: KF 578 | best=0.836 | thresh=0.959 | no proposal
+[INFO] [1792114934.477192]: KF 579 | best=0.834 | thresh=0.959 | no proposal
+[INFO] [1792114934.529611]: KF 580 | best=0.848 | thresh=0.959 | no proposal
+[INFO] [1792114934.580436]: KF 581 | best=0.841 | thresh=0.959 | no proposal
+[INFO] [1792114934.681604]: KF 582 | best=0.854 | thresh=0.959 | no proposal
+[INFO] [1792114934.729305]: KF 583 | best=0.875 | thresh=0.959 | no proposal
+[INFO] [1792114934.777036]: KF 584 | best=0.878 | thresh=0.958 | no proposal
+[INFO] [1792114934.829444]: KF 585 | best=0.881 | thresh=0.958 | no proposal
+[INFO] [1792114934.884420]: KF 586 | best=0.883 | thresh=0.958 | no proposal
+[INFO] [1792114934.981338]: KF 587 | best=0.889 | thresh=0.958 | no proposal
+[INFO] [1792114935.080126]: KF 588 | best=0.877 | thresh=0.958 | no proposal
+[INFO] [1792114935.177868]: KF 589 | best=0.880 | thresh=0.958 | no proposal
+[INFO] [1792114935.231983]: KF 590 | best=0.896 | thresh=0.958 | no proposal
+[INFO] [1792114935.328567]: KF 591 | best=0.877 | thresh=0.958 | no proposal
+[INFO] [1792114935.379124]: KF 592 | best=0.866 | thresh=0.958 | no proposal
+[INFO] [1792114935.429575]: KF 593 | best=0.844 | thresh=0.958 | no proposal
+[INFO] [1792114935.528569]: KF 594 | best=0.882 | thresh=0.958 | no proposal
+[INFO] [1792114935.629187]: KF 595 | best=0.886 | thresh=0.958 | no proposal
+[INFO] [1792114936.534861]: KF 596 | best=0.918 | thresh=0.958 | no proposal
+[INFO] [1792114937.485664]: KF 597 | best=0.906 | thresh=0.958 | no proposal
+[INFO] [1792114938.237063]: KF 598 | best=0.923 | thresh=0.958 | no proposal
+[INFO] [1792114939.441143]: KF 599 | best=0.938 | thresh=0.958 | no proposal
+[INFO] [1792114940.283864]: KF 600 | best=0.929 | thresh=0.958 | no proposal
+[INFO] [1792114940.835360]: dumped 600 descriptors to /home/anish/mono-slam-cnn-loop-closure/results/proposal_v2/runs/T3_V0102_r2_resnet18/descs.npz
+[INFO] [1792114940.836975]: KF 601 | best=0.897 | thresh=0.958 | no proposal
+[INFO] [1792114941.132259]: KF 602 | best=0.879 | thresh=0.958 | no proposal
+[INFO] [1792114941.482448]: KF 603 | best=0.853 | thresh=0.958 | no proposal
+[INFO] [1792114941.786552]: KF 604 | best=0.878 | thresh=0.957 | no proposal
+[INFO] [1792114942.032146]: KF 605 | best=0.881 | thresh=0.957 | no proposal
+[INFO] [1792114942.286484]: KF 606 | best=0.895 | thresh=0.957 | no proposal
+[INFO] [1792114942.532249]: KF 607 | best=0.894 | thresh=0.957 | no proposal
+[INFO] [1792114942.682813]: KF 608 | best=0.890 | thresh=0.957 | no proposal
+[INFO] [1792114942.884535]: KF 609 | best=0.871 | thresh=0.957 | no proposal
+[INFO] [1792114943.081116]: KF 610 | best=0.859 | thresh=0.957 | no proposal
+[INFO] [1792114943.331413]: KF 611 | best=0.852 | thresh=0.957 | no proposal
+[INFO] [1792114943.631123]: KF 612 | best=0.865 | thresh=0.957 | no proposal
+[INFO] [1792114943.982177]: KF 613 | best=0.854 | thresh=0.957 | no proposal
+[INFO] [1792114944.239326]: KF 614 | best=0.864 | thresh=0.957 | no proposal
+[INFO] [1792114944.633461]: KF 615 | best=0.869 | thresh=0.957 | no proposal
+[INFO] [1792114944.885582]: KF 616 | best=0.866 | thresh=0.957 | no proposal
+[INFO] [1792114945.132085]: KF 617 | best=0.891 | thresh=0.957 | no proposal
+[INFO] [1792114945.433306]: KF 618 | best=0.855 | thresh=0.957 | no proposal
+[INFO] [1792114945.733641]: KF 619 | best=0.849 | thresh=0.957 | no proposal
+[INFO] [1792114946.034106]: KF 620 | best=0.841 | thresh=0.957 | no proposal
+[INFO] [1792114946.432319]: KF 621 | best=0.891 | thresh=0.957 | no proposal
+[INFO] [1792114946.834111]: KF 622 | best=0.882 | thresh=0.956 | no proposal
+[INFO] [1792114947.237523]: KF 623 | best=0.902 | thresh=0.956 | no proposal
+[INFO] [1792114947.631449]: KF 624 | best=0.892 | thresh=0.956 | no proposal
+[INFO] [1792114947.932560]: KF 625 | best=0.875 | thresh=0.956 | no proposal
+[INFO] [1792114948.228829]: KF 626 | best=0.891 | thresh=0.956 | no proposal
+[INFO] [1792114948.328430]: KF 627 | best=0.874 | thresh=0.956 | no proposal
+[INFO] [1792114948.578923]: KF 628 | best=0.872 | thresh=0.956 | no proposal
+[INFO] [1792114948.881864]: KF 629 | best=0.874 | thresh=0.956 | no proposal
+[INFO] [1792114949.131316]: KF 630 | best=0.856 | thresh=0.956 | no proposal
+[INFO] [1792114949.383110]: KF 631 | best=0.856 | thresh=0.956 | no proposal
+[INFO] [1792114949.576979]: KF 632 | best=0.865 | thresh=0.956 | no proposal
+[INFO] [1792114949.777008]: KF 633 | best=0.852 | thresh=0.956 | no proposal
+[INFO] [1792114949.925659]: KF 634 | best=0.861 | thresh=0.956 | no proposal
+[INFO] [1792114950.076410]: KF 635 | best=0.854 | thresh=0.956 | no proposal
+[INFO] [1792114950.277688]: KF 636 | best=0.863 | thresh=0.956 | no proposal
+[INFO] [1792114950.482208]: KF 637 | best=0.842 | thresh=0.956 | no proposal
+[INFO] [1792114950.624730]: KF 638 | best=0.848 | thresh=0.956 | no proposal
+[INFO] [1792114950.882462]: KF 639 | best=0.847 | thresh=0.956 | no proposal
+[INFO] [1792114951.077105]: KF 640 | best=0.857 | thresh=0.956 | no proposal
+[INFO] [1792114951.284713]: KF 641 | best=0.844 | thresh=0.955 | no proposal
+[INFO] [1792114951.528314]: KF 642 | best=0.844 | thresh=0.955 | no proposal
+[INFO] [1792114951.780845]: KF 643 | best=0.859 | thresh=0.955 | no proposal
+[INFO] [1792114952.577393]: KF 644 | best=0.887 | thresh=0.955 | no proposal
+[INFO] [1792114954.580566]: KF 645 | best=0.924 | thresh=0.955 | no proposal
+[INFO] [1792114955.083114]: KF 646 | best=0.952 | thresh=0.955 | no proposal
+[INFO] [1792114955.629758]: KF 647 | best=0.867 | thresh=0.955 | no proposal
+[INFO] [1792114956.333739]: KF 648 | best=0.854 | thresh=0.955 | no proposal
+[INFO] [1792114956.985234]: KF 649 | best=0.924 | thresh=0.955 | no proposal
+[INFO] [1792114957.779176]: KF 650 | best=0.916 | thresh=0.955 | no proposal
+[INFO] [1792114958.778826]: KF 651 | best=0.901 | thresh=0.955 | no proposal
+[INFO] [1792114959.129615]: KF 652 | best=0.877 | thresh=0.955 | no proposal
+[INFO] [1792114959.529649]: KF 653 | best=0.891 | thresh=0.955 | no proposal
+[INFO] [1792114959.777484]: KF 654 | best=0.941 | thresh=0.955 | no proposal
+[INFO] [1792114960.030139]: KF 655 | best=0.939 | thresh=0.955 | no proposal
+[INFO] [1792114961.386264]: KF 656 | best=0.925 | thresh=0.955 | no proposal
+[INFO] [1792114962.787112]: KF 657 | best=0.834 | thresh=0.955 | no proposal
+[INFO] [1792114964.041109]: KF 658 | best=0.921 | thresh=0.955 | no proposal
+[INFO] [1792114965.232103]: KF 659 | best=0.871 | thresh=0.955 | no proposal
+[INFO] [1792114965.684735]: KF 660 | best=0.927 | thresh=0.955 | no proposal
+[INFO] [1792114966.435459]: KF 661 | best=0.943 | thresh=0.955 | no proposal
+[INFO] [1792114967.187845]: KF 662 | best=0.909 | thresh=0.955 | no proposal
+[INFO] [1792114968.540537]: KF 663 | best=0.923 | thresh=0.955 | no proposal
+[INFO] [1792114969.941847]: KF 664 | best=0.912 | thresh=0.955 | no proposal
+[INFO] [1792114971.240899]: KF 665 | best=0.923 | thresh=0.955 | no proposal
+[INFO] [1792114972.492372]: KF 666 | best=0.932 | thresh=0.955 | no proposal
+[WARN] [1792114973.592290]: LOOP CLOSURE: KF 667 matches KF 445 | score=0.957 | adaptive_thresh=0.956 | dt=192.2s
+[INFO] [1792114974.492076]: KF 668 | best=0.955 | thresh=0.956 | no proposal
+[WARN] [1792114975.242757]: LOOP CLOSURE: KF 669 matches KF 451 | score=0.979 | adaptive_thresh=0.958 | dt=191.2s
+[INFO] [1792114985.034213]: dumped 668 descriptors to /home/anish/mono-slam-cnn-loop-closure/results/proposal_v2/runs/T3_V0102_r2_resnet18/descs.npz
+[INFO] [1792114985.035214]: node counts: {'kf': 670, 'no_frame': 2, 'proposals': 33}
