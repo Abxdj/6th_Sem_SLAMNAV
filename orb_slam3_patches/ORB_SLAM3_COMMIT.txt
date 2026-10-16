@@ -1,1 +1,10 @@
-4452a3c4ab75b1cde34e5505a36ec3f9edcdc4c4
+upstream: 4452a3c4ab75b1cde34e5505a36ec3f9edcdc4c4 (UZ-SLAMLab/ORB_SLAM3 master, "Update Dependencies.md")
+local branch: proposal-v2, HEAD d6414535141d9bf24c6fe95c2eef42ba34b390c1
+proposal_v2.patch = git -C ~/ORB_SLAM3 diff 4452a3c d641453   (apply: git -C <clean 4452a3c checkout> apply proposal_v2.patch)
+File copies here are the full files at that HEAD (exported 2026-10-16):
+  CMakeLists.txt                 <- CMakeLists.txt
+  ros_CMakeLists.txt             <- Examples_old/ROS/ORB_SLAM3/CMakeLists.txt
+  ros_mono.cc                    <- Examples_old/ROS/ORB_SLAM3/src/ros_mono.cc   (also ros_nodes/ros_mono.cc)
+  LoopClosing.h, System.h, Tracking.h       <- include/
+  LoopClosing.cc, System.cc, Tracking.cc    <- src/
+Commits: d641453 C6: /orb_slam3/new_keyframe carries the KF's map id at creation ([id, stamp, map_i;13f3e65 S: /orb_slam3/new_session -> System::ChangeDataset(); SaveKeyFrameTrajectoryAllMap;1c4d8d7 C5: one recorded outcome per external proposal ([PROP] lines, PROP-STATS/PROP-FINA;2b5790c C3: publish [id, timestamp] on /orb_slam3/new_keyframe for every KF incl. monocula;e708ae6 C2: search all live Atlas maps; route other-map external candidates to the merge l;dac86a1 C1: resolve external candidates through the spanning-tree parent of culled KFs (al;3ef0100 Base project patches (as of 2026-10-16): ROS candidate injection, KF id publisher,;

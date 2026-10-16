@@ -151,6 +151,8 @@ public:
     // Call first Shutdown()
     // See format details at: http://vision.in.tum.de/data/datasets/rgbd-dataset
     void SaveKeyFrameTrajectoryTUM(const string &filename);
+    // proposal-v2 S: every live map, one line per KF: map_id t x y z qx qy qz qw
+    void SaveKeyFrameTrajectoryAllMapsTUM(const string &filename);
 
     void SaveTrajectoryEuRoC(const string &filename);
     void SaveKeyFrameTrajectoryEuRoC(const string &filename);

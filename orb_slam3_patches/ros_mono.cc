@@ -25,6 +25,7 @@
 #include<ros/ros.h>
 #include <cv_bridge/cv_bridge.h>
 #include <sensor_msgs/image_encodings.h>
+#include <std_msgs/Empty.h>
 
 #include<opencv2/core/core.hpp>
 
@@ -40,6 +41,13 @@ public:
     void GrabImage(const sensor_msgs::ImageConstPtr& msg);
 
     ORB_SLAM3::System* mpSLAM;
+
+    // proposal-v2 S: multi-session trigger, mirrors Examples/Monocular/mono_euroc.cc:182
+    void NewSession(const std_msgs::EmptyConstPtr&)
+    {
+        cout << "[SESSION] ChangeDataset requested" << endl;
+        mpSLAM->ChangeDataset();
+    }
 };
 
 int main(int argc, char **argv)
@@ -64,6 +72,7 @@ int main(int argc, char **argv)
     // Subscribe LoopClosing thread to external CNN/ViT loop closure candidates
     SLAM.GetLoopCloser()->SetExternalCandidateSubscriber(nodeHandler);
     SLAM.GetTracker()->SetKeyFramePublisher(nodeHandler); 
+    ros::Subscriber subSession = nodeHandler.subscribe("/orb_slam3/new_session", 1, &ImageGrabber::NewSession, &igb);
     ros::spin();
 
     // Stop all threads
@@ -71,6 +80,7 @@ int main(int argc, char **argv)
 
     // Save camera trajectory
     SLAM.SaveKeyFrameTrajectoryTUM("KeyFrameTrajectory.txt");
+    SLAM.SaveKeyFrameTrajectoryAllMapsTUM("KeyFrameTrajectory_allmaps.txt");
 
     ros::shutdown();
 

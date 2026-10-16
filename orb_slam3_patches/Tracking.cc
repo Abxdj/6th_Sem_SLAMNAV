@@ -2622,6 +2622,8 @@ void Tracking::CreateInitialMapMonocular()
 
     mpLocalMapper->InsertKeyFrame(pKFini);
     mpLocalMapper->InsertKeyFrame(pKFcur);
+    PublishKeyFrame(pKFini);   // proposal-v2 C3: the two init KFs were never published
+    PublishKeyFrame(pKFcur);
     mpLocalMapper->mFirstTs=pKFcur->mTimeStamp;
 
     mCurrentFrame.SetPose(pKFcur->GetPose());
@@ -3217,8 +3219,22 @@ bool Tracking::NeedNewKeyFrame()
 void Tracking::SetKeyFramePublisher(ros::NodeHandle& nh)
 {
     mKFIdPublisher = nh.advertise<std_msgs::Int32>("/orb_slam3/new_keyframe_id", 10);
+    mKFPublisher = nh.advertise<std_msgs::Float64MultiArray>("/orb_slam3/new_keyframe", 100);
     mbKFPublisherSet = true;
     cout << "Tracking: publishing new keyframe IDs on /orb_slam3/new_keyframe_id" << endl;
+}
+
+void Tracking::PublishKeyFrame(KeyFrame* pKF)
+{
+    if(!mbKFPublisherSet || !pKF)
+        return;
+    std_msgs::Int32 kfIdMsg;
+    kfIdMsg.data = (int)pKF->mnId;
+    mKFIdPublisher.publish(kfIdMsg);
+    std_msgs::Float64MultiArray kfMsg;
+    Map* pKFMap = pKF->GetMap();
+    kfMsg.data = {(double)pKF->mnId, pKF->mTimeStamp, pKFMap ? (double)pKFMap->GetId() : -1.0};   // C6: + map id
+    mKFPublisher.publish(kfMsg);
 }
 
 void Tracking::CreateNewKeyFrame()
@@ -3347,13 +3363,8 @@ void Tracking::CreateNewKeyFrame()
     mnLastKeyFrameId = mCurrentFrame.mnId;
     mpLastKeyFrame = pKF;
 
-    // --- Publish new keyframe ID for external loop closure descriptor nodes ---
-    if(mbKFPublisherSet)
-    {
-        std_msgs::Int32 kfIdMsg;
-        kfIdMsg.data = (int)pKF->mnId;
-        mKFIdPublisher.publish(kfIdMsg);
-    }
+    // --- Publish new keyframe ID (+ stamp) for external loop closure descriptor nodes ---
+    PublishKeyFrame(pKF);
 }
 
 void Tracking::SearchLocalPoints()

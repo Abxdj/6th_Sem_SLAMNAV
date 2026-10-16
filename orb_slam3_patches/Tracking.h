@@ -22,6 +22,7 @@
 
 #include <ros/ros.h>
 #include <std_msgs/Int32.h>
+#include <std_msgs/Float64MultiArray.h>
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/features2d/features2d.hpp>
@@ -375,6 +376,8 @@ public:
     // --- Publish new keyframe IDs for external loop closure descriptor nodes ---
     void SetKeyFramePublisher(ros::NodeHandle& nh);
     ros::Publisher mKFIdPublisher;
+    ros::Publisher mKFPublisher;          // proposal-v2 C3: [kf_id, stamp] on /orb_slam3/new_keyframe
+    void PublishKeyFrame(KeyFrame* pKF);
     bool mbKFPublisherSet = false;
 };
 

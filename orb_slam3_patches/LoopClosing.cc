@@ -96,9 +96,15 @@ void LoopClosing::ExternalCandidateCallback(const std_msgs::Int32MultiArray::Con
         std::make_pair((long unsigned int)msg->data[0],
                        (long unsigned int)msg->data[1]));
 
+    { unique_lock<mutex> lp(mMutexProp); mmPropCount["received"]++; }
+    cout << "[PROP] received cur=" << msg->data[0] << " cand=" << msg->data[1] << endl;
+
     // bound the queue so a stalled consumer can't grow it without limit
     while(mExternalCandQueue.size() > 50)
+    {
+        { unique_lock<mutex> lp(mMutexProp); mmPropCount["drop_queue_cap"]++; }
         mExternalCandQueue.pop_front();
+    }
 }
 
 KeyFrame* LoopClosing::GetKeyFrameById(long unsigned int id)
@@ -110,6 +116,70 @@ KeyFrame* LoopClosing::GetKeyFrameById(long unsigned int id)
             return pKF;
     }
     return nullptr;
+}
+
+// proposal-v2 C1: a keyframe is live if it is not bad and belongs to a live map of the Atlas.
+// Culled keyframes are never freed (KeyFrame::SetBadFlag keeps the object and mpParent);
+// keyframes of a reset map are not freed either (Map::clear deletes are commented out).
+void LoopClosing::PropCount(const std::string &k, int n)
+{
+    unique_lock<mutex> lock(mMutexProp);
+    mmPropCount[k] += n;
+}
+
+void LoopClosing::PrintPropStats(const char* tag)
+{
+    size_t q;
+    { unique_lock<mutex> lq(mMutexExternalCand); q = mExternalCandQueue.size(); }   // never hold both locks
+    unique_lock<mutex> lock(mMutexProp);
+    cout << "[" << tag << "]";
+    for(auto &kv : mmPropCount)
+        cout << " " << kv.first << "=" << kv.second;
+    cout << " queued=" << q << " pending_loop=" << (mbLoopFromExt ? 1 : 0)
+         << " pending_merge=" << (mbMergeFromExt ? 1 : 0) << endl;
+}
+
+bool LoopClosing::IsKeyFrameLive(KeyFrame* pKF)
+{
+    if(!pKF || pKF->isBad())
+        return false;
+    Map* pMap = pKF->GetMap();
+    if(!pMap || pMap->IsBad())
+        return false;
+    for(Map* pM : mpAtlas->GetAllMaps())
+        if(pM == pMap)
+            return true;                               // C2: any live map of the Atlas
+    return false;
+}
+
+KeyFrame* LoopClosing::ResolveExternalCandidate(long unsigned int id, int &nHops, std::string &sWhy)
+{
+    nHops = 0;
+    KeyFrame* pKF = nullptr;
+    {
+        unique_lock<mutex> lockReg(mMutexAllKFs);
+        auto it = mmAllKFs.find(id);
+        if(it != mmAllKFs.end())
+            pKF = it->second;
+    }
+    if(!pKF)
+    {
+        sWhy = "not_found";
+        return nullptr;
+    }
+    while(pKF && !IsKeyFrameLive(pKF) && nHops < 20)
+    {
+        pKF = pKF->GetParent();
+        nHops++;
+    }
+    if(!pKF || !IsKeyFrameLive(pKF))
+    {
+        sWhy = pKF ? "redirect_cap" : "no_live_ancestor";
+        return nullptr;
+    }
+    if(nHops > 0)
+        cout << "[PROP] redirect " << id << "->" << pKF->mnId << " hops=" << nHops << endl;
+    return pKF;
 }
 
 void LoopClosing::SetTracker(Tracking *pTracker)
@@ -346,6 +416,10 @@ void LoopClosing::Run()
 
 void LoopClosing::InsertKeyFrame(KeyFrame *pKF)
 {
+    {
+        unique_lock<mutex> lockReg(mMutexAllKFs);
+        mmAllKFs[pKF->mnId] = pKF;
+    }
     unique_lock<mutex> lock(mMutexLoopQueue);
     if(pKF->mnId!=0)
         mlpLoopKeyFrameQueue.push_back(pKF);
@@ -443,6 +517,8 @@ bool LoopClosing::NewDetectCommonRegions()
             mnLoopNumNotFound++;
             if(mnLoopNumNotFound >= 2)
             {
+                if(mbLoopFromExt) { PropCount("unconfirmed_loop"); cout << "[PROP] unconfirmed list=loop src=" << mnLoopExtSrc << endl; }
+                mbLoopFromExt = false;
                 mpLoopLastCurrentKF->SetErase();
                 mpLoopMatchedKF->SetErase();
                 mnLoopNumCoincidences = 0;
@@ -486,6 +562,8 @@ bool LoopClosing::NewDetectCommonRegions()
             mnMergeNumNotFound++;
             if(mnMergeNumNotFound >= 2)
             {
+                if(mbMergeFromExt) { PropCount("unconfirmed_merge"); cout << "[PROP] unconfirmed list=merge src=" << mnMergeExtSrc << endl; }
+                mbMergeFromExt = false;
                 mpMergeLastCurrentKF->SetErase();
                 mpMergeMatchedKF->SetErase();
                 mnMergeNumCoincidences = 0;
@@ -528,6 +606,15 @@ bool LoopClosing::NewDetectCommonRegions()
         mpKeyFrameDB->DetectNBestCandidates(mpCurrentKF, vpLoopBowCand, vpMergeBowCand,3);
 
         // --- External CNN/ViT loop closure candidate injection ---
+        mspExtThisPass.clear();
+        {
+            cout << "[DBOW] cur=" << mpCurrentKF->mnId << " t=" << std::setprecision(17) << mpCurrentKF->mTimeStamp
+                 << std::setprecision(6) << " loop=";
+            for(KeyFrame* k : vpLoopBowCand) cout << k->mnId << ",";
+            cout << " merge=";
+            for(KeyFrame* k : vpMergeBowCand) cout << k->mnId << ",";
+            cout << endl;
+        }
         {
             unique_lock<mutex> lock(mMutexExternalCand);
             while(!mExternalCandQueue.empty())
@@ -535,17 +622,48 @@ bool LoopClosing::NewDetectCommonRegions()
                 long unsigned int matchId = mExternalCandQueue.front().second;
                 mExternalCandQueue.pop_front();
 
-                KeyFrame* pExtCand = GetKeyFrameById(matchId);
-                if(!pExtCand || pExtCand == mpCurrentKF)
+                int nHops = 0;
+                std::string sWhy;
+                KeyFrame* pExtCand = ResolveExternalCandidate(matchId, nHops, sWhy);
+                if(!pExtCand)
+                {
+                    cout << "[PROP] drop " << sWhy << " cand=" << matchId << " curKF=" << mpCurrentKF->mnId << endl;
+                    PropCount("drop_" + sWhy);
                     continue;
+                }
+                if(pExtCand == mpCurrentKF)
+                {
+                    cout << "[PROP] drop self cand=" << matchId << endl;
+                    PropCount("drop_self");
+                    continue;
+                }
 
+                // C2: same map -> loop list, other map -> merge list
+                const bool bToMerge = pExtCand->GetMap() != mpCurrentKF->GetMap();
+                vector<KeyFrame*> &vpTarget = bToMerge ? vpMergeBowCand : vpLoopBowCand;
                 bool alreadyPresent = false;
                 for(KeyFrame* pKF : vpLoopBowCand)
                     if(pKF == pExtCand) { alreadyPresent = true; break; }
+                for(KeyFrame* pKF : vpMergeBowCand)
+                    if(pKF == pExtCand) { alreadyPresent = true; break; }
                 if(alreadyPresent)
+                {
+                    cout << "[PROP] drop dup_with_dbow2 cand=" << pExtCand->mnId << endl;
+                    PropCount("drop_dup_with_dbow2");
                     continue;
+                }
+                if(mspExtThisPass.count(pExtCand))
+                {
+                    PropCount("drop_dup_in_queue");
+                    continue;
+                }
 
-                vpLoopBowCand.push_back(pExtCand);
+                vpTarget.push_back(pExtCand);
+                mspExtThisPass.insert(pExtCand);
+                if(nHops > 0) { PropCount("redirected"); PropCount("redirect_hops", nHops); }
+                PropCount(bToMerge ? "to_merge_list" : "to_loop_list");
+                cout << "[PROP] to_" << (bToMerge ? "merge" : "loop") << "_list cand=" << pExtCand->mnId
+                     << " (req " << matchId << ") curKF=" << mpCurrentKF->mnId << endl;
                 mnInjectedCount++;
                 bInjectedThisPass = true;
                 pInjectedThisPass = pExtCand;
@@ -574,10 +692,25 @@ bool LoopClosing::NewDetectCommonRegions()
         std::chrono::steady_clock::time_point time_StartEstSim3_2 = std::chrono::steady_clock::now();
 #endif
     // Check the BoW candidates if the geometric candidate list is empty
+    for(KeyFrame* pK : mspExtThisPass)
+    {
+        const bool bInMerge = std::find(vpMergeBowCand.begin(), vpMergeBowCand.end(), pK) != vpMergeBowCand.end();
+        if((bInMerge && bMergeDetectedInKF) || (!bInMerge && bLoopDetectedInKF))
+        {
+            PropCount("not_evaluated");
+            cout << "[PROP] not_evaluated cand=" << pK->mnId << endl;
+        }
+    }
     //Loop candidates
     if(!bLoopDetectedInKF && !vpLoopBowCand.empty())
     {
         mbLoopDetected = DetectCommonRegionsFromBoW(vpLoopBowCand, mpLoopMatchedKF, mpLoopLastCurrentKF, mg2oLoopSlw, mnLoopNumCoincidences, mvpLoopMPs, mvpLoopMatchedMPs);
+        if(mbLastBoWHadBest)
+        {
+            if(mbLoopFromExt && !mbLastBoWBestFromExt) PropCount("unconfirmed_replaced_loop");
+            mbLoopFromExt = mbLastBoWBestFromExt;
+            mnLoopExtSrc = mnLastBoWExtSrc;
+        }
 	if(mbLoopDetected && bInjectedThisPass && mpLoopMatchedKF == pInjectedThisPass)
             mnInjectedVerified++;
     }
@@ -585,7 +718,15 @@ bool LoopClosing::NewDetectCommonRegions()
     if(!bMergeDetectedInKF && !vpMergeBowCand.empty())
     {
         mbMergeDetected = DetectCommonRegionsFromBoW(vpMergeBowCand, mpMergeMatchedKF, mpMergeLastCurrentKF, mg2oMergeSlw, mnMergeNumCoincidences, mvpMergeMPs, mvpMergeMatchedMPs);
+        if(mbLastBoWHadBest)
+        {
+            if(mbMergeFromExt && !mbLastBoWBestFromExt) PropCount("unconfirmed_replaced_merge");
+            mbMergeFromExt = mbLastBoWBestFromExt;
+            mnMergeExtSrc = mnLastBoWExtSrc;
+        }
     }
+    if(!mspExtThisPass.empty() && (++mnPropPasses % 10 == 0))
+        PrintPropStats("PROP-STATS");
 
 #ifdef REGISTER_TIMES
         std::chrono::steady_clock::time_point time_EndEstSim3_2 = std::chrono::steady_clock::now();
@@ -679,11 +820,19 @@ bool LoopClosing::DetectCommonRegionsFromBoW(std::vector<KeyFrame*> &vpBowCand, 
     vector<int> vnMatchesStage(numCandidates, 0);
 
     int index = 0;
+    mbLastBoWHadBest = false; mbLastBoWBestFromExt = false; mnLastBoWExtSrc = 0;
+    bool bBestFromExt = false; long unsigned int nBestExtSrc = 0;
+    std::vector<long unsigned int> vExtGeomPass;
     //Verbose::PrintMess("BoW candidates: There are " + to_string(vpBowCand.size()) + " possible candidates ", Verbose::VERBOSITY_DEBUG);
     for(KeyFrame* pKFi : vpBowCand)
     {
+        const bool bExt = mspExtThisPass.count(pKFi) > 0;
+        int nExtStage = 0;   // 1 gate passed, 2 BoW matches, 3 Sim3 converged, 4 fully verified
         if(!pKFi || pKFi->isBad())
+        {
+            if(bExt) { PropCount("bad_at_eval"); }
             continue;
+        }
 
         // std::cout << "KF candidate: " << pKFi->mnId << std::endl;
         // Current KF against KF with covisibles version
@@ -711,6 +860,8 @@ bool LoopClosing::DetectCommonRegionsFromBoW(std::vector<KeyFrame*> &vpBowCand, 
         }
         if(bAbortByNearKF)
         {
+            PropCount(bExt ? "abort_near" : "abort_near_dbow2");
+            if(bExt) cout << "[PROP] abort_near cand=" << pKFi->mnId << " curKF=" << mpCurrentKF->mnId << endl;
             mnAbortedByNearKF++;
 	    cout << "[ABORT-NEAR] candidate KF " << pKFi->mnId
                  << " vs current KF " << mpCurrentKF->mnId << endl;
@@ -765,8 +916,10 @@ bool LoopClosing::DetectCommonRegionsFromBoW(std::vector<KeyFrame*> &vpBowCand, 
 
         //pMostBoWMatchesKF = vpCovKFi[pMostBoWMatchesKF];
 
+        nExtStage = 1;
         if(numBoWMatches >= nBoWMatches) // TODO pick a good threshold
         {
+            nExtStage = 2;
             // Geometric validation
             bool bFixedScale = mbFixScale;
             if(mpTracker->mSensor==System::IMU_MONOCULAR && !mpCurrentKF->GetMap()->GetIniertialBA2())
@@ -788,6 +941,7 @@ bool LoopClosing::DetectCommonRegionsFromBoW(std::vector<KeyFrame*> &vpBowCand, 
 
             if(bConverge)
             {
+                nExtStage = 3;
                 //std::cout << "Check BoW: SolverSim3 converged" << std::endl;
 
                 //Verbose::PrintMess("BoW guess: Convergende with " + to_string(nInliers) + " geometrical inliers among " + to_string(nBoWInliers) + " BoW matches", Verbose::VERBOSITY_DEBUG);
@@ -923,8 +1077,12 @@ bool LoopClosing::DetectCommonRegionsFromBoW(std::vector<KeyFrame*> &vpBowCand, 
                                 vnMatchesStage[index] = nNumKFs;
                             }
 
+                            nExtStage = 4;
+                            if(bExt) vExtGeomPass.push_back(pKFi->mnId);
                             if(nBestMatchesReproj < numProjOptMatches)
                             {
+                                bBestFromExt = bExt;
+                                nBestExtSrc = bExt ? pKFi->mnId : 0;
                                 nBestMatchesReproj = numProjOptMatches;
                                 nBestNumCoindicendes = nNumKFs;
                                 pBestMatchedKF = pMostBoWMatchesKF;
@@ -941,11 +1099,26 @@ bool LoopClosing::DetectCommonRegionsFromBoW(std::vector<KeyFrame*> &vpBowCand, 
                 Verbose::PrintMess("BoW candidate: it don't match with the current one", Verbose::VERBOSITY_DEBUG);
             }*/
         }
+        if(bExt && nExtStage < 4)
+        {
+            PropCount(nExtStage <= 1 ? "bow_fail" : "sim3_fail");
+            cout << "[PROP] " << (nExtStage <= 1 ? "bow_fail" : "sim3_fail") << " cand=" << pKFi->mnId
+                 << " stage=" << nExtStage << " bow=" << numBoWMatches << " curKF=" << mpCurrentKF->mnId << endl;
+        }
         index++;
     }
 
+    for(long unsigned int id : vExtGeomPass)
+    {
+        const bool bWon = bBestFromExt && id == nBestExtSrc;
+        PropCount(bWon ? "geom_pass_best" : "geom_pass_not_best");
+        cout << "[PROP] geom_pass cand=" << id << " best=" << bWon << " curKF=" << mpCurrentKF->mnId << endl;
+    }
     if(nBestMatchesReproj > 0)
     {
+        mbLastBoWHadBest = true;
+        mbLastBoWBestFromExt = bBestFromExt;
+        mnLastBoWExtSrc = nBestExtSrc;
         pLastCurrentKF = mpCurrentKF;
         nNumCoincidences = nBestNumCoindicendes;
         pMatchedKF2 = pBestMatchedKF;
@@ -1046,6 +1219,11 @@ int LoopClosing::FindMatchesByProjection(KeyFrame* pCurrentKF, KeyFrame* pMatche
 void LoopClosing::CorrectLoop()
 {
     mnCorrectLoopCalls++;
+    PropCount(mbLoopFromExt ? "accepted_loop" : "accepted_loop_dbow2");
+    cout << "[PROP] accepted list=loop src=" << (mbLoopFromExt ? "ext" : "dbow2") << " ext_cand=" << mnLoopExtSrc
+         << " matchedKF=" << mpLoopMatchedKF->mnId << " curKF=" << mpCurrentKF->mnId
+         << " t=" << std::setprecision(17) << mpCurrentKF->mTimeStamp << std::setprecision(6) << endl;
+    mbLoopFromExt = false;
     cout << "[STATS] injected=" << mnInjectedCount
          << " verified=" << mnInjectedVerified
          << " corrections=" << mnCorrectLoopCalls
@@ -1298,6 +1476,11 @@ void LoopClosing::CorrectLoop()
 
 void LoopClosing::MergeLocal()
 {
+    PropCount(mbMergeFromExt ? "accepted_merge" : "accepted_merge_dbow2");
+    cout << "[PROP] accepted list=merge src=" << (mbMergeFromExt ? "ext" : "dbow2") << " ext_cand=" << mnMergeExtSrc
+         << " matchedKF=" << mpMergeMatchedKF->mnId << " curKF=" << mpCurrentKF->mnId
+         << " t=" << std::setprecision(17) << mpCurrentKF->mTimeStamp << std::setprecision(6) << endl;
+    mbMergeFromExt = false;
     int numTemporalKFs = 25; //Temporal KFs in the local window if the map is inertial.
 
     //Relationship to rebuild the essential graph, it is used two times, first in the local window and later in the rest of the map
@@ -2609,6 +2792,7 @@ bool LoopClosing::CheckFinish()
 
 void LoopClosing::SetFinish()
 {
+    PrintPropStats("PROP-FINAL");
     cout << "[FINAL STATS] injected=" << mnInjectedCount
          << " verified=" << mnInjectedVerified
          << " corrections=" << mnCorrectLoopCalls

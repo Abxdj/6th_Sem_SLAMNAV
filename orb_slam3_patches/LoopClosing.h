@@ -35,6 +35,12 @@
 #include <ros/ros.h>
 #include <std_msgs/Int32MultiArray.h>
 #include <deque>
+#include <unordered_map>
+#include <map>
+#include <set>
+#include <iomanip>
+#include <algorithm>
+#include <string>
 
 namespace ORB_SLAM3
 {
@@ -137,6 +143,25 @@ public:
 protected:
     void ExternalCandidateCallback(const std_msgs::Int32MultiArray::ConstPtr& msg);
     KeyFrame* GetKeyFrameById(long unsigned int id);
+
+    // proposal-v2 C1: every keyframe LoopClosing has seen, so culled ids can be redirected
+    std::unordered_map<long unsigned int, KeyFrame*> mmAllKFs;
+    std::mutex mMutexAllKFs;
+    bool IsKeyFrameLive(KeyFrame* pKF);
+
+    // proposal-v2 C5: per-proposal outcome accounting and attribution
+    std::map<std::string, int> mmPropCount;
+    std::mutex mMutexProp;
+    void PropCount(const std::string &k, int n = 1);
+    void PrintPropStats(const char* tag);
+    int mnPropPasses = 0;
+    std::set<KeyFrame*> mspExtThisPass;       // our candidates injected in the current pass
+    bool mbLastBoWHadBest = false;            // set by DetectCommonRegionsFromBoW
+    bool mbLastBoWBestFromExt = false;
+    long unsigned int mnLastBoWExtSrc = 0;
+    bool mbLoopFromExt = false, mbMergeFromExt = false;   // attribution carried through temporal checks
+    long unsigned int mnLoopExtSrc = 0, mnMergeExtSrc = 0;
+    KeyFrame* ResolveExternalCandidate(long unsigned int id, int &nHops, std::string &sWhy);
 
     ros::Subscriber mExternalCandSub;
     std::mutex mMutexExternalCand;
