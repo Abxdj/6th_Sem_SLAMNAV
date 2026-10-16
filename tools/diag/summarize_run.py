@@ -23,6 +23,16 @@ def read_csv(p):
         return list(csv.DictReader(f))
 
 
+def bag_t(r, w0=[None]):
+    """bag time; for runs without /clock (EuRoC harness, bag_t=nan) wall time since the first row."""
+    t = float(r['bag_t'])
+    if t == t:
+        return t
+    if w0[0] is None:
+        w0[0] = float(r['wall'])
+    return float(r['wall']) - w0[0]
+
+
 def summarize(run):
     out = {'run': os.path.basename(run.rstrip('/'))}
     meta = {}
@@ -43,6 +53,7 @@ def summarize(run):
         'final_stats_printed': int('[FINAL STATS]' in log),
     }
     kfs = [int(x) for x in re.findall(r'Creation of new map with last KF id: (\d+)', log)]
+    bag_t.__defaults__[0][0] = None   # new wall origin per run
     ev = read_csv(f'{run}/events.csv')
     kf = read_csv(f'{run}/keyframes.csv')
     ids = [int(r['kf_id']) for r in kf]
@@ -71,15 +82,15 @@ def summarize(run):
         out['counts_events'] = {t: sum(1 for r in ev if r['type'] == t) for t in TYPES}
         fig, ax = plt.subplots(3, 1, figsize=(12, 7), sharex=True)
         for i, t in enumerate(['new_map', 'merge', 'loop_detected', 'injected', 'sophus_crash']):
-            x = [float(r['bag_t']) for r in ev if r['type'] == t]
+            x = [bag_t(r) for r in ev if r['type'] == t]
             ax[0].scatter(x, [i] * len(x), c=COLORS.get(t, 'k'), s=25, marker='|' if t != 'new_map' else 'v')
         ax[0].set_yticks(range(5)); ax[0].set_yticklabels(['new_map', 'merge', 'loop', 'injected', 'sophus'])
-        x = [float(r['bag_t']) for r in ev if r['type'] == 'lost']
+        x = [bag_t(r) for r in ev if r['type'] == 'lost']
         if x:
             ax[1].hist(x, bins=np.arange(0, max(x) + 10, 10), color='tab:orange')
         ax[1].set_ylabel('"Fail to track"\nper 10 s')
         if kf:
-            x = np.array([float(r['bag_t']) for r in kf])
+            x = np.array([bag_t(r) for r in kf])
             ax[2].hist(x, bins=np.arange(0, max(x) + 10, 10), color='tab:blue')
         ax[2].set_ylabel('keyframes\nper 10 s'); ax[2].set_xlabel('bag time (s)')
         ax[0].set_title(out['run'])
