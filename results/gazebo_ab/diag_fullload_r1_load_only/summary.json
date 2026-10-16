@@ -1,0 +1,52 @@
+{
+ "run": "diag_fullload_r1_load_only",
+ "meta": {
+  "mode": "load_only",
+  "rate": "0.5",
+  "start": "0",
+  "duration": "full",
+  "yaml": "/home/anish/mono-slam-cnn-loop-closure/config/turtlebot3_waffle.yaml",
+  "relay": "none",
+  "mono_exit": "139"
+ },
+ "counts_log": {
+  "new_map": 4,
+  "merge": 1,
+  "loop_detected": 1,
+  "fail_track_local_map": 624,
+  "injected": 0,
+  "abort_near": 119,
+  "sophus_crash": 0,
+  "final_stats_printed": 1
+ },
+ "kfs_per_map": [
+  3163,
+  154,
+  1205,
+  1037
+ ],
+ "kf_total": 5551,
+ "mono_image_delivered": 107875,
+ "mono_image_dropped": 6836,
+ "mono_drop_pct": 5.96,
+ "cpu_mean": {
+  "gpu_util_mean": 8.4,
+  "Mono": 229.4,
+  "load": 13.2,
+  "rosbag_play": 1.3
+ },
+ "gpu_mem_max_mb": 920.0,
+ "counts_events": {
+  "new_map": 4,
+  "merge": 1,
+  "loop_detected": 1,
+  "correction": 1,
+  "injected": 0,
+  "abort_near": 119,
+  "proposal": 0,
+  "sophus_crash": 0,
+  "lost": 624,
+  "reset_map": 0
+ },
+ "traj_kfs_final_map": 215
+}
