@@ -39,4 +39,14 @@ Written 2026-10-16, **before** any calibration-pair or test-pair run with the cr
 
 ## Part B: calibrated threshold
 
-*(to be filled after calibration, before the first test run)*
+Filled 2026-10-16 13:45 IST. No MH_02→MH_04 run with the cross-map proposer has been started.
+
+- **Calibration pair:** MH_01 → MH_03. GT overlap at 2 m / 45°: MH_01→MH_03 0.558, MH_01→MH_05 0.166 (rule: the higher wins).
+- **Calibration runs:** `CAL_MH0103_r1..3_resnet18_dry`. All exit 0; each merged once via DBoW2. 854 scored KFs pooled, 186 of them would be correct if proposed.
+- **τ = 0.8768** (`results/proposal_v2/calibration_xmap.json`). At τ: 198 proposals, 179 correct, precision 0.904. Command: `calibrate_xmap.py ~/euroc_mh/MH_01_MH_03_groundtruth_tum.txt 0.90 2.0 45 <3 runs>`.
+- **Frozen code:**
+  - repo commit with Part A: 3828a1a
+  - `ros_nodes/loop_closure_node.py` md5 `781802e997edfb22b6d31bf08184ecf4`
+  - ORB-SLAM3 `proposal-v2` HEAD `d641453` (C6)
+- **Test invocation:** `LOAD_KF_HZ=3.55 NODE_ARGS="_mode:=xmap _xmap_thresh:=0.8768" tools/proposal_v2/run_batch.sh results/proposal_v2/plans/XMAP_TEST.plan results/proposal_v2/XMAP_TEST_batch.log`
+- **Known limitation, stated before the test:** the test pair's GT overlap (0.128 at 2 m) is much lower than the calibration pair's (0.558). Precision at a fixed τ falls with prevalence, so live precision on MH_02→MH_04 is expected to be below 0.90. The rule is not adjusted for this.
