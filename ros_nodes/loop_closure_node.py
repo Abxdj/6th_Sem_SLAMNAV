@@ -10,8 +10,12 @@ ResNet18 loop closure candidate proposer (proposal-v2).
     keyframe count. ~skip_recent_kf >= 0 restores the old count-based exclusion for back-comparison.
   * Adaptive threshold unchanged: propose when best >= max(P98 of past best scores, 0.80),
     after 60 scored keyframes.
-  * ~dump_path: on shutdown (and every 200 KFs) saves ids, stamps and descriptors for offline
+  * ~dump_path: on shutdown (and every 200 KFs) saves ids, stamps, map ids and descriptors for offline
     recall analysis.
+  * ~mode (proposal-v2 cross-map proposer): 'same' (default; the adaptive proposer above), 'xmap', or 'both'.
+    xmap: ORB-SLAM3 publishes [kf_id, stamp, map_id] (C6). The query is restricted to database KFs created
+    in a DIFFERENT map, still with the time exclusion. Propose the top-1 if its cosine >= ~xmap_thresh, a fixed
+    absolute threshold (pre-registered in results/proposal_v2/PREREG.md; no adaptation, no warm-up).
 Publishes Int32MultiArray [current_kf, matched_kf] on /loop_closure/candidate_kfids.
 """
 import sys, threading, time, collections
@@ -51,6 +55,7 @@ BUF_SPAN_S = 2.0
 MATCH_TOL_S = 1e-3
 
 ids, stamps, descs = [], [], []      # descriptor database, in insertion order
+maps = []                            # map id of each KF at creation (-1 if not published)
 db_mat = None                        # (N, 512) tensor
 score_history = []
 counts = collections.Counter()
@@ -86,7 +91,7 @@ def find_frame(t):
 def dump():
     if not DUMP or not ids:
         return
-    np.savez(DUMP, ids=np.array(ids), stamps=np.array(stamps),
+    np.savez(DUMP, ids=np.array(ids), stamps=np.array(stamps), maps=np.array(maps),
              descs=torch.stack(descs).cpu().numpy().astype(np.float32))
     rospy.loginfo(f"dumped {len(ids)} descriptors to {DUMP}")
 
@@ -96,6 +101,7 @@ def keyframe_callback(msg):
     if len(msg.data) < 2:
         return
     kf_id, kf_t = int(msg.data[0]), float(msg.data[1])
+    kf_map = int(msg.data[2]) if len(msg.data) >= 3 else -1
     counts['kf'] += 1
     img = find_frame(kf_t)
     deadline = time.time() + 0.5      # the image may still be in flight to this node
@@ -109,7 +115,9 @@ def keyframe_callback(msg):
 
     desc = extract_descriptor(img)
     best_score, best_id, best_t = -1.0, -1, 0.0
-    if db_mat is not None:
+    if db_mat is not None and MODE in ('xmap', 'both'):
+        xmap_propose(kf_id, kf_t, kf_map, desc)
+    if db_mat is not None and MODE in ('same', 'both'):
         sc = db_mat @ desc
         st = torch.tensor(stamps, device=sc.device, dtype=torch.float64)
         if SKIP_RECENT_KF >= 0:
@@ -123,11 +131,13 @@ def keyframe_callback(msg):
             j = int(torch.argmax(sc))
             best_score, best_id, best_t = float(sc[j]), ids[j], stamps[j]
 
-    ids.append(kf_id); stamps.append(kf_t); descs.append(desc)
+    ids.append(kf_id); stamps.append(kf_t); descs.append(desc); maps.append(kf_map)
     db_mat = desc.unsqueeze(0) if db_mat is None else torch.cat([db_mat, desc.unsqueeze(0)])
     if DUMP and len(ids) % 200 == 0:
         dump()
 
+    if MODE == 'xmap':
+        return
     if best_id < 0:
         rospy.loginfo(f"KF {kf_id} | t={kf_t:.3f} | no eligible keyframe yet, db_size={len(ids)}")
         return
@@ -146,6 +156,31 @@ def keyframe_callback(msg):
         rospy.loginfo(f"KF {kf_id} | best={best_score:.3f} | thresh={thresh:.3f} | no proposal")
 
 
+def xmap_propose(kf_id, kf_t, kf_map, desc):
+    if kf_map < 0:
+        counts['xmap_no_map_id'] += 1
+        return
+    sc = db_mat @ desc
+    st = torch.tensor(stamps, device=sc.device, dtype=torch.float64)
+    mp = torch.tensor(maps, device=sc.device)
+    elig = ((kf_t - st).abs() >= EXCLUDE_S) & (mp != kf_map) & (mp >= 0)
+    if not bool(elig.any()):
+        counts['xmap_no_other_map'] += 1
+        return
+    sc = torch.where(elig, sc, torch.full_like(sc, -2.0))
+    j = int(torch.argmax(sc))
+    s, cand = float(sc[j]), ids[j]
+    counts['xmap_scored'] += 1
+    if s >= XMAP_THRESH:
+        counts['xmap_proposals'] += 1
+        rospy.logwarn(f"XMAP PROPOSAL: KF {kf_id} (map {kf_map}) matches KF {cand} (map {maps[j]}) | score={s:.4f} "
+                      f"| thresh={XMAP_THRESH:.4f} | dt={kf_t - stamps[j]:.1f}s")
+        m = Int32MultiArray(); m.data = [kf_id, cand]
+        candidate_pub.publish(m)
+    else:
+        rospy.loginfo(f"KF {kf_id} (map {kf_map}) | xmap best={s:.4f} KF {cand} (map {maps[j]}) | no proposal")
+
+
 rospy.init_node('loop_closure_resnet18')
 EXCLUDE_S = rospy.get_param('~exclude_recent_s', 30.0)
 SKIP_RECENT_KF = rospy.get_param('~skip_recent_kf', -1)     # >= 0: old keyframe-count exclusion
@@ -153,10 +188,13 @@ PERCENTILE = rospy.get_param('~percentile', 98.0)
 WARMUP = rospy.get_param('~warmup', 60)
 ABS_FLOOR = rospy.get_param('~abs_floor', 0.80)
 DUMP = rospy.get_param('~dump_path', '')
+MODE = rospy.get_param('~mode', 'same')
+XMAP_THRESH = float(rospy.get_param('~xmap_thresh', 2.0))     # 2.0 = never propose unless set
+assert MODE in ('same', 'xmap', 'both'), MODE
 rospy.on_shutdown(lambda: (dump(), rospy.loginfo(f"node counts: {dict(counts)}")))
 img_sub = rospy.Subscriber('/camera/image_raw', Image, image_callback, queue_size=200)
 kf_sub = rospy.Subscriber('/orb_slam3/new_keyframe', Float64MultiArray, keyframe_callback, queue_size=1000)
 candidate_pub = rospy.Publisher('/loop_closure/candidate_kfids', Int32MultiArray, queue_size=100)
 mode = f"skip_recent_kf={SKIP_RECENT_KF}" if SKIP_RECENT_KF >= 0 else f"exclude_recent_s={EXCLUDE_S}"
-rospy.loginfo(f"ResNet18 proposer v2 started - adaptive P{PERCENTILE}, {mode}, keyframe-image matching")
+rospy.loginfo(f"ResNet18 proposer v2 started - mode={MODE} xmap_thresh={XMAP_THRESH} adaptive P{PERCENTILE}, {mode}, keyframe-image matching")
 rospy.spin()

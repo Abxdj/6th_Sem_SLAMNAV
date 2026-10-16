@@ -563,7 +563,17 @@ C5['src/LoopClosing.cc'].append(
     mbMergeFromExt = false;
 """))
 
-GROUPS = {'C1': C1, 'C2': C2, 'C3': C3, 'C5': C5, 'S': S}
+# C6 (cross-map proposer): the KF's map id at creation, so the node can restrict a query to other maps
+C6 = {
+'src/Tracking.cc': [
+("""    kfMsg.data = {(double)pKF->mnId, pKF->mTimeStamp};
+""", """    Map* pKFMap = pKF->GetMap();
+    kfMsg.data = {(double)pKF->mnId, pKF->mTimeStamp, pKFMap ? (double)pKFMap->GetId() : -1.0};   // C6: + map id
+"""),
+],
+}
+
+GROUPS = {'C1': C1, 'C2': C2, 'C3': C3, 'C5': C5, 'S': S, 'C6': C6}
 
 if __name__ == '__main__':
     g = sys.argv[1]

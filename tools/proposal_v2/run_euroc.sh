@@ -10,6 +10,7 @@ REPO=~/mono-slam-cnn-loop-closure
 OUT=$REPO/results/proposal_v2/runs/${TAG}_${MODE}
 YAML=${YAML:-$HOME/ORB_SLAM3/Examples/Monocular/EuRoC.yaml}
 LOAD_KF_HZ=${LOAD_KF_HZ:-1.8}
+NODE_ARGS=${NODE_ARGS:-}      # extra rosparams for loop_closure_node.py, e.g. "_mode:=xmap _xmap_thresh:=0.9"
 if [ -e "$OUT" ]; then echo "$OUT already exists; use a new tag."; exit 1; fi
 if pgrep -x rosmaster > /dev/null; then echo "A ROS master is already running."; exit 1; fi
 mkdir -p "$OUT"
@@ -18,7 +19,7 @@ source ~/cv_bridge_ws/devel/setup.bash
 export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:~/ORB_SLAM3/Examples_old/ROS
 {
   echo "mode=$MODE"; echo "seqs=$SEQS"; echo "speed=$SPEED"; echo "yaml=$YAML"
-  echo "yaml_md5=$(md5sum "$YAML" | cut -d' ' -f1)"; echo "load_kf_hz=$LOAD_KF_HZ"
+  echo "yaml_md5=$(md5sum "$YAML" | cut -d' ' -f1)"; echo "load_kf_hz=$LOAD_KF_HZ"; echo "node_args=$NODE_ARGS"; echo "node_md5=$(md5sum $REPO/ros_nodes/loop_closure_node.py | cut -d' ' -f1)"
   echo "date=$(date -Iseconds)"
   echo "repo_sha=$(git -C $REPO rev-parse HEAD)"; echo "repo_dirty=$(git -C $REPO status --porcelain -- ros_nodes tools scripts | wc -l)"
   echo "orbslam_sha=$(git -C ~/ORB_SLAM3 rev-parse HEAD)"
@@ -44,8 +45,8 @@ sleep 10
 DESC_PID=""
 NODE=$REPO/ros_nodes/loop_closure_node.py
 case $MODE in
-  resnet18)     python3 -u $NODE _dump_path:=$OUT/descs.npz > "$OUT/desc.log" 2>&1 & DESC_PID=$! ;;
-  resnet18_dry) python3 -u $NODE _dump_path:=$OUT/descs.npz /loop_closure/candidate_kfids:=/loop_closure/dry_run > "$OUT/desc.log" 2>&1 & DESC_PID=$! ;;
+  resnet18)     python3 -u $NODE _dump_path:=$OUT/descs.npz $NODE_ARGS > "$OUT/desc.log" 2>&1 & DESC_PID=$! ;;
+  resnet18_dry) python3 -u $NODE _dump_path:=$OUT/descs.npz $NODE_ARGS /loop_closure/candidate_kfids:=/loop_closure/dry_run > "$OUT/desc.log" 2>&1 & DESC_PID=$! ;;
   load_only)    python3 -u $REPO/tools/proposal_v2/load_only_v2.py $LOAD_KF_HZ 20 > "$OUT/desc.log" 2>&1 & DESC_PID=$! ;;
   none)         ;;
   *) echo "unknown mode $MODE"; kill $MONO_PID $MON_PID $CLAHE_PID; pkill -x rosmaster; exit 1 ;;
