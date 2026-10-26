@@ -169,3 +169,84 @@ Written 2026-10-26, after Part C finished (`bdecde1`). The selection rule below 
   - neither sequence was in any earlier live test pair (MH_02, MH_04, MH_05).
 
   Otherwise it is **related**, and the reason is given per pair.
+
+### Pairs (selection rule applied after the commit above, `b96908c`)
+- **Overlaps:** all 20 ordered pairs are in `results/proposal_v2/partE/overlap_all_ordered.jsonl`.
+- **Eligible:** exactly 3 pairs, so all 3 are taken. No tie-break was needed.
+
+| pair (session 1 → 2) | overlap | regions / places | label | why related |
+|---|---|---|---|---|
+| MH_02 → MH_05 | 0.140 | 2 / 1 | **related** | MH_02 was session 1 of the Part B test pair; MH_05 was session 2 of a Part C pair |
+| MH_01 → MH_04 | 0.145 | 2 / 1 | **related** | MH_01 was used to set τ; MH_04 was in the Part B and Part C test pairs |
+| MH_01 → MH_05 | 0.166 | 2 / 1 | **related** | MH_01 was used to set τ; MH_05 was in a Part C pair |
+
+**Ineligible pairs:**
+- Excluded by rule 3: MH_02→MH_04 (0.127) and MH_01→MH_03 (0.559). Without the rule MH_02→MH_04 would have qualified, which is why it is excluded by name.
+- Every other pair is outside 0.05–0.25. The lowest of these is MH_04→MH_01 at 0.299.
+
+**Note: all three pairs revisit the same place as Part B.**
+- **The places:**
+  - In all three, the first region starts 24–26 s into session 2 at about (0.3–0.9, 4.1–4.3) m.
+  - A second visit comes 81–98 s in, within 3 m of the first, so it is the same place.
+  - MH_02 → MH_04 (Part B) has the same structure: 25.8 s at (0.07, 4.3) m, then 81.4 s.
+- **What this means:**
+  - Part E is a test of whether the Part B effect recurs at that revisit with different session pairings.
+  - It is not a test at new places.
+  - The four low-overlap pairs share session-2 sequences: MH_04 is in Part B and MH0104; MH_05 is in MH0205 and MH0105.
+
+All pairs run forward in time, so there are no reversed timestamps. The concatenated GT files were built with `cat` then `sort -g`, and their line counts equal the sum of their parts:
+- `~/euroc_mh/MH_02_MH_05_groundtruth_tum.txt`
+- `~/euroc_mh/MH_01_MH_04_groundtruth_tum.txt`
+- `~/euroc_mh/MH_01_MH_05_groundtruth_tum.txt`
+
+### Frozen (identical to Part C; nothing rebuilt)
+- **ORB-SLAM3** `9aad4f8`, with an empty working-tree diff. `libORB_SLAM3.so` dated 11:16:45 and `Mono` 11:17:21.
+- **Node** md5 `781802e997edfb22b6d31bf08184ecf4`, run with `_mode:=xmap _xmap_thresh:=0.8768`.
+- **Harness:** `run_euroc.sh`, `run_batch.sh`, `kf_logger.py` and `load_only_v2.py` with `LOAD_KF_HZ=3.55`. `tools/` and `ros_nodes/` are unchanged since `b830bee`.
+- **Analysis:** `tools/proposal_v2/analyze_xmap2.py`, md5 `e1cc90d9b4ce7b0bba3cc2d1f42c91cb`, unchanged. Inputs `results/proposal_v2/plans/XMAPE_pairs.json`; output `results/proposal_v2/xmapE_test_results.json`.
+- **No smoke run.** Code and build are byte-identical to the Part C batch, which ran 60/60 with PROP-FINAL. Every run's `meta.txt` is checked against the values above before analysis. Any mismatch is reported as a deviation.
+
+### Design (as Part C)
+- **Arms:** control (`none`), load-only (`load_only`), injection (`resnet18`, xmap, τ = 0.8768).
+- **Runs:** 10 runs per arm per pair, **90 runs**. Real time, one ORB-SLAM3 process per run, `/orb_slam3/new_session`, 5 s gap.
+- **Plan:** `results/proposal_v2/plans/XMAPE_TEST.plan`, from `make_plan_xmap2.py XMAPE_pairs.json 10`.
+  - Interleaved blocks k = 1..10, pairs in the order MH0205, MH0104, MH0105.
+  - Arm order rotates with k mod 3, as in Part C.
+- **Tags:** `XE_<PAIR>_r<k>_<arm>`.
+- **Invocation:** `LOAD_KF_HZ=3.55 NODE_ARGS="_mode:=xmap _xmap_thresh:=0.8768" tools/proposal_v2/run_batch.sh results/proposal_v2/plans/XMAPE_TEST.plan results/proposal_v2/XMAPE_TEST_batch.log`
+- **Expected machine time:** about **8.5 h**. This is (session 1 + session 2 + 60 s) per run, where 60 s is Part C's measured median overhead, times 90. That is above the ~8 h approved per batch so far, so the batch starts only after the owner explicitly approves this time.
+
+### Outcomes and analysis (`analyze_xmap2.py`, exactly as committed)
+- **Primary outcome:** maps merged (≥ 1 `Merge finished`) per run.
+- **Primary test:** injection vs control, CMH χ² stratified by pair over all three pairs. 1 df, no continuity correction, two-sided. Reported with the MH common odds ratio.
+- **Pre-registered sensitivity analyses:**
+  1. The exact conditional stratified test, all pairs.
+  2. Independent pairs only. **Not applicable:** all three pairs are related.
+- **Secondary tests** (as Part C):
+  - CMH and exact test, injection vs load-only.
+  - Per pair: Fisher (two-sided) and MWU on merge counts, vs control and vs load-only.
+  - Time to first merge into session 2, never-merged runs censored, MWU per pair.
+  - Detect ms per KF, MWU per pair.
+- **α:** 0.05, descriptive. No multiplicity correction beyond reporting every comparison.
+- **Prediction (pre-registered):** on every pair where control merges in **≤ 5/10** runs, injection rate − control rate **≥ 0.3**.
+  - Reported per pair as holds / fails.
+  - A pair with control > 5/10 is **not applicable** to this prediction and is reported as such.
+  - The script's `prediction` field uses the Part C bands. Its low band (≤ 0.5, d ≥ 0.3) is exactly this rule. Its high-band verdicts are reported for information and are not part of Part E's prediction.
+  - Overall, the prediction **holds** if it holds on every applicable pair. If no pair is applicable, it is **untested**.
+- **Reported for every pair** (as Part C):
+  - merge tables and attribution (ext / dbow2);
+  - GT check of every merge and loop in every arm;
+  - proposal outcomes;
+  - ATE per session and of the spanning map;
+  - Sim3 cost of failed external candidates (C7 stages 1–3, attempts and ms);
+  - live proposal precision;
+  - exit codes, crashes and drop %.
+
+### Stopping
+- The batch stops on any of:
+  - 3 consecutive mid-run crashes;
+  - disk below 10 GB;
+  - the machine-time cap the owner approves.
+- If the batch stops early, the analysis uses complete blocks only (`--max-block K`). The incomplete block is reported separately.
+- Crashed runs are reported, not replaced.
+- **Part D** (V1_01 → V1_03) is not run or pooled with Part E.
