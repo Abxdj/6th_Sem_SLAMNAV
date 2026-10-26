@@ -1,43 +1,49 @@
-# SLAM project status (15 Oct 2026)
+# SLAM project status (16 Oct 2026)
 
-Repo: github.com/Abxdj/6th_Sem_SLAMNAV. Branches:
-- `audit-snapshot`: pushed 12 Oct; contains the resize fix.
-- `diagnosis`: local; push it.
+Repo: github.com/Abxdj/6th_Sem_SLAMNAV.
+- **`proposal-v2`** (pushed, at `8d70ad0`): the current work.
+- `diagnosis` and `audit-snapshot`: older.
 - `master`: still Phase 1; merge into it only after the README update.
 
-## Established results
-- **ros_mono.cc resize bug fixed.** KITTI 00 live ROS (real time) gives 15.32 / 4.51 / 9.40 m, median 9.40. Standalone gives 10.14 / 8.86 / 6.89 m, median 8.86. Gate A passes for KITTI. DBoW2 closes 4–5 loops per run on its own.
-- **EuRoC V1_02 live control:** 0.329 (spike near 44 s) / 0.0633 / 0.0635 m. The resize was not the cause of the gap to published results. Standalone `mono_euroc` x3 still to run.
-- **Descriptor AUC on V1_02** (position < 0.5 m and orientation < 45°): ResNet18 0.936, EfficientNet-B0 0.953, DINO 0.969. Best-F1 thresholds don't transfer between V1_02 and V1_01.
-- **Gazebo replay A/B** (drive1.bag, 0.5x):
+ORB-SLAM3 changes are exported as `orb_slam3_patches/proposal_v2.patch` (against upstream `4452a3c`). The local branch `proposal-v2` is at `d641453`. Never push `~/ORB_SLAM3`.
 
-  | Arm | Maps | Merges | Corrections |
-  |---|---|---|---|
-  | Control (n=10) | 5.1 | 0.2 | 2.5 |
-  | Dry (n=5) | 4.2 | 1.2 | 2.0 |
-  | Injection (n=5) | 4.0 | 1.6 | 2.0 |
+## Findings so far
 
-  - Node running vs control, merges: p = 0.0014.
-  - Injection vs dry, merges: p = 0.49.
-  - So the effect comes from the node running, not from injection.
-- **Diagnosis** (Claude Code, `results/diagnosis/DIAGNOSIS_REPORT.md`):
-  - The Gazebo bag is limited by its route: blank or dark walls cause deterministic tracking loss. Not caused by FAST thresholds, duplicate frames or calibration.
-  - The node-running effect is compute contention. It doubles ORB-SLAM3 input frame drops (1.8% to 3.7%), and a load-only process reproduces this.
-  - **95% of proposals point at keyframes ORB-SLAM3 already culled.** The rest fail the covisibility gate. 126/128 matches are 100–220 keyframes back, just past `SKIP_RECENT=100`.
-  - The bag is CLAHE'd, has no ground truth, and was recorded in turtlebot3_house. Retire it except for smoke tests.
+1. **Infrastructure bugs, now fixed.**
+   - The `ros_mono.cc` 640x480 resize broke KITTI: live ROS went from 130–165 m to a median of 9.40 m, against 8.86 m standalone, n=3 each.
+   - ORB-SLAM3 keyframe culling silently dropped 95% of external proposals. Fixed by redirecting to the surviving parent keyframe (at most 5 hops).
+   - The count-based exclusion window gave temporal near-duplicates. It's now time-based.
+   - Descriptors are now computed on the actual keyframe image.
+2. **Single-session and easy multi-session: DBoW2 saturates.**
+   - KITTI: 4–5 loops per run from DBoW2 alone.
+   - V1_02: the one accepted learned loop is the same loop DBoW2 closes.
+   - V1_01→V1_02: DBoW2 merged 12/12 runs. No headroom.
+3. **Hard multi-session, MH_02→MH_04 (pre-registered, τ=0.8768 calibrated on MH_01→MH_03).**
 
-## Next steps (in order)
-1. Overnight: 5 full load-only replays (Claude Code is ready; tell it: yes to load-only, no to Gazebo, change `pgrep -f` to `pgrep -x rosmaster`).
-2. Fix the proposal design:
-   - ORB-SLAM3 publishes culled keyframe ids; the node deletes them from its database.
-   - Exclude recent matches by time or covisibility, not by keyframe count.
-   - Inject into the merge list as well, with keyframe lookup across all maps.
-   - Compute descriptors on the actual keyframe image.
-3. Multi-session EuRoC (MH01 to MH05), measuring Recall@1 against DBoW2.
-4. Re-record Gazebo: avoid bare walls, drive forward, camera at 30 Hz, record raw images plus /odom and /gazebo/model_states.
-5. README update, then merge into master. EuRoC standalone x3. Update the paper draft, whose KITTI section is outdated.
+   | Arm | Runs that merged |
+   |---|---|
+   | Injection | 9/10 (8 of them by the learned proposer) |
+   | Control | 4/10 |
+   | Load-only | 2/10 |
 
-## Housekeeping
-- `git -C ~/ORB_SLAM3 branch -D diag-counters`
-- `git push -u origin diagnosis`
-- Log frame drops (`MONITOR=1`) in all future runs, including KITTI and EuRoC.
+   - Injection vs control: Fisher **p=0.057**, the primary test, just missing 0.05. Injection vs load-only: p=0.0055.
+   - All learned merges are correct by ground truth (0.57–0.84 m, about 32° viewpoint difference; DBoW2's merges are at about 9°).
+   - 226 of 288 learned proposals failed Sim3, and none of them led to a merge. Verification safely rejects the wrong ones.
+   - It's the same merge moment, closed more reliably (30% to 90%). There's no ATE gain.
+   - Interpretation: in this case **proposal is the bottleneck**, not verification.
+4. **Fair Gate B, offline, at matched precision:** learned is ahead of raw DBoW2 top-1 on MH_02→MH_04 (AP 0.455 vs 0.126 at 2 m) and on V1.
+5. **Methodological lessons:**
+   - A GPU node perturbs ORB-SLAM3 through compute alone (input frame drops 1.8% → 3.7%), so a load-matched control is needed.
+   - Within-session thresholds don't transfer across sessions.
+   - The Gazebo bag is limited by its route (blank walls) and has no ground truth: smoke tests only.
+
+## Next (tomorrow)
+
+1. **Generalisation test, with τ frozen at 0.8768.**
+   - Offline: overlap check for MH_01→MH_05, MH_03→MH_05, MH_04→MH_02, and V2 pairs.
+   - Offline: DINO and EfficientNet Gate B.
+   - Write PREREG Part C, then **push it to GitHub BEFORE any run.**
+   - 3 arms x 10 runs per pair. Primary test: CMH injection vs control.
+   - The prompt for Claude Code is in the chat ("Good work. Approved, under these conditions...").
+2. Rewrite the paper around the three findings above. Target venue: an ICRA or IROS 2027 workshop, plus arXiv.
+3. Later: README update and merge into master, EuRoC standalone x3, a Gazebo re-record (optional).
