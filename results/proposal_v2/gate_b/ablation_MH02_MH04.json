@@ -1,0 +1,338 @@
+{
+ "runs": [
+  "T3_MH0204_r1_resnet18",
+  "T3_MH0204_r1_resnet18_dry",
+  "T3_MH0204_r2_resnet18",
+  "T3_MH0204_r2_resnet18_dry",
+  "T3_MH0204_r3_resnet18",
+  "T3_MH0204_r3_resnet18_dry"
+ ],
+ "pooled": {
+  "0.5m": {
+   "resnet18": {
+    "R@P90": 0.0,
+    "thr@P90": null,
+    "R@P95": 0.0,
+    "thr@P95": null,
+    "R@1_unthresholded": 0.0,
+    "AP": 0.0
+   },
+   "dino": {
+    "R@P90": 0.0,
+    "thr@P90": null,
+    "R@P95": 0.0,
+    "thr@P95": null,
+    "R@1_unthresholded": 0.0,
+    "AP": 0.0
+   },
+   "effnet": {
+    "R@P90": 0.0,
+    "thr@P90": null,
+    "R@P95": 0.0,
+    "thr@P95": null,
+    "R@1_unthresholded": 0.0,
+    "AP": 0.0
+   },
+   "dbow2": {
+    "R@P90": 0.0,
+    "thr@P90": null,
+    "R@P95": 0.0,
+    "thr@P95": null,
+    "R@1_unthresholded": 0.0,
+    "AP": 0.0
+   }
+  },
+  "1m": {
+   "resnet18": {
+    "R@P90": 0.032,
+    "thr@P90": 0.9186,
+    "R@P95": 0.032,
+    "thr@P95": 0.9186,
+    "R@1_unthresholded": 0.381,
+    "AP": 0.178
+   },
+   "dino": {
+    "R@P90": 0.065,
+    "thr@P90": 0.9381,
+    "R@P95": 0.058,
+    "thr@P95": 0.9408,
+    "R@1_unthresholded": 0.277,
+    "AP": 0.132
+   },
+   "effnet": {
+    "R@P90": 0.032,
+    "thr@P90": 0.8941,
+    "R@P95": 0.032,
+    "thr@P95": 0.8941,
+    "R@1_unthresholded": 0.452,
+    "AP": 0.217
+   },
+   "dbow2": {
+    "R@P90": 0.0,
+    "thr@P90": null,
+    "R@P95": 0.0,
+    "thr@P95": null,
+    "R@1_unthresholded": 0.265,
+    "AP": 0.063
+   }
+  },
+  "2m": {
+   "resnet18": {
+    "R@P90": 0.043,
+    "thr@P90": 0.9138,
+    "R@P95": 0.043,
+    "thr@P95": 0.9138,
+    "R@1_unthresholded": 0.624,
+    "AP": 0.455
+   },
+   "dino": {
+    "R@P90": 0.032,
+    "thr@P90": 0.9378,
+    "R@P95": 0.024,
+    "thr@P95": 0.9408,
+    "R@1_unthresholded": 0.522,
+    "AP": 0.339
+   },
+   "effnet": {
+    "R@P90": 0.03,
+    "thr@P90": 0.8853,
+    "R@P95": 0.019,
+    "thr@P95": 0.8923,
+    "R@1_unthresholded": 0.535,
+    "AP": 0.35
+   },
+   "dbow2": {
+    "R@P90": 0.013,
+    "thr@P90": 0.0243,
+    "R@P95": 0.013,
+    "thr@P95": 0.0243,
+    "R@1_unthresholded": 0.376,
+    "AP": 0.126
+   }
+  }
+ },
+ "bootstrap": {
+  "0.5m": {
+   "resnet18-dino": {
+    "R@P90_diff_ci95": [
+     0.0,
+     0.0
+    ],
+    "R@P90_P(diff<=0)": 1.0,
+    "AP_diff_ci95": [
+     0.0,
+     0.0
+    ],
+    "AP_P(diff<=0)": 1.0
+   },
+   "resnet18-effnet": {
+    "R@P90_diff_ci95": [
+     0.0,
+     0.0
+    ],
+    "R@P90_P(diff<=0)": 1.0,
+    "AP_diff_ci95": [
+     0.0,
+     0.0
+    ],
+    "AP_P(diff<=0)": 1.0
+   },
+   "resnet18-dbow2": {
+    "R@P90_diff_ci95": [
+     0.0,
+     0.0
+    ],
+    "R@P90_P(diff<=0)": 1.0,
+    "AP_diff_ci95": [
+     0.0,
+     0.0
+    ],
+    "AP_P(diff<=0)": 1.0
+   },
+   "dino-effnet": {
+    "R@P90_diff_ci95": [
+     0.0,
+     0.0
+    ],
+    "R@P90_P(diff<=0)": 1.0,
+    "AP_diff_ci95": [
+     0.0,
+     0.0
+    ],
+    "AP_P(diff<=0)": 1.0
+   },
+   "dino-dbow2": {
+    "R@P90_diff_ci95": [
+     0.0,
+     0.0
+    ],
+    "R@P90_P(diff<=0)": 1.0,
+    "AP_diff_ci95": [
+     0.0,
+     0.0
+    ],
+    "AP_P(diff<=0)": 1.0
+   },
+   "effnet-dbow2": {
+    "R@P90_diff_ci95": [
+     0.0,
+     0.0
+    ],
+    "R@P90_P(diff<=0)": 1.0,
+    "AP_diff_ci95": [
+     0.0,
+     0.0
+    ],
+    "AP_P(diff<=0)": 1.0
+   }
+  },
+  "1m": {
+   "resnet18-dino": {
+    "R@P90_diff_ci95": [
+     -0.067,
+     0.004
+    ],
+    "R@P90_P(diff<=0)": 0.96,
+    "AP_diff_ci95": [
+     -0.021,
+     0.116
+    ],
+    "AP_P(diff<=0)": 0.088
+   },
+   "resnet18-effnet": {
+    "R@P90_diff_ci95": [
+     -0.046,
+     0.023
+    ],
+    "R@P90_P(diff<=0)": 0.656,
+    "AP_diff_ci95": [
+     -0.119,
+     0.044
+    ],
+    "AP_P(diff<=0)": 0.815
+   },
+   "resnet18-dbow2": {
+    "R@P90_diff_ci95": [
+     0.008,
+     0.051
+    ],
+    "R@P90_P(diff<=0)": 0.005,
+    "AP_diff_ci95": [
+     0.05,
+     0.181
+    ],
+    "AP_P(diff<=0)": 0.001
+   },
+   "dino-effnet": {
+    "R@P90_diff_ci95": [
+     -0.022,
+     0.065
+    ],
+    "R@P90_P(diff<=0)": 0.138,
+    "AP_diff_ci95": [
+     -0.156,
+     -0.015
+    ],
+    "AP_P(diff<=0)": 0.99
+   },
+   "dino-dbow2": {
+    "R@P90_diff_ci95": [
+     0.031,
+     0.095
+    ],
+    "R@P90_P(diff<=0)": 0.001,
+    "AP_diff_ci95": [
+     0.018,
+     0.116
+    ],
+    "AP_P(diff<=0)": 0.005
+   },
+   "effnet-dbow2": {
+    "R@P90_diff_ci95": [
+     0.01,
+     0.077
+    ],
+    "R@P90_P(diff<=0)": 0.004,
+    "AP_diff_ci95": [
+     0.086,
+     0.217
+    ],
+    "AP_P(diff<=0)": 0.0
+   }
+  },
+  "2m": {
+   "resnet18-dino": {
+    "R@P90_diff_ci95": [
+     -0.016,
+     0.085
+    ],
+    "R@P90_P(diff<=0)": 0.222,
+    "AP_diff_ci95": [
+     0.006,
+     0.208
+    ],
+    "AP_P(diff<=0)": 0.018
+   },
+   "resnet18-effnet": {
+    "R@P90_diff_ci95": [
+     -0.02,
+     0.089
+    ],
+    "R@P90_P(diff<=0)": 0.177,
+    "AP_diff_ci95": [
+     0.002,
+     0.197
+    ],
+    "AP_P(diff<=0)": 0.023
+   },
+   "resnet18-dbow2": {
+    "R@P90_diff_ci95": [
+     0.002,
+     0.104
+    ],
+    "R@P90_P(diff<=0)": 0.018,
+    "AP_diff_ci95": [
+     0.233,
+     0.399
+    ],
+    "AP_P(diff<=0)": 0.0
+   },
+   "dino-effnet": {
+    "R@P90_diff_ci95": [
+     -0.033,
+     0.033
+    ],
+    "R@P90_P(diff<=0)": 0.424,
+    "AP_diff_ci95": [
+     -0.095,
+     0.08
+    ],
+    "AP_P(diff<=0)": 0.611
+   },
+   "dino-dbow2": {
+    "R@P90_diff_ci95": [
+     -0.011,
+     0.045
+    ],
+    "R@P90_P(diff<=0)": 0.11,
+    "AP_diff_ci95": [
+     0.139,
+     0.29
+    ],
+    "AP_P(diff<=0)": 0.0
+   },
+   "effnet-dbow2": {
+    "R@P90_diff_ci95": [
+     -0.015,
+     0.05
+    ],
+    "R@P90_P(diff<=0)": 0.177,
+    "AP_diff_ci95": [
+     0.145,
+     0.287
+    ],
+    "AP_P(diff<=0)": 0.0
+   }
+  }
+ }
+}

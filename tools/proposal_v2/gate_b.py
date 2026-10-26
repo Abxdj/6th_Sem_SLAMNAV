@@ -23,6 +23,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 DBOW = os.environ.get('DBOW_QUERY', os.path.join(HERE, 'dbow_query'))
 VOC = os.path.expanduser('~/ORB_SLAM3/Vocabulary/ORBvoc.txt')
 RADII, ANG, PRECS = (0.5, 1.0, 2.0), 45.0, (0.90, 0.95)
+LEARNED = os.environ.get('GATEB_DESCS', 'descs.npz')   # learned descriptor file per run, e.g. descs_dino.npz (offline_descs.py)
 
 
 def load_tum(p):
@@ -66,7 +67,7 @@ def pr(scores, correct, npos):
 
 
 def per_run(run, G, I):
-    D = np.load(f'{run}/descs.npz'); ids, st, X = D['ids'], D['stamps'], D['descs']
+    D = np.load(f'{run}/{LEARNED}'); ids, st, X = D['ids'], D['stamps'], D['descs']
     b = [tuple(map(float, m)) for m in re.findall(r'\[SESSION\] start \d+ \S+ frames=\d+ t0=([\d.]+) t1=([\d.]+)', open(f'{run}/pub.log').read())]
     sess = [0 if b[0][0] - 1 <= t <= b[0][1] + 1 else 1 if b[1][0] - 1 <= t <= b[1][1] + 1 else -1 for t in st]
     keep = [[], []]

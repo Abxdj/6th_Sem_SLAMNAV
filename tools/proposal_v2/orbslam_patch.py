@@ -8,6 +8,8 @@ Groups, applied in this order (each one commit on ORB_SLAM3 branch proposal-v2):
   C3  Tracking publishes [kf_id, stamp] on /orb_slam3/new_keyframe (incl. the two init KFs)
   C5  per-proposal outcome accounting ([PROP] / [PROP-STATS]) and loop/merge attribution
   S   ROS wrapper: /orb_slam3/new_session -> System::ChangeDataset(); save all maps with map ids
+  C6  /orb_slam3/new_keyframe carries the map id at creation
+  C7  timing counters: place recognition per KF, per-candidate verification by source and stage
 Every anchor must occur exactly once or the script aborts without writing anything.
 """
 import sys, os
@@ -573,7 +575,41 @@ C6 = {
 ],
 }
 
-GROUPS = {'C1': C1, 'C2': C2, 'C3': C3, 'C5': C5, 'S': S, 'C6': C6}
+# ----------------------------------------------------------------------------- C7
+# Timing only, no behaviour change: wall time of place recognition per KF, and per-candidate verification time
+# by source (ext = our queue, dbow2) and by the stage reached. Reported in [PROP-STATS]/[PROP-FINAL] as us_*/n_*.
+C7 = {
+'src/LoopClosing.cc': [
+("""#include<thread>
+""", """#include<thread>
+#include<chrono>
+"""),
+("""            bool bFindedRegion = NewDetectCommonRegions();
+""", """            const auto tC7Detect = std::chrono::steady_clock::now();   // C7: place-recognition wall time per KF
+            bool bFindedRegion = NewDetectCommonRegions();
+            PropCount("us_detect_total", (int)std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - tC7Detect).count());
+            PropCount("n_detect_calls");
+"""),
+("""        const bool bExt = mspExtThisPass.count(pKFi) > 0;
+        int nExtStage = 0;   // 1 gate passed, 2 BoW matches, 3 Sim3 converged, 4 fully verified
+""", """        const bool bExt = mspExtThisPass.count(pKFi) > 0;
+        int nExtStage = 0;   // 1 gate passed, 2 BoW matches, 3 Sim3 converged, 4 fully verified
+        // C7: time this candidate's evaluation, keyed by source and the stage reached (0 bad/abort_near,
+        // 1 < nBoWMatches, 2 RANSAC did not converge, 3 converged but projection/optimisation failed, 4 verified)
+        struct C7Timer {
+            LoopClosing* lc; bool ext; const int &stage; std::chrono::steady_clock::time_point t0;
+            ~C7Timer()
+            {
+                const std::string s = std::string(ext ? "ext" : "dbow2") + "_stage" + std::to_string(stage);
+                lc->PropCount("us_" + s, (int)std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - t0).count());
+                lc->PropCount("n_" + s);
+            }
+        } tC7Cand{this, bExt, nExtStage, std::chrono::steady_clock::now()};
+"""),
+],
+}
+
+GROUPS = {'C1': C1, 'C2': C2, 'C3': C3, 'C5': C5, 'S': S, 'C6': C6, 'C7': C7}
 
 if __name__ == '__main__':
     g = sys.argv[1]
