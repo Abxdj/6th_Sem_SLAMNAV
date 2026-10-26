@@ -151,3 +151,21 @@ Both pairs are **related**, so Part C has **no independent pair**.
   - more than about 8 h of machine time in total, counting the smoke run. The batch is expected to take about 5.3 h.
 - If the batch stops early, the analysis uses the completed blocks. Interleaving keeps n equal across pairs at block boundaries, so an incomplete last block is dropped from the primary test (`--max-block K`, K = last complete block) and reported separately.
 - Crashed runs are reported, not replaced.
+
+## Part E: low-overlap cross-map test
+
+Written 2026-10-26, after Part C finished (`bdecde1`). The selection rule below is committed **before** any overlap for Part E is computed. Pairs, design and analysis follow in a later commit, before any run. Parts A–D are unchanged. τ = 0.8768 is not recalibrated. Part D (V1_01 → V1_03) stays a separate test and is not pooled with Part E.
+
+### Selection rule (fixed before it is applied)
+- **Candidates:** every ordered pair (session 1 → session 2) of the EuRoC MH sequences on disk: MH_01, MH_02, MH_03, MH_04, MH_05. That is 20 ordered pairs.
+- **Overlap measure:** `tools/proposal_v2/pair_overlap.py` at this commit, 2 m / 45°, using the `overlap` field (the fraction of all session-2 GT poses), with the region and place definitions of Part C. GT comes from `~/euroc_mh/<seq>_groundtruth_tum.txt`.
+- **Eligible pairs** meet all three:
+  1. 0.05 ≤ overlap ≤ 0.25;
+  2. `n_regions` ≥ 1;
+  3. not one of the excluded ordered pairs: **MH_02→MH_04** (Parts A/B), **MH_03→MH_05** and **MH_04→MH_02** (Part C), and **MH_01→MH_03** (calibration). The exclusion applies to these ordered pairs only. Their reverses are judged by rules 1–2 like any other pair.
+- **Choice:** the eligible pairs sorted by overlap, ascending; take the first **3**, or all of them if fewer than 3. Ties are broken by more `n_places`, then by sequence names in lexical order. If no pair is eligible, Part E ends here, with no runs.
+- **Label:** a pair is **independent** only if:
+  - neither sequence was used to set τ (MH_01, MH_03); and
+  - neither sequence was in any earlier live test pair (MH_02, MH_04, MH_05).
+
+  Otherwise it is **related**, and the reason is given per pair.
