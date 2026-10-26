@@ -26,6 +26,7 @@ export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:~/ORB_SLAM3/Examples_old/ROS
   echo "orbslam_branch=$(git -C ~/ORB_SLAM3 rev-parse --abbrev-ref HEAD)"
   echo "orbslam_diff_md5=$(git -C ~/ORB_SLAM3 diff | md5sum | cut -d' ' -f1)"
   echo "mono_mtime=$(stat -c %y ~/ORB_SLAM3/Examples_old/ROS/ORB_SLAM3/Mono)"
+  echo "lib_mtime=$(stat -c %y ~/ORB_SLAM3/lib/libORB_SLAM3.so)"
 } > "$OUT/meta.txt"
 
 roscore > "$OUT/roscore.log" 2>&1 &
@@ -37,6 +38,8 @@ python3 $REPO/tools/diag/monitor.py "$OUT" 1 0 > "$OUT/monitor.log" 2>&1 &
 MON_PID=$!
 python3 -u $REPO/ros_nodes/clahe_node.py _resize_width:=0 _resize_height:=0 > "$OUT/clahe.log" 2>&1 &
 CLAHE_PID=$!
+python3 -u $REPO/tools/proposal_v2/kf_logger.py "$OUT/kf_log.csv" > "$OUT/kf_logger.log" 2>&1 &
+KFLOG_PID=$!
 sleep 2
 cd "$OUT"
 rosrun ORB_SLAM3 Mono ~/ORB_SLAM3/Vocabulary/ORBvoc.txt "$YAML" > "$OUT/mono.log" 2>&1 &
@@ -58,7 +61,7 @@ rosnode kill /Mono > /dev/null 2>&1
 wait $MONO_PID
 echo "mono_exit=$?" >> "$OUT/meta.txt"
 [ -n "$DESC_PID" ] && { kill -INT $DESC_PID 2>/dev/null; sleep 3; kill $DESC_PID 2>/dev/null; }
-kill $CLAHE_PID 2>/dev/null
+kill $CLAHE_PID $KFLOG_PID 2>/dev/null
 kill $MON_PID 2>/dev/null; wait $MON_PID 2>/dev/null
 pkill -x rosmaster; pkill -f roscore
 sleep 3
