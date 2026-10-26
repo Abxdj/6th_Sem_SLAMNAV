@@ -1,0 +1,1828 @@
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Monocular
+Loading settings from /home/anish/ORB_SLAM3/Examples/Monocular/EuRoC.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+	-Loaded image info
+	-Loaded ORB settings
+Viewer.imageViewScale optional parameter does not exist...
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 458.654 457.296 367.215 248.375 ]
+	-Camera 1 distortion parameters: [  -0.283408 0.0739591 0.00019359 1.76187e-05 ]
+	-Original image size: [ 752 , 480 ]
+	-Current image size: [ 600 , 350 ]
+	-Camera 1 parameters after resize: [  365.947 333.445 292.991 181.107 ]
+	-Sequence FPS: 20
+	-Features per image: 1000
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+LoopClosing: subscribed to /loop_closure/candidate_kfids
+Tracking: publishing new keyframe IDs on /orb_slam3/new_keyframe_id
+Starting the Viewer
+First KF:0; Map init KF:0
+New Map created with 183 points
+[DBOW] cur=11 t=1403637133.7883189 loop= merge=
+[DBOW] cur=12 t=1403637133.8383191 loop= merge=
+[DBOW] cur=13 t=1403637133.888319 loop= merge=
+[DBOW] cur=14 t=1403637133.9383192 loop= merge=
+[DBOW] cur=15 t=1403637133.9883189 loop= merge=
+[DBOW] cur=16 t=1403637134.0383191 loop= merge=
+[DBOW] cur=17 t=1403637134.138319 loop= merge=
+[DBOW] cur=18 t=1403637134.188319 loop= merge=
+[DBOW] cur=19 t=1403637134.2883189 loop= merge=
+[DBOW] cur=20 t=1403637134.388319 loop= merge=
+[DBOW] cur=21 t=1403637134.4883189 loop= merge=
+[DBOW] cur=22 t=1403637134.638319 loop= merge=
+[DBOW] cur=23 t=1403637134.8383191 loop= merge=
+[DBOW] cur=24 t=1403637134.9883189 loop= merge=
+[DBOW] cur=25 t=1403637135.138319 loop= merge=
+[DBOW] cur=26 t=1403637135.2383192 loop= merge=
+[DBOW] cur=27 t=1403637135.3383191 loop= merge=
+[DBOW] cur=28 t=1403637135.4383192 loop= merge=
+[DBOW] cur=29 t=1403637135.5383191 loop= merge=
+[DBOW] cur=30 t=1403637135.638319 loop= merge=
+[DBOW] cur=31 t=1403637135.7383192 loop= merge=
+[DBOW] cur=32 t=1403637135.8383191 loop= merge=
+[DBOW] cur=33 t=1403637135.9383192 loop= merge=
+[DBOW] cur=34 t=1403637136.0883191 loop= merge=
+[DBOW] cur=35 t=1403637136.2383192 loop= merge=
+[DBOW] cur=36 t=1403637136.4383192 loop= merge=
+[DBOW] cur=37 t=1403637136.5383191 loop= merge=
+[DBOW] cur=38 t=1403637136.638319 loop= merge=
+[DBOW] cur=39 t=1403637136.7383192 loop= merge=
+[DBOW] cur=40 t=1403637136.8383191 loop= merge=
+[DBOW] cur=41 t=1403637136.9883189 loop= merge=
+[DBOW] cur=42 t=1403637137.138319 loop= merge=
+[DBOW] cur=43 t=1403637137.2383192 loop= merge=
+[DBOW] cur=44 t=1403637137.3383191 loop= merge=
+[DBOW] cur=45 t=1403637137.5883191 loop= merge=
+[DBOW] cur=46 t=1403637137.688319 loop= merge=
+[DBOW] cur=47 t=1403637137.888319 loop= merge=
+[DBOW] cur=48 t=1403637137.9883189 loop= merge=
+[DBOW] cur=49 t=1403637138.188319 loop= merge=
+[DBOW] cur=50 t=1403637138.2883189 loop= merge=
+[DBOW] cur=51 t=1403637138.388319 loop= merge=
+[DBOW] cur=52 t=1403637138.4883189 loop= merge=
+[DBOW] cur=53 t=1403637138.638319 loop= merge=
+[DBOW] cur=54 t=1403637139.0383191 loop= merge=
+[DBOW] cur=55 t=1403637139.2383192 loop= merge=
+[DBOW] cur=56 t=1403637139.3383191 loop= merge=
+[DBOW] cur=57 t=1403637139.4383192 loop= merge=
+[DBOW] cur=58 t=1403637139.5383191 loop= merge=
+[DBOW] cur=59 t=1403637139.638319 loop= merge=
+[DBOW] cur=60 t=1403637139.7883189 loop= merge=
+[DBOW] cur=61 t=1403637139.9883189 loop= merge=
+[DBOW] cur=62 t=1403637140.2883189 loop= merge=
+[DBOW] cur=63 t=1403637140.8383191 loop= merge=
+[DBOW] cur=64 t=1403637149.7883189 loop= merge=
+[DBOW] cur=65 t=1403637149.888319 loop= merge=
+[DBOW] cur=66 t=1403637150.0383191 loop= merge=
+[DBOW] cur=67 t=1403637150.188319 loop= merge=
+[DBOW] cur=68 t=1403637150.3383191 loop= merge=
+[DBOW] cur=69 t=1403637150.4883189 loop= merge=
+[DBOW] cur=70 t=1403637150.638319 loop= merge=
+[DBOW] cur=71 t=1403637150.7883189 loop= merge=
+[DBOW] cur=72 t=1403637150.9383192 loop= merge=
+[DBOW] cur=73 t=1403637151.138319 loop= merge=
+[DBOW] cur=74 t=1403637151.3383191 loop= merge=
+[DBOW] cur=75 t=1403637151.5383191 loop= merge=
+[DBOW] cur=76 t=1403637151.688319 loop= merge=
+[DBOW] cur=77 t=1403637151.888319 loop= merge=
+[DBOW] cur=78 t=1403637152.0883191 loop= merge=
+[DBOW] cur=79 t=1403637152.2883189 loop= merge=
+[DBOW] cur=80 t=1403637152.4883189 loop= merge=
+[DBOW] cur=81 t=1403637152.7383192 loop= merge=
+[DBOW] cur=82 t=1403637152.9383192 loop= merge=
+[DBOW] cur=83 t=1403637153.138319 loop= merge=
+[DBOW] cur=84 t=1403637153.3383191 loop= merge=
+[DBOW] cur=85 t=1403637153.4883189 loop= merge=
+[DBOW] cur=86 t=1403637153.7383192 loop= merge=
+[DBOW] cur=87 t=1403637153.9383192 loop= merge=
+[DBOW] cur=88 t=1403637154.138319 loop= merge=
+[DBOW] cur=89 t=1403637154.3383191 loop= merge=
+[DBOW] cur=90 t=1403637154.5883191 loop= merge=
+[DBOW] cur=91 t=1403637154.7883189 loop= merge=
+[DBOW] cur=92 t=1403637154.9883189 loop= merge=
+[DBOW] cur=93 t=1403637155.188319 loop= merge=
+[DBOW] cur=94 t=1403637155.388319 loop= merge=
+[DBOW] cur=95 t=1403637155.5883191 loop= merge=
+[DBOW] cur=96 t=1403637155.7883189 loop= merge=
+[DBOW] cur=97 t=1403637155.9883189 loop= merge=
+[DBOW] cur=98 t=1403637156.188319 loop= merge=
+[DBOW] cur=99 t=1403637156.388319 loop= merge=
+[DBOW] cur=100 t=1403637156.5883191 loop= merge=
+[DBOW] cur=101 t=1403637156.7883189 loop= merge=
+[DBOW] cur=102 t=1403637156.9383192 loop= merge=
+[DBOW] cur=103 t=1403637157.138319 loop= merge=
+[DBOW] cur=104 t=1403637157.388319 loop= merge=
+[DBOW] cur=105 t=1403637157.5383191 loop= merge=
+[DBOW] cur=106 t=1403637157.7383192 loop= merge=
+[DBOW] cur=107 t=1403637157.9383192 loop= merge=
+[DBOW] cur=108 t=1403637158.138319 loop= merge=
+[DBOW] cur=109 t=1403637158.3383191 loop= merge=
+[DBOW] cur=110 t=1403637158.5883191 loop= merge=
+[DBOW] cur=111 t=1403637158.8383191 loop= merge=
+[DBOW] cur=112 t=1403637159.0383191 loop= merge=
+[DBOW] cur=113 t=1403637159.2383192 loop= merge=
+[DBOW] cur=114 t=1403637159.4383192 loop= merge=
+[DBOW] cur=115 t=1403637159.5883191 loop= merge=
+[DBOW] cur=116 t=1403637159.7883189 loop= merge=
+[DBOW] cur=117 t=1403637159.888319 loop= merge=
+[DBOW] cur=118 t=1403637160.0383191 loop=1, merge=
+[DBOW] cur=119 t=1403637160.138319 loop=1, merge=
+[DBOW] cur=120 t=1403637160.2383192 loop=1, merge=
+[DBOW] cur=121 t=1403637160.3383191 loop=1, merge=
+[DBOW] cur=122 t=1403637160.4383192 loop=1, merge=
+[DBOW] cur=123 t=1403637160.5383191 loop=1, merge=
+[DBOW] cur=124 t=1403637160.638319 loop=1, merge=
+[DBOW] cur=125 t=1403637160.7383192 loop=1, merge=
+[DBOW] cur=126 t=1403637160.8383191 loop=1, merge=
+[DBOW] cur=127 t=1403637160.9383192 loop=1, merge=
+[DBOW] cur=128 t=1403637161.0383191 loop=1, merge=
+[DBOW] cur=129 t=1403637161.138319 loop=1, merge=
+[DBOW] cur=130 t=1403637161.2383192 loop=1, merge=
+[DBOW] cur=131 t=1403637161.3383191 loop=1, merge=
+[DBOW] cur=132 t=1403637161.4383192 loop=1, merge=
+[DBOW] cur=133 t=1403637161.5383191 loop=1, merge=
+[DBOW] cur=134 t=1403637161.638319 loop=1, merge=
+[DBOW] cur=135 t=1403637161.7883189 loop=1, merge=
+[DBOW] cur=136 t=1403637161.888319 loop=1, merge=
+[DBOW] cur=137 t=1403637161.9883189 loop=1, merge=
+[DBOW] cur=138 t=1403637162.0883191 loop=1, merge=
+[DBOW] cur=139 t=1403637162.188319 loop=1, merge=
+[DBOW] cur=140 t=1403637162.388319 loop=1, merge=
+[DBOW] cur=141 t=1403637162.5383191 loop=1, merge=
+[DBOW] cur=142 t=1403637162.638319 loop=1, merge=
+[DBOW] cur=143 t=1403637162.7383192 loop=1, merge=
+[DBOW] cur=144 t=1403637162.8383191 loop=1, merge=
+[DBOW] cur=145 t=1403637162.9883189 loop=1, merge=
+[DBOW] cur=146 t=1403637163.138319 loop=1, merge=
+[DBOW] cur=147 t=1403637163.2383192 loop=1, merge=
+[DBOW] cur=148 t=1403637163.3383191 loop=1, merge=
+[DBOW] cur=149 t=1403637163.4883189 loop=1, merge=
+[DBOW] cur=150 t=1403637163.5883191 loop=1, merge=
+[DBOW] cur=151 t=1403637163.688319 loop=1, merge=
+[DBOW] cur=152 t=1403637163.8383191 loop=1, merge=
+[DBOW] cur=153 t=1403637163.9883189 loop=1, merge=
+[DBOW] cur=154 t=1403637164.0883191 loop=1, merge=
+[DBOW] cur=155 t=1403637164.188319 loop=1, merge=
+[DBOW] cur=156 t=1403637164.2883189 loop=1, merge=
+[DBOW] cur=157 t=1403637164.388319 loop=1, merge=
+[DBOW] cur=158 t=1403637164.4883189 loop=1, merge=
+[DBOW] cur=159 t=1403637164.5883191 loop=1, merge=
+[DBOW] cur=160 t=1403637164.688319 loop=1, merge=
+[DBOW] cur=161 t=1403637164.7883189 loop=1, merge=
+[DBOW] cur=162 t=1403637164.888319 loop=1, merge=
+[DBOW] cur=163 t=1403637164.9883189 loop=1, merge=
+[DBOW] cur=164 t=1403637165.0883191 loop=1, merge=
+[DBOW] cur=165 t=1403637165.188319 loop=1, merge=
+sim3 solver: 0.00126703
+17315.8
+[DBOW] cur=166 t=1403637165.2883189 loop=1, merge=
+[DBOW] cur=167 t=1403637165.388319 loop=1, merge=
+[DBOW] cur=168 t=1403637165.4883189 loop=1, merge=
+[DBOW] cur=169 t=1403637165.5883191 loop=27,1, merge=
+[DBOW] cur=170 t=1403637165.688319 loop=1, merge=
+[DBOW] cur=171 t=1403637165.7883189 loop=1, merge=
+[DBOW] cur=172 t=1403637165.9383192 loop=1, merge=
+[DBOW] cur=173 t=1403637166.0383191 loop=1, merge=
+[DBOW] cur=174 t=1403637166.138319 loop=1, merge=
+[DBOW] cur=175 t=1403637166.2883189 loop=1, merge=
+[DBOW] cur=176 t=1403637166.3383191 loop=1, merge=
+[DBOW] cur=177 t=1403637166.4383192 loop=1, merge=
+[DBOW] cur=178 t=1403637166.5383191 loop=1, merge=
+[DBOW] cur=179 t=1403637166.638319 loop=1, merge=
+[DBOW] cur=180 t=1403637166.7383192 loop=1, merge=
+[DBOW] cur=181 t=1403637166.8383191 loop=1, merge=
+[DBOW] cur=182 t=1403637166.9383192 loop=1, merge=
+[DBOW] cur=183 t=1403637167.0883191 loop=1, merge=
+[DBOW] cur=184 t=1403637167.2383192 loop=1, merge=
+[DBOW] cur=185 t=1403637167.388319 loop=1, merge=
+[DBOW] cur=186 t=1403637167.4883189 loop=1, merge=
+[DBOW] cur=187 t=1403637167.638319 loop=1, merge=
+[DBOW] cur=188 t=1403637167.7883189 loop=1, merge=
+[DBOW] cur=189 t=1403637167.9383192 loop=1, merge=
+[DBOW] cur=190 t=1403637168.0883191 loop=1, merge=
+[DBOW] cur=191 t=1403637168.2383192 loop=1, merge=
+[DBOW] cur=192 t=1403637168.4383192 loop=73,1, merge=
+[DBOW] cur=193 t=1403637168.5883191 loop=1, merge=
+[DBOW] cur=194 t=1403637168.7883189 loop=1, merge=
+[DBOW] cur=195 t=1403637168.9383192 loop=1, merge=
+[DBOW] cur=196 t=1403637169.0883191 loop=1, merge=
+[DBOW] cur=197 t=1403637169.2383192 loop=1, merge=
+[DBOW] cur=198 t=1403637169.388319 loop=1, merge=
+[DBOW] cur=199 t=1403637169.5883191 loop=1, merge=
+[DBOW] cur=200 t=1403637169.8383191 loop=1, merge=
+[DBOW] cur=201 t=1403637170.0883191 loop=1, merge=
+[DBOW] cur=202 t=1403637170.2883189 loop=1, merge=
+[DBOW] cur=203 t=1403637170.4883189 loop=1, merge=
+[DBOW] cur=204 t=1403637170.7383192 loop=1, merge=
+[DBOW] cur=205 t=1403637170.9383192 loop=1, merge=
+[DBOW] cur=206 t=1403637171.138319 loop=1, merge=
+[ABORT-NEAR] candidate KF 1 vs current KF 206
+[DBOW] cur=207 t=1403637171.3383191 loop=1, merge=
+[DBOW] cur=208 t=1403637171.5383191 loop=1, merge=
+[ABORT-NEAR] candidate KF 1 vs current KF 208
+[DBOW] cur=209 t=1403637171.7383192 loop=1, merge=
+[DBOW] cur=210 t=1403637171.9383192 loop=1, merge=
+[DBOW] cur=211 t=1403637172.138319 loop=1, merge=
+[DBOW] cur=212 t=1403637172.3383191 loop=61,164,196, merge=
+[ABORT-NEAR] candidate KF 61 vs current KF 212
+[DBOW] cur=213 t=1403637172.5383191 loop=163,148, merge=
+[ABORT-NEAR] candidate KF 148 vs current KF 213
+[DBOW] cur=214 t=1403637172.8383191 loop=163,188,148, merge=
+[ABORT-NEAR] candidate KF 148 vs current KF 214
+[DBOW] cur=215 t=1403637173.188319 loop=163,188,186, merge=
+[DBOW] cur=216 t=1403637173.4383192 loop=1, merge=
+[ABORT-NEAR] candidate KF 1 vs current KF 216
+[DBOW] cur=217 t=1403637173.638319 loop=1, merge=
+[DBOW] cur=218 t=1403637173.888319 loop=1, merge=
+[DBOW] cur=219 t=1403637174.138319 loop=1, merge=
+[DBOW] cur=220 t=1403637174.4383192 loop=1, merge=
+[DBOW] cur=221 t=1403637174.688319 loop=1, merge=
+[DBOW] cur=222 t=1403637174.9883189 loop=1, merge=
+[DBOW] cur=223 t=1403637175.2383192 loop=1, merge=
+[DBOW] cur=224 t=1403637175.4883189 loop=1, merge=
+[DBOW] cur=225 t=1403637175.7883189 loop=1, merge=
+[DBOW] cur=226 t=1403637176.0883191 loop=1, merge=
+[DBOW] cur=227 t=1403637176.388319 loop=1, merge=
+[DBOW] cur=228 t=1403637176.688319 loop=1, merge=
+[DBOW] cur=229 t=1403637177.0383191 loop=1, merge=
+[DBOW] cur=230 t=1403637177.2883189 loop=1, merge=
+[DBOW] cur=231 t=1403637177.5883191 loop=1, merge=
+[DBOW] cur=232 t=1403637177.8383191 loop=1, merge=
+[DBOW] cur=233 t=1403637178.0883191 loop=1, merge=
+[DBOW] cur=234 t=1403637178.2883189 loop=1, merge=
+[DBOW] cur=235 t=1403637178.4883189 loop=1, merge=
+[DBOW] cur=236 t=1403637178.8383191 loop=1, merge=
+[DBOW] cur=237 t=1403637179.2383192 loop=1, merge=
+[DBOW] cur=238 t=1403637179.5883191 loop=1, merge=
+[DBOW] cur=239 t=1403637179.8383191 loop=1, merge=
+[DBOW] cur=240 t=1403637180.0883191 loop=1, merge=
+[DBOW] cur=241 t=1403637180.3383191 loop=1, merge=
+[DBOW] cur=242 t=1403637180.5883191 loop=1, merge=
+[DBOW] cur=243 t=1403637180.8383191 loop=1, merge=
+[DBOW] cur=244 t=1403637181.0383191 loop=1, merge=
+[DBOW] cur=245 t=1403637181.2883189 loop=1, merge=
+[DBOW] cur=246 t=1403637181.5383191 loop=1, merge=
+[DBOW] cur=247 t=1403637181.7883189 loop=1, merge=
+[DBOW] cur=248 t=1403637182.138319 loop=1, merge=
+[DBOW] cur=249 t=1403637182.4883189 loop=1, merge=
+[DBOW] cur=250 t=1403637183.188319 loop=1, merge=
+[DBOW] cur=251 t=1403637183.5383191 loop=1, merge=
+[DBOW] cur=252 t=1403637183.888319 loop=73,108,1, merge=
+[ABORT-NEAR] candidate KF 108 vs current KF 252
+[DBOW] cur=253 t=1403637184.2383192 loop=1, merge=
+[DBOW] cur=254 t=1403637184.638319 loop=1, merge=
+[DBOW] cur=255 t=1403637185.0883191 loop=1, merge=
+[DBOW] cur=256 t=1403637185.5383191 loop=1, merge=
+[DBOW] cur=257 t=1403637186.3383191 loop=1, merge=
+[DBOW] cur=258 t=1403637186.7883189 loop=1, merge=
+[DBOW] cur=259 t=1403637187.2383192 loop=1, merge=
+[DBOW] cur=260 t=1403637187.8383191 loop=1, merge=
+[DBOW] cur=261 t=1403637188.188319 loop=1, merge=
+[DBOW] cur=262 t=1403637188.9883189 loop=1, merge=
+[DBOW] cur=263 t=1403637189.4883189 loop=1, merge=
+[DBOW] cur=264 t=1403637189.8383191 loop=1, merge=
+[DBOW] cur=265 t=1403637190.188319 loop=1, merge=
+[DBOW] cur=266 t=1403637190.5883191 loop=1, merge=
+[DBOW] cur=267 t=1403637190.9383192 loop=1, merge=
+[DBOW] cur=268 t=1403637191.2383192 loop=1, merge=
+[DBOW] cur=269 t=1403637191.5883191 loop=1, merge=
+[DBOW] cur=270 t=1403637191.888319 loop=1, merge=
+[DBOW] cur=271 t=1403637192.2383192 loop=1, merge=
+[DBOW] cur=272 t=1403637192.888319 loop=1, merge=
+[DBOW] cur=273 t=1403637193.188319 loop=1, merge=
+[DBOW] cur=274 t=1403637193.4383192 loop=1, merge=
+[DBOW] cur=275 t=1403637193.7383192 loop=1, merge=
+[DBOW] cur=276 t=1403637193.9883189 loop=1, merge=
+[DBOW] cur=277 t=1403637194.2883189 loop=1, merge=
+[DBOW] cur=278 t=1403637194.5883191 loop=1, merge=
+[DBOW] cur=279 t=1403637194.888319 loop=1, merge=
+[DBOW] cur=280 t=1403637195.188319 loop=1, merge=
+[DBOW] cur=281 t=1403637195.5883191 loop=1, merge=
+[DBOW] cur=282 t=1403637195.9383192 loop=1, merge=
+[DBOW] cur=283 t=1403637196.2883189 loop=1, merge=
+[DBOW] cur=284 t=1403637196.5883191 loop=1, merge=
+[DBOW] cur=285 t=1403637196.9383192 loop=1, merge=
+[DBOW] cur=286 t=1403637197.4383192 loop=1, merge=
+[DBOW] cur=287 t=1403637197.7883189 loop=1, merge=
+[DBOW] cur=288 t=1403637198.3383191 loop=1, merge=
+[DBOW] cur=289 t=1403637198.7883189 loop=1, merge=
+[DBOW] cur=290 t=1403637199.188319 loop=1, merge=
+[DBOW] cur=291 t=1403637199.5383191 loop=1, merge=
+[DBOW] cur=292 t=1403637199.8383191 loop=1, merge=
+[DBOW] cur=293 t=1403637200.0883191 loop=284, merge=
+[DBOW] cur=294 t=1403637200.3383191 loop=230,274,251, merge=
+[ABORT-NEAR] candidate KF 251 vs current KF 294
+[DBOW] cur=295 t=1403637200.638319 loop=284,198,289, merge=
+[DBOW] cur=296 t=1403637201.0383191 loop=284,289, merge=
+[DBOW] cur=297 t=1403637201.4383192 loop=289,126,250, merge=
+[ABORT-NEAR] candidate KF 126 vs current KF 297
+[DBOW] cur=298 t=1403637202.2383192 loop=284,188,250, merge=
+[DBOW] cur=299 t=1403637202.888319 loop=285,264,188, merge=
+[DBOW] cur=300 t=1403637203.3383191 loop=289,251, merge=
+[ABORT-NEAR] candidate KF 289 vs current KF 300
+[ABORT-NEAR] candidate KF 251 vs current KF 300
+[DBOW] cur=301 t=1403637203.8383191 loop=243,234,273, merge=
+[DBOW] cur=302 t=1403637204.2383192 loop=153,234,249, merge=
+[ABORT-NEAR] candidate KF 249 vs current KF 302
+[DBOW] cur=303 t=1403637204.9383192 loop=153,163,243, merge=
+[DBOW] cur=304 t=1403637205.9383192 loop=234,284,274, merge=
+[DBOW] cur=305 t=1403637206.8383191 loop=245, merge=
+[DBOW] cur=306 t=1403637207.4883189 loop=163, merge=
+[DBOW] cur=307 t=1403637207.8383191 loop=172,153,163, merge=
+[DBOW] cur=308 t=1403637209.0383191 loop=232,243,172, merge=
+[DBOW] cur=309 t=1403637209.4883189 loop=153,149,243, merge=
+[DBOW] cur=310 t=1403637209.888319 loop=239,198,275, merge=
+[DBOW] cur=311 t=1403637210.2883189 loop=1, merge=
+[DBOW] cur=312 t=1403637210.5883191 loop=1, merge=
+[DBOW] cur=313 t=1403637210.9383192 loop=289,232,153, merge=
+[DBOW] cur=314 t=1403637211.2883189 loop=163, merge=
+[DBOW] cur=315 t=1403637211.638319 loop=239,163, merge=
+[DBOW] cur=316 t=1403637211.9883189 loop=232,153,281, merge=
+[DBOW] cur=317 t=1403637212.2883189 loop=239,232,280, merge=
+[DBOW] cur=318 t=1403637212.638319 loop=239,163,226, merge=
+[DBOW] cur=319 t=1403637212.9883189 loop=163,187,207, merge=
+[ABORT-NEAR] candidate KF 207 vs current KF 319
+[DBOW] cur=320 t=1403637213.3383191 loop=194, merge=
+[DBOW] cur=321 t=1403637213.5383191 loop=285,232,187, merge=
+[DBOW] cur=322 t=1403637213.8383191 loop=228,194,126, merge=
+[DBOW] cur=323 t=1403637214.0883191 loop=286, merge=
+[DBOW] cur=324 t=1403637214.3383191 loop=286,239,289, merge=
+[DBOW] cur=325 t=1403637214.5383191 loop=243,232, merge=
+[DBOW] cur=326 t=1403637214.888319 loop=240,289,243, merge=
+[DBOW] cur=327 t=1403637215.2883189 loop=232,289,243, merge=
+[DBOW] cur=328 t=1403637215.5883191 loop=243,289,231, merge=
+[DBOW] cur=329 t=1403637215.9883189 loop=243,151,285, merge=
+[DBOW] cur=330 t=1403637216.2383192 loop=289,243,239, merge=
+[DBOW] cur=331 t=1403637216.7883189 loop=187,234,138, merge=
+[DBOW] cur=332 t=1403637217.2383192 loop=153,232,138, merge=
+[DBOW] cur=333 t=1403637217.688319 loop=153,138,167, merge=
+[DBOW] cur=334 t=1403637217.9383192 loop=153,224,167, merge=
+[DBOW] cur=335 t=1403637218.188319 loop=224,274,185, merge=
+[DBOW] cur=336 t=1403637218.4383192 loop=258,138, merge=
+[DBOW] cur=337 t=1403637218.7383192 loop=281,193,172, merge=
+[DBOW] cur=338 t=1403637219.188319 loop=162,236, merge=
+[DBOW] cur=339 t=1403637219.4883189 loop=266,162,138, merge=
+[DBOW] cur=340 t=1403637219.8383191 loop=243,232,138, merge=
+[DBOW] cur=341 t=1403637220.3383191 loop=240, merge=
+[DBOW] cur=342 t=1403637220.7383192 loop=153,162,236, merge=
+[DBOW] cur=343 t=1403637221.138319 loop=134, merge=
+[DBOW] cur=344 t=1403637221.5383191 loop=134,258,172, merge=
+[DBOW] cur=345 t=1403637222.138319 loop=203, merge=
+[DBOW] cur=346 t=1403637222.688319 loop=138,236,240, merge=
+[DBOW] cur=347 t=1403637223.2883189 loop=195, merge=
+[DBOW] cur=348 t=1403637223.688319 loop=240,266,162, merge=
+[DBOW] cur=349 t=1403637225.2383192 loop=161, merge=
+[DBOW] cur=350 t=1403637225.888319 loop=240, merge=
+[DBOW] cur=351 t=1403637226.5883191 loop=203,132,138, merge=
+[DBOW] cur=352 t=1403637227.2383192 loop=161,154,266, merge=
+[DBOW] cur=353 t=1403637227.888319 loop=234,254, merge=
+[DBOW] cur=354 t=1403637228.5883191 loop=203,162,231, merge=
+[DBOW] cur=355 t=1403637229.2883189 loop=240,234,254, merge=
+[DBOW] cur=356 t=1403637229.7383192 loop=234,240,138, merge=
+[DBOW] cur=357 t=1403637230.188319 loop=240,162,234, merge=
+[DBOW] cur=358 t=1403637230.9383192 loop=266,275,285, merge=
+[ABORT-NEAR] candidate KF 266 vs current KF 358
+[DBOW] cur=359 t=1403637231.4883189 loop=1, merge=
+[ABORT-NEAR] candidate KF 1 vs current KF 359
+[DBOW] cur=360 t=1403637232.188319 loop=1, merge=
+[DBOW] cur=361 t=1403637232.9383192 loop=1, merge=
+[DBOW] cur=362 t=1403637234.388319 loop=1, merge=
+[DBOW] cur=363 t=1403637234.9383192 loop=1, merge=
+[DBOW] cur=364 t=1403637235.5383191 loop=1, merge=
+[DBOW] cur=365 t=1403637236.0383191 loop=1, merge=
+[DBOW] cur=366 t=1403637236.5383191 loop=1, merge=
+[DBOW] cur=367 t=1403637237.2383192 loop=1, merge=
+[DBOW] cur=368 t=1403637237.638319 loop=1, merge=
+[DBOW] cur=369 t=1403637238.0383191 loop=1, merge=
+[DBOW] cur=370 t=1403637238.388319 loop=1, merge=
+[DBOW] cur=371 t=1403637239.0383191 loop=1, merge=
+[DBOW] cur=372 t=1403637239.5883191 loop=1, merge=
+[DBOW] cur=373 t=1403637240.2383192 loop=1, merge=
+[DBOW] cur=374 t=1403637241.0883191 loop=1, merge=
+[DBOW] cur=375 t=1403637241.688319 loop=1, merge=
+[DBOW] cur=376 t=1403637242.138319 loop=1, merge=
+[DBOW] cur=377 t=1403637242.638319 loop=1, merge=
+[DBOW] cur=378 t=1403637243.0383191 loop=1, merge=
+[DBOW] cur=379 t=1403637244.5883191 loop=1, merge=
+[DBOW] cur=380 t=1403637245.388319 loop=1, merge=
+[DBOW] cur=381 t=1403637246.0883191 loop=1, merge=
+[DBOW] cur=382 t=1403637246.8383191 loop=1, merge=
+[DBOW] cur=383 t=1403637247.3383191 loop=1, merge=
+[DBOW] cur=384 t=1403637247.8383191 loop=1, merge=
+[DBOW] cur=385 t=1403637248.2383192 loop=1, merge=
+[DBOW] cur=386 t=1403637248.8383191 loop=1, merge=
+[DBOW] cur=387 t=1403637250.0383191 loop=282,258,252, merge=
+[ABORT-NEAR] candidate KF 258 vs current KF 387
+[ABORT-NEAR] candidate KF 252 vs current KF 387
+[DBOW] cur=388 t=1403637250.7383192 loop=133, merge=
+[ABORT-NEAR] candidate KF 133 vs current KF 388
+[DBOW] cur=389 t=1403637251.638319 loop=133, merge=
+[DBOW] cur=390 t=1403637252.3383191 loop=233,259,172, merge=
+[DBOW] cur=391 t=1403637254.188319 loop=133,275,243, merge=
+[DBOW] cur=392 t=1403637255.0383191 loop=266,248,195, merge=
+[DBOW] cur=393 t=1403637255.688319 loop=133,138,233, merge=
+[DBOW] cur=394 t=1403637256.5883191 loop=133,161,138, merge=
+[DBOW] cur=395 t=1403637257.388319 loop=233,162,148, merge=
+[DBOW] cur=396 t=1403637258.138319 loop=133,233,195, merge=
+[DBOW] cur=397 t=1403637258.7383192 loop=270,263,195, merge=
+[DBOW] cur=398 t=1403637259.188319 loop=133, merge=
+[DBOW] cur=399 t=1403637259.638319 loop=133,162,275, merge=
+[DBOW] cur=400 t=1403637260.3383191 loop=195,270,275, merge=
+[DBOW] cur=401 t=1403637260.7883189 loop=248,133,233, merge=
+[DBOW] cur=402 t=1403637261.188319 loop=133,270, merge=
+[DBOW] cur=403 t=1403637261.4883189 loop=162,264,284, merge=
+[DBOW] cur=404 t=1403637261.7383192 loop=148,138,162, merge=
+[DBOW] cur=405 t=1403637262.0383191 loop=275,138,264, merge=
+[DBOW] cur=406 t=1403637262.2883189 loop=270,264,284, merge=
+[DBOW] cur=407 t=1403637262.5383191 loop=270,383,162, merge=
+[DBOW] cur=408 t=1403637262.888319 loop=162,160,284, merge=
+[SESSION] ChangeDataset requested
+Creation of new map with id: 1
+Stored map with ID: 0
+Creation of new map with last KF id: 409
+First KF:409; Map init KF:409
+New Map created with 246 points
+[PROP] received cur=420 cand=228
+[DBOW] cur=420 t=1403638522.7778294 loop= merge=1,
+[PROP] to_merge_list cand=228 (req 228) curKF=420
+LoopClosing: injected external candidate KF 228 for current KF 420
+[STATS] injected=1 verified=0 abortedByNearKF=18
+  neighbours: 227 229 226 230 262 261 373 364 360 231
+[PROP] sim3_fail cand=228 stage=2 bow=55 curKF=420
+[PROP] received cur=421 cand=228
+[DBOW] cur=421 t=1403638522.8278296 loop= merge=1,
+[PROP] to_merge_list cand=228 (req 228) curKF=421
+LoopClosing: injected external candidate KF 228 for current KF 421
+[STATS] injected=2 verified=0 abortedByNearKF=18
+  neighbours: 227 229 226 230 262 261 373 364 360 231
+[PROP] sim3_fail cand=228 stage=2 bow=57 curKF=421
+[DBOW] cur=422 t=1403638522.8778293 loop= merge=1,
+[PROP] received cur=423 cand=227
+[DBOW] cur=423 t=1403638522.9778295 loop= merge=1,
+[PROP] to_merge_list cand=227 (req 227) curKF=423
+LoopClosing: injected external candidate KF 227 for current KF 423
+[STATS] injected=3 verified=0 abortedByNearKF=18
+  neighbours: 228 226 225 229 259 261 260 230 373 258
+[PROP] sim3_fail cand=227 stage=2 bow=54 curKF=423
+[DBOW] cur=424 t=1403638523.2778294 loop= merge=1,
+[PROP] received cur=425 cand=227
+[DBOW] cur=425 t=1403638523.5278294 loop= merge=1,
+[PROP] to_merge_list cand=227 (req 227) curKF=425
+LoopClosing: injected external candidate KF 227 for current KF 425
+[STATS] injected=4 verified=0 abortedByNearKF=18
+  neighbours: 228 226 225 229 259 261 260 230 373 258
+[PROP] sim3_fail cand=227 stage=2 bow=60 curKF=425
+[DBOW] cur=426 t=1403638523.8778293 loop= merge=1,
+[DBOW] cur=427 t=1403638523.9778295 loop= merge=1,
+[DBOW] cur=428 t=1403638524.0778294 loop= merge=1,
+[DBOW] cur=429 t=1403638524.3778293 loop= merge=1,
+[PROP] received cur=430 cand=359
+[DBOW] cur=430 t=1403638524.8278296 loop= merge=1,
+[PROP] to_merge_list cand=359 (req 359) curKF=430
+LoopClosing: injected external candidate KF 359 for current KF 430
+[STATS] injected=5 verified=0 abortedByNearKF=18
+  neighbours: 360 358 357 361 229 351 356 225 228 230
+[PROP] sim3_fail cand=359 stage=2 bow=62 curKF=430
+[PROP] received cur=431 cand=359
+[DBOW] cur=431 t=1403638524.9778295 loop= merge=1,
+[PROP] to_merge_list cand=359 (req 359) curKF=431
+LoopClosing: injected external candidate KF 359 for current KF 431
+[STATS] injected=6 verified=0 abortedByNearKF=18
+  neighbours: 360 358 357 361 229 351 356 225 228 230
+[PROP] sim3_fail cand=359 stage=2 bow=75 curKF=431
+[DBOW] cur=432 t=1403638525.7278295 loop= merge=1,
+[DBOW] cur=433 t=1403638525.8278296 loop= merge=1,
+[DBOW] cur=434 t=1403638525.9778295 loop= merge=1,
+[DBOW] cur=435 t=1403638526.0778294 loop= merge=1,
+[DBOW] cur=436 t=1403638526.1778293 loop= merge=1,
+[DBOW] cur=437 t=1403638526.2778294 loop= merge=1,
+[DBOW] cur=438 t=1403638526.4278295 loop= merge=1,
+[DBOW] cur=439 t=1403638526.5278294 loop= merge=1,
+[DBOW] cur=440 t=1403638526.6278296 loop= merge=1,
+[DBOW] cur=441 t=1403638526.7778294 loop= merge=1,
+[DBOW] cur=442 t=1403638526.8778293 loop= merge=1,
+[DBOW] cur=443 t=1403638526.9778295 loop= merge=1,
+[DBOW] cur=444 t=1403638527.0778294 loop= merge=1,
+[DBOW] cur=445 t=1403638527.1778293 loop= merge=1,
+[DBOW] cur=446 t=1403638527.2778294 loop= merge=1,
+[DBOW] cur=447 t=1403638527.3778293 loop= merge=1,
+[DBOW] cur=448 t=1403638527.5778294 loop= merge=233,270,361,
+[DBOW] cur=449 t=1403638528.4278295 loop= merge=126,1,
+[PROP] received cur=450 cand=228
+[DBOW] cur=450 t=1403638528.5778294 loop= merge=1,
+[PROP] to_merge_list cand=228 (req 228) curKF=450
+LoopClosing: injected external candidate KF 228 for current KF 450
+[STATS] injected=7 verified=0 abortedByNearKF=18
+  neighbours: 227 229 226 230 262 261 373 364 360 231
+[PROP] sim3_fail cand=228 stage=2 bow=74 curKF=450
+[PROP] received cur=451 cand=227
+[DBOW] cur=451 t=1403638528.8278296 loop= merge=1,
+[PROP] to_merge_list cand=227 (req 227) curKF=451
+LoopClosing: injected external candidate KF 227 for current KF 451
+[STATS] injected=8 verified=0 abortedByNearKF=18
+  neighbours: 228 226 225 229 259 261 260 230 373 258
+[PROP] sim3_fail cand=227 stage=2 bow=57 curKF=451
+[PROP] received cur=452 cand=227
+[DBOW] cur=452 t=1403638529.0278294 loop= merge=1,
+[PROP] to_merge_list cand=227 (req 227) curKF=452
+LoopClosing: injected external candidate KF 227 for current KF 452
+[STATS] injected=9 verified=0 abortedByNearKF=18
+  neighbours: 228 226 225 229 259 261 260 230 373 258
+[PROP] sim3_fail cand=227 stage=3 bow=58 curKF=452
+[PROP] received cur=453 cand=228
+[DBOW] cur=453 t=1403638529.2278295 loop= merge=1,
+[PROP] to_merge_list cand=228 (req 228) curKF=453
+LoopClosing: injected external candidate KF 228 for current KF 453
+[STATS] injected=10 verified=0 abortedByNearKF=18
+  neighbours: 227 229 226 230 262 261 373 364 360 231
+[PROP] sim3_fail cand=228 stage=2 bow=68 curKF=453
+[PROP-STATS] abort_near_dbow2=18 n_dbow2_stage0=18 n_dbow2_stage1=63 n_dbow2_stage2=392 n_detect_calls=452 n_ext_stage2=9 n_ext_stage3=1 received=10 sim3_fail=10 to_merge_list=10 us_dbow2_stage0=173 us_dbow2_stage1=94210 us_dbow2_stage2=694651 us_detect_total=1081431 us_ext_stage2=14257 us_ext_stage3=3833 queued=0 pending_loop=0 pending_merge=0
+[DBOW] cur=454 t=1403638529.5278294 loop= merge=1,
+[DBOW] cur=455 t=1403638529.6778293 loop= merge=1,
+[DBOW] cur=456 t=1403638529.7778294 loop= merge=1,
+[DBOW] cur=457 t=1403638529.9278295 loop= merge=1,
+[DBOW] cur=458 t=1403638530.0278294 loop= merge=1,
+[DBOW] cur=459 t=1403638530.1778293 loop= merge=1,
+[DBOW] cur=460 t=1403638530.2778294 loop= merge=1,
+[DBOW] cur=461 t=1403638530.3778293 loop= merge=1,
+[DBOW] cur=462 t=1403638530.5778294 loop= merge=1,
+[DBOW] cur=463 t=1403638530.7278295 loop= merge=1,
+[DBOW] cur=464 t=1403638530.8278296 loop= merge=1,
+[DBOW] cur=465 t=1403638531.0278294 loop= merge=1,
+[DBOW] cur=466 t=1403638533.9278295 loop= merge=1,
+[DBOW] cur=467 t=1403638538.9778295 loop= merge=1,
+[DBOW] cur=468 t=1403638539.1278296 loop= merge=1,
+[DBOW] cur=469 t=1403638539.2778294 loop= merge=1,
+[DBOW] cur=470 t=1403638539.4778295 loop= merge=1,
+[DBOW] cur=471 t=1403638539.7278295 loop= merge=1,
+[PROP] received cur=472 cand=257
+[DBOW] cur=472 t=1403638539.9778295 loop= merge=1,
+[PROP] to_merge_list cand=257 (req 257) curKF=472
+LoopClosing: injected external candidate KF 257 for current KF 472
+[STATS] injected=11 verified=0 abortedByNearKF=18
+  neighbours: 258 259 223 225 224 260 256 222 372 226
+[PROP] sim3_fail cand=257 stage=2 bow=56 curKF=472
+[DBOW] cur=473 t=1403638540.1278296 loop= merge=1,
+[PROP] received cur=474 cand=360
+[DBOW] cur=474 t=1403638540.3778293 loop= merge=1,
+[PROP] to_merge_list cand=360 (req 360) curKF=474
+LoopClosing: injected external candidate KF 360 for current KF 474
+[STATS] injected=12 verified=0 abortedByNearKF=18
+  neighbours: 361 359 263 262 264 230 229 261 231 228
+[PROP] sim3_fail cand=360 stage=3 bow=81 curKF=474
+[PROP] received cur=475 cand=228
+[DBOW] cur=475 t=1403638540.5778294 loop= merge=1,
+[PROP] to_merge_list cand=228 (req 228) curKF=475
+LoopClosing: injected external candidate KF 228 for current KF 475
+[STATS] injected=13 verified=0 abortedByNearKF=18
+  neighbours: 227 229 226 230 262 261 373 364 360 231
+[PROP] sim3_fail cand=228 stage=2 bow=59 curKF=475
+[PROP] received cur=476 cand=360
+[DBOW] cur=476 t=1403638540.8778293 loop= merge=1,
+[PROP] to_merge_list cand=360 (req 360) curKF=476
+LoopClosing: injected external candidate KF 360 for current KF 476
+[STATS] injected=14 verified=0 abortedByNearKF=18
+  neighbours: 361 359 263 262 264 230 229 261 231 228
+[PROP] sim3_fail cand=360 stage=3 bow=78 curKF=476
+[PROP] received cur=477 cand=359
+[DBOW] cur=477 t=1403638541.2278295 loop= merge=1,
+[PROP] to_merge_list cand=359 (req 359) curKF=477
+LoopClosing: injected external candidate KF 359 for current KF 477
+[STATS] injected=15 verified=0 abortedByNearKF=18
+  neighbours: 360 358 357 361 229 351 356 225 228 230
+[PROP] sim3_fail cand=359 stage=2 bow=60 curKF=477
+[PROP] received cur=478 cand=359
+[DBOW] cur=478 t=1403638541.4778295 loop= merge=261,1,
+[PROP] to_merge_list cand=359 (req 359) curKF=478
+LoopClosing: injected external candidate KF 359 for current KF 478
+[STATS] injected=16 verified=0 abortedByNearKF=18
+  neighbours: 360 358 357 361 229 351 356 225 228 230
+[PROP] sim3_fail cand=359 stage=2 bow=61 curKF=478
+[PROP] received cur=479 cand=227
+[DBOW] cur=479 t=1403638541.6778293 loop= merge=261,104,1,
+[PROP] to_merge_list cand=227 (req 227) curKF=479
+LoopClosing: injected external candidate KF 227 for current KF 479
+[STATS] injected=17 verified=0 abortedByNearKF=18
+  neighbours: 228 226 225 229 259 261 260 230 373 258
+[PROP] sim3_fail cand=227 stage=3 bow=68 curKF=479
+[PROP] received cur=480 cand=227
+[DBOW] cur=480 t=1403638541.8778293 loop= merge=1,
+[PROP] to_merge_list cand=227 (req 227) curKF=480
+LoopClosing: injected external candidate KF 227 for current KF 480
+[STATS] injected=18 verified=0 abortedByNearKF=18
+  neighbours: 228 226 225 229 259 261 260 230 373 258
+[PROP] sim3_fail cand=227 stage=3 bow=62 curKF=480
+[PROP] received cur=481 cand=359
+[DBOW] cur=481 t=1403638542.0278294 loop= merge=1,
+[PROP] to_merge_list cand=359 (req 359) curKF=481
+LoopClosing: injected external candidate KF 359 for current KF 481
+[STATS] injected=19 verified=0 abortedByNearKF=18
+  neighbours: 360 358 357 361 229 351 356 225 228 230
+[PROP] sim3_fail cand=359 stage=2 bow=51 curKF=481
+[PROP] received cur=482 cand=359
+[DBOW] cur=482 t=1403638542.2278295 loop= merge=1,
+[PROP] to_merge_list cand=359 (req 359) curKF=482
+LoopClosing: injected external candidate KF 359 for current KF 482
+[STATS] injected=20 verified=0 abortedByNearKF=18
+  neighbours: 360 358 357 361 229 351 356 225 228 230
+[PROP] sim3_fail cand=359 stage=2 bow=46 curKF=482
+[PROP-STATS] abort_near_dbow2=18 n_dbow2_stage0=18 n_dbow2_stage1=64 n_dbow2_stage2=422 n_dbow2_stage3=1 n_detect_calls=481 n_ext_stage2=15 n_ext_stage3=5 received=20 sim3_fail=20 to_merge_list=20 us_dbow2_stage0=173 us_dbow2_stage1=96778 us_dbow2_stage2=757474 us_dbow2_stage3=5262 us_detect_total=1201161 us_ext_stage2=23732 us_ext_stage3=22375 queued=0 pending_loop=0 pending_merge=0
+[PROP] received cur=483 cand=358
+[DBOW] cur=483 t=1403638542.4278295 loop= merge=1,
+[PROP] to_merge_list cand=358 (req 358) curKF=483
+LoopClosing: injected external candidate KF 358 for current KF 483
+[STATS] injected=21 verified=0 abortedByNearKF=18
+  neighbours: 357 356 354 359 355 352 353 350 351 348
+[PROP] sim3_fail cand=358 stage=2 bow=30 curKF=483
+[PROP] received cur=484 cand=290
+[DBOW] cur=484 t=1403638542.5778294 loop= merge=309,1,
+[PROP] redirect 290->142 hops=2
+[PROP] to_merge_list cand=142 (req 290) curKF=484
+LoopClosing: injected external candidate KF 142 for current KF 484
+[STATS] injected=22 verified=0 abortedByNearKF=18
+  neighbours: 143 144 145 138 147 134 148 203 133 382
+[PROP] sim3_fail cand=142 stage=2 bow=32 curKF=484
+[PROP] received cur=485 cand=107
+[DBOW] cur=485 t=1403638542.7778294 loop= merge=1,
+[PROP] redirect 107->104 hops=3
+[PROP] to_merge_list cand=104 (req 107) curKF=485
+LoopClosing: injected external candidate KF 104 for current KF 485
+[STATS] injected=23 verified=0 abortedByNearKF=18
+  neighbours: 108 101 100 299 313 308 391 314 307 309
+[PROP] sim3_fail cand=104 stage=3 bow=53 curKF=485
+[PROP] received cur=486 cand=103
+[DBOW] cur=486 t=1403638542.9278295 loop= merge=308,
+[PROP] redirect 103->101 hops=1
+[PROP] to_merge_list cand=101 (req 103) curKF=486
+LoopClosing: injected external candidate KF 101 for current KF 486
+[STATS] injected=24 verified=0 abortedByNearKF=18
+  neighbours: 104 108 100 392 98 97 391 308 299 309
+[PROP] sim3_fail cand=101 stage=2 bow=65 curKF=486
+[DBOW] cur=487 t=1403638543.1278296 loop= merge=1,
+[PROP] received cur=488 cand=113
+[DBOW] cur=488 t=1403638543.3278296 loop= merge=1,
+[PROP] redirect 113->108 hops=2
+[PROP] to_merge_list cand=108 (req 113) curKF=488
+LoopClosing: injected external candidate KF 108 for current KF 488
+[STATS] injected=25 verified=0 abortedByNearKF=18
+  neighbours: 306 299 308 303 302 307 104 389 309 313
+[PROP] sim3_fail cand=108 stage=3 bow=63 curKF=488
+[PROP] received cur=489 cand=112
+[DBOW] cur=489 t=1403638543.5278294 loop= merge=1,
+[PROP] redirect 112->108 hops=1
+[PROP] to_merge_list cand=108 (req 112) curKF=489
+LoopClosing: injected external candidate KF 108 for current KF 489
+[STATS] injected=26 verified=0 abortedByNearKF=18
+  neighbours: 306 299 308 303 302 307 104 389 309 313
+[PROP] sim3_fail cand=108 stage=3 bow=64 curKF=489
+[PROP] received cur=490 cand=112
+[DBOW] cur=490 t=1403638543.7278295 loop= merge=308,1,
+[PROP] redirect 112->108 hops=1
+[PROP] to_merge_list cand=108 (req 112) curKF=490
+LoopClosing: injected external candidate KF 108 for current KF 490
+[STATS] injected=27 verified=0 abortedByNearKF=18
+  neighbours: 306 299 308 303 302 307 104 389 309 313
+[PROP] sim3_fail cand=108 stage=3 bow=76 curKF=490
+[PROP] received cur=491 cand=112
+[DBOW] cur=491 t=1403638543.8778293 loop= merge=308,108,1,
+[PROP] redirect 112->108 hops=1
+[PROP] drop dup_with_dbow2 cand=108
+*Merge detected
+[PROP] accepted list=merge src=dbow2 ext_cand=0 matchedKF=108 curKF=491 t=1403638543.8778293
+Local Mapping STOP
+Change to map with id: 0
+Local Mapping RELEASE
+Local Mapping STOP
+Local Mapping RELEASE
+Merge finished!
+[PROP] received cur=492 cand=107
+[DBOW] cur=492 t=1403638544.6778293 loop=233,195,148, merge=
+[PROP] redirect 107->104 hops=3
+[PROP] to_loop_list cand=104 (req 107) curKF=492
+LoopClosing: injected external candidate KF 104 for current KF 492
+[STATS] injected=28 verified=0 abortedByNearKF=18
+  neighbours: 101 100 299 313 306 391 308 314 492 307
+[ABORT-NEAR] candidate KF 148 vs current KF 492
+[PROP] abort_near cand=104 curKF=492
+[ABORT-NEAR] candidate KF 104 vs current KF 492
+[PROP] received cur=493 cand=299
+[DBOW] cur=493 t=1403638545.8278296 loop=261,252,233, merge=
+[PROP] to_loop_list cand=299 (req 299) curKF=493
+LoopClosing: injected external candidate KF 299 for current KF 493
+[STATS] injected=29 verified=0 abortedByNearKF=20
+  neighbours: 389 314 306 302 313 104 307 308 303 315
+[PROP] abort_near cand=299 curKF=493
+[ABORT-NEAR] candidate KF 299 vs current KF 493
+[PROP] received cur=494 cand=389
+[DBOW] cur=494 t=1403638546.6778293 loop=410, merge=
+[PROP] to_loop_list cand=389 (req 389) curKF=494
+LoopClosing: injected external candidate KF 389 for current KF 494
+[STATS] injected=30 verified=0 abortedByNearKF=21
+  neighbours: 391 314 313 306 392 308 307 315 493 104
+[PROP] abort_near cand=389 curKF=494
+[ABORT-NEAR] candidate KF 389 vs current KF 494
+[PROP-STATS] abort_near=3 abort_near_dbow2=19 accepted_merge_dbow2=1 drop_dup_with_dbow2=1 n_dbow2_stage0=19 n_dbow2_stage1=67 n_dbow2_stage2=434 n_dbow2_stage3=4 n_dbow2_stage4=1 n_detect_calls=493 n_ext_stage0=3 n_ext_stage2=18 n_ext_stage3=9 received=31 redirect_hops=13 redirected=7 sim3_fail=27 to_loop_list=3 to_merge_list=27 us_dbow2_stage0=181 us_dbow2_stage1=102846 us_dbow2_stage2=778005 us_dbow2_stage3=21371 us_dbow2_stage4=9412 us_detect_total=1289602 us_ext_stage0=26 us_ext_stage2=28017 us_ext_stage3=40685 queued=0 pending_loop=0 pending_merge=0
+[PROP] received cur=495 cand=299
+[DBOW] cur=495 t=1403638547.3778293 loop=410, merge=
+[PROP] redirect 299->104 hops=1
+[PROP] to_loop_list cand=104 (req 299) curKF=495
+LoopClosing: injected external candidate KF 104 for current KF 495
+[STATS] injected=31 verified=0 abortedByNearKF=22
+  neighbours: 101 313 306 391 308 314 492 307 392 303
+[PROP] abort_near cand=104 curKF=495
+[ABORT-NEAR] candidate KF 104 vs current KF 495
+[PROP] received cur=496 cand=389
+[DBOW] cur=496 t=1403638547.8278296 loop=410, merge=
+[PROP] to_loop_list cand=389 (req 389) curKF=496
+LoopClosing: injected external candidate KF 389 for current KF 496
+[STATS] injected=32 verified=0 abortedByNearKF=23
+  neighbours: 391 314 313 306 392 308 307 315 493 104
+[PROP] abort_near cand=389 curKF=496
+[ABORT-NEAR] candidate KF 389 vs current KF 496
+[PROP] received cur=497 cand=323
+[DBOW] cur=497 t=1403638548.5278294 loop=410, merge=
+[PROP] to_loop_list cand=323 (req 323) curKF=497
+LoopClosing: injected external candidate KF 323 for current KF 497
+[STATS] injected=33 verified=0 abortedByNearKF=24
+  neighbours: 322 324 325 321 326 320 327 319 328 318
+[PROP] abort_near cand=323 curKF=497
+[ABORT-NEAR] candidate KF 323 vs current KF 497
+[PROP] received cur=498 cand=332
+[DBOW] cur=498 t=1403638549.1778293 loop=409, merge=
+[PROP] to_loop_list cand=332 (req 332) curKF=498
+LoopClosing: injected external candidate KF 332 for current KF 498
+[STATS] injected=34 verified=0 abortedByNearKF=25
+  neighbours: 333 331 334 330 329 335 498 497 336 328
+[PROP] abort_near cand=332 curKF=498
+[ABORT-NEAR] candidate KF 332 vs current KF 498
+[PROP] received cur=499 cand=332
+[DBOW] cur=499 t=1403638549.5778294 loop=410, merge=
+[PROP] to_loop_list cand=332 (req 332) curKF=499
+LoopClosing: injected external candidate KF 332 for current KF 499
+[STATS] injected=35 verified=0 abortedByNearKF=26
+  neighbours: 333 331 334 330 329 335 498 499 497 336
+[PROP] abort_near cand=332 curKF=499
+[ABORT-NEAR] candidate KF 332 vs current KF 499
+[PROP] received cur=500 cand=332
+[DBOW] cur=500 t=1403638550.1278296 loop=410, merge=
+[PROP] to_loop_list cand=332 (req 332) curKF=500
+LoopClosing: injected external candidate KF 332 for current KF 500
+[STATS] injected=36 verified=0 abortedByNearKF=27
+  neighbours: 333 331 334 330 329 335 498 499 497 336
+[PROP] abort_near cand=332 curKF=500
+[ABORT-NEAR] candidate KF 332 vs current KF 500
+[DBOW] cur=501 t=1403638550.5278294 loop=409, merge=
+[DBOW] cur=502 t=1403638550.9278295 loop=410, merge=
+[DBOW] cur=503 t=1403638551.2778294 loop=409, merge=
+[DBOW] cur=504 t=1403638551.6278296 loop=409, merge=
+[DBOW] cur=505 t=1403638551.9278295 loop=409, merge=
+[DBOW] cur=506 t=1403638552.1778293 loop=375,410, merge=
+[DBOW] cur=507 t=1403638552.5278294 loop=409, merge=
+[DBOW] cur=508 t=1403638552.8278296 loop=409, merge=
+[DBOW] cur=509 t=1403638553.1278296 loop=410, merge=
+[DBOW] cur=510 t=1403638553.3778293 loop=410, merge=
+[DBOW] cur=511 t=1403638553.6778293 loop=409, merge=
+[DBOW] cur=512 t=1403638553.9778295 loop=409, merge=
+[DBOW] cur=513 t=1403638554.2778294 loop=410, merge=
+[DBOW] cur=514 t=1403638554.5778294 loop=410, merge=
+[DBOW] cur=515 t=1403638554.8778293 loop=409, merge=
+[DBOW] cur=516 t=1403638555.1278296 loop=409, merge=
+[DBOW] cur=517 t=1403638555.4278295 loop=409, merge=
+[DBOW] cur=518 t=1403638555.7278295 loop=409, merge=
+[DBOW] cur=519 t=1403638556.0778294 loop=195,361,158, merge=
+[DBOW] cur=520 t=1403638556.4778295 loop=409, merge=
+[DBOW] cur=521 t=1403638556.8278296 loop=409, merge=
+[DBOW] cur=522 t=1403638557.0778294 loop=409, merge=
+[DBOW] cur=523 t=1403638557.3278296 loop=409, merge=
+[DBOW] cur=524 t=1403638557.5778294 loop=410, merge=
+[ABORT-NEAR] candidate KF 410 vs current KF 524
+[DBOW] cur=525 t=1403638557.8278296 loop=409, merge=
+[ABORT-NEAR] candidate KF 409 vs current KF 525
+[DBOW] cur=526 t=1403638558.0278294 loop=409, merge=
+[DBOW] cur=527 t=1403638558.2278295 loop=409, merge=
+[DBOW] cur=528 t=1403638558.4278295 loop=409, merge=
+[ABORT-NEAR] candidate KF 409 vs current KF 528
+[DBOW] cur=529 t=1403638558.6778293 loop=409, merge=
+[ABORT-NEAR] candidate KF 409 vs current KF 529
+[DBOW] cur=530 t=1403638558.8278296 loop=311,410, merge=
+[ABORT-NEAR] candidate KF 311 vs current KF 530
+[ABORT-NEAR] candidate KF 410 vs current KF 530
+[DBOW] cur=531 t=1403638558.9778295 loop=410, merge=
+[ABORT-NEAR] candidate KF 410 vs current KF 531
+[DBOW] cur=532 t=1403638559.1278296 loop=1, merge=
+[DBOW] cur=533 t=1403638559.2278295 loop=410,1, merge=
+[ABORT-NEAR] candidate KF 410 vs current KF 533
+[DBOW] cur=534 t=1403638559.3778293 loop=1, merge=
+[ABORT-NEAR] candidate KF 1 vs current KF 534
+[DBOW] cur=535 t=1403638559.5278294 loop=1, merge=
+[DBOW] cur=536 t=1403638559.6778293 loop=409,1, merge=
+[ABORT-NEAR] candidate KF 409 vs current KF 536
+[DBOW] cur=537 t=1403638559.7778294 loop=1, merge=
+[DBOW] cur=538 t=1403638559.9278295 loop=409,1, merge=
+sim3 solver: 0.00114262
+10502.1
+[DBOW] cur=539 t=1403638560.0778294 loop=410,1, merge=
+[ABORT-NEAR] candidate KF 410 vs current KF 539
+[DBOW] cur=540 t=1403638560.1778293 loop=409,1, merge=
+[ABORT-NEAR] candidate KF 409 vs current KF 540
+[DBOW] cur=541 t=1403638560.3278296 loop=1, merge=
+[DBOW] cur=542 t=1403638560.4778295 loop=410,1, merge=
+[DBOW] cur=543 t=1403638560.5778294 loop=1, merge=
+[DBOW] cur=544 t=1403638560.6778293 loop=281,410,1, merge=
+[DBOW] cur=545 t=1403638560.8278296 loop=444,409,1, merge=
+[DBOW] cur=546 t=1403638560.9278295 loop=409, merge=
+[DBOW] cur=547 t=1403638561.0278294 loop=475,410,1, merge=
+[DBOW] cur=548 t=1403638561.1278296 loop=410, merge=
+[DBOW] cur=549 t=1403638561.2278295 loop=409,1, merge=
+[DBOW] cur=550 t=1403638561.3278296 loop=410,1, merge=
+[DBOW] cur=551 t=1403638561.4278295 loop=410, merge=
+[DBOW] cur=552 t=1403638561.5778294 loop=1, merge=
+[DBOW] cur=553 t=1403638561.6778293 loop=409,1, merge=
+[DBOW] cur=554 t=1403638561.8278296 loop=1, merge=
+[DBOW] cur=555 t=1403638561.9778295 loop=410, merge=
+[DBOW] cur=556 t=1403638562.1278296 loop=410,1, merge=
+[DBOW] cur=557 t=1403638562.2778294 loop=253,192,475, merge=
+[DBOW] cur=558 t=1403638562.4278295 loop=409,1, merge=
+[DBOW] cur=559 t=1403638562.5778294 loop=409, merge=
+[DBOW] cur=560 t=1403638562.7278295 loop=409,1, merge=
+[DBOW] cur=561 t=1403638562.8778293 loop=1, merge=
+[DBOW] cur=562 t=1403638563.0278294 loop=410,1, merge=
+[DBOW] cur=563 t=1403638563.1778293 loop=409,1, merge=
+[DBOW] cur=564 t=1403638563.2778294 loop=1, merge=
+[DBOW] cur=565 t=1403638563.3778293 loop=410,1, merge=
+[DBOW] cur=566 t=1403638563.4778295 loop=410,1, merge=
+[DBOW] cur=567 t=1403638563.6278296 loop=410,1, merge=
+[DBOW] cur=568 t=1403638563.7778294 loop=409, merge=
+[DBOW] cur=569 t=1403638563.9278295 loop=409, merge=
+[DBOW] cur=570 t=1403638564.0778294 loop=409, merge=
+[DBOW] cur=571 t=1403638564.2278295 loop=409,1, merge=
+[DBOW] cur=572 t=1403638564.3778293 loop=409,1, merge=
+[DBOW] cur=573 t=1403638564.4778295 loop=1, merge=
+[DBOW] cur=574 t=1403638564.6278296 loop=410,1, merge=
+[DBOW] cur=575 t=1403638564.7778294 loop=409,1, merge=
+[DBOW] cur=576 t=1403638564.9278295 loop=1, merge=
+[DBOW] cur=577 t=1403638565.0778294 loop=410,1, merge=
+[DBOW] cur=578 t=1403638565.2278295 loop=1, merge=
+[DBOW] cur=579 t=1403638565.3778293 loop=410,1, merge=
+[DBOW] cur=580 t=1403638565.5278294 loop=409,1, merge=
+[DBOW] cur=581 t=1403638565.6778293 loop=409,1, merge=
+[DBOW] cur=582 t=1403638565.8278296 loop=410,1, merge=
+[DBOW] cur=583 t=1403638565.9778295 loop=409, merge=
+[DBOW] cur=584 t=1403638566.1278296 loop=409,1, merge=
+[DBOW] cur=585 t=1403638566.2778294 loop=409,1, merge=
+[DBOW] cur=586 t=1403638566.4278295 loop=410,1, merge=
+[PROP] received cur=587 cand=289
+[DBOW] cur=587 t=1403638566.5778294 loop=410, merge=
+[PROP] redirect 289->142 hops=1
+[PROP] to_loop_list cand=142 (req 289) curKF=587
+LoopClosing: injected external candidate KF 142 for current KF 587
+[STATS] injected=37 verified=0 abortedByNearKF=40
+  neighbours: 143 144 145 138 147 134 148 203 133 382
+[PROP] sim3_fail cand=142 stage=2 bow=20 curKF=587
+[PROP] received cur=588 cand=289
+[DBOW] cur=588 t=1403638566.7278295 loop=1, merge=
+[PROP] redirect 289->142 hops=1
+[PROP] to_loop_list cand=142 (req 289) curKF=588
+LoopClosing: injected external candidate KF 142 for current KF 588
+[STATS] injected=38 verified=0 abortedByNearKF=40
+  neighbours: 143 144 145 138 147 134 148 203 133 382
+[PROP] sim3_fail cand=142 stage=2 bow=26 curKF=588
+[PROP] received cur=589 cand=289
+[DBOW] cur=589 t=1403638566.8778293 loop=410, merge=
+[PROP] redirect 289->142 hops=1
+[PROP] to_loop_list cand=142 (req 289) curKF=589
+LoopClosing: injected external candidate KF 142 for current KF 589
+[STATS] injected=39 verified=0 abortedByNearKF=40
+  neighbours: 143 144 145 138 147 134 148 203 133 382
+[PROP] sim3_fail cand=142 stage=2 bow=24 curKF=589
+[PROP] received cur=590 cand=289
+[DBOW] cur=590 t=1403638567.0278294 loop=410,1, merge=
+[PROP] redirect 289->142 hops=1
+[PROP] to_loop_list cand=142 (req 289) curKF=590
+LoopClosing: injected external candidate KF 142 for current KF 590
+[STATS] injected=40 verified=0 abortedByNearKF=40
+  neighbours: 143 144 145 138 147 134 148 203 133 382
+[PROP] sim3_fail cand=142 stage=2 bow=27 curKF=590
+[PROP-STATS] abort_near=9 abort_near_dbow2=31 accepted_merge_dbow2=1 drop_dup_with_dbow2=1 n_dbow2_stage0=31 n_dbow2_stage1=81 n_dbow2_stage2=546 n_dbow2_stage3=4 n_dbow2_stage4=1 n_detect_calls=589 n_ext_stage0=9 n_ext_stage2=22 n_ext_stage3=9 received=41 redirect_hops=18 redirected=12 sim3_fail=31 to_loop_list=13 to_merge_list=27 us_dbow2_stage0=288 us_dbow2_stage1=124285 us_dbow2_stage2=978735 us_dbow2_stage3=21371 us_dbow2_stage4=9412 us_detect_total=1625494 us_ext_stage0=87 us_ext_stage2=32724 us_ext_stage3=40685 queued=0 pending_loop=0 pending_merge=0
+[PROP] received cur=591 cand=289
+[DBOW] cur=591 t=1403638567.1778293 loop=410,1, merge=
+[PROP] redirect 289->142 hops=1
+[PROP] to_loop_list cand=142 (req 289) curKF=591
+LoopClosing: injected external candidate KF 142 for current KF 591
+[STATS] injected=41 verified=0 abortedByNearKF=40
+  neighbours: 143 144 145 138 147 134 148 203 133 382
+[PROP] sim3_fail cand=142 stage=2 bow=41 curKF=591
+[PROP] received cur=592 cand=289
+[DBOW] cur=592 t=1403638567.3278296 loop=410,1, merge=
+[PROP] redirect 289->142 hops=1
+[PROP] to_loop_list cand=142 (req 289) curKF=592
+LoopClosing: injected external candidate KF 142 for current KF 592
+[STATS] injected=42 verified=0 abortedByNearKF=40
+  neighbours: 143 144 145 138 147 134 148 203 133 382
+[PROP] sim3_fail cand=142 stage=2 bow=34 curKF=592
+[PROP] received cur=593 cand=289
+[DBOW] cur=593 t=1403638567.4278295 loop=409, merge=
+[PROP] redirect 289->142 hops=1
+[PROP] to_loop_list cand=142 (req 289) curKF=593
+LoopClosing: injected external candidate KF 142 for current KF 593
+[STATS] injected=43 verified=0 abortedByNearKF=40
+  neighbours: 143 144 145 138 147 134 148 203 133 382
+[PROP] sim3_fail cand=142 stage=3 bow=52 curKF=593
+[PROP] received cur=594 cand=139
+[DBOW] cur=594 t=1403638567.5778294 loop=409,1, merge=
+[PROP] redirect 139->138 hops=1
+[PROP] to_loop_list cand=138 (req 139) curKF=594
+LoopClosing: injected external candidate KF 138 for current KF 594
+[STATS] injected=44 verified=0 abortedByNearKF=40
+  neighbours: 143 142 144 134 145 133 132 131 250 147
+[PROP] sim3_fail cand=138 stage=3 bow=51 curKF=594
+[PROP] received cur=595 cand=139
+[DBOW] cur=595 t=1403638567.6778293 loop=1, merge=
+[PROP] redirect 139->138 hops=1
+[PROP] to_loop_list cand=138 (req 139) curKF=595
+LoopClosing: injected external candidate KF 138 for current KF 595
+[STATS] injected=45 verified=0 abortedByNearKF=40
+  neighbours: 143 142 144 134 145 133 132 131 250 147
+[PROP] sim3_fail cand=138 stage=3 bow=64 curKF=595
+[PROP] received cur=596 cand=288
+[DBOW] cur=596 t=1403638567.8278296 loop=1, merge=
+[PROP] redirect 288->203 hops=1
+[PROP] to_loop_list cand=203 (req 288) curKF=596
+LoopClosing: injected external candidate KF 203 for current KF 596
+[STATS] injected=46 verified=0 abortedByNearKF=40
+  neighbours: 204 142 201 133 205 134 143 131 138 144
+[PROP] sim3_fail cand=203 stage=2 bow=83 curKF=596
+[PROP] received cur=597 cand=381
+[DBOW] cur=597 t=1403638567.9778295 loop=409,1, merge=
+[PROP] to_loop_list cand=381 (req 381) curKF=597
+LoopClosing: injected external candidate KF 381 for current KF 597
+[STATS] injected=47 verified=0 abortedByNearKF=40
+  neighbours: 380 151 152 149 142 147 148 154 153 144
+[PROP] sim3_fail cand=381 stage=2 bow=67 curKF=597
+[PROP] received cur=598 cand=381
+[DBOW] cur=598 t=1403638568.1278296 loop=1, merge=
+[PROP] to_loop_list cand=381 (req 381) curKF=598
+LoopClosing: injected external candidate KF 381 for current KF 598
+[STATS] injected=48 verified=0 abortedByNearKF=40
+  neighbours: 380 151 152 149 142 147 148 154 153 144
+[PROP] sim3_fail cand=381 stage=2 bow=81 curKF=598
+[PROP] received cur=599 cand=381
+[DBOW] cur=599 t=1403638568.2778294 loop=410,1, merge=
+[PROP] to_loop_list cand=381 (req 381) curKF=599
+LoopClosing: injected external candidate KF 381 for current KF 599
+[STATS] injected=49 verified=0 abortedByNearKF=40
+  neighbours: 380 151 152 149 142 147 148 154 153 144
+[PROP] sim3_fail cand=381 stage=3 bow=84 curKF=599
+[PROP] received cur=600 cand=381
+[DBOW] cur=600 t=1403638568.4278295 loop=410,1, merge=
+[PROP] to_loop_list cand=381 (req 381) curKF=600
+LoopClosing: injected external candidate KF 381 for current KF 600
+[STATS] injected=50 verified=0 abortedByNearKF=40
+  neighbours: 380 151 152 149 142 147 148 154 153 144
+[PROP] sim3_fail cand=381 stage=2 bow=78 curKF=600
+[PROP-STATS] abort_near=9 abort_near_dbow2=31 accepted_merge_dbow2=1 drop_dup_with_dbow2=1 n_dbow2_stage0=31 n_dbow2_stage1=82 n_dbow2_stage2=561 n_dbow2_stage3=4 n_dbow2_stage4=1 n_detect_calls=599 n_ext_stage0=9 n_ext_stage2=28 n_ext_stage3=13 received=51 redirect_hops=24 redirected=18 sim3_fail=41 to_loop_list=23 to_merge_list=27 us_dbow2_stage0=288 us_dbow2_stage1=125654 us_dbow2_stage2=1004023 us_dbow2_stage3=21371 us_dbow2_stage4=9412 us_detect_total=1692598 us_ext_stage0=87 us_ext_stage2=41731 us_ext_stage3=63280 queued=0 pending_loop=0 pending_merge=0
+[PROP] received cur=601 cand=381
+[DBOW] cur=601 t=1403638568.5778294 loop=410,1, merge=
+[PROP] to_loop_list cand=381 (req 381) curKF=601
+LoopClosing: injected external candidate KF 381 for current KF 601
+[STATS] injected=51 verified=0 abortedByNearKF=40
+  neighbours: 380 151 152 149 142 147 148 154 153 144
+[PROP] sim3_fail cand=381 stage=2 bow=82 curKF=601
+[PROP] received cur=602 cand=288
+[DBOW] cur=602 t=1403638568.7778294 loop=409,1, merge=
+[PROP] redirect 288->203 hops=1
+[PROP] to_loop_list cand=203 (req 288) curKF=602
+LoopClosing: injected external candidate KF 203 for current KF 602
+[STATS] injected=52 verified=0 abortedByNearKF=40
+  neighbours: 204 142 201 133 205 134 143 131 138 144
+[PROP] sim3_fail cand=203 stage=2 bow=65 curKF=602
+[PROP] received cur=603 cand=288
+[DBOW] cur=603 t=1403638569.0278294 loop=409,1, merge=
+[PROP] redirect 288->203 hops=1
+[PROP] to_loop_list cand=203 (req 288) curKF=603
+LoopClosing: injected external candidate KF 203 for current KF 603
+[STATS] injected=53 verified=0 abortedByNearKF=40
+  neighbours: 204 142 201 133 205 134 143 131 138 144
+[PROP] sim3_fail cand=203 stage=2 bow=52 curKF=603
+[PROP] received cur=604 cand=288
+[DBOW] cur=604 t=1403638569.3278296 loop=409,1, merge=
+[PROP] redirect 288->203 hops=1
+[PROP] to_loop_list cand=203 (req 288) curKF=604
+LoopClosing: injected external candidate KF 203 for current KF 604
+[STATS] injected=54 verified=0 abortedByNearKF=40
+  neighbours: 204 142 201 133 205 134 143 131 138 144
+[PROP] sim3_fail cand=203 stage=2 bow=64 curKF=604
+[PROP] received cur=605 cand=200
+[DBOW] cur=605 t=1403638569.7778294 loop=410,1, merge=
+[PROP] to_loop_list cand=200 (req 200) curKF=605
+LoopClosing: injected external candidate KF 200 for current KF 605
+[STATS] injected=55 verified=0 abortedByNearKF=40
+  neighbours: 199 201 198 380 365 379 287 248 249 203
+[PROP] sim3_fail cand=200 stage=2 bow=73 curKF=605
+[PROP] received cur=606 cand=373
+[DBOW] cur=606 t=1403638570.3778293 loop=409, merge=
+[PROP] to_loop_list cand=373 (req 373) curKF=606
+LoopClosing: injected external candidate KF 373 for current KF 606
+[STATS] injected=56 verified=0 abortedByNearKF=40
+  neighbours: 262 261 361 260 263 259 264 229 230 374
+[PROP] sim3_fail cand=373 stage=2 bow=46 curKF=606
+[PROP] received cur=607 cand=373
+[DBOW] cur=607 t=1403638570.5278294 loop=409,1, merge=
+[PROP] to_loop_list cand=373 (req 373) curKF=607
+LoopClosing: injected external candidate KF 373 for current KF 607
+[STATS] injected=57 verified=0 abortedByNearKF=40
+  neighbours: 262 261 361 260 263 259 264 229 230 374
+[PROP] sim3_fail cand=373 stage=2 bow=44 curKF=607
+[PROP] received cur=608 cand=373
+[DBOW] cur=608 t=1403638570.6778293 loop=409,1, merge=
+[PROP] to_loop_list cand=373 (req 373) curKF=608
+LoopClosing: injected external candidate KF 373 for current KF 608
+[STATS] injected=58 verified=0 abortedByNearKF=40
+  neighbours: 262 261 361 260 263 259 264 229 230 374
+[PROP] sim3_fail cand=373 stage=2 bow=43 curKF=608
+[PROP] received cur=609 cand=373
+[DBOW] cur=609 t=1403638570.7778294 loop=409, merge=
+[PROP] to_loop_list cand=373 (req 373) curKF=609
+LoopClosing: injected external candidate KF 373 for current KF 609
+[STATS] injected=59 verified=0 abortedByNearKF=40
+  neighbours: 262 261 361 260 263 259 264 229 230 374
+[PROP] sim3_fail cand=373 stage=2 bow=51 curKF=609
+[PROP] received cur=610 cand=373
+[DBOW] cur=610 t=1403638570.8778293 loop=410, merge=
+[PROP] to_loop_list cand=373 (req 373) curKF=610
+LoopClosing: injected external candidate KF 373 for current KF 610
+[STATS] injected=60 verified=0 abortedByNearKF=40
+  neighbours: 262 261 361 260 263 259 264 229 230 374
+[PROP] sim3_fail cand=373 stage=2 bow=41 curKF=610
+[PROP-STATS] abort_near=9 abort_near_dbow2=31 accepted_merge_dbow2=1 drop_dup_with_dbow2=1 n_dbow2_stage0=31 n_dbow2_stage1=82 n_dbow2_stage2=578 n_dbow2_stage3=4 n_dbow2_stage4=1 n_detect_calls=609 n_ext_stage0=9 n_ext_stage2=38 n_ext_stage3=13 received=61 redirect_hops=27 redirected=21 sim3_fail=51 to_loop_list=33 to_merge_list=27 us_dbow2_stage0=288 us_dbow2_stage1=125654 us_dbow2_stage2=1037551 us_dbow2_stage3=21371 us_dbow2_stage4=9412 us_detect_total=1759234 us_ext_stage0=87 us_ext_stage2=59806 us_ext_stage3=63280 queued=0 pending_loop=0 pending_merge=0
+[PROP] received cur=611 cand=373
+[DBOW] cur=611 t=1403638570.9778295 loop=1, merge=
+[PROP] to_loop_list cand=373 (req 373) curKF=611
+LoopClosing: injected external candidate KF 373 for current KF 611
+[STATS] injected=61 verified=0 abortedByNearKF=40
+  neighbours: 262 261 361 260 263 259 264 229 230 374
+[PROP] sim3_fail cand=373 stage=2 bow=46 curKF=611
+[PROP] received cur=612 cand=373
+[DBOW] cur=612 t=1403638571.0778294 loop=410, merge=
+[PROP] to_loop_list cand=373 (req 373) curKF=612
+LoopClosing: injected external candidate KF 373 for current KF 612
+[STATS] injected=62 verified=0 abortedByNearKF=40
+  neighbours: 262 261 361 260 263 259 264 229 230 374
+[PROP] sim3_fail cand=373 stage=2 bow=39 curKF=612
+[PROP] received cur=613 cand=373
+[DBOW] cur=613 t=1403638571.1778293 loop=410, merge=
+[PROP] to_loop_list cand=373 (req 373) curKF=613
+LoopClosing: injected external candidate KF 373 for current KF 613
+[STATS] injected=63 verified=0 abortedByNearKF=40
+  neighbours: 262 261 361 260 263 259 264 229 230 374
+[PROP] sim3_fail cand=373 stage=2 bow=56 curKF=613
+[PROP] received cur=614 cand=373
+[DBOW] cur=614 t=1403638571.2778294 loop=409,1, merge=
+[PROP] to_loop_list cand=373 (req 373) curKF=614
+LoopClosing: injected external candidate KF 373 for current KF 614
+[STATS] injected=64 verified=0 abortedByNearKF=40
+  neighbours: 262 261 361 260 263 259 264 229 230 374
+[PROP] sim3_fail cand=373 stage=3 bow=49 curKF=614
+[PROP] received cur=615 cand=373
+[DBOW] cur=615 t=1403638571.3778293 loop=409, merge=
+[PROP] to_loop_list cand=373 (req 373) curKF=615
+LoopClosing: injected external candidate KF 373 for current KF 615
+[STATS] injected=65 verified=0 abortedByNearKF=40
+  neighbours: 262 261 361 260 263 259 264 229 230 374
+[PROP] received cur=616 cand=373
+[PROP] sim3_fail cand=373 stage=3 bow=58 curKF=615
+[DBOW] cur=616 t=1403638571.4778295 loop=409,1, merge=
+[PROP] to_loop_list cand=373 (req 373) curKF=616
+LoopClosing: injected external candidate KF 373 for current KF 616
+[STATS] injected=66 verified=0 abortedByNearKF=40
+  neighbours: 262 261 361 260 263 259 264 229 230 374
+[PROP] received cur=617 cand=373
+[PROP] sim3_fail cand=373 stage=3 bow=65 curKF=616
+[DBOW] cur=617 t=1403638571.5778294 loop=200,409, merge=
+[PROP] to_loop_list cand=373 (req 373) curKF=617
+LoopClosing: injected external candidate KF 373 for current KF 617
+[STATS] injected=67 verified=0 abortedByNearKF=40
+  neighbours: 262 261 361 260 263 259 264 229 230 374
+[PROP] received cur=618 cand=373
+[PROP] sim3_fail cand=373 stage=3 bow=63 curKF=617
+[DBOW] cur=618 t=1403638571.6778293 loop=409,1, merge=
+[PROP] to_loop_list cand=373 (req 373) curKF=618
+LoopClosing: injected external candidate KF 373 for current KF 618
+[STATS] injected=68 verified=0 abortedByNearKF=40
+  neighbours: 262 261 361 260 263 259 264 229 230 374
+[PROP] received cur=619 cand=373
+[PROP] sim3_fail cand=373 stage=3 bow=69 curKF=618
+[DBOW] cur=619 t=1403638571.7778294 loop=409,1, merge=
+[PROP] to_loop_list cand=373 (req 373) curKF=619
+LoopClosing: injected external candidate KF 373 for current KF 619
+[STATS] injected=69 verified=0 abortedByNearKF=40
+  neighbours: 262 261 361 260 263 259 264 229 230 374
+[PROP] sim3_fail cand=373 stage=3 bow=75 curKF=619
+[PROP] received cur=620 cand=373
+[DBOW] cur=620 t=1403638571.8778293 loop=409,1, merge=
+[PROP] to_loop_list cand=373 (req 373) curKF=620
+LoopClosing: injected external candidate KF 373 for current KF 620
+[STATS] injected=70 verified=0 abortedByNearKF=40
+  neighbours: 262 261 361 260 263 259 264 229 230 374
+[PROP] sim3_fail cand=373 stage=3 bow=91 curKF=620
+[PROP-STATS] abort_near=9 abort_near_dbow2=31 accepted_merge_dbow2=1 drop_dup_with_dbow2=1 n_dbow2_stage0=31 n_dbow2_stage1=82 n_dbow2_stage2=594 n_dbow2_stage3=4 n_dbow2_stage4=1 n_detect_calls=619 n_ext_stage0=9 n_ext_stage2=41 n_ext_stage3=20 received=71 redirect_hops=27 redirected=21 sim3_fail=61 to_loop_list=43 to_merge_list=27 us_dbow2_stage0=288 us_dbow2_stage1=125654 us_dbow2_stage2=1069298 us_dbow2_stage3=21371 us_dbow2_stage4=9412 us_detect_total=1848877 us_ext_stage0=87 us_ext_stage2=70322 us_ext_stage3=105908 queued=0 pending_loop=0 pending_merge=0
+[PROP] received cur=621 cand=373
+[DBOW] cur=621 t=1403638571.9778295 loop=373,410,1, merge=
+[PROP] drop dup_with_dbow2 cand=373
+[PROP] received cur=622 cand=373
+[DBOW] cur=622 t=1403638572.0778294 loop=410,1, merge=
+[PROP] to_loop_list cand=373 (req 373) curKF=622
+LoopClosing: injected external candidate KF 373 for current KF 622
+[STATS] injected=71 verified=0 abortedByNearKF=40
+  neighbours: 262 261 361 260 263 259 264 229 230 374
+[PROP] sim3_fail cand=373 stage=3 bow=105 curKF=622
+[PROP] received cur=623 cand=363
+[DBOW] cur=623 t=1403638572.1778293 loop=373,1, merge=
+[PROP] to_loop_list cand=363 (req 363) curKF=623
+LoopClosing: injected external candidate KF 363 for current KF 623
+[STATS] injected=72 verified=0 abortedByNearKF=40
+  neighbours: 364 362 241 239 374 242 232 237 263 230
+[PROP] sim3_fail cand=363 stage=2 bow=71 curKF=623
+[PROP] received cur=624 cand=262
+[DBOW] cur=624 t=1403638572.3278296 loop=409,1, merge=
+[PROP] to_loop_list cand=262 (req 262) curKF=624
+LoopClosing: injected external candidate KF 262 for current KF 624
+[STATS] injected=73 verified=0 abortedByNearKF=40
+  neighbours: 263 261 264 361 260 229 373 265 360 259
+[PROP] sim3_fail cand=262 stage=3 bow=81 curKF=624
+[PROP] received cur=625 cand=262
+[DBOW] cur=625 t=1403638572.4278295 loop=409,1, merge=
+[PROP] to_loop_list cand=262 (req 262) curKF=625
+LoopClosing: injected external candidate KF 262 for current KF 625
+[STATS] injected=74 verified=0 abortedByNearKF=40
+  neighbours: 263 261 264 361 260 229 373 265 360 259
+sim3 solver: 0.00117831
+12677.7
+[PROP] sim3_fail cand=262 stage=2 bow=83 curKF=625
+[PROP] received cur=626 cand=266
+[DBOW] cur=626 t=1403638572.5278294 loop=410,1, merge=
+[PROP] to_loop_list cand=266 (req 266) curKF=626
+LoopClosing: injected external candidate KF 266 for current KF 626
+[STATS] injected=75 verified=0 abortedByNearKF=40
+  neighbours: 267 268 265 362 269 264 234 233 232 270
+sim3 solver: 0.00143677
+11361.3
+[PROP] sim3_fail cand=266 stage=2 bow=46 curKF=626
+[PROP] received cur=627 cand=266
+[DBOW] cur=627 t=1403638572.6778293 loop=409, merge=
+[PROP] to_loop_list cand=266 (req 266) curKF=627
+LoopClosing: injected external candidate KF 266 for current KF 627
+[STATS] injected=76 verified=0 abortedByNearKF=40
+  neighbours: 267 268 265 362 269 264 234 233 232 270
+[PROP] received cur=628 cand=266
+[PROP] sim3_fail cand=266 stage=2 bow=56 curKF=627
+[DBOW] cur=628 t=1403638572.7778294 loop=409, merge=
+[PROP] to_loop_list cand=266 (req 266) curKF=628
+LoopClosing: injected external candidate KF 266 for current KF 628
+[STATS] injected=77 verified=0 abortedByNearKF=40
+  neighbours: 267 268 265 362 269 264 234 233 232 270
+[PROP] sim3_fail cand=266 stage=2 bow=56 curKF=628
+[PROP] received cur=629 cand=266
+[DBOW] cur=629 t=1403638572.9278295 loop=410,1, merge=
+[PROP] to_loop_list cand=266 (req 266) curKF=629
+LoopClosing: injected external candidate KF 266 for current KF 629
+[STATS] injected=78 verified=0 abortedByNearKF=40
+  neighbours: 267 268 265 362 269 264 234 233 232 270
+[PROP] sim3_fail cand=266 stage=2 bow=49 curKF=629
+[PROP] received cur=630 cand=266
+[DBOW] cur=630 t=1403638573.0778294 loop=1, merge=
+[PROP] to_loop_list cand=266 (req 266) curKF=630
+LoopClosing: injected external candidate KF 266 for current KF 630
+[STATS] injected=79 verified=0 abortedByNearKF=40
+  neighbours: 267 268 265 362 269 264 234 233 232 270
+[PROP] received cur=631 cand=266
+sim3 solver: 0.00120114
+18869.5
+[PROP] sim3_fail cand=266 stage=2 bow=49 curKF=630
+[DBOW] cur=631 t=1403638573.1778293 loop=409,1, merge=
+[PROP] to_loop_list cand=266 (req 266) curKF=631
+LoopClosing: injected external candidate KF 266 for current KF 631
+[STATS] injected=80 verified=0 abortedByNearKF=40
+  neighbours: 267 268 265 362 269 264 234 233 232 270
+[PROP] sim3_fail cand=266 stage=2 bow=54 curKF=631
+[PROP-STATS] abort_near=9 abort_near_dbow2=31 accepted_merge_dbow2=1 drop_dup_with_dbow2=2 n_dbow2_stage0=31 n_dbow2_stage1=82 n_dbow2_stage2=612 n_dbow2_stage3=6 n_dbow2_stage4=1 n_detect_calls=630 n_ext_stage0=9 n_ext_stage2=49 n_ext_stage3=22 received=82 redirect_hops=27 redirected=21 sim3_fail=71 to_loop_list=53 to_merge_list=27 us_dbow2_stage0=288 us_dbow2_stage1=125654 us_dbow2_stage2=1105390 us_dbow2_stage3=37566 us_dbow2_stage4=9412 us_detect_total=1948696 us_ext_stage0=87 us_ext_stage2=87456 us_ext_stage3=118912 queued=0 pending_loop=0 pending_merge=0
+[PROP] received cur=632 cand=266
+[DBOW] cur=632 t=1403638573.3278296 loop=409,1, merge=
+[PROP] to_loop_list cand=266 (req 266) curKF=632
+LoopClosing: injected external candidate KF 266 for current KF 632
+[STATS] injected=81 verified=0 abortedByNearKF=40
+  neighbours: 267 268 265 362 269 264 234 233 232 270
+[PROP] sim3_fail cand=266 stage=2 bow=65 curKF=632
+[PROP] received cur=633 cand=266
+[DBOW] cur=633 t=1403638573.4278295 loop=409,1, merge=
+[PROP] to_loop_list cand=266 (req 266) curKF=633
+LoopClosing: injected external candidate KF 266 for current KF 633
+[STATS] injected=82 verified=0 abortedByNearKF=40
+  neighbours: 267 268 265 362 269 264 234 233 232 270
+[PROP] sim3_fail cand=266 stage=3 bow=62 curKF=633
+[PROP] received cur=634 cand=266
+[DBOW] cur=634 t=1403638573.5778294 loop=410, merge=
+[PROP] to_loop_list cand=266 (req 266) curKF=634
+LoopClosing: injected external candidate KF 266 for current KF 634
+[STATS] injected=83 verified=0 abortedByNearKF=40
+  neighbours: 267 268 265 362 269 264 234 233 232 270
+sim3 solver: 0.00144533
+10763.5
+[PROP] sim3_fail cand=266 stage=2 bow=64 curKF=634
+[PROP] received cur=635 cand=266
+[DBOW] cur=635 t=1403638573.7278295 loop=410,1, merge=
+[PROP] to_loop_list cand=266 (req 266) curKF=635
+LoopClosing: injected external candidate KF 266 for current KF 635
+[STATS] injected=84 verified=0 abortedByNearKF=40
+  neighbours: 267 268 265 362 269 264 234 233 232 270
+[PROP] received cur=636 cand=265
+[PROP] sim3_fail cand=266 stage=2 bow=55 curKF=635
+[DBOW] cur=636 t=1403638573.8278296 loop=409, merge=
+[PROP] to_loop_list cand=265 (req 265) curKF=636
+LoopClosing: injected external candidate KF 265 for current KF 636
+[STATS] injected=85 verified=0 abortedByNearKF=40
+  neighbours: 264 266 232 263 267 362 268 233 231 234
+[PROP] sim3_fail cand=265 stage=2 bow=61 curKF=636
+[PROP] received cur=637 cand=265
+[DBOW] cur=637 t=1403638573.9278295 loop=410, merge=
+[PROP] to_loop_list cand=265 (req 265) curKF=637
+LoopClosing: injected external candidate KF 265 for current KF 637
+[STATS] injected=86 verified=0 abortedByNearKF=40
+  neighbours: 264 266 232 263 267 362 268 233 231 234
+[PROP] sim3_fail cand=265 stage=2 bow=68 curKF=637
+[DBOW] cur=638 t=1403638574.0778294 loop=409,1, merge=
+[DBOW] cur=639 t=1403638574.1778293 loop=410,1, merge=
+[DBOW] cur=640 t=1403638574.2778294 loop=410,1, merge=
+[DBOW] cur=641 t=1403638574.3778293 loop=410, merge=
+[DBOW] cur=642 t=1403638574.4778295 loop=409, merge=
+[DBOW] cur=643 t=1403638574.6278296 loop=409,1, merge=
+[DBOW] cur=644 t=1403638574.7778294 loop=409,1, merge=
+[DBOW] cur=645 t=1403638574.9278295 loop=409,1, merge=
+[DBOW] cur=646 t=1403638575.1278296 loop=409, merge=
+[DBOW] cur=647 t=1403638575.2778294 loop=410, merge=
+[DBOW] cur=648 t=1403638575.4278295 loop=409, merge=
+[DBOW] cur=649 t=1403638575.5778294 loop=277,409,1, merge=
+[DBOW] cur=650 t=1403638575.7278295 loop=409,1, merge=
+[DBOW] cur=651 t=1403638575.8778293 loop=1, merge=
+[DBOW] cur=652 t=1403638576.0278294 loop=1, merge=
+[DBOW] cur=653 t=1403638576.1778293 loop=410,1, merge=
+[DBOW] cur=654 t=1403638576.3278296 loop=410,1, merge=
+[DBOW] cur=655 t=1403638576.4778295 loop=410, merge=
+[DBOW] cur=656 t=1403638576.6278296 loop=1, merge=
+[DBOW] cur=657 t=1403638576.7778294 loop=409,1, merge=
+[DBOW] cur=658 t=1403638576.9278295 loop=409,1, merge=
+[DBOW] cur=659 t=1403638577.0778294 loop=277,410,1, merge=
+[DBOW] cur=660 t=1403638577.2278295 loop=280,268,409, merge=
+sim3 solver: 0.00170328
+25142.7
+[DBOW] cur=661 t=1403638577.3778293 loop=410, merge=
+[DBOW] cur=662 t=1403638577.5278294 loop=410, merge=
+[DBOW] cur=663 t=1403638577.6778293 loop=409, merge=
+[DBOW] cur=664 t=1403638577.8778293 loop=409,1, merge=
+[DBOW] cur=665 t=1403638578.0278294 loop=409, merge=
+[DBOW] cur=666 t=1403638578.2278295 loop=278,183,409, merge=
+sim3 solver: 0.00105356
+10074.1
+sim3 solver: 0.00100083
+19129.6
+sim3 solver: 0.00191581
+22690.8
+sim3 solver: 0.00118284
+20140.9
+[DBOW] cur=667 t=1403638578.4278295 loop=409, merge=
+[DBOW] cur=668 t=1403638578.5778294 loop=282,409, merge=
+sim3 solver: 0.00115577
+11090.8
+[DBOW] cur=669 t=1403638578.7778294 loop=410,1, merge=
+[DBOW] cur=670 t=1403638578.9278295 loop=409, merge=
+[DBOW] cur=671 t=1403638579.1278296 loop=409, merge=
+[DBOW] cur=672 t=1403638579.3278296 loop=409, merge=
+[DBOW] cur=673 t=1403638579.5278294 loop=409, merge=
+[DBOW] cur=674 t=1403638579.7278295 loop=409, merge=
+[DBOW] cur=675 t=1403638579.9278295 loop=409, merge=
+[DBOW] cur=676 t=1403638580.1778293 loop=278,410, merge=
+sim3 solver: 0.00144484
+15616.6
+[DBOW] cur=677 t=1403638580.4278295 loop=282,410, merge=
+[DBOW] cur=678 t=1403638580.6278296 loop=278,282,169, merge=
+sim3 solver: 0.00111981
+17838
+[DBOW] cur=679 t=1403638580.8778293 loop=410,1, merge=
+[DBOW] cur=680 t=1403638581.1778293 loop=278,410, merge=
+[DBOW] cur=681 t=1403638581.4778295 loop=281, merge=
+[DBOW] cur=682 t=1403638581.7278295 loop=172,280, merge=
+sim3 solver: 0.00108715
+10089.8
+[DBOW] cur=683 t=1403638581.9278295 loop=172,280,410, merge=
+sim3 solver: 0.00115656
+12288.3
+sim3 solver: 0.00141452
+11811.1
+[DBOW] cur=684 t=1403638582.1278296 loop=280,172,410, merge=
+[DBOW] cur=685 t=1403638582.3778293 loop=282, merge=
+sim3 solver: 0.00103797
+8224.85
+sim3 solver: 0.00138049
+16408.5
+[DBOW] cur=686 t=1403638582.5778294 loop=183, merge=
+sim3 solver: 0.00120692
+12354.8
+sim3 solver: 0.00119718
+10870.4
+[DBOW] cur=687 t=1403638582.8278296 loop=183,410, merge=
+[DBOW] cur=688 t=1403638583.0278294 loop=280,409, merge=
+[DBOW] cur=689 t=1403638583.2778294 loop=282,280,172, merge=
+sim3 solver: 0.00108956
+11705.2
+[DBOW] cur=690 t=1403638583.4778295 loop=281,409,1, merge=
+[DBOW] cur=691 t=1403638583.7278295 loop=282,172,410, merge=
+sim3 solver: 0.00138922
+8555.91
+sim3 solver: 0.00108536
+11590.3
+[DBOW] cur=692 t=1403638583.9278295 loop=281,278,172, merge=
+sim3 solver: 0.00103831
+8535.03
+sim3 solver: 0.00128825
+13374.6
+sim3 solver: 0.00145358
+10501.9
+sim3 solver: 0.00105396
+13583.9
+[DBOW] cur=693 t=1403638584.1278296 loop=282,1, merge=
+sim3 solver: 0.0010432
+9197.65
+[DBOW] cur=694 t=1403638584.3278296 loop=282,410, merge=
+sim3 solver: 0.00114494
+8306.74
+sim3 solver: 0.00135348
+9763.05
+[DBOW] cur=695 t=1403638584.5778294 loop=282,410, merge=
+[DBOW] cur=696 t=1403638584.7778294 loop=177,172,409, merge=
+sim3 solver: 0.00100319
+7061.78
+[DBOW] cur=697 t=1403638585.0278294 loop=177,409, merge=
+sim3 solver: 0.00128812
+8641.25
+[DBOW] cur=698 t=1403638585.2278295 loop=177,278,409, merge=
+sim3 solver: 0.00127639
+12350.3
+[DBOW] cur=699 t=1403638585.4278295 loop=177,409, merge=
+sim3 solver: 0.0010041
+11043.1
+[DBOW] cur=700 t=1403638585.6278296 loop=177,281,410, merge=
+sim3 solver: 0.00117106
+8169.9
+sim3 solver: 0.00125762
+12303.7
+sim3 solver: 0.00101111
+8335.27
+[DBOW] cur=701 t=1403638585.8778293 loop=177,281,410, merge=
+sim3 solver: 0.00129096
+12731
+sim3 solver: 0.00106572
+5671.28
+[DBOW] cur=702 t=1403638586.0778294 loop=177,282,410, merge=
+sim3 solver: 0.00122083
+9155.02
+sim3 solver: 0.00222742
+14000.5
+sim3 solver: 0.00124935
+14817.9
+sim3 solver: 0.00116429
+6785.32
+sim3 solver: 0.00114002
+9207.1
+[DBOW] cur=703 t=1403638586.2778294 loop=282,409, merge=
+[DBOW] cur=704 t=1403638586.4778295 loop=177,409, merge=
+sim3 solver: 0.00153019
+18018.5
+sim3 solver: 0.00112348
+11183.5
+sim3 solver: 0.00141692
+9595.09
+sim3 solver: 0.00114571
+16244.5
+sim3 solver: 0.00275476
+16879.3
+[DBOW] cur=705 t=1403638586.6778293 loop=281,177, merge=
+sim3 solver: 0.00151837
+16917
+sim3 solver: 0.00126508
+12330.2
+sim3 solver: 0.00239236
+18450
+sim3 solver: 0.00134504
+16312.5
+sim3 solver: 0.00114035
+10418.4
+[DBOW] cur=706 t=1403638586.9278295 loop=281,409, merge=
+sim3 solver: 0.00139591
+11719.4
+sim3 solver: 0.0020837
+16771.6
+sim3 solver: 0.00191753
+9518.82
+[DBOW] cur=707 t=1403638587.1278296 loop=183,280,410, merge=
+sim3 solver: 0.00169854
+15735.4
+[DBOW] cur=708 t=1403638587.3278296 loop=185,409, merge=
+sim3 solver: 0.00145506
+9007.46
+[DBOW] cur=709 t=1403638587.5778294 loop=185,409, merge=
+sim3 solver: 0.00133446
+13381.8
+sim3 solver: 0.00134076
+14375.8
+sim3 solver: 0.00109781
+15473.3
+sim3 solver: 0.00119687
+13267.8
+sim3 solver: 0.00124536
+15027.9
+[DBOW] cur=710 t=1403638587.7778294 loop=185,410, merge=
+sim3 solver: 0.0010429
+6544.62
+sim3 solver: 0.00121778
+12618.6
+sim3 solver: 0.00122362
+13661.7
+sim3 solver: 0.00103041
+10643
+sim3 solver: 0.00125953
+10412.1
+sim3 solver: 0.00127729
+15149.9
+[DBOW] cur=711 t=1403638588.0278294 loop=185, merge=
+sim3 solver: 0.00114947
+15614.9
+[DBOW] cur=712 t=1403638588.2278295 loop=409, merge=
+[DBOW] cur=713 t=1403638588.4278295 loop=409, merge=
+[DBOW] cur=714 t=1403638588.6278296 loop=185, merge=
+sim3 solver: 0.00106315
+9156.72
+sim3 solver: 0.00123071
+13454
+sim3 solver: 0.00121548
+14548
+[DBOW] cur=715 t=1403638588.8278296 loop=185,409, merge=
+sim3 solver: 0.0010586
+18048.9
+[DBOW] cur=716 t=1403638589.0778294 loop=185,410, merge=
+[DBOW] cur=717 t=1403638589.3278296 loop=185,409, merge=
+sim3 solver: 0.00123537
+17684.7
+sim3 solver: 0.00137835
+17389
+[DBOW] cur=718 t=1403638589.5278294 loop=410, merge=
+[DBOW] cur=719 t=1403638589.7778294 loop=1, merge=
+[DBOW] cur=720 t=1403638590.0278294 loop=185,1, merge=
+sim3 solver: 0.0011145
+10280.9
+sim3 solver: 0.00130395
+10882.1
+[DBOW] cur=721 t=1403638590.3278296 loop=185,410,1, merge=
+[DBOW] cur=722 t=1403638590.5778294 loop=410, merge=
+[DBOW] cur=723 t=1403638590.8778293 loop=185,409, merge=
+sim3 solver: 0.00108316
+5861.6
+sim3 solver: 0.00282942
+17395.5
+sim3 solver: 0.00128531
+10501.8
+sim3 solver: 0.00135536
+9327.97
+sim3 solver: 0.00115468
+6772.48
+[DBOW] cur=724 t=1403638591.1778293 loop=410,1, merge=
+[PROP] received cur=725 cand=280
+[DBOW] cur=725 t=1403638591.4778295 loop=410, merge=
+[PROP] to_loop_list cand=280 (req 280) curKF=725
+LoopClosing: injected external candidate KF 280 for current KF 725
+[STATS] injected=87 verified=0 abortedByNearKF=40
+  neighbours: 281 279 278 282 277 183 185 276 186 177
+sim3 solver: 0.0013612
+11100
+[PROP] sim3_fail cand=280 stage=2 bow=78 curKF=725
+[PROP] received cur=726 cand=280
+[DBOW] cur=726 t=1403638591.7778294 loop=409,1, merge=
+[PROP] to_loop_list cand=280 (req 280) curKF=726
+LoopClosing: injected external candidate KF 280 for current KF 726
+[STATS] injected=88 verified=0 abortedByNearKF=40
+  neighbours: 281 279 278 282 277 183 185 276 186 177
+sim3 solver: 0.00122508
+12422.9
+sim3 solver: 0.00114963
+38742.4
+sim3 solver: 0.00604209
+77314.4
+sim3 solver: 0.00535718
+62220
+sim3 solver: 0.00302712
+36953.2
+sim3 solver: 0.00102515
+12831
+sim3 solver: 0.00135997
+8757.31
+sim3 solver: 0.00375879
+72661.2
+sim3 solver: 0.00100575
+7969.47
+sim3 solver: 0.00382183
+69492.9
+sim3 solver: 0.00246992
+104454
+sim3 solver: 0.00136511
+15250.8
+sim3 solver: 0.00166619
+53034.6
+sim3 solver: 0.00192358
+83638.2
+sim3 solver: 0.00736899
+136759
+sim3 solver: 0.00143692
+40279
+[PROP] sim3_fail cand=280 stage=2 bow=97 curKF=726
+[PROP] received cur=727 cand=280
+[DBOW] cur=727 t=1403638592.0778294 loop=410, merge=
+[PROP] to_loop_list cand=280 (req 280) curKF=727
+LoopClosing: injected external candidate KF 280 for current KF 727
+[STATS] injected=89 verified=0 abortedByNearKF=40
+  neighbours: 281 279 278 282 277 183 185 276 186 177
+sim3 solver: 0.00105741
+9245.63
+sim3 solver: 0.00105584
+12308.5
+sim3 solver: 0.00132484
+12397
+[PROP] sim3_fail cand=280 stage=2 bow=101 curKF=727
+[PROP] received cur=728 cand=283
+[DBOW] cur=728 t=1403638592.4278295 loop=185,409,1, merge=
+[PROP] redirect 283->282 hops=1
+[PROP] to_loop_list cand=282 (req 283) curKF=728
+LoopClosing: injected external candidate KF 282 for current KF 728
+[STATS] injected=90 verified=0 abortedByNearKF=40
+  neighbours: 281 183 185 177 280 178 186 279 284 187
+sim3 solver: 0.0012832
+33835.8
+sim3 solver: 0.00306552
+43109
+sim3 solver: 0.00143836
+13323
+sim3 solver: 0.00104353
+13105
+sim3 solver: 0.00134421
+13477.2
+sim3 solver: 0.00137818
+12348
+sim3 solver: 0.00116148
+8993.12
+[PROP] sim3_fail cand=282 stage=2 bow=84 curKF=728
+[PROP-STATS] abort_near=9 abort_near_dbow2=31 accepted_merge_dbow2=1 drop_dup_with_dbow2=2 n_dbow2_stage0=31 n_dbow2_stage1=87 n_dbow2_stage2=785 n_dbow2_stage3=6 n_dbow2_stage4=1 n_detect_calls=727 n_ext_stage0=9 n_ext_stage2=58 n_ext_stage3=23 received=92 redirect_hops=28 redirected=22 sim3_fail=81 to_loop_list=63 to_merge_list=27 us_dbow2_stage0=288 us_dbow2_stage1=131995 us_dbow2_stage2=1459782 us_dbow2_stage3=37566 us_dbow2_stage4=9412 us_detect_total=2474257 us_ext_stage0=87 us_ext_stage2=109151 us_ext_stage3=124222 queued=0 pending_loop=0 pending_merge=0
+[DBOW] cur=729 t=1403638592.6278296 loop=185,1, merge=
+sim3 solver: 0.00118581
+12790.5
+sim3 solver: 0.00119213
+9391.56
+sim3 solver: 0.00121887
+6331.65
+sim3 solver: 0.00133077
+13252.5
+[PROP] received cur=730 cand=178
+[DBOW] cur=730 t=1403638592.8278296 loop=1, merge=
+[PROP] to_loop_list cand=178 (req 178) curKF=730
+LoopClosing: injected external candidate KF 178 for current KF 730
+[STATS] injected=91 verified=0 abortedByNearKF=40
+  neighbours: 185 177 183 186 282 281 187 284 172 280
+[PROP] sim3_fail cand=178 stage=3 bow=89 curKF=730
+[PROP] received cur=731 cand=178
+[DBOW] cur=731 t=1403638592.9778295 loop=410,1, merge=
+[PROP] to_loop_list cand=178 (req 178) curKF=731
+LoopClosing: injected external candidate KF 178 for current KF 731
+[STATS] injected=92 verified=0 abortedByNearKF=40
+  neighbours: 185 177 183 186 282 281 187 284 172 280
+sim3 solver: 0.00176172
+28995.6
+sim3 solver: 0.00279181
+27446.6
+[PROP] sim3_fail cand=178 stage=2 bow=89 curKF=731
+[PROP] received cur=732 cand=283
+[DBOW] cur=732 t=1403638593.1778293 loop=410,1, merge=
+[PROP] redirect 283->282 hops=1
+[PROP] to_loop_list cand=282 (req 283) curKF=732
+LoopClosing: injected external candidate KF 282 for current KF 732
+[STATS] injected=93 verified=0 abortedByNearKF=40
+  neighbours: 281 183 185 177 280 178 186 279 284 187
+[PROP] sim3_fail cand=282 stage=2 bow=83 curKF=732
+[DBOW] cur=733 t=1403638593.4278295 loop=1, merge=
+[DBOW] cur=734 t=1403638593.6278296 loop=409,1, merge=
+[DBOW] cur=735 t=1403638593.8278296 loop=185,410, merge=
+sim3 solver: 0.00114039
+11893.5
+sim3 solver: 0.00142722
+10651.8
+[DBOW] cur=736 t=1403638593.9778295 loop=409, merge=
+[DBOW] cur=737 t=1403638594.1778293 loop=409, merge=
+[DBOW] cur=738 t=1403638594.3778293 loop=409, merge=
+[DBOW] cur=739 t=1403638594.5278294 loop=409, merge=
+[DBOW] cur=740 t=1403638594.7278295 loop=185,410,1, merge=
+sim3 solver: 0.0013477
+11714.1
+[DBOW] cur=741 t=1403638594.9278295 loop=410, merge=
+[DBOW] cur=742 t=1403638595.1278296 loop=410, merge=
+[DBOW] cur=743 t=1403638595.3278296 loop=185,410,1, merge=
+[DBOW] cur=744 t=1403638595.5278294 loop=409, merge=
+[DBOW] cur=745 t=1403638595.6778293 loop=409, merge=
+[DBOW] cur=746 t=1403638595.9278295 loop=409, merge=
+[DBOW] cur=747 t=1403638596.1278296 loop=409, merge=
+[DBOW] cur=748 t=1403638596.3278296 loop=409, merge=
+[DBOW] cur=749 t=1403638596.5278294 loop=409,1, merge=
+[DBOW] cur=750 t=1403638596.7278295 loop=409, merge=
+[DBOW] cur=751 t=1403638596.9778295 loop=410, merge=
+[DBOW] cur=752 t=1403638597.1778293 loop=185,409, merge=
+[DBOW] cur=753 t=1403638597.4278295 loop=410, merge=
+[DBOW] cur=754 t=1403638597.6278296 loop=410,1, merge=
+[DBOW] cur=755 t=1403638597.8278296 loop=1, merge=
+[DBOW] cur=756 t=1403638598.0278294 loop=409,1, merge=
+[DBOW] cur=757 t=1403638598.1778293 loop=410,1, merge=
+[DBOW] cur=758 t=1403638598.3278296 loop=409,1, merge=
+[DBOW] cur=759 t=1403638598.4778295 loop=1, merge=
+[DBOW] cur=760 t=1403638598.6278296 loop=410,1, merge=
+[DBOW] cur=761 t=1403638598.7778294 loop=410,1, merge=
+[DBOW] cur=762 t=1403638598.9278295 loop=409, merge=
+[DBOW] cur=763 t=1403638599.0778294 loop=409,1, merge=
+[DBOW] cur=764 t=1403638599.2778294 loop=409,1, merge=
+[DBOW] cur=765 t=1403638599.5278294 loop=410, merge=
+[DBOW] cur=766 t=1403638599.7778294 loop=409,1, merge=
+[DBOW] cur=767 t=1403638600.0278294 loop=1, merge=
+[DBOW] cur=768 t=1403638600.2778294 loop=409, merge=
+[DBOW] cur=769 t=1403638600.5278294 loop=409,1, merge=
+[DBOW] cur=770 t=1403638600.7778294 loop=1, merge=
+[DBOW] cur=771 t=1403638601.0278294 loop=409,1, merge=
+[DBOW] cur=772 t=1403638601.3778293 loop=409,1, merge=
+[DBOW] cur=773 t=1403638601.6778293 loop=1, merge=
+[DBOW] cur=774 t=1403638601.9778295 loop=1, merge=
+[DBOW] cur=775 t=1403638602.2278295 loop=409, merge=
+[DBOW] cur=776 t=1403638602.5278294 loop=1, merge=
+[DBOW] cur=777 t=1403638602.8278296 loop=410,1, merge=
+[DBOW] cur=778 t=1403638603.1278296 loop=409,1, merge=
+[DBOW] cur=779 t=1403638603.4778295 loop=409,1, merge=
+[DBOW] cur=780 t=1403638603.7278295 loop=410,1, merge=
+[DBOW] cur=781 t=1403638603.9778295 loop=241,308,410, merge=
+[DBOW] cur=782 t=1403638604.2278295 loop=1, merge=
+[DBOW] cur=783 t=1403638604.5278294 loop=410, merge=
+[DBOW] cur=784 t=1403638604.8278296 loop=409,1, merge=
+[ABORT-NEAR] candidate KF 409 vs current KF 784
+[DBOW] cur=785 t=1403638605.0778294 loop=409,1, merge=
+[ABORT-NEAR] candidate KF 409 vs current KF 785
+[DBOW] cur=786 t=1403638605.3278296 loop=410, merge=
+[DBOW] cur=787 t=1403638605.7778294 loop=410,1, merge=
+[DBOW] cur=788 t=1403638606.0778294 loop=409,1, merge=
+[ABORT-NEAR] candidate KF 409 vs current KF 788
+sim3 solver: 0.00108165
+39039.1
+[DBOW] cur=789 t=1403638606.4278295 loop=410,1, merge=
+[ABORT-NEAR] candidate KF 410 vs current KF 789
+[DBOW] cur=790 t=1403638606.7778294 loop=410,1, merge=
+[DBOW] cur=791 t=1403638607.0278294 loop=410, merge=
+[ABORT-NEAR] candidate KF 410 vs current KF 791
+[DBOW] cur=792 t=1403638607.4278295 loop=409, merge=
+[DBOW] cur=793 t=1403638608.0278294 loop=409, merge=
+[DBOW] cur=794 t=1403638608.5278294 loop=619,409, merge=
+[DBOW] cur=795 t=1403638609.0278294 loop=410, merge=
+[DBOW] cur=796 t=1403638609.4278295 loop=409, merge=
+[DBOW] cur=797 t=1403638609.8778293 loop=409, merge=
+[DBOW] cur=798 t=1403638610.3778293 loop=409, merge=
+[PROP] received cur=799 cand=327
+[DBOW] cur=799 t=1403638610.8278296 loop=409, merge=
+[PROP] to_loop_list cand=327 (req 327) curKF=799
+LoopClosing: injected external candidate KF 327 for current KF 799
+[STATS] injected=94 verified=0 abortedByNearKF=45
+  neighbours: 326 325 324 329 323 322 330 321 499 320
+[PROP] abort_near cand=327 curKF=799
+[ABORT-NEAR] candidate KF 327 vs current KF 799
+[PROP] received cur=800 cand=324
+[DBOW] cur=800 t=1403638611.3278296 loop=409, merge=
+[PROP] to_loop_list cand=324 (req 324) curKF=800
+LoopClosing: injected external candidate KF 324 for current KF 800
+[STATS] injected=95 verified=0 abortedByNearKF=46
+  neighbours: 325 326 323 322 327 321 320 319 497 318
+[PROP] abort_near cand=324 curKF=800
+[ABORT-NEAR] candidate KF 324 vs current KF 800
+[PROP] received cur=801 cand=324
+[DBOW] cur=801 t=1403638611.8278296 loop=410, merge=
+[PROP] to_loop_list cand=324 (req 324) curKF=801
+LoopClosing: injected external candidate KF 324 for current KF 801
+[STATS] injected=96 verified=0 abortedByNearKF=47
+  neighbours: 325 326 323 322 327 321 320 319 497 318
+[PROP] abort_near cand=324 curKF=801
+[ABORT-NEAR] candidate KF 324 vs current KF 801
+[PROP] received cur=802 cand=324
+[DBOW] cur=802 t=1403638612.2778294 loop=409, merge=
+[PROP] to_loop_list cand=324 (req 324) curKF=802
+LoopClosing: injected external candidate KF 324 for current KF 802
+[STATS] injected=97 verified=0 abortedByNearKF=48
+  neighbours: 325 326 323 322 327 321 320 319 802 497
+[PROP] abort_near cand=324 curKF=802
+[ABORT-NEAR] candidate KF 324 vs current KF 802
+[PROP] received cur=803 cand=324
+[DBOW] cur=803 t=1403638613.0278294 loop=410, merge=
+[PROP] to_loop_list cand=324 (req 324) curKF=803
+LoopClosing: injected external candidate KF 324 for current KF 803
+[STATS] injected=98 verified=0 abortedByNearKF=49
+  neighbours: 325 326 323 322 327 321 320 803 319 802
+[PROP] abort_near cand=324 curKF=803
+[ABORT-NEAR] candidate KF 324 vs current KF 803
+[PROP] received cur=804 cand=324
+[DBOW] cur=804 t=1403638613.7278295 loop=185,409, merge=
+[PROP] to_loop_list cand=324 (req 324) curKF=804
+LoopClosing: injected external candidate KF 324 for current KF 804
+[STATS] injected=99 verified=0 abortedByNearKF=50
+  neighbours: 325 326 323 322 327 321 320 804 803 319
+[PROP] abort_near cand=324 curKF=804
+[ABORT-NEAR] candidate KF 324 vs current KF 804
+[DBOW] cur=805 t=1403638614.5278294 loop=409, merge=
+[DBOW] cur=806 t=1403638615.1278296 loop=410, merge=
+[PROP] received cur=807 cand=290
+[DBOW] cur=807 t=1403638615.5778294 loop=2, merge=
+[PROP] redirect 290->142 hops=2
+[PROP] to_loop_list cand=142 (req 290) curKF=807
+LoopClosing: injected external candidate KF 142 for current KF 807
+[STATS] injected=100 verified=0 abortedByNearKF=51
+  neighbours: 143 144 145 138 147 134 148 203 133 382
+[PROP] abort_near cand=142 curKF=807
+[ABORT-NEAR] candidate KF 142 vs current KF 807
+[PROP-STATS] abort_near=16 abort_near_dbow2=36 accepted_merge_dbow2=1 drop_dup_with_dbow2=2 n_dbow2_stage0=36 n_dbow2_stage1=91 n_dbow2_stage2=892 n_dbow2_stage3=6 n_dbow2_stage4=1 n_detect_calls=806 n_ext_stage0=16 n_ext_stage2=60 n_ext_stage3=24 received=102 redirect_hops=31 redirected=24 sim3_fail=84 to_loop_list=73 to_merge_list=27 us_dbow2_stage0=319 us_dbow2_stage1=137581 us_dbow2_stage2=1665733 us_dbow2_stage3=37566 us_dbow2_stage4=9412 us_detect_total=2832378 us_ext_stage0=7381 us_ext_stage2=114299 us_ext_stage3=130264 queued=0 pending_loop=0 pending_merge=0
+[DBOW] cur=808 t=1403638615.7778294 loop=2, merge=
+[DBOW] cur=809 t=1403638616.0778294 loop=2, merge=
+[DBOW] cur=810 t=1403638616.4778295 loop=2, merge=
+[PROP] received cur=811 cand=217
+[DBOW] cur=811 t=1403638617.5278294 loop=2, merge=
+[PROP] to_loop_list cand=217 (req 217) curKF=811
+LoopClosing: injected external candidate KF 217 for current KF 811
+[STATS] injected=101 verified=0 abortedByNearKF=52
+  neighbours: 218 216 219 215 220 221 212 211 210 209
+[PROP] abort_near cand=217 curKF=811
+[ABORT-NEAR] candidate KF 217 vs current KF 811
+[PROP] received cur=812 cand=373
+[DBOW] cur=812 t=1403638619.5278294 loop=635,2, merge=
+[PROP] to_loop_list cand=373 (req 373) curKF=812
+LoopClosing: injected external candidate KF 373 for current KF 812
+[STATS] injected=102 verified=0 abortedByNearKF=53
+  neighbours: 262 261 361 260 263 259 812 264 229 230
+[PROP] abort_near cand=373 curKF=812
+[ABORT-NEAR] candidate KF 373 vs current KF 812
+[PROP] received cur=813 cand=373
+[DBOW] cur=813 t=1403638621.1778293 loop=618,2, merge=
+[PROP] to_loop_list cand=373 (req 373) curKF=813
+LoopClosing: injected external candidate KF 373 for current KF 813
+[STATS] injected=103 verified=0 abortedByNearKF=54
+  neighbours: 813 262 261 361 260 263 259 812 264 229
+[PROP] abort_near cand=373 curKF=813
+[ABORT-NEAR] candidate KF 373 vs current KF 813
+*Loop detected
+[PROP] accepted list=loop src=dbow2 ext_cand=0 matchedKF=618 curKF=813 t=1403638621.1778293
+[STATS] injected=103 verified=0 corrections=1 matchedKF=618 currentKF=813
+Local Mapping STOP
+Local Mapping RELEASE
+[DBOW] cur=814 t=1403638629.3278296 loop=2, merge=
+[DBOW] cur=815 t=1403638630.5278294 loop=2, merge=
+[DBOW] cur=816 t=1403638631.5778294 loop=2, merge=
+[33m[WARN] [1793015252.766903689]: Shutdown request received.[0m
+[33m[WARN] [1793015252.767762081]: Reason given for shutdown: [user request][0m
+Shutdown
+
+Saving keyframe trajectory to KeyFrameTrajectory.txt ...
+[PROP-FINAL] abort_near=19 abort_near_dbow2=36 accepted_loop_dbow2=1 accepted_merge_dbow2=1 drop_dup_with_dbow2=2 n_dbow2_stage0=36 n_dbow2_stage1=93 n_dbow2_stage2=900 n_dbow2_stage3=6 n_dbow2_stage4=2 n_detect_calls=816 n_ext_stage0=19 n_ext_stage2=60 n_ext_stage3=24 received=105 redirect_hops=31 redirected=24 sim3_fail=84 to_loop_list=76 to_merge_list=27 us_dbow2_stage0=319 us_dbow2_stage1=139659 us_dbow2_stage2=1681858 us_dbow2_stage3=37566 us_dbow2_stage4=23087 us_detect_total=2881821 us_ext_stage0=7442 us_ext_stage2=114299 us_ext_stage3=130264 queued=0 pending_loop=0 pending_merge=0
+[FINAL STATS] injected=103 verified=0 corrections=1 abortedByNearKF=55
+
+Saving all-maps keyframe trajectory to KeyFrameTrajectory_allmaps.txt ...

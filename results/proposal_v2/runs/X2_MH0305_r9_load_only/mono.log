@@ -1,0 +1,1799 @@
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Monocular
+Loading settings from /home/anish/ORB_SLAM3/Examples/Monocular/EuRoC.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+	-Loaded image info
+	-Loaded ORB settings
+Viewer.imageViewScale optional parameter does not exist...
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 458.654 457.296 367.215 248.375 ]
+	-Camera 1 distortion parameters: [  -0.283408 0.0739591 0.00019359 1.76187e-05 ]
+	-Original image size: [ 752 , 480 ]
+	-Current image size: [ 600 , 350 ]
+	-Camera 1 parameters after resize: [  365.947 333.445 292.991 181.107 ]
+	-Sequence FPS: 20
+	-Features per image: 1000
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+LoopClosing: subscribed to /loop_closure/candidate_kfids
+Tracking: publishing new keyframe IDs on /orb_slam3/new_keyframe_id
+Starting the Viewer
+First KF:0; Map init KF:0
+New Map created with 183 points
+[DBOW] cur=11 t=1403637133.7883189 loop= merge=
+[DBOW] cur=12 t=1403637133.8383191 loop= merge=
+[DBOW] cur=13 t=1403637133.888319 loop= merge=
+[DBOW] cur=14 t=1403637133.9383192 loop= merge=
+[DBOW] cur=15 t=1403637133.9883189 loop= merge=
+[DBOW] cur=16 t=1403637134.0383191 loop= merge=
+[DBOW] cur=17 t=1403637134.138319 loop= merge=
+[DBOW] cur=18 t=1403637134.188319 loop= merge=
+[DBOW] cur=19 t=1403637134.2883189 loop= merge=
+[DBOW] cur=20 t=1403637134.3383191 loop= merge=
+[DBOW] cur=21 t=1403637134.4383192 loop= merge=
+[DBOW] cur=22 t=1403637134.7883189 loop= merge=
+[DBOW] cur=23 t=1403637134.888319 loop= merge=
+[DBOW] cur=24 t=1403637134.9883189 loop= merge=
+[DBOW] cur=25 t=1403637135.188319 loop= merge=
+[DBOW] cur=26 t=1403637135.2383192 loop= merge=
+[DBOW] cur=27 t=1403637135.3383191 loop= merge=
+[DBOW] cur=28 t=1403637135.4383192 loop= merge=
+[DBOW] cur=29 t=1403637135.5383191 loop= merge=
+[DBOW] cur=30 t=1403637135.638319 loop= merge=
+[DBOW] cur=31 t=1403637135.688319 loop= merge=
+[DBOW] cur=32 t=1403637135.7383192 loop= merge=
+[DBOW] cur=33 t=1403637135.7883189 loop= merge=
+[DBOW] cur=34 t=1403637135.8383191 loop= merge=
+[DBOW] cur=35 t=1403637135.888319 loop= merge=
+[DBOW] cur=36 t=1403637136.0883191 loop= merge=
+[DBOW] cur=37 t=1403637136.2883189 loop= merge=
+[DBOW] cur=38 t=1403637136.4383192 loop= merge=
+[DBOW] cur=39 t=1403637136.5883191 loop= merge=
+[DBOW] cur=40 t=1403637136.7383192 loop= merge=
+[DBOW] cur=41 t=1403637136.8383191 loop= merge=
+[DBOW] cur=42 t=1403637137.0383191 loop= merge=
+[DBOW] cur=43 t=1403637137.138319 loop= merge=
+[DBOW] cur=44 t=1403637137.188319 loop= merge=
+[DBOW] cur=45 t=1403637137.2383192 loop= merge=
+[DBOW] cur=46 t=1403637137.3383191 loop= merge=
+[DBOW] cur=47 t=1403637137.5383191 loop= merge=
+[DBOW] cur=48 t=1403637137.688319 loop= merge=
+[DBOW] cur=49 t=1403637137.8383191 loop= merge=
+[DBOW] cur=50 t=1403637137.9383192 loop= merge=
+[DBOW] cur=51 t=1403637138.188319 loop= merge=
+[DBOW] cur=52 t=1403637138.3383191 loop= merge=
+[DBOW] cur=53 t=1403637138.4383192 loop= merge=
+[DBOW] cur=54 t=1403637138.5383191 loop= merge=
+[DBOW] cur=55 t=1403637138.5883191 loop= merge=
+[DBOW] cur=56 t=1403637138.688319 loop= merge=
+[DBOW] cur=57 t=1403637138.7883189 loop= merge=
+[DBOW] cur=58 t=1403637138.9883189 loop= merge=
+[DBOW] cur=59 t=1403637139.138319 loop= merge=
+[DBOW] cur=60 t=1403637139.2883189 loop= merge=
+[DBOW] cur=61 t=1403637139.388319 loop= merge=
+[DBOW] cur=62 t=1403637139.5383191 loop= merge=
+[DBOW] cur=63 t=1403637139.638319 loop= merge=
+[DBOW] cur=64 t=1403637139.7883189 loop= merge=
+[DBOW] cur=65 t=1403637139.9383192 loop= merge=
+[DBOW] cur=66 t=1403637140.138319 loop= merge=
+[DBOW] cur=67 t=1403637140.4383192 loop= merge=
+[DBOW] cur=68 t=1403637149.4883189 loop= merge=
+[DBOW] cur=69 t=1403637149.7883189 loop= merge=
+[DBOW] cur=70 t=1403637149.9383192 loop= merge=
+[DBOW] cur=71 t=1403637150.0383191 loop= merge=
+[DBOW] cur=72 t=1403637150.138319 loop= merge=
+[DBOW] cur=73 t=1403637150.2383192 loop= merge=
+[DBOW] cur=74 t=1403637150.388319 loop= merge=
+[DBOW] cur=75 t=1403637150.5383191 loop= merge=
+[DBOW] cur=76 t=1403637150.688319 loop= merge=
+[DBOW] cur=77 t=1403637150.8383191 loop= merge=
+[DBOW] cur=78 t=1403637150.9883189 loop= merge=
+[DBOW] cur=79 t=1403637151.138319 loop= merge=
+[DBOW] cur=80 t=1403637151.3383191 loop= merge=
+[DBOW] cur=81 t=1403637151.5383191 loop= merge=
+[DBOW] cur=82 t=1403637151.7383192 loop= merge=
+[DBOW] cur=83 t=1403637151.9383192 loop= merge=
+[DBOW] cur=84 t=1403637152.138319 loop= merge=
+[DBOW] cur=85 t=1403637152.3383191 loop= merge=
+[DBOW] cur=86 t=1403637152.4883189 loop= merge=
+[DBOW] cur=87 t=1403637152.638319 loop= merge=
+[DBOW] cur=88 t=1403637152.7883189 loop= merge=
+[DBOW] cur=89 t=1403637152.9383192 loop= merge=
+[DBOW] cur=90 t=1403637153.138319 loop= merge=
+[DBOW] cur=91 t=1403637153.3383191 loop= merge=
+[DBOW] cur=92 t=1403637153.5383191 loop= merge=
+[DBOW] cur=93 t=1403637153.7883189 loop= merge=
+[DBOW] cur=94 t=1403637153.9883189 loop= merge=
+[DBOW] cur=95 t=1403637154.188319 loop= merge=
+[DBOW] cur=96 t=1403637154.4383192 loop= merge=
+[DBOW] cur=97 t=1403637154.638319 loop= merge=
+[DBOW] cur=98 t=1403637154.8383191 loop= merge=
+[DBOW] cur=99 t=1403637155.0383191 loop= merge=
+[DBOW] cur=100 t=1403637155.2383192 loop= merge=
+[DBOW] cur=101 t=1403637155.4883189 loop= merge=
+[DBOW] cur=102 t=1403637155.688319 loop= merge=
+[DBOW] cur=103 t=1403637155.9383192 loop= merge=
+[DBOW] cur=104 t=1403637156.0883191 loop= merge=
+[DBOW] cur=105 t=1403637156.2883189 loop= merge=
+[DBOW] cur=106 t=1403637156.4883189 loop= merge=
+[DBOW] cur=107 t=1403637156.688319 loop= merge=
+[DBOW] cur=108 t=1403637156.888319 loop= merge=
+[DBOW] cur=109 t=1403637157.0383191 loop= merge=
+[DBOW] cur=110 t=1403637157.2383192 loop= merge=
+[DBOW] cur=111 t=1403637157.4383192 loop= merge=
+[DBOW] cur=112 t=1403637157.638319 loop= merge=
+[DBOW] cur=113 t=1403637157.8383191 loop= merge=
+[DBOW] cur=114 t=1403637158.0383191 loop= merge=
+[DBOW] cur=115 t=1403637158.2883189 loop= merge=
+[DBOW] cur=116 t=1403637158.5383191 loop= merge=
+[DBOW] cur=117 t=1403637158.7883189 loop= merge=
+[DBOW] cur=118 t=1403637158.9883189 loop= merge=
+[DBOW] cur=119 t=1403637159.188319 loop= merge=
+[DBOW] cur=120 t=1403637159.388319 loop= merge=
+[DBOW] cur=121 t=1403637159.5883191 loop= merge=
+[DBOW] cur=122 t=1403637159.7383192 loop= merge=
+[DBOW] cur=123 t=1403637159.888319 loop= merge=
+[DBOW] cur=124 t=1403637159.9883189 loop=1, merge=
+[DBOW] cur=125 t=1403637160.0883191 loop=1, merge=
+[DBOW] cur=126 t=1403637160.2383192 loop=1, merge=
+[DBOW] cur=127 t=1403637160.3383191 loop=1, merge=
+[DBOW] cur=128 t=1403637160.4383192 loop=1, merge=
+[DBOW] cur=129 t=1403637160.5383191 loop=1, merge=
+[DBOW] cur=130 t=1403637160.638319 loop=1, merge=
+[DBOW] cur=131 t=1403637160.7383192 loop=1, merge=
+[DBOW] cur=132 t=1403637160.8383191 loop=1, merge=
+[DBOW] cur=133 t=1403637160.9383192 loop=1, merge=
+[DBOW] cur=134 t=1403637161.0383191 loop=1, merge=
+[DBOW] cur=135 t=1403637161.138319 loop=1, merge=
+[DBOW] cur=136 t=1403637161.2383192 loop=1, merge=
+[DBOW] cur=137 t=1403637161.3383191 loop=1, merge=
+[DBOW] cur=138 t=1403637161.4383192 loop=1, merge=
+[DBOW] cur=139 t=1403637161.5383191 loop=1, merge=
+[DBOW] cur=140 t=1403637161.638319 loop=1, merge=
+[DBOW] cur=141 t=1403637161.7383192 loop=1, merge=
+[DBOW] cur=142 t=1403637161.8383191 loop=1, merge=
+[DBOW] cur=143 t=1403637161.9383192 loop=1, merge=
+[DBOW] cur=144 t=1403637162.0383191 loop=1, merge=
+[DBOW] cur=145 t=1403637162.188319 loop=1, merge=
+[DBOW] cur=146 t=1403637162.4383192 loop=1, merge=
+[DBOW] cur=147 t=1403637162.5883191 loop=1, merge=
+[DBOW] cur=148 t=1403637162.7383192 loop=1, merge=
+[DBOW] cur=149 t=1403637162.888319 loop=1, merge=
+[DBOW] cur=150 t=1403637162.9883189 loop=1, merge=
+[DBOW] cur=151 t=1403637163.0883191 loop=1, merge=
+[DBOW] cur=152 t=1403637163.188319 loop=1, merge=
+sim3 solver: 0.00152522
+18882.9
+[DBOW] cur=153 t=1403637163.3383191 loop=1, merge=
+[DBOW] cur=154 t=1403637163.4383192 loop=1, merge=
+[DBOW] cur=155 t=1403637163.5383191 loop=1, merge=
+[DBOW] cur=156 t=1403637163.638319 loop=1, merge=
+[DBOW] cur=157 t=1403637163.7383192 loop=1, merge=
+[DBOW] cur=158 t=1403637163.888319 loop=1, merge=
+[DBOW] cur=159 t=1403637163.9883189 loop=1, merge=
+[DBOW] cur=160 t=1403637164.138319 loop=1, merge=
+[DBOW] cur=161 t=1403637164.2383192 loop=1, merge=
+[DBOW] cur=162 t=1403637164.3383191 loop=1, merge=
+[DBOW] cur=163 t=1403637164.4383192 loop=1, merge=
+[DBOW] cur=164 t=1403637164.5883191 loop=1, merge=
+[DBOW] cur=165 t=1403637164.688319 loop=1, merge=
+[DBOW] cur=166 t=1403637164.7883189 loop=1, merge=
+[DBOW] cur=167 t=1403637164.888319 loop=1, merge=
+[DBOW] cur=168 t=1403637164.9883189 loop=1, merge=
+[DBOW] cur=169 t=1403637165.138319 loop=1, merge=
+[DBOW] cur=170 t=1403637165.2383192 loop=1, merge=
+[DBOW] cur=171 t=1403637165.3383191 loop=1, merge=
+[DBOW] cur=172 t=1403637165.4383192 loop=1, merge=
+[DBOW] cur=173 t=1403637165.5383191 loop=128,1, merge=
+[DBOW] cur=174 t=1403637165.638319 loop=1, merge=
+sim3 solver: 0.00128711
+14138.6
+[DBOW] cur=175 t=1403637165.7383192 loop=1, merge=
+[DBOW] cur=176 t=1403637165.8383191 loop=1, merge=
+[DBOW] cur=177 t=1403637165.9383192 loop=1, merge=
+[DBOW] cur=178 t=1403637166.0883191 loop=1, merge=
+[DBOW] cur=179 t=1403637166.188319 loop=1, merge=
+[DBOW] cur=180 t=1403637166.2883189 loop=1, merge=
+[DBOW] cur=181 t=1403637166.388319 loop=1, merge=
+sim3 solver: 0.00199125
+18453.8
+sim3 solver: 0.00171541
+15781.5
+[DBOW] cur=182 t=1403637166.5383191 loop=1, merge=
+[DBOW] cur=183 t=1403637166.688319 loop=1, merge=
+[DBOW] cur=184 t=1403637166.8383191 loop=1, merge=
+[DBOW] cur=185 t=1403637166.9383192 loop=1, merge=
+[DBOW] cur=186 t=1403637167.0383191 loop=1, merge=
+[DBOW] cur=187 t=1403637167.188319 loop=1, merge=
+[DBOW] cur=188 t=1403637167.3383191 loop=1, merge=
+[DBOW] cur=189 t=1403637167.4383192 loop=1, merge=
+[DBOW] cur=190 t=1403637167.5383191 loop=1, merge=
+[DBOW] cur=191 t=1403637167.638319 loop=1, merge=
+[DBOW] cur=192 t=1403637167.7883189 loop=1, merge=
+[DBOW] cur=193 t=1403637167.9383192 loop=1, merge=
+[DBOW] cur=194 t=1403637168.0883191 loop=1, merge=
+[DBOW] cur=195 t=1403637168.2383192 loop=1, merge=
+[DBOW] cur=196 t=1403637168.388319 loop=1, merge=
+[DBOW] cur=197 t=1403637168.5383191 loop=1, merge=
+[DBOW] cur=198 t=1403637168.688319 loop=1, merge=
+[DBOW] cur=199 t=1403637168.8383191 loop=1, merge=
+[DBOW] cur=200 t=1403637168.9883189 loop=1, merge=
+[DBOW] cur=201 t=1403637169.138319 loop=1, merge=
+[DBOW] cur=202 t=1403637169.2883189 loop=1, merge=
+[DBOW] cur=203 t=1403637169.4383192 loop=1, merge=
+[DBOW] cur=204 t=1403637169.638319 loop=1, merge=
+[DBOW] cur=205 t=1403637169.8383191 loop=1, merge=
+[DBOW] cur=206 t=1403637170.0383191 loop=1, merge=
+[DBOW] cur=207 t=1403637170.2383192 loop=1, merge=
+[DBOW] cur=208 t=1403637170.4383192 loop=1, merge=
+[DBOW] cur=209 t=1403637170.688319 loop=1, merge=
+[DBOW] cur=210 t=1403637170.888319 loop=1, merge=
+[DBOW] cur=211 t=1403637171.0883191 loop=1, merge=
+[DBOW] cur=212 t=1403637171.2883189 loop=1, merge=
+[DBOW] cur=213 t=1403637171.4883189 loop=1, merge=
+[DBOW] cur=214 t=1403637171.688319 loop=1, merge=
+[DBOW] cur=215 t=1403637171.888319 loop=1, merge=
+[DBOW] cur=216 t=1403637172.0883191 loop=185,197,164, merge=
+[DBOW] cur=217 t=1403637172.2883189 loop=188, merge=
+[DBOW] cur=218 t=1403637172.5883191 loop=199,197,149, merge=
+[ABORT-NEAR] candidate KF 149 vs current KF 218
+[DBOW] cur=219 t=1403637172.8383191 loop=188,169,149, merge=
+[ABORT-NEAR] candidate KF 149 vs current KF 219
+[DBOW] cur=220 t=1403637173.188319 loop=185,199,203, merge=
+[DBOW] cur=221 t=1403637173.4383192 loop=1, merge=
+[ABORT-NEAR] candidate KF 1 vs current KF 221
+[DBOW] cur=222 t=1403637173.7383192 loop=1, merge=
+[DBOW] cur=223 t=1403637173.9383192 loop=1, merge=
+[DBOW] cur=224 t=1403637174.138319 loop=1, merge=
+[DBOW] cur=225 t=1403637174.388319 loop=1, merge=
+[DBOW] cur=226 t=1403637174.638319 loop=1, merge=
+[DBOW] cur=227 t=1403637174.888319 loop=1, merge=
+[DBOW] cur=228 t=1403637175.188319 loop=1, merge=
+[DBOW] cur=229 t=1403637175.4883189 loop=1, merge=
+[DBOW] cur=230 t=1403637175.7883189 loop=1, merge=
+[DBOW] cur=231 t=1403637176.138319 loop=1, merge=
+[DBOW] cur=232 t=1403637176.4883189 loop=1, merge=
+[DBOW] cur=233 t=1403637176.8383191 loop=1, merge=
+[DBOW] cur=234 t=1403637177.138319 loop=20,1, merge=
+[DBOW] cur=235 t=1403637177.4383192 loop=88,117,41, merge=
+[ABORT-NEAR] candidate KF 117 vs current KF 235
+[DBOW] cur=236 t=1403637177.7383192 loop=3, merge=
+[DBOW] cur=237 t=1403637178.0383191 loop=3, merge=
+[DBOW] cur=238 t=1403637178.2383192 loop=3, merge=
+[DBOW] cur=239 t=1403637178.4883189 loop=3, merge=
+[DBOW] cur=240 t=1403637178.9383192 loop=3, merge=
+[DBOW] cur=241 t=1403637179.2383192 loop=3, merge=
+[DBOW] cur=242 t=1403637179.638319 loop=3, merge=
+[DBOW] cur=243 t=1403637179.9383192 loop=1, merge=
+[DBOW] cur=244 t=1403637180.188319 loop=3, merge=
+[DBOW] cur=245 t=1403637180.4383192 loop=128,3, merge=
+[ABORT-NEAR] candidate KF 128 vs current KF 245
+[DBOW] cur=246 t=1403637180.638319 loop=3, merge=
+[DBOW] cur=247 t=1403637180.8383191 loop=3, merge=
+[DBOW] cur=248 t=1403637181.0883191 loop=3, merge=
+[DBOW] cur=249 t=1403637181.388319 loop=3, merge=
+[DBOW] cur=250 t=1403637181.638319 loop=3, merge=
+[DBOW] cur=251 t=1403637181.9883189 loop=3, merge=
+[DBOW] cur=252 t=1403637182.3383191 loop=3, merge=
+[DBOW] cur=253 t=1403637182.888319 loop=3, merge=
+[DBOW] cur=254 t=1403637183.2383192 loop=3, merge=
+[DBOW] cur=255 t=1403637183.5883191 loop=3, merge=
+[DBOW] cur=256 t=1403637183.9883189 loop=3, merge=
+[DBOW] cur=257 t=1403637184.388319 loop=3, merge=
+[DBOW] cur=258 t=1403637184.8383191 loop=3, merge=
+[DBOW] cur=259 t=1403637185.2383192 loop=3, merge=
+[DBOW] cur=260 t=1403637185.888319 loop=3, merge=
+[DBOW] cur=261 t=1403637186.5883191 loop=88,110,20, merge=
+[ABORT-NEAR] candidate KF 110 vs current KF 261
+[DBOW] cur=262 t=1403637187.0883191 loop=3, merge=
+[DBOW] cur=263 t=1403637187.4883189 loop=3, merge=
+[DBOW] cur=264 t=1403637187.9383192 loop=3, merge=
+[DBOW] cur=265 t=1403637188.9883189 loop=3, merge=
+[DBOW] cur=266 t=1403637189.7383192 loop=3, merge=
+[DBOW] cur=267 t=1403637190.138319 loop=3, merge=
+[DBOW] cur=268 t=1403637190.4883189 loop=3, merge=
+[DBOW] cur=269 t=1403637190.7883189 loop=3, merge=
+[DBOW] cur=270 t=1403637191.0883191 loop=3, merge=
+[DBOW] cur=271 t=1403637191.4383192 loop=1, merge=
+[DBOW] cur=272 t=1403637191.7383192 loop=3, merge=
+[DBOW] cur=273 t=1403637191.9883189 loop=3, merge=
+[DBOW] cur=274 t=1403637192.3383191 loop=3, merge=
+[DBOW] cur=275 t=1403637192.888319 loop=3, merge=
+[DBOW] cur=276 t=1403637193.138319 loop=3, merge=
+[DBOW] cur=277 t=1403637193.4383192 loop=3, merge=
+[DBOW] cur=278 t=1403637193.7383192 loop=3, merge=
+[DBOW] cur=279 t=1403637193.9883189 loop=3, merge=
+[DBOW] cur=280 t=1403637194.2883189 loop=3, merge=
+[DBOW] cur=281 t=1403637194.5383191 loop=3, merge=
+[DBOW] cur=282 t=1403637194.8383191 loop=3, merge=
+[DBOW] cur=283 t=1403637195.0883191 loop=3, merge=
+[DBOW] cur=284 t=1403637195.3383191 loop=3, merge=
+[DBOW] cur=285 t=1403637195.638319 loop=3, merge=
+[DBOW] cur=286 t=1403637195.9383192 loop=3, merge=
+[DBOW] cur=287 t=1403637196.2383192 loop=3, merge=
+[DBOW] cur=288 t=1403637196.5383191 loop=3, merge=
+[DBOW] cur=289 t=1403637196.888319 loop=3, merge=
+[DBOW] cur=290 t=1403637197.2383192 loop=3, merge=
+[DBOW] cur=291 t=1403637197.5883191 loop=3, merge=
+[DBOW] cur=292 t=1403637198.0383191 loop=9,19,71, merge=
+[DBOW] cur=293 t=1403637198.4383192 loop=9, merge=
+[DBOW] cur=294 t=1403637198.8383191 loop=9, merge=
+[DBOW] cur=295 t=1403637199.2383192 loop=9, merge=
+[DBOW] cur=296 t=1403637199.5883191 loop=9, merge=
+[DBOW] cur=297 t=1403637199.888319 loop=290,173,205, merge=
+[ABORT-NEAR] candidate KF 205 vs current KF 297
+[DBOW] cur=298 t=1403637200.188319 loop=290,240,180, merge=
+[DBOW] cur=299 t=1403637200.388319 loop=205,167,233, merge=
+[DBOW] cur=300 t=1403637200.7883189 loop=290,149,233, merge=
+[DBOW] cur=301 t=1403637201.3383191 loop=244, merge=
+[DBOW] cur=302 t=1403637201.9383192 loop=244,167,149, merge=
+[DBOW] cur=303 t=1403637206.0383191 loop=271, merge=
+[DBOW] cur=304 t=1403637209.138319 loop=244,167,271, merge=
+[DBOW] cur=305 t=1403637209.638319 loop=167,244,271, merge=
+[DBOW] cur=306 t=1403637209.9883189 loop=208, merge=
+[ABORT-NEAR] candidate KF 208 vs current KF 306
+[DBOW] cur=307 t=1403637210.3383191 loop=9, merge=
+[ABORT-NEAR] candidate KF 9 vs current KF 307
+[DBOW] cur=308 t=1403637210.7383192 loop=284,178,264, merge=
+[DBOW] cur=309 t=1403637211.0883191 loop=248,240,267, merge=
+[DBOW] cur=310 t=1403637211.388319 loop=205,178,199, merge=
+[DBOW] cur=311 t=1403637211.688319 loop=244,208,240, merge=
+[DBOW] cur=312 t=1403637212.0383191 loop=208,132, merge=
+[ABORT-NEAR] candidate KF 208 vs current KF 312
+[ABORT-NEAR] candidate KF 132 vs current KF 312
+[DBOW] cur=313 t=1403637212.3383191 loop=208,271,199, merge=
+[DBOW] cur=314 t=1403637212.688319 loop=132,244,271, merge=
+[DBOW] cur=315 t=1403637212.9383192 loop=201,287,282, merge=
+[DBOW] cur=316 t=1403637213.188319 loop=132,287,282, merge=
+[DBOW] cur=317 t=1403637213.4883189 loop=201,287,291, merge=
+[DBOW] cur=318 t=1403637213.7883189 loop=244,128,265, merge=
+[ABORT-NEAR] candidate KF 128 vs current KF 318
+[DBOW] cur=319 t=1403637213.9883189 loop=282,287,201, merge=
+[DBOW] cur=320 t=1403637214.2383192 loop=282,201,287, merge=
+[DBOW] cur=321 t=1403637214.4883189 loop=251,201,209, merge=
+[DBOW] cur=322 t=1403637214.688319 loop=244,201,237, merge=
+[DBOW] cur=323 t=1403637214.9883189 loop=201,209,287, merge=
+[DBOW] cur=324 t=1403637215.2883189 loop=201,132,149, merge=
+[DBOW] cur=325 t=1403637215.5883191 loop=248,291,209, merge=
+[DBOW] cur=326 t=1403637215.9883189 loop=166,132,291, merge=
+[DBOW] cur=327 t=1403637216.2883189 loop=237,149,235, merge=
+[DBOW] cur=328 t=1403637216.5883191 loop=132,290,164, merge=
+[DBOW] cur=329 t=1403637216.8383191 loop=149,287, merge=
+[DBOW] cur=330 t=1403637217.138319 loop=162, merge=
+[DBOW] cur=331 t=1403637217.388319 loop=132,201,235, merge=
+[DBOW] cur=332 t=1403637217.688319 loop=288,186, merge=
+[DBOW] cur=333 t=1403637217.9883189 loop=237,201,136, merge=
+[DBOW] cur=334 t=1403637218.138319 loop=162, merge=
+[DBOW] cur=335 t=1403637218.2883189 loop=201,248,237, merge=
+[DBOW] cur=336 t=1403637218.5383191 loop=176, merge=
+[DBOW] cur=337 t=1403637218.7883189 loop=132,201,287, merge=
+[DBOW] cur=338 t=1403637219.0383191 loop=127, merge=
+[ABORT-NEAR] candidate KF 127 vs current KF 338
+[DBOW] cur=339 t=1403637219.2883189 loop=237,162,175, merge=
+[DBOW] cur=340 t=1403637219.5883191 loop=201,162,293, merge=
+[DBOW] cur=341 t=1403637219.9883189 loop=209,235,230, merge=
+[DBOW] cur=342 t=1403637220.4883189 loop=199, merge=
+[DBOW] cur=343 t=1403637220.9883189 loop=128,162,201, merge=
+[ABORT-NEAR] candidate KF 128 vs current KF 343
+[DBOW] cur=344 t=1403637221.4883189 loop=201,162, merge=
+[DBOW] cur=345 t=1403637222.0383191 loop=128,162,168, merge=
+[ABORT-NEAR] candidate KF 128 vs current KF 345
+[DBOW] cur=346 t=1403637222.5883191 loop=136,295,287, merge=
+[ABORT-NEAR] candidate KF 136 vs current KF 346
+[DBOW] cur=347 t=1403637223.0383191 loop=136,157,186, merge=
+[ABORT-NEAR] candidate KF 136 vs current KF 347
+[DBOW] cur=348 t=1403637225.2383192 loop=162, merge=
+[DBOW] cur=349 t=1403637226.388319 loop=128,237,201, merge=
+[ABORT-NEAR] candidate KF 128 vs current KF 349
+[DBOW] cur=350 t=1403637226.888319 loop=157,237,128, merge=
+[ABORT-NEAR] candidate KF 128 vs current KF 350
+[DBOW] cur=351 t=1403637227.3383191 loop=209,201,186, merge=
+[DBOW] cur=352 t=1403637229.138319 loop=139,157,201, merge=
+[DBOW] cur=353 t=1403637229.7883189 loop=201,168, merge=
+[DBOW] cur=354 t=1403637230.5383191 loop=242, merge=
+[DBOW] cur=355 t=1403637231.0383191 loop=166,175,201, merge=
+[ABORT-NEAR] candidate KF 201 vs current KF 355
+[DBOW] cur=356 t=1403637231.4383192 loop=286,175,276, merge=
+[ABORT-NEAR] candidate KF 276 vs current KF 356
+[DBOW] cur=357 t=1403637231.9883189 loop=9, merge=
+[DBOW] cur=358 t=1403637234.2883189 loop=9, merge=
+[DBOW] cur=359 t=1403637234.7883189 loop=9, merge=
+[DBOW] cur=360 t=1403637235.888319 loop=9, merge=
+[DBOW] cur=361 t=1403637236.4383192 loop=9, merge=
+[DBOW] cur=362 t=1403637237.0883191 loop=9, merge=
+[DBOW] cur=363 t=1403637237.4383192 loop=9, merge=
+[DBOW] cur=364 t=1403637237.9383192 loop=9, merge=
+[DBOW] cur=365 t=1403637238.2883189 loop=9, merge=
+[DBOW] cur=366 t=1403637238.9883189 loop=9, merge=
+[DBOW] cur=367 t=1403637239.4383192 loop=9, merge=
+[DBOW] cur=368 t=1403637239.9883189 loop=9, merge=
+[DBOW] cur=369 t=1403637240.888319 loop=9, merge=
+[DBOW] cur=370 t=1403637241.5883191 loop=9, merge=
+[DBOW] cur=371 t=1403637244.5883191 loop=9, merge=
+[DBOW] cur=372 t=1403637245.388319 loop=9, merge=
+[DBOW] cur=373 t=1403637246.688319 loop=9, merge=
+[DBOW] cur=374 t=1403637247.138319 loop=9,340, merge=
+[ABORT-NEAR] candidate KF 340 vs current KF 374
+[DBOW] cur=375 t=1403637247.5883191 loop=9, merge=
+[DBOW] cur=376 t=1403637247.9883189 loop=286,369, merge=
+[DBOW] cur=377 t=1403637248.4883189 loop=201,153,157, merge=
+[ABORT-NEAR] candidate KF 153 vs current KF 377
+[DBOW] cur=378 t=1403637248.8383191 loop=270,276,201, merge=
+[DBOW] cur=379 t=1403637249.4883189 loop=237,193,201, merge=
+[DBOW] cur=380 t=1403637249.8383191 loop=166,284,275, merge=
+[DBOW] cur=381 t=1403637250.4883189 loop=281,196,361, merge=
+[ABORT-NEAR] candidate KF 361 vs current KF 381
+[DBOW] cur=382 t=1403637251.8383191 loop=132, merge=
+[ABORT-NEAR] candidate KF 132 vs current KF 382
+[DBOW] cur=383 t=1403637252.4883189 loop=291,162,369, merge=
+[DBOW] cur=384 t=1403637254.888319 loop=132,162,237, merge=
+[ABORT-NEAR] candidate KF 132 vs current KF 384
+[DBOW] cur=385 t=1403637255.4383192 loop=162,153,139, merge=
+[DBOW] cur=386 t=1403637256.0383191 loop=162,361,269, merge=
+[DBOW] cur=387 t=1403637256.7383192 loop=285,269,193, merge=
+[DBOW] cur=388 t=1403637257.5383191 loop=269,370,250, merge=
+[DBOW] cur=389 t=1403637258.188319 loop=153,250,162, merge=
+[DBOW] cur=390 t=1403637258.688319 loop=162,132,285, merge=
+[DBOW] cur=391 t=1403637259.0883191 loop=276,226,117, merge=
+[ABORT-NEAR] candidate KF 117 vs current KF 391
+[DBOW] cur=392 t=1403637259.4883189 loop=250,168,285, merge=
+[DBOW] cur=393 t=1403637259.8383191 loop=369,284,285, merge=
+[DBOW] cur=394 t=1403637260.3383191 loop=162,263,276, merge=
+[DBOW] cur=395 t=1403637260.638319 loop=284,162,269, merge=
+[DBOW] cur=396 t=1403637260.9883189 loop=162,226,132, merge=
+[DBOW] cur=397 t=1403637261.2383192 loop=284,269,132, merge=
+[DBOW] cur=398 t=1403637261.5383191 loop=283, merge=
+[DBOW] cur=399 t=1403637261.7883189 loop=277,269, merge=
+[DBOW] cur=400 t=1403637262.0383191 loop=277,162,283, merge=
+[DBOW] cur=401 t=1403637262.2883189 loop=277,203,132, merge=
+[DBOW] cur=402 t=1403637262.5383191 loop=162,283,168, merge=
+[DBOW] cur=403 t=1403637262.7883189 loop=269,277,162, merge=
+[SESSION] ChangeDataset requested
+Creation of new map with id: 1
+Stored map with ID: 0
+Creation of new map with last KF id: 404
+First KF:404; Map init KF:404
+New Map created with 330 points
+[DBOW] cur=415 t=1403638522.9778295 loop= merge=9,
+[DBOW] cur=416 t=1403638523.0778294 loop= merge=9,
+[DBOW] cur=417 t=1403638523.3778293 loop= merge=9,
+[DBOW] cur=418 t=1403638523.5778294 loop= merge=9,
+[DBOW] cur=419 t=1403638523.7778294 loop= merge=9,
+[DBOW] cur=420 t=1403638523.8778293 loop= merge=9,
+[DBOW] cur=421 t=1403638523.9278295 loop= merge=9,
+[DBOW] cur=422 t=1403638523.9778295 loop= merge=9,
+[DBOW] cur=423 t=1403638524.0278294 loop= merge=9,
+[DBOW] cur=424 t=1403638524.0778294 loop= merge=9,
+[DBOW] cur=425 t=1403638524.1778293 loop= merge=9,
+[DBOW] cur=426 t=1403638524.2778294 loop= merge=9,
+[DBOW] cur=427 t=1403638524.3778293 loop= merge=9,
+[DBOW] cur=428 t=1403638524.5778294 loop= merge=9,
+[DBOW] cur=429 t=1403638524.6778293 loop= merge=9,
+[DBOW] cur=430 t=1403638524.7778294 loop= merge=9,
+[DBOW] cur=431 t=1403638524.8778293 loop= merge=9,
+[DBOW] cur=432 t=1403638525.0278294 loop= merge=9,
+[DBOW] cur=433 t=1403638525.3278296 loop= merge=9,
+[DBOW] cur=434 t=1403638525.7278295 loop= merge=9,
+[DBOW] cur=435 t=1403638525.7778294 loop= merge=9,
+[DBOW] cur=436 t=1403638525.9278295 loop= merge=9,
+[DBOW] cur=437 t=1403638526.1278296 loop= merge=9,
+[DBOW] cur=438 t=1403638526.2278295 loop= merge=9,
+[DBOW] cur=439 t=1403638526.3778293 loop= merge=9,
+[DBOW] cur=440 t=1403638526.5778294 loop= merge=9,
+[DBOW] cur=441 t=1403638526.6778293 loop= merge=9,
+[DBOW] cur=442 t=1403638526.7778294 loop= merge=9,
+[DBOW] cur=443 t=1403638526.9278295 loop= merge=9,
+[DBOW] cur=444 t=1403638527.0278294 loop= merge=9,
+[DBOW] cur=445 t=1403638527.1278296 loop= merge=9,
+[DBOW] cur=446 t=1403638527.2278295 loop= merge=9,
+[DBOW] cur=447 t=1403638527.3278296 loop= merge=9,
+[DBOW] cur=448 t=1403638527.4778295 loop= merge=9,
+[DBOW] cur=449 t=1403638527.7778294 loop= merge=358,357,73,
+[DBOW] cur=450 t=1403638528.5278294 loop= merge=9,
+[DBOW] cur=451 t=1403638528.8778293 loop= merge=9,
+[DBOW] cur=452 t=1403638529.2778294 loop= merge=9,
+[DBOW] cur=453 t=1403638529.5278294 loop= merge=3,
+[DBOW] cur=454 t=1403638529.6778293 loop= merge=9,
+[DBOW] cur=455 t=1403638529.7778294 loop= merge=9,
+[DBOW] cur=456 t=1403638529.8778293 loop= merge=9,
+[DBOW] cur=457 t=1403638529.9778295 loop= merge=9,
+[DBOW] cur=458 t=1403638530.0778294 loop= merge=9,
+[DBOW] cur=459 t=1403638530.2278295 loop= merge=9,
+[DBOW] cur=460 t=1403638530.3278296 loop= merge=9,
+[DBOW] cur=461 t=1403638530.4278295 loop= merge=9,
+[DBOW] cur=462 t=1403638530.5778294 loop= merge=9,
+[DBOW] cur=463 t=1403638530.6778293 loop= merge=9,
+[DBOW] cur=464 t=1403638530.7778294 loop= merge=9,
+[DBOW] cur=465 t=1403638530.8778293 loop= merge=9,
+[DBOW] cur=466 t=1403638531.0278294 loop= merge=9,
+[DBOW] cur=467 t=1403638533.1278296 loop= merge=9,
+[DBOW] cur=468 t=1403638533.9278295 loop= merge=9,
+[DBOW] cur=469 t=1403638534.0778294 loop= merge=9,
+[DBOW] cur=470 t=1403638538.7278295 loop= merge=9,
+[DBOW] cur=471 t=1403638538.8778293 loop= merge=9,
+[DBOW] cur=472 t=1403638539.0278294 loop= merge=9,
+[DBOW] cur=473 t=1403638539.1778293 loop= merge=9,
+[DBOW] cur=474 t=1403638539.2778294 loop= merge=9,
+[DBOW] cur=475 t=1403638539.3778293 loop= merge=9,
+[DBOW] cur=476 t=1403638539.5278294 loop= merge=9,
+[DBOW] cur=477 t=1403638539.8278296 loop= merge=9,
+[DBOW] cur=478 t=1403638540.0278294 loop= merge=9,
+[DBOW] cur=479 t=1403638540.4778295 loop= merge=9,
+[DBOW] cur=480 t=1403638540.9278295 loop= merge=9,
+[DBOW] cur=481 t=1403638541.2278295 loop= merge=9,
+[DBOW] cur=482 t=1403638541.4778295 loop= merge=263,9,
+[DBOW] cur=483 t=1403638541.7278295 loop= merge=9,
+[DBOW] cur=484 t=1403638541.8778293 loop= merge=9,
+[DBOW] cur=485 t=1403638542.0278294 loop= merge=9,
+[DBOW] cur=486 t=1403638542.1778293 loop= merge=9,
+[DBOW] cur=487 t=1403638542.3278296 loop= merge=9,
+[DBOW] cur=488 t=1403638542.5278294 loop= merge=263,305,9,
+[DBOW] cur=489 t=1403638542.6778293 loop= merge=9,
+[DBOW] cur=490 t=1403638542.8278296 loop= merge=9,
+[DBOW] cur=491 t=1403638542.9778295 loop= merge=311,9,
+[DBOW] cur=492 t=1403638543.1278296 loop= merge=9,
+[DBOW] cur=493 t=1403638543.2778294 loop= merge=9,
+[DBOW] cur=494 t=1403638543.4278295 loop= merge=305,9,
+[DBOW] cur=495 t=1403638543.5778294 loop= merge=9,
+[DBOW] cur=496 t=1403638543.7278295 loop= merge=9,
+[DBOW] cur=497 t=1403638543.8778293 loop= merge=117,9,
+*Merge detected
+[PROP] accepted list=merge src=dbow2 ext_cand=0 matchedKF=117 curKF=497 t=1403638543.8778293
+Local Mapping STOP
+Change to map with id: 0
+Local Mapping RELEASE
+Local Mapping STOP
+Local Mapping RELEASE
+Merge finished!
+[DBOW] cur=498 t=1403638544.0278294 loop=358,283,369, merge=
+[DBOW] cur=499 t=1403638545.3278296 loop=360,272,153, merge=
+[ABORT-NEAR] candidate KF 360 vs current KF 499
+[ABORT-NEAR] candidate KF 153 vs current KF 499
+[DBOW] cur=500 t=1403638546.2778294 loop=405, merge=
+[ABORT-NEAR] candidate KF 405 vs current KF 500
+[DBOW] cur=501 t=1403638546.8778293 loop=404, merge=
+[ABORT-NEAR] candidate KF 404 vs current KF 501
+[DBOW] cur=502 t=1403638547.4778295 loop=404, merge=
+[DBOW] cur=503 t=1403638548.1778293 loop=404, merge=
+[DBOW] cur=504 t=1403638548.7278295 loop=404, merge=
+[DBOW] cur=505 t=1403638549.2778294 loop=404, merge=
+[DBOW] cur=506 t=1403638549.7778294 loop=405, merge=
+[DBOW] cur=507 t=1403638550.3278296 loop=404, merge=
+[DBOW] cur=508 t=1403638550.7778294 loop=405, merge=
+[DBOW] cur=509 t=1403638551.1778293 loop=404, merge=
+[DBOW] cur=510 t=1403638551.6778293 loop=405, merge=
+[DBOW] cur=511 t=1403638552.1278296 loop=404, merge=
+[DBOW] cur=512 t=1403638552.4278295 loop=404, merge=
+[DBOW] cur=513 t=1403638552.7778294 loop=404, merge=
+[DBOW] cur=514 t=1403638553.2778294 loop=405, merge=
+sim3 solver: 0.00129854
+13453.1
+sim3 solver: 0.00112997
+12641.6
+[DBOW] cur=515 t=1403638553.4778295 loop=404, merge=
+[DBOW] cur=516 t=1403638553.7278295 loop=404, merge=
+[DBOW] cur=517 t=1403638553.9278295 loop=404, merge=
+[DBOW] cur=518 t=1403638554.1778293 loop=405, merge=
+[DBOW] cur=519 t=1403638554.4778295 loop=405, merge=
+[DBOW] cur=520 t=1403638554.7778294 loop=405, merge=
+[DBOW] cur=521 t=1403638555.0278294 loop=405, merge=
+[DBOW] cur=522 t=1403638555.2778294 loop=404, merge=
+[DBOW] cur=523 t=1403638555.4778295 loop=405, merge=
+[DBOW] cur=524 t=1403638555.7278295 loop=404, merge=
+[DBOW] cur=525 t=1403638556.0278294 loop=405, merge=
+[DBOW] cur=526 t=1403638556.2778294 loop=405, merge=
+[DBOW] cur=527 t=1403638556.4778295 loop=405, merge=
+[DBOW] cur=528 t=1403638556.7778294 loop=405, merge=
+[DBOW] cur=529 t=1403638557.0778294 loop=405, merge=
+[DBOW] cur=530 t=1403638557.3278296 loop=405, merge=
+sim3 solver: 0.00117071
+7814.15
+[DBOW] cur=531 t=1403638557.6278296 loop=287,404, merge=
+[DBOW] cur=532 t=1403638557.8278296 loop=405, merge=
+[DBOW] cur=533 t=1403638558.0278294 loop=405, merge=
+[DBOW] cur=534 t=1403638558.1778293 loop=405, merge=
+[DBOW] cur=535 t=1403638558.3278296 loop=405, merge=
+[DBOW] cur=536 t=1403638558.4778295 loop=405, merge=
+[DBOW] cur=537 t=1403638558.6278296 loop=404, merge=
+[DBOW] cur=538 t=1403638558.7778294 loop=404, merge=
+[DBOW] cur=539 t=1403638558.9278295 loop=405, merge=
+[DBOW] cur=540 t=1403638559.0778294 loop=404, merge=
+[DBOW] cur=541 t=1403638559.2278295 loop=9,404, merge=
+[DBOW] cur=542 t=1403638559.3278296 loop=9,404, merge=
+[DBOW] cur=543 t=1403638559.4778295 loop=9,405, merge=
+[DBOW] cur=544 t=1403638559.6278296 loop=9,404, merge=
+[DBOW] cur=545 t=1403638559.7778294 loop=9,404, merge=
+[DBOW] cur=546 t=1403638559.9278295 loop=9,404, merge=
+[DBOW] cur=547 t=1403638560.0778294 loop=405, merge=
+[DBOW] cur=548 t=1403638560.2278295 loop=405, merge=
+sim3 solver: 0.00129622
+12417.7
+[DBOW] cur=549 t=1403638560.3278296 loop=9, merge=
+[DBOW] cur=550 t=1403638560.4278295 loop=9,405, merge=
+[DBOW] cur=551 t=1403638560.5278294 loop=404, merge=
+[DBOW] cur=552 t=1403638560.6278296 loop=404, merge=
+[DBOW] cur=553 t=1403638560.7278295 loop=9, merge=
+[DBOW] cur=554 t=1403638560.8278296 loop=9,405, merge=
+[DBOW] cur=555 t=1403638560.9278295 loop=404, merge=
+[DBOW] cur=556 t=1403638561.0278294 loop=405, merge=
+[DBOW] cur=557 t=1403638561.1778293 loop=404, merge=
+[DBOW] cur=558 t=1403638561.3278296 loop=9,405, merge=
+[DBOW] cur=559 t=1403638561.4278295 loop=9,404, merge=
+[DBOW] cur=560 t=1403638561.5278294 loop=405, merge=
+[DBOW] cur=561 t=1403638561.6278296 loop=9,405, merge=
+[DBOW] cur=562 t=1403638561.7778294 loop=405, merge=
+[DBOW] cur=563 t=1403638561.9278295 loop=405, merge=
+[DBOW] cur=564 t=1403638562.0778294 loop=9,405, merge=
+[DBOW] cur=565 t=1403638562.2278295 loop=9,405, merge=
+[DBOW] cur=566 t=1403638562.3778293 loop=9,404, merge=
+[DBOW] cur=567 t=1403638562.5278294 loop=9,404, merge=
+[DBOW] cur=568 t=1403638562.6778293 loop=9,405, merge=
+[DBOW] cur=569 t=1403638562.8278296 loop=9,405, merge=
+[DBOW] cur=570 t=1403638562.9778295 loop=9, merge=
+[DBOW] cur=571 t=1403638563.0778294 loop=9,405, merge=
+[DBOW] cur=572 t=1403638563.1778293 loop=405, merge=
+[DBOW] cur=573 t=1403638563.2778294 loop=9,404, merge=
+[DBOW] cur=574 t=1403638563.3778293 loop=9,404, merge=
+[DBOW] cur=575 t=1403638563.4778295 loop=9,404, merge=
+[DBOW] cur=576 t=1403638563.5778294 loop=404, merge=
+[DBOW] cur=577 t=1403638563.7278295 loop=404, merge=
+[DBOW] cur=578 t=1403638563.8278296 loop=9,405, merge=
+[DBOW] cur=579 t=1403638563.9278295 loop=9,405, merge=
+[DBOW] cur=580 t=1403638564.0778294 loop=404, merge=
+[DBOW] cur=581 t=1403638564.2278295 loop=9,404, merge=
+[DBOW] cur=582 t=1403638564.3278296 loop=9,404, merge=
+[DBOW] cur=583 t=1403638564.4278295 loop=9,404, merge=
+[DBOW] cur=584 t=1403638564.5778294 loop=9,405, merge=
+sim3 solver: 0.0011436
+9698.36
+[DBOW] cur=585 t=1403638564.7278295 loop=9, merge=
+[DBOW] cur=586 t=1403638564.8778293 loop=9,405, merge=
+[DBOW] cur=587 t=1403638565.0278294 loop=9,404, merge=
+[DBOW] cur=588 t=1403638565.1778293 loop=9,405, merge=
+[DBOW] cur=589 t=1403638565.3278296 loop=404, merge=
+[DBOW] cur=590 t=1403638565.4278295 loop=9,404, merge=
+[DBOW] cur=591 t=1403638565.5778294 loop=9,405, merge=
+[DBOW] cur=592 t=1403638565.7278295 loop=405, merge=
+[DBOW] cur=593 t=1403638565.8778293 loop=405, merge=
+[DBOW] cur=594 t=1403638565.9778295 loop=9,404, merge=
+[DBOW] cur=595 t=1403638566.1778293 loop=405, merge=
+[DBOW] cur=596 t=1403638566.3278296 loop=9,404, merge=
+[DBOW] cur=597 t=1403638566.4778295 loop=405, merge=
+[DBOW] cur=598 t=1403638566.5778294 loop=9,404, merge=
+[DBOW] cur=599 t=1403638566.7278295 loop=9, merge=
+[DBOW] cur=600 t=1403638566.8778293 loop=9,404, merge=
+[DBOW] cur=601 t=1403638567.0778294 loop=9, merge=
+[DBOW] cur=602 t=1403638567.2278295 loop=404, merge=
+[DBOW] cur=603 t=1403638567.4278295 loop=404, merge=
+[DBOW] cur=604 t=1403638567.5778294 loop=405, merge=
+[DBOW] cur=605 t=1403638567.6778293 loop=9,405, merge=
+[DBOW] cur=606 t=1403638567.8278296 loop=9,405, merge=
+[DBOW] cur=607 t=1403638567.9778295 loop=9,405, merge=
+[DBOW] cur=608 t=1403638568.1778293 loop=9,405, merge=
+[DBOW] cur=609 t=1403638568.3778293 loop=9,405, merge=
+[DBOW] cur=610 t=1403638568.5778294 loop=9,404, merge=
+[DBOW] cur=611 t=1403638568.7778294 loop=9,405, merge=
+[DBOW] cur=612 t=1403638568.9778295 loop=9, merge=
+[DBOW] cur=613 t=1403638569.3778293 loop=9,404, merge=
+[DBOW] cur=614 t=1403638570.5778294 loop=9, merge=
+[DBOW] cur=615 t=1403638570.6778293 loop=9,404, merge=
+[DBOW] cur=616 t=1403638570.7778294 loop=9,404, merge=
+[DBOW] cur=617 t=1403638570.8778293 loop=361,287,373, merge=
+[DBOW] cur=618 t=1403638570.9778295 loop=9, merge=
+[DBOW] cur=619 t=1403638571.0778294 loop=370,9,404, merge=
+[DBOW] cur=620 t=1403638571.1778293 loop=404, merge=
+[DBOW] cur=621 t=1403638571.2778294 loop=9,404, merge=
+[DBOW] cur=622 t=1403638571.3778293 loop=9,404, merge=
+[DBOW] cur=623 t=1403638571.4778295 loop=9, merge=
+[DBOW] cur=624 t=1403638571.5778294 loop=205,9,405, merge=
+[DBOW] cur=625 t=1403638571.6778293 loop=9,405, merge=
+[DBOW] cur=626 t=1403638571.7778294 loop=9,405, merge=
+[DBOW] cur=627 t=1403638571.8778293 loop=405, merge=
+[DBOW] cur=628 t=1403638571.9778295 loop=405, merge=
+sim3 solver: 0.00125373
+9671.93
+[DBOW] cur=629 t=1403638572.0778294 loop=9,404, merge=
+sim3 solver: 0.00146865
+23883.9
+[DBOW] cur=630 t=1403638572.1778293 loop=9,404, merge=
+[DBOW] cur=631 t=1403638572.2778294 loop=404, merge=
+[DBOW] cur=632 t=1403638572.3778293 loop=405, merge=
+sim3 solver: 0.00142034
+25166.9
+[DBOW] cur=633 t=1403638572.4778295 loop=405, merge=
+[DBOW] cur=634 t=1403638572.5778294 loop=404, merge=
+sim3 solver: 0.00132721
+12277.6
+[DBOW] cur=635 t=1403638572.6778293 loop=9,404, merge=
+[DBOW] cur=636 t=1403638572.7778294 loop=404, merge=
+sim3 solver: 0.00170501
+16698.1
+[DBOW] cur=637 t=1403638572.8778293 loop=9,404, merge=
+[DBOW] cur=638 t=1403638573.0278294 loop=369,9,404, merge=
+sim3 solver: 0.00104326
+16299.3
+[DBOW] cur=639 t=1403638573.1278296 loop=404, merge=
+[DBOW] cur=640 t=1403638573.2278295 loop=9,404, merge=
+sim3 solver: 0.00145291
+13794.6
+[DBOW] cur=641 t=1403638573.3278296 loop=404, merge=
+[DBOW] cur=642 t=1403638573.4278295 loop=404, merge=
+sim3 solver: 0.00217773
+14536.5
+[DBOW] cur=643 t=1403638573.5778294 loop=404, merge=
+[DBOW] cur=644 t=1403638573.6778293 loop=370,9,405, merge=
+sim3 solver: 0.00142649
+8974.57
+sim3 solver: 0.00230701
+29969.3
+sim3 solver: 0.00136127
+34156.8
+sim3 solver: 0.0011835
+38183.6
+sim3 solver: 0.00126143
+8673.78
+[DBOW] cur=645 t=1403638573.7778294 loop=9,405, merge=
+sim3 solver: 0.00184376
+18378.9
+sim3 solver: 0.00139978
+21552
+[DBOW] cur=646 t=1403638573.9278295 loop=405, merge=
+sim3 solver: 0.00268107
+22471.9
+sim3 solver: 0.00209763
+21774.7
+[DBOW] cur=647 t=1403638574.0278294 loop=9,404, merge=
+[DBOW] cur=648 t=1403638574.1278296 loop=9,404, merge=
+sim3 solver: 0.00105106
+37700.7
+sim3 solver: 0.00182107
+39903
+[DBOW] cur=649 t=1403638574.2278295 loop=283,9,405, merge=
+sim3 solver: 0.00140908
+15503.6
+sim3 solver: 0.00143892
+8904.75
+sim3 solver: 0.00177013
+32460.9
+sim3 solver: 0.00167744
+33109.4
+sim3 solver: 0.00192926
+19493.8
+[DBOW] cur=650 t=1403638574.3278296 loop=404, merge=
+[DBOW] cur=651 t=1403638574.4278295 loop=9,404, merge=
+[DBOW] cur=652 t=1403638574.5278294 loop=405, merge=
+[DBOW] cur=653 t=1403638574.6778293 loop=9,404, merge=
+[DBOW] cur=654 t=1403638574.8278296 loop=9,404, merge=
+[DBOW] cur=655 t=1403638574.9778295 loop=9,404, merge=
+[DBOW] cur=656 t=1403638575.1278296 loop=9,405, merge=
+[DBOW] cur=657 t=1403638575.2778294 loop=405, merge=
+[DBOW] cur=658 t=1403638575.4278295 loop=405, merge=
+[DBOW] cur=659 t=1403638575.5278294 loop=404, merge=
+[DBOW] cur=660 t=1403638575.6778293 loop=9,405, merge=
+[DBOW] cur=661 t=1403638575.8278296 loop=9,404, merge=
+[DBOW] cur=662 t=1403638576.0278294 loop=9,405, merge=
+[DBOW] cur=663 t=1403638576.1778293 loop=404, merge=
+[DBOW] cur=664 t=1403638576.3278296 loop=9,404, merge=
+sim3 solver: 0.00213646
+39005.9
+[DBOW] cur=665 t=1403638576.4778295 loop=405, merge=
+sim3 solver: 0.00109511
+38043.9
+sim3 solver: 0.00210577
+32602.1
+[DBOW] cur=666 t=1403638576.6278296 loop=9, merge=
+[DBOW] cur=667 t=1403638576.7778294 loop=280,9,405, merge=
+[DBOW] cur=668 t=1403638576.9278295 loop=9,405, merge=
+sim3 solver: 0.00152107
+20875
+[DBOW] cur=669 t=1403638577.0778294 loop=9,405, merge=
+[DBOW] cur=670 t=1403638577.2278295 loop=280,405, merge=
+sim3 solver: 0.00342534
+47264.6
+sim3 solver: 0.00228157
+33101.9
+sim3 solver: 0.00126266
+9036.04
+sim3 solver: 0.00226092
+24833.6
+sim3 solver: 0.00142203
+22790.2
+sim3 solver: 0.00141106
+21644.6
+sim3 solver: 0.00387217
+33932.3
+sim3 solver: 0.00108138
+26625.2
+[DBOW] cur=671 t=1403638577.4278295 loop=9,404, merge=
+[DBOW] cur=672 t=1403638577.5778294 loop=404, merge=
+[DBOW] cur=673 t=1403638577.7778294 loop=9,404, merge=
+[DBOW] cur=674 t=1403638577.9778295 loop=9, merge=
+[DBOW] cur=675 t=1403638578.1778293 loop=9,404, merge=
+[DBOW] cur=676 t=1403638578.3778293 loop=9,404, merge=
+[DBOW] cur=677 t=1403638578.5778294 loop=284,405, merge=
+sim3 solver: 0.00178605
+12995.4
+sim3 solver: 0.00179353
+17982.3
+sim3 solver: 0.00191356
+18931.8
+sim3 solver: 0.00136323
+13783.2
+sim3 solver: 0.00160464
+27637.1
+sim3 solver: 0.00127624
+22854.4
+sim3 solver: 0.0012508
+10311.3
+sim3 solver: 0.00150577
+16781.7
+sim3 solver: 0.00116215
+21664.3
+[DBOW] cur=678 t=1403638578.7778294 loop=9,404, merge=
+[DBOW] cur=679 t=1403638578.9778295 loop=405, merge=
+[DBOW] cur=680 t=1403638579.1778293 loop=285,405, merge=
+[DBOW] cur=681 t=1403638579.4278295 loop=285,404, merge=
+sim3 solver: 0.00146637
+21018.3
+[DBOW] cur=682 t=1403638579.6778293 loop=405, merge=
+sim3 solver: 0.00178608
+16932.4
+sim3 solver: 0.00118542
+32963.2
+[DBOW] cur=683 t=1403638579.9278295 loop=286, merge=
+sim3 solver: 0.00160972
+16443.2
+[DBOW] cur=684 t=1403638580.1778293 loop=178,288,284, merge=
+sim3 solver: 0.00110019
+16587.5
+[DBOW] cur=685 t=1403638580.3778293 loop=186,9,405, merge=
+[DBOW] cur=686 t=1403638580.5778294 loop=405, merge=
+[DBOW] cur=687 t=1403638580.7778294 loop=186, merge=
+[DBOW] cur=688 t=1403638580.9778295 loop=186,289,405, merge=
+sim3 solver: 0.00132584
+53536.8
+sim3 solver: 0.00178063
+17825.3
+sim3 solver: 0.00169588
+17964.8
+sim3 solver: 0.0017349
+40403
+sim3 solver: 0.00132217
+10872.2
+sim3 solver: 0.00100903
+14240.4
+sim3 solver: 0.00116111
+44274.4
+[DBOW] cur=689 t=1403638581.2278295 loop=288,285,178, merge=
+sim3 solver: 0.00137343
+15287.2
+sim3 solver: 0.00100966
+7523.02
+sim3 solver: 0.00105866
+15942.6
+sim3 solver: 0.00117299
+9330.41
+sim3 solver: 0.00118892
+9798.68
+sim3 solver: 0.00204595
+19672.7
+[DBOW] cur=690 t=1403638581.4778295 loop=279,288,184, merge=
+sim3 solver: 0.00169207
+16860.6
+sim3 solver: 0.00104739
+13796.9
+sim3 solver: 0.00158777
+16802.7
+sim3 solver: 0.00118583
+14099.4
+sim3 solver: 0.00123607
+15482.7
+sim3 solver: 0.00130426
+10285.6
+[DBOW] cur=691 t=1403638581.6778293 loop=286,284,9, merge=
+sim3 solver: 0.00133977
+16155.4
+sim3 solver: 0.00151138
+19905.2
+sim3 solver: 0.00213519
+22866.4
+sim3 solver: 0.00119327
+9822.36
+sim3 solver: 0.00138251
+15517.3
+sim3 solver: 0.00282576
+16838.1
+sim3 solver: 0.00101329
+11446.9
+sim3 solver: 0.00108151
+13000.7
+[DBOW] cur=692 t=1403638581.8778293 loop=286,405, merge=
+sim3 solver: 0.00100523
+8335.87
+sim3 solver: 0.00441943
+53945.5
+sim3 solver: 0.00204832
+36733.3
+sim3 solver: 0.00116144
+15022.9
+[DBOW] cur=693 t=1403638582.2778294 loop=286,405, merge=
+sim3 solver: 0.00136175
+23770
+[DBOW] cur=694 t=1403638582.5278294 loop=285,404, merge=
+sim3 solver: 0.00145673
+10959.6
+sim3 solver: 0.001005
+14920.6
+[DBOW] cur=695 t=1403638582.7278295 loop=284,286,404, merge=
+sim3 solver: 0.00204143
+24486.8
+sim3 solver: 0.00100845
+8154.63
+sim3 solver: 0.00154232
+16935.1
+sim3 solver: 0.00124479
+10873
+sim3 solver: 0.00247863
+17044.2
+sim3 solver: 0.00103659
+8119.5
+[DBOW] cur=696 t=1403638582.9778295 loop=186, merge=
+sim3 solver: 0.00207903
+13473.2
+sim3 solver: 0.00106399
+12342.5
+sim3 solver: 0.00128596
+9328.43
+sim3 solver: 0.00135581
+12556.2
+[DBOW] cur=697 t=1403638583.1778293 loop=404, merge=
+sim3 solver: 0.00289838
+32101.3
+sim3 solver: 0.00196812
+25253.3
+[DBOW] cur=698 t=1403638583.3778293 loop=186,284,279, merge=
+sim3 solver: 0.00259399
+19408.7
+sim3 solver: 0.00121387
+13126.8
+sim3 solver: 0.00272477
+22430.7
+sim3 solver: 0.00142149
+9743.86
+sim3 solver: 0.00109484
+8268.12
+sim3 solver: 0.00129001
+16436
+sim3 solver: 0.00185284
+27622.3
+sim3 solver: 0.0014858
+24346.4
+[DBOW] cur=699 t=1403638583.6278296 loop=184,285,282, merge=
+sim3 solver: 0.00117431
+19736.9
+sim3 solver: 0.00278455
+19254.2
+sim3 solver: 0.00185685
+16415.9
+sim3 solver: 0.00197061
+20194
+sim3 solver: 0.00131314
+11636.3
+sim3 solver: 0.00256019
+17856.6
+sim3 solver: 0.00192015
+14741.7
+sim3 solver: 0.00187183
+25947
+sim3 solver: 0.00105109
+8950.48
+sim3 solver: 0.00124821
+11133.2
+sim3 solver: 0.00142208
+14190.5
+[DBOW] cur=700 t=1403638583.8278296 loop=184,286,404, merge=
+sim3 solver: 0.00138875
+21868.7
+sim3 solver: 0.00158618
+17624.5
+sim3 solver: 0.00114907
+13731.3
+sim3 solver: 0.00232536
+18640.9
+sim3 solver: 0.00202453
+10036.7
+sim3 solver: 0.00139152
+10599.4
+sim3 solver: 0.00141055
+17579.2
+[DBOW] cur=701 t=1403638584.0278294 loop=184,286,272, merge=
+sim3 solver: 0.00107877
+9806.86
+sim3 solver: 0.00142522
+10758.1
+sim3 solver: 0.00144576
+16222.8
+sim3 solver: 0.00140388
+20418.6
+sim3 solver: 0.0012656
+9260.92
+sim3 solver: 0.00271756
+24560.1
+[DBOW] cur=702 t=1403638584.2278295 loop=184,286,274, merge=
+sim3 solver: 0.0014419
+16168
+sim3 solver: 0.0020577
+20219.6
+sim3 solver: 0.00243998
+19340.1
+[DBOW] cur=703 t=1403638584.4278295 loop=286,272,405, merge=
+sim3 solver: 0.00122755
+13492.4
+sim3 solver: 0.00181093
+21906.8
+sim3 solver: 0.00173015
+19882.3
+sim3 solver: 0.00226509
+21617.1
+sim3 solver: 0.0022912
+12250.7
+sim3 solver: 0.00112701
+23343
+sim3 solver: 0.00239728
+23547.4
+sim3 solver: 0.00162488
+15396.9
+sim3 solver: 0.00104911
+12762.8
+sim3 solver: 0.00135415
+9362.5
+[DBOW] cur=704 t=1403638584.6278296 loop=287,281,286, merge=
+sim3 solver: 0.00117449
+13502.7
+sim3 solver: 0.00113108
+18107.9
+sim3 solver: 0.00176498
+21156.5
+sim3 solver: 0.00115477
+13081.4
+sim3 solver: 0.00114349
+30061.9
+sim3 solver: 0.00284542
+21103.6
+sim3 solver: 0.0010697
+20671.2
+sim3 solver: 0.00123075
+13855.2
+[DBOW] cur=705 t=1403638584.8278296 loop=287, merge=
+sim3 solver: 0.00204097
+21773.7
+sim3 solver: 0.00145779
+9209.35
+[DBOW] cur=706 t=1403638585.0278294 loop=287,281,272, merge=
+sim3 solver: 0.00109683
+8695.9
+sim3 solver: 0.00115123
+9501.33
+sim3 solver: 0.00179997
+25164.1
+sim3 solver: 0.00100015
+8590.17
+sim3 solver: 0.00115547
+22097
+sim3 solver: 0.00195182
+14481.7
+[DBOW] cur=707 t=1403638585.2278295 loop=287,289,9, merge=
+sim3 solver: 0.00383676
+23422.3
+sim3 solver: 0.00173854
+17724.8
+[DBOW] cur=708 t=1403638585.4778295 loop=287,405, merge=
+sim3 solver: 0.00117407
+14612
+sim3 solver: 0.00139954
+10417.8
+sim3 solver: 0.0010992
+12994
+sim3 solver: 0.00164206
+23981.2
+sim3 solver: 0.0029194
+24631.2
+sim3 solver: 0.00126552
+8673.75
+[DBOW] cur=709 t=1403638585.7278295 loop=287,281,272, merge=
+sim3 solver: 0.00171616
+19710.1
+sim3 solver: 0.00101691
+12765
+sim3 solver: 0.00100095
+14057.8
+sim3 solver: 0.00242391
+28005.9
+sim3 solver: 0.00141484
+12279.7
+sim3 solver: 0.00122558
+21398.4
+sim3 solver: 0.00201548
+14697.9
+[DBOW] cur=710 t=1403638585.9278295 loop=285,289,271, merge=
+sim3 solver: 0.00105935
+10757.3
+sim3 solver: 0.00205228
+29886.2
+sim3 solver: 0.0028283
+23413
+[DBOW] cur=711 t=1403638586.1278296 loop=285,288,9, merge=
+sim3 solver: 0.00212238
+18307.3
+sim3 solver: 0.00102741
+9216.34
+sim3 solver: 0.00144628
+9853.15
+sim3 solver: 0.00113679
+9948.2
+sim3 solver: 0.00135336
+13795.5
+sim3 solver: 0.00116228
+12927.1
+[DBOW] cur=712 t=1403638586.3778293 loop=285,9, merge=
+sim3 solver: 0.00137398
+14508
+sim3 solver: 0.00173733
+17224.2
+sim3 solver: 0.00123006
+15555
+sim3 solver: 0.00145416
+15577.7
+sim3 solver: 0.0012437
+10074.3
+sim3 solver: 0.00132618
+10339.1
+[DBOW] cur=713 t=1403638586.5778294 loop=285,186,405, merge=
+sim3 solver: 0.00123198
+19226.3
+sim3 solver: 0.00144426
+10300.9
+sim3 solver: 0.00109995
+13922.9
+sim3 solver: 0.00120128
+8676.37
+sim3 solver: 0.00286454
+19739.1
+sim3 solver: 0.00110203
+9935.73
+sim3 solver: 0.00121539
+20064.5
+sim3 solver: 0.00149179
+16397.8
+sim3 solver: 0.00184196
+19248.8
+sim3 solver: 0.00134792
+8557.62
+sim3 solver: 0.00141001
+22299.5
+[DBOW] cur=714 t=1403638586.7778294 loop=178,9,404, merge=
+sim3 solver: 0.00127271
+22955.2
+sim3 solver: 0.00353188
+36781.8
+sim3 solver: 0.0012548
+12677.7
+sim3 solver: 0.00285358
+26738.7
+sim3 solver: 0.00151618
+24242.1
+sim3 solver: 0.00229446
+28555.1
+sim3 solver: 0.00100255
+8102.33
+sim3 solver: 0.00104144
+11057.1
+sim3 solver: 0.00279153
+21081.3
+sim3 solver: 0.00116563
+12937.3
+[DBOW] cur=715 t=1403638586.9778295 loop=285,180,404, merge=
+sim3 solver: 0.001089
+10954.7
+sim3 solver: 0.00101962
+12088.6
+sim3 solver: 0.00128631
+25943.2
+sim3 solver: 0.00112002
+19111.7
+sim3 solver: 0.00223395
+22457.3
+sim3 solver: 0.00164297
+27040
+sim3 solver: 0.00257194
+27504.2
+sim3 solver: 0.00231473
+18928.5
+sim3 solver: 0.00115433
+12846.5
+sim3 solver: 0.00223769
+18099
+sim3 solver: 0.00122639
+25842.4
+sim3 solver: 0.0016207
+21557.3
+sim3 solver: 0.00241997
+13406.5
+sim3 solver: 0.00112917
+18033.5
+[DBOW] cur=716 t=1403638587.1778293 loop=285,287,286, merge=
+sim3 solver: 0.00375755
+78338.5
+sim3 solver: 0.00103417
+13374.6
+sim3 solver: 0.00110389
+11092
+sim3 solver: 0.0014055
+13635.2
+sim3 solver: 0.00110703
+12794
+sim3 solver: 0.00163213
+51071.9
+sim3 solver: 0.00125976
+14675.4
+sim3 solver: 0.00107657
+9060.79
+sim3 solver: 0.00121032
+84132.6
+sim3 solver: 0.00365439
+75316.7
+sim3 solver: 0.00236089
+78216.5
+sim3 solver: 0.00134541
+36279.3
+sim3 solver: 0.00173622
+22245.4
+sim3 solver: 0.00142849
+10337.9
+sim3 solver: 0.00250434
+19691.6
+sim3 solver: 0.00156212
+18273.9
+sim3 solver: 0.00229552
+17565.7
+sim3 solver: 0.00453998
+34704
+sim3 solver: 0.0012297
+11404.3
+sim3 solver: 0.00139976
+12989.6
+sim3 solver: 0.00132614
+13202
+[DBOW] cur=717 t=1403638587.3778293 loop=285,178,404, merge=
+sim3 solver: 0.00188324
+17271.4
+sim3 solver: 0.00231568
+19411.2
+sim3 solver: 0.00139626
+12812.7
+sim3 solver: 0.00108044
+15404.1
+sim3 solver: 0.00141569
+14018.5
+sim3 solver: 0.00103815
+20474.6
+sim3 solver: 0.00125717
+23482.9
+sim3 solver: 0.00158737
+16554.1
+sim3 solver: 0.00237657
+15041.9
+sim3 solver: 0.00279565
+22056.3
+sim3 solver: 0.00241833
+32032.9
+sim3 solver: 0.00104681
+11898.8
+sim3 solver: 0.00104999
+12980.2
+[DBOW] cur=718 t=1403638587.5778294 loop=285,178,404, merge=
+sim3 solver: 0.00231751
+21913.4
+sim3 solver: 0.00186792
+17594.5
+sim3 solver: 0.00103312
+24823.9
+sim3 solver: 0.00273232
+24845.7
+sim3 solver: 0.00138675
+11231.3
+sim3 solver: 0.00117334
+6699.64
+sim3 solver: 0.00137474
+11704.6
+sim3 solver: 0.00119186
+17839.8
+sim3 solver: 0.00184047
+23911.4
+sim3 solver: 0.00142855
+23362.7
+sim3 solver: 0.00254207
+28007.7
+sim3 solver: 0.0028937
+24223.2
+sim3 solver: 0.00137954
+32304.4
+sim3 solver: 0.00406156
+38664
+sim3 solver: 0.00123589
+18300.7
+sim3 solver: 0.00276684
+22739.7
+[DBOW] cur=719 t=1403638587.7778294 loop=285,178,405, merge=
+sim3 solver: 0.00140871
+14395.7
+sim3 solver: 0.00111786
+22045.5
+sim3 solver: 0.00202398
+20148
+sim3 solver: 0.00187851
+18654.5
+sim3 solver: 0.00232378
+16325.5
+sim3 solver: 0.00191302
+19005.7
+sim3 solver: 0.00108961
+9749.57
+sim3 solver: 0.00157958
+21758
+sim3 solver: 0.00107572
+18894
+sim3 solver: 0.00189684
+24682.8
+sim3 solver: 0.00185037
+25211.4
+sim3 solver: 0.00139066
+9191.71
+[DBOW] cur=720 t=1403638588.0278294 loop=285,180,405, merge=
+sim3 solver: 0.00170415
+22070.9
+sim3 solver: 0.00152484
+19246.3
+sim3 solver: 0.00124571
+9952.19
+sim3 solver: 0.00124515
+10149.2
+sim3 solver: 0.00132325
+11760.5
+sim3 solver: 0.00120274
+12502.6
+sim3 solver: 0.00228356
+19039.4
+sim3 solver: 0.0027815
+17363.4
+sim3 solver: 0.00129118
+19434.6
+[DBOW] cur=721 t=1403638588.2778294 loop=285,180,405, merge=
+sim3 solver: 0.00168571
+20328.6
+sim3 solver: 0.00101912
+18507.7
+sim3 solver: 0.00109494
+8730.28
+sim3 solver: 0.0025414
+24340.7
+sim3 solver: 0.00109562
+32080
+sim3 solver: 0.00121085
+8071.77
+sim3 solver: 0.00143939
+13923.3
+sim3 solver: 0.00153781
+26215.6
+sim3 solver: 0.00130928
+12851.6
+sim3 solver: 0.00156867
+26125.8
+sim3 solver: 0.0010905
+28839.6
+sim3 solver: 0.00189975
+27903.9
+sim3 solver: 0.00175982
+22687.3
+sim3 solver: 0.00134526
+8448.04
+sim3 solver: 0.00168583
+28512.8
+sim3 solver: 0.00146815
+23772.9
+sim3 solver: 0.00414572
+24796.4
+sim3 solver: 0.00155644
+19092.6
+[DBOW] cur=722 t=1403638588.4778295 loop=405, merge=
+sim3 solver: 0.00145387
+23977.6
+sim3 solver: 0.00134102
+18506.8
+sim3 solver: 0.00259526
+25116.9
+[DBOW] cur=723 t=1403638588.6778293 loop=404, merge=
+sim3 solver: 0.00153991
+25689.2
+[DBOW] cur=724 t=1403638588.8778293 loop=285,404, merge=
+sim3 solver: 0.00121046
+10902.9
+sim3 solver: 0.0012917
+35132.4
+sim3 solver: 0.00192901
+17596.7
+sim3 solver: 0.00130381
+9773.5
+sim3 solver: 0.00243784
+20972.5
+sim3 solver: 0.00371093
+22658.2
+sim3 solver: 0.00138437
+9323.95
+[DBOW] cur=725 t=1403638589.1278296 loop=404, merge=
+sim3 solver: 0.00242647
+17421.1
+[DBOW] cur=726 t=1403638589.3278296 loop=405, merge=
+sim3 solver: 0.00129036
+13370
+sim3 solver: 0.00166122
+30267.3
+sim3 solver: 0.00145166
+15520.7
+sim3 solver: 0.00242745
+26270.7
+sim3 solver: 0.00146246
+16775.5
+[DBOW] cur=727 t=1403638589.5778294 loop=180,281,405, merge=
+sim3 solver: 0.00128602
+10741
+sim3 solver: 0.00285021
+20332
+sim3 solver: 0.00141054
+10769.1
+sim3 solver: 0.00262472
+25290.5
+sim3 solver: 0.00104676
+8981.39
+sim3 solver: 0.00111258
+7007.91
+sim3 solver: 0.00124537
+12007.5
+sim3 solver: 0.00164252
+19042.7
+sim3 solver: 0.00107516
+8141.91
+sim3 solver: 0.00106627
+22346.9
+sim3 solver: 0.00103368
+14328.2
+sim3 solver: 0.0012134
+12831.4
+sim3 solver: 0.00196812
+26045.4
+sim3 solver: 0.00229126
+23875.1
+sim3 solver: 0.00129882
+27354
+sim3 solver: 0.00276255
+20994.1
+sim3 solver: 0.00179823
+21604.4
+[DBOW] cur=728 t=1403638589.7778294 loop=9,404, merge=
+sim3 solver: 0.00114684
+14952.2
+[DBOW] cur=729 t=1403638590.0278294 loop=9,404, merge=
+sim3 solver: 0.0018401
+30215.3
+[DBOW] cur=730 t=1403638590.2778294 loop=180,9,404, merge=
+sim3 solver: 0.00290562
+24850.7
+sim3 solver: 0.00109276
+28755
+sim3 solver: 0.00172429
+24539.9
+sim3 solver: 0.00116994
+9470.97
+sim3 solver: 0.00178601
+28107.4
+sim3 solver: 0.00198597
+28407.2
+sim3 solver: 0.00122612
+20100.4
+sim3 solver: 0.00187943
+31400.6
+sim3 solver: 0.00188707
+17571.5
+sim3 solver: 0.00172804
+35803.5
+[DBOW] cur=731 t=1403638590.5278294 loop=9,405, merge=
+sim3 solver: 0.00101776
+11688.6
+[DBOW] cur=732 t=1403638590.7778294 loop=281,405, merge=
+sim3 solver: 0.00100567
+13673.1
+sim3 solver: 0.00126687
+10155.3
+sim3 solver: 0.00270372
+21804.5
+[DBOW] cur=733 t=1403638591.0278294 loop=404, merge=
+sim3 solver: 0.00539639
+470348
+[DBOW] cur=734 t=1403638591.2278295 loop=180,404, merge=
+sim3 solver: 0.00122537
+9139.08
+sim3 solver: 0.0012353
+23215
+sim3 solver: 0.00137753
+14083.9
+sim3 solver: 0.00117728
+10324.1
+sim3 solver: 0.00180889
+35139.2
+sim3 solver: 0.00177478
+24423.6
+sim3 solver: 0.00103009
+6368.23
+sim3 solver: 0.00202842
+20342.6
+[DBOW] cur=735 t=1403638591.5278294 loop=9,404, merge=
+[DBOW] cur=736 t=1403638591.8278296 loop=281,9,405, merge=
+sim3 solver: 0.00209321
+17624.5
+sim3 solver: 0.00121496
+10034.7
+sim3 solver: 0.00131576
+12070.6
+sim3 solver: 0.00110116
+12011.4
+sim3 solver: 0.00165534
+12373.1
+sim3 solver: 0.0012323
+9605.96
+[DBOW] cur=737 t=1403638592.1278296 loop=9,404, merge=
+sim3 solver: 0.0020854
+17268.9
+[DBOW] cur=738 t=1403638592.4778295 loop=180,404, merge=
+sim3 solver: 0.00136964
+15775
+sim3 solver: 0.00183386
+17444.3
+sim3 solver: 0.00102245
+11496.5
+sim3 solver: 0.00133403
+9123.11
+[DBOW] cur=739 t=1403638592.7278295 loop=405, merge=
+sim3 solver: 0.00181228
+20625
+[DBOW] cur=740 t=1403638592.9278295 loop=9,405, merge=
+[DBOW] cur=741 t=1403638593.2278295 loop=404, merge=
+sim3 solver: 0.00252026
+21218.9
+[DBOW] cur=742 t=1403638593.4278295 loop=9, merge=
+[DBOW] cur=743 t=1403638593.6278296 loop=180,9,405, merge=
+sim3 solver: 0.00162869
+23990.3
+sim3 solver: 0.00146609
+19672.7
+sim3 solver: 0.00107403
+12046.8
+sim3 solver: 0.00137452
+25989
+sim3 solver: 0.00103356
+13527.7
+sim3 solver: 0.00212048
+25854.2
+[DBOW] cur=744 t=1403638593.8278296 loop=180,9,405, merge=
+sim3 solver: 0.00132501
+12399.9
+sim3 solver: 0.00101593
+11000.3
+[DBOW] cur=745 t=1403638593.9778295 loop=180,404, merge=
+sim3 solver: 0.0014969
+19139
+sim3 solver: 0.00253965
+18866.5
+sim3 solver: 0.001416
+21313
+[DBOW] cur=746 t=1403638594.1778293 loop=404, merge=
+[DBOW] cur=747 t=1403638594.3278296 loop=180,405, merge=
+sim3 solver: 0.00108345
+12442
+sim3 solver: 0.00116001
+14059.7
+sim3 solver: 0.00120706
+12563.8
+sim3 solver: 0.00106269
+11211.3
+sim3 solver: 0.00110456
+12033.2
+sim3 solver: 0.001329
+19740.7
+sim3 solver: 0.00121047
+8958.28
+sim3 solver: 0.00103059
+12876.5
+sim3 solver: 0.0010636
+11592.3
+sim3 solver: 0.00130928
+15919.6
+sim3 solver: 0.00117878
+25670.3
+sim3 solver: 0.00175998
+38855.8
+sim3 solver: 0.00233097
+17504.6
+sim3 solver: 0.00253116
+26373.6
+[DBOW] cur=748 t=1403638594.5278294 loop=9,404, merge=
+[DBOW] cur=749 t=1403638594.7278295 loop=9,405, merge=
+[DBOW] cur=750 t=1403638594.9278295 loop=405, merge=
+[DBOW] cur=751 t=1403638595.1278296 loop=405, merge=
+sim3 solver: 0.00139883
+16325.7
+sim3 solver: 0.00140068
+13045.8
+[DBOW] cur=752 t=1403638595.3278296 loop=180,285,9, merge=
+sim3 solver: 0.00265725
+22811.3
+sim3 solver: 0.00205806
+16132.4
+sim3 solver: 0.00238395
+20029.6
+sim3 solver: 0.00118132
+8439.73
+sim3 solver: 0.00137129
+8742.13
+sim3 solver: 0.00119405
+13398.1
+[DBOW] cur=753 t=1403638595.5278294 loop=405, merge=
+[DBOW] cur=754 t=1403638595.6778293 loop=285,284,9, merge=
+sim3 solver: 0.00125803
+12669.9
+sim3 solver: 0.00100376
+12151.4
+sim3 solver: 0.00100944
+17906.9
+sim3 solver: 0.00104285
+12628.7
+[DBOW] cur=755 t=1403638595.8778293 loop=405, merge=
+sim3 solver: 0.00143698
+12787.8
+sim3 solver: 0.00122528
+11244.2
+[DBOW] cur=756 t=1403638596.1278296 loop=405, merge=
+sim3 solver: 0.00165954
+23522.3
+sim3 solver: 0.00141759
+14017.1
+[DBOW] cur=757 t=1403638596.3278296 loop=405, merge=
+sim3 solver: 0.00287155
+18776.6
+[DBOW] cur=758 t=1403638596.5278294 loop=9,405, merge=
+[DBOW] cur=759 t=1403638596.7278295 loop=9,404, merge=
+[DBOW] cur=760 t=1403638596.9778295 loop=405, merge=
+[DBOW] cur=761 t=1403638597.2278295 loop=404, merge=
+[DBOW] cur=762 t=1403638597.4278295 loop=9,405, merge=
+[DBOW] cur=763 t=1403638597.6278296 loop=9,405, merge=
+[DBOW] cur=764 t=1403638597.8278296 loop=9,405, merge=
+sim3 solver: 0.00238205
+14061.9
+[DBOW] cur=765 t=1403638598.0278294 loop=9,405, merge=
+[DBOW] cur=766 t=1403638598.2278295 loop=9,404, merge=
+[DBOW] cur=767 t=1403638598.4278295 loop=404, merge=
+[DBOW] cur=768 t=1403638598.5278294 loop=405, merge=
+[DBOW] cur=769 t=1403638598.6778293 loop=9,405, merge=
+sim3 solver: 0.00111978
+13650.8
+[DBOW] cur=770 t=1403638598.7778294 loop=9,404, merge=
+[DBOW] cur=771 t=1403638598.8778293 loop=405, merge=
+[DBOW] cur=772 t=1403638598.9778295 loop=9,405, merge=
+[DBOW] cur=773 t=1403638599.1278296 loop=404, merge=
+[DBOW] cur=774 t=1403638599.2778294 loop=405, merge=
+sim3 solver: 0.00128281
+11723.1
+sim3 solver: 0.00116042
+9783.94
+[DBOW] cur=775 t=1403638599.4778295 loop=404, merge=
+[DBOW] cur=776 t=1403638599.6278296 loop=9,405, merge=
+[DBOW] cur=777 t=1403638599.8778293 loop=405, merge=
+[DBOW] cur=778 t=1403638600.2778294 loop=404, merge=
+[DBOW] cur=779 t=1403638600.4778295 loop=9, merge=
+[DBOW] cur=780 t=1403638600.7278295 loop=405, merge=
+[DBOW] cur=781 t=1403638600.9278295 loop=9,404, merge=
+[DBOW] cur=782 t=1403638601.1778293 loop=9,404, merge=
+[DBOW] cur=783 t=1403638601.4278295 loop=9, merge=
+[DBOW] cur=784 t=1403638601.6278296 loop=9,404, merge=
+sim3 solver: 0.00196175
+22875.5
+[DBOW] cur=785 t=1403638601.8278296 loop=9, merge=
+[DBOW] cur=786 t=1403638602.0778294 loop=9,404, merge=
+[DBOW] cur=787 t=1403638602.3778293 loop=404, merge=
+[DBOW] cur=788 t=1403638602.6278296 loop=9,404, merge=
+[DBOW] cur=789 t=1403638602.9778295 loop=9,405, merge=
+[DBOW] cur=790 t=1403638603.3278296 loop=9,405, merge=
+[DBOW] cur=791 t=1403638603.5778294 loop=405, merge=
+[DBOW] cur=792 t=1403638603.8778293 loop=405, merge=
+sim3 solver: 0.00109518
+11906
+[DBOW] cur=793 t=1403638604.1778293 loop=9,404, merge=
+[DBOW] cur=794 t=1403638604.4778295 loop=405, merge=
+[DBOW] cur=795 t=1403638604.7778294 loop=9,405, merge=
+[DBOW] cur=796 t=1403638605.0778294 loop=405, merge=
+[DBOW] cur=797 t=1403638605.3778293 loop=404, merge=
+[DBOW] cur=798 t=1403638605.6778293 loop=9,404, merge=
+[DBOW] cur=799 t=1403638606.0278294 loop=9,405, merge=
+[DBOW] cur=800 t=1403638606.3278296 loop=9,404, merge=
+[DBOW] cur=801 t=1403638606.6778293 loop=9, merge=
+[DBOW] cur=802 t=1403638606.9778295 loop=404, merge=
+[DBOW] cur=803 t=1403638607.5278294 loop=404, merge=
+[DBOW] cur=804 t=1403638608.0278294 loop=404, merge=
+[DBOW] cur=805 t=1403638608.4778295 loop=405, merge=
+[DBOW] cur=806 t=1403638608.8778293 loop=404, merge=
+[DBOW] cur=807 t=1403638609.2278295 loop=404, merge=
+[DBOW] cur=808 t=1403638609.5778294 loop=405, merge=
+[DBOW] cur=809 t=1403638609.9778295 loop=405, merge=
+[DBOW] cur=810 t=1403638610.4778295 loop=405, merge=
+[DBOW] cur=811 t=1403638610.9278295 loop=405, merge=
+[DBOW] cur=812 t=1403638611.4278295 loop=404, merge=
+[DBOW] cur=813 t=1403638612.1278296 loop=405, merge=
+[DBOW] cur=814 t=1403638612.6778293 loop=405, merge=
+[DBOW] cur=815 t=1403638613.2778294 loop=404, merge=
+[DBOW] cur=816 t=1403638613.9278295 loop=404, merge=
+[DBOW] cur=817 t=1403638614.6278296 loop=404, merge=
+[DBOW] cur=818 t=1403638615.2278295 loop=9, merge=
+[ABORT-NEAR] candidate KF 9 vs current KF 818
+[DBOW] cur=819 t=1403638615.5778294 loop=9,767, merge=
+[DBOW] cur=820 t=1403638615.8278296 loop=9, merge=
+[DBOW] cur=821 t=1403638616.2278295 loop=9, merge=
+[DBOW] cur=822 t=1403638617.0278294 loop=9, merge=
+[DBOW] cur=823 t=1403638619.6778293 loop=9, merge=
+[DBOW] cur=824 t=1403638621.4278295 loop=9,624,613, merge=
+*Loop detected
+[PROP] accepted list=loop src=dbow2 ext_cand=0 matchedKF=624 curKF=824 t=1403638621.4278295
+[STATS] injected=0 verified=0 corrections=1 matchedKF=624 currentKF=824
+Local Mapping STOP
+Local Mapping RELEASE
+[DBOW] cur=825 t=1403638623.6778293 loop=9, merge=
+[DBOW] cur=826 t=1403638625.0278294 loop=9, merge=
+[DBOW] cur=827 t=1403638626.2278295 loop=9, merge=
+[DBOW] cur=828 t=1403638627.4278295 loop=9, merge=
+[DBOW] cur=829 t=1403638628.5778294 loop=9, merge=
+[DBOW] cur=830 t=1403638629.7778294 loop=9, merge=
+[DBOW] cur=831 t=1403638630.9278295 loop=9, merge=
+[33m[WARN] [1793024267.347431718]: Shutdown request received.[0m
+[33m[WARN] [1793024267.348439587]: Reason given for shutdown: [user request][0m
+Shutdown
+
+Saving keyframe trajectory to KeyFrameTrajectory.txt ...
+[PROP-FINAL] abort_near_dbow2=32 accepted_loop_dbow2=1 accepted_merge_dbow2=1 n_dbow2_stage0=32 n_dbow2_stage1=79 n_dbow2_stage2=958 n_dbow2_stage3=7 n_dbow2_stage4=2 n_detect_calls=831 us_dbow2_stage0=290 us_dbow2_stage1=112518 us_dbow2_stage2=1737742 us_dbow2_stage3=39129 us_dbow2_stage4=22297 us_detect_total=2660821 queued=0 pending_loop=0 pending_merge=0
+[FINAL STATS] injected=0 verified=0 corrections=1 abortedByNearKF=32
+
+Saving all-maps keyframe trajectory to KeyFrameTrajectory_allmaps.txt ...

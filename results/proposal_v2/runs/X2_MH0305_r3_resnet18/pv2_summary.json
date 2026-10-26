@@ -1,0 +1,132 @@
+{
+ "run": "X2_MH0305_r3_resnet18",
+ "meta": {
+  "mode": "resnet18",
+  "rate": null,
+  "start": null,
+  "duration": null,
+  "yaml": "/home/anish/ORB_SLAM3/Examples/Monocular/EuRoC.yaml",
+  "relay": null,
+  "mono_exit": "0"
+ },
+ "counts_log": {
+  "new_map": 2,
+  "merge": 1,
+  "loop_detected": 1,
+  "fail_track_local_map": 0,
+  "injected": 110,
+  "abort_near": 59,
+  "sophus_crash": 0,
+  "final_stats_printed": 1
+ },
+ "kfs_per_map": [
+  426,
+  429
+ ],
+ "kf_total": 855,
+ "mono_image_delivered": 4914,
+ "mono_image_dropped": 8,
+ "mono_drop_pct": 0.16,
+ "cpu_mean": {
+  "gpu_util_mean": 3.6,
+  "Mono": 129.9,
+  "desc": 4.4
+ },
+ "gpu_mem_max_mb": 768.0,
+ "counts_events": {
+  "new_map": 2,
+  "merge": 1,
+  "loop_detected": 1,
+  "correction": 1,
+  "injected": 110,
+  "abort_near": 59,
+  "proposal": 0,
+  "sophus_crash": 0,
+  "lost": 0,
+  "reset_map": 0
+ },
+ "traj_kfs_final_map": 603,
+ "prop_src": "final",
+ "prop": {
+  "abort_near": 17,
+  "abort_near_dbow2": 42,
+  "accepted_loop_dbow2": 1,
+  "accepted_merge": 1,
+  "drop_dup_with_dbow2": 4,
+  "geom_pass_best": 1,
+  "n_dbow2_stage0": 42,
+  "n_dbow2_stage1": 83,
+  "n_dbow2_stage2": 1019,
+  "n_dbow2_stage3": 12,
+  "n_dbow2_stage4": 1,
+  "n_detect_calls": 854,
+  "n_ext_stage0": 17,
+  "n_ext_stage2": 52,
+  "n_ext_stage3": 40,
+  "n_ext_stage4": 1,
+  "received": 114,
+  "redirect_hops": 33,
+  "redirected": 20,
+  "sim3_fail": 92,
+  "to_loop_list": 83,
+  "to_merge_list": 27,
+  "us_dbow2_stage0": 392,
+  "us_dbow2_stage1": 120020,
+  "us_dbow2_stage2": 1882080,
+  "us_dbow2_stage3": 66092,
+  "us_dbow2_stage4": 12634,
+  "us_detect_total": 3223002,
+  "us_ext_stage0": 201,
+  "us_ext_stage2": 95308,
+  "us_ext_stage3": 220593,
+  "us_ext_stage4": 8399,
+  "queued": 0,
+  "pending_loop": 0,
+  "pending_merge": 0
+ },
+ "accepted": [
+  {
+   "list": "merge",
+   "src": "ext",
+   "ext_cand": "99",
+   "matchedKF": "99",
+   "curKF": "512",
+   "t": "1403638544.0778294"
+  },
+  {
+   "list": "loop",
+   "src": "dbow2",
+   "ext_cand": "0",
+   "matchedKF": "647",
+   "curKF": "851",
+   "t": "1403638621.3778293"
+  }
+ ],
+ "session_events": [
+  "[SESSION] ChangeDataset requested"
+ ],
+ "session_bounds": [
+  [
+   1403637130.538319,
+   1403637265.488319
+  ],
+  [
+   1403638518.077829,
+   1403638631.677829
+  ]
+ ],
+ "live_maps": [
+  {
+   "map_id": 1,
+   "kfs": 603,
+   "t0": 1403637130.54,
+   "t1": 1403638630.88,
+   "kfs_per_session": [
+    289,
+    314
+   ],
+   "ate_sim3_m": 0.0482,
+   "ate_n": 600
+  }
+ ]
+}

@@ -1,0 +1,420 @@
+/home/anish/.local/lib/python3.8/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/anish/.local/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+[INFO] [1793014973.827162]: ResNet18 proposer v2 started - mode=xmap xmap_thresh=0.8768 adaptive P98.0, exclude_recent_s=30.0, keyframe-image matching
+[WARN] [1793014992.566375]: KF 0 | NO_FRAME for stamp 1403637130.538319 (buffer miss #1)
+[INFO] [1793015028.623124]: dumped 200 descriptors to /home/anish/mono-slam-cnn-loop-closure/results/proposal_v2/runs/X2_MH0305_r4_resnet18/descs.npz
+[INFO] [1793015119.134945]: dumped 400 descriptors to /home/anish/mono-slam-cnn-loop-closure/results/proposal_v2/runs/X2_MH0305_r4_resnet18/descs.npz
+[WARN] [1793015134.879312]: KF 409 | NO_FRAME for stamp 1403638518.077829 (buffer miss #2)
+[INFO] [1793015134.889671]: KF 410 (map 1) | xmap best=0.7885 KF 404 (map 0) | no proposal
+[INFO] [1793015134.895885]: KF 411 (map 1) | xmap best=0.8214 KF 66 (map 0) | no proposal
+[INFO] [1793015134.900980]: KF 412 (map 1) | xmap best=0.8290 KF 215 (map 0) | no proposal
+[INFO] [1793015134.905677]: KF 413 (map 1) | xmap best=0.8408 KF 66 (map 0) | no proposal
+[INFO] [1793015134.910082]: KF 414 (map 1) | xmap best=0.8411 KF 102 (map 0) | no proposal
+[INFO] [1793015134.914581]: KF 415 (map 1) | xmap best=0.8235 KF 217 (map 0) | no proposal
+[INFO] [1793015134.919249]: KF 416 (map 1) | xmap best=0.8098 KF 227 (map 0) | no proposal
+[INFO] [1793015134.925211]: KF 417 (map 1) | xmap best=0.8132 KF 227 (map 0) | no proposal
+[INFO] [1793015134.931327]: KF 418 (map 1) | xmap best=0.8303 KF 228 (map 0) | no proposal
+[INFO] [1793015134.939750]: KF 419 (map 1) | xmap best=0.8734 KF 228 (map 0) | no proposal
+[WARN] [1793015134.987296]: XMAP PROPOSAL: KF 420 (map 1) matches KF 228 (map 0) | score=0.8785 | thresh=0.8768 | dt=1346.1s
+[WARN] [1793015135.038569]: XMAP PROPOSAL: KF 421 (map 1) matches KF 228 (map 0) | score=0.8870 | thresh=0.8768 | dt=1346.1s
+[INFO] [1793015135.088944]: KF 422 (map 1) | xmap best=0.8767 KF 227 (map 0) | no proposal
+[WARN] [1793015135.184985]: XMAP PROPOSAL: KF 423 (map 1) matches KF 227 (map 0) | score=0.8918 | thresh=0.8768 | dt=1346.6s
+[INFO] [1793015135.494896]: KF 424 (map 1) | xmap best=0.8744 KF 227 (map 0) | no proposal
+[WARN] [1793015135.740628]: XMAP PROPOSAL: KF 425 (map 1) matches KF 227 (map 0) | score=0.8909 | thresh=0.8768 | dt=1347.1s
+[INFO] [1793015136.095794]: KF 426 (map 1) | xmap best=0.8514 KF 311 (map 0) | no proposal
+[INFO] [1793015136.189568]: KF 427 (map 1) | xmap best=0.8442 KF 114 (map 0) | no proposal
+[INFO] [1793015136.291588]: KF 428 (map 1) | xmap best=0.8500 KF 66 (map 0) | no proposal
+[INFO] [1793015136.597862]: KF 429 (map 1) | xmap best=0.8570 KF 226 (map 0) | no proposal
+[WARN] [1793015137.042109]: XMAP PROPOSAL: KF 430 (map 1) matches KF 359 (map 0) | score=0.8824 | thresh=0.8768 | dt=1293.3s
+[WARN] [1793015137.193568]: XMAP PROPOSAL: KF 431 (map 1) matches KF 359 (map 0) | score=0.8861 | thresh=0.8768 | dt=1293.5s
+[INFO] [1793015137.938522]: KF 432 (map 1) | xmap best=0.8308 KF 226 (map 0) | no proposal
+[INFO] [1793015138.041100]: KF 433 (map 1) | xmap best=0.8175 KF 9 (map 0) | no proposal
+[INFO] [1793015138.196122]: KF 434 (map 1) | xmap best=0.8422 KF 9 (map 0) | no proposal
+[INFO] [1793015138.286433]: KF 435 (map 1) | xmap best=0.8343 KF 67 (map 0) | no proposal
+[INFO] [1793015138.393343]: KF 436 (map 1) | xmap best=0.8313 KF 114 (map 0) | no proposal
+[INFO] [1793015138.485174]: KF 437 (map 1) | xmap best=0.8462 KF 311 (map 0) | no proposal
+[INFO] [1793015138.643871]: KF 438 (map 1) | xmap best=0.8389 KF 371 (map 0) | no proposal
+[INFO] [1793015138.736495]: KF 439 (map 1) | xmap best=0.8445 KF 311 (map 0) | no proposal
+[INFO] [1793015138.834497]: KF 440 (map 1) | xmap best=0.8444 KF 372 (map 0) | no proposal
+[INFO] [1793015138.985135]: KF 441 (map 1) | xmap best=0.8626 KF 228 (map 0) | no proposal
+[INFO] [1793015139.086655]: KF 442 (map 1) | xmap best=0.8670 KF 227 (map 0) | no proposal
+[INFO] [1793015139.189151]: KF 443 (map 1) | xmap best=0.8668 KF 228 (map 0) | no proposal
+[INFO] [1793015139.288928]: KF 444 (map 1) | xmap best=0.8258 KF 228 (map 0) | no proposal
+[INFO] [1793015139.384878]: KF 445 (map 1) | xmap best=0.8581 KF 228 (map 0) | no proposal
+[INFO] [1793015139.485392]: KF 446 (map 1) | xmap best=0.8613 KF 227 (map 0) | no proposal
+[INFO] [1793015139.585671]: KF 447 (map 1) | xmap best=0.8620 KF 262 (map 0) | no proposal
+[INFO] [1793015139.789330]: KF 448 (map 1) | xmap best=0.8584 KF 361 (map 0) | no proposal
+[INFO] [1793015140.639362]: KF 449 (map 1) | xmap best=0.8730 KF 227 (map 0) | no proposal
+[WARN] [1793015140.785267]: XMAP PROPOSAL: KF 450 (map 1) matches KF 228 (map 0) | score=0.8925 | thresh=0.8768 | dt=1351.9s
+[WARN] [1793015141.038164]: XMAP PROPOSAL: KF 451 (map 1) matches KF 227 (map 0) | score=0.8871 | thresh=0.8768 | dt=1352.4s
+[WARN] [1793015141.238032]: XMAP PROPOSAL: KF 452 (map 1) matches KF 227 (map 0) | score=0.8817 | thresh=0.8768 | dt=1352.6s
+[WARN] [1793015141.438383]: XMAP PROPOSAL: KF 453 (map 1) matches KF 228 (map 0) | score=0.8877 | thresh=0.8768 | dt=1352.5s
+[INFO] [1793015141.746235]: KF 454 (map 1) | xmap best=0.8486 KF 372 (map 0) | no proposal
+[INFO] [1793015141.888197]: KF 455 (map 1) | xmap best=0.8456 KF 226 (map 0) | no proposal
+[INFO] [1793015141.989288]: KF 456 (map 1) | xmap best=0.8149 KF 371 (map 0) | no proposal
+[INFO] [1793015142.140095]: KF 457 (map 1) | xmap best=0.7938 KF 408 (map 0) | no proposal
+[INFO] [1793015142.235854]: KF 458 (map 1) | xmap best=0.7934 KF 371 (map 0) | no proposal
+[INFO] [1793015142.387653]: KF 459 (map 1) | xmap best=0.7806 KF 280 (map 0) | no proposal
+[INFO] [1793015142.489482]: KF 460 (map 1) | xmap best=0.8004 KF 403 (map 0) | no proposal
+[INFO] [1793015142.591766]: KF 461 (map 1) | xmap best=0.7999 KF 403 (map 0) | no proposal
+[INFO] [1793015142.795747]: KF 462 (map 1) | xmap best=0.7763 KF 403 (map 0) | no proposal
+[INFO] [1793015142.939528]: KF 463 (map 1) | xmap best=0.7715 KF 218 (map 0) | no proposal
+[INFO] [1793015143.036462]: KF 464 (map 1) | xmap best=0.7918 KF 403 (map 0) | no proposal
+[INFO] [1793015143.240381]: KF 465 (map 1) | xmap best=0.7777 KF 218 (map 0) | no proposal
+[INFO] [1793015146.138875]: KF 466 (map 1) | xmap best=0.7572 KF 148 (map 0) | no proposal
+[INFO] [1793015151.189173]: KF 467 (map 1) | xmap best=0.7955 KF 403 (map 0) | no proposal
+[INFO] [1793015151.334398]: KF 468 (map 1) | xmap best=0.7833 KF 289 (map 0) | no proposal
+[INFO] [1793015151.490190]: KF 469 (map 1) | xmap best=0.7891 KF 289 (map 0) | no proposal
+[INFO] [1793015151.691747]: KF 470 (map 1) | xmap best=0.8123 KF 372 (map 0) | no proposal
+[INFO] [1793015151.941199]: KF 471 (map 1) | xmap best=0.8483 KF 228 (map 0) | no proposal
+[WARN] [1793015152.187395]: XMAP PROPOSAL: KF 472 (map 1) matches KF 257 (map 0) | score=0.8853 | thresh=0.8768 | dt=1353.6s
+[INFO] [1793015152.336799]: KF 473 (map 1) | xmap best=0.8752 KF 228 (map 0) | no proposal
+[WARN] [1793015152.591909]: XMAP PROPOSAL: KF 474 (map 1) matches KF 360 (map 0) | score=0.8801 | thresh=0.8768 | dt=1308.2s
+[WARN] [1793015152.789818]: XMAP PROPOSAL: KF 475 (map 1) matches KF 228 (map 0) | score=0.8998 | thresh=0.8768 | dt=1363.9s
+[WARN] [1793015153.089508]: XMAP PROPOSAL: KF 476 (map 1) matches KF 360 (map 0) | score=0.8886 | thresh=0.8768 | dt=1308.7s
+[WARN] [1793015153.438229]: XMAP PROPOSAL: KF 477 (map 1) matches KF 359 (map 0) | score=0.9231 | thresh=0.8768 | dt=1309.7s
+[WARN] [1793015153.694484]: XMAP PROPOSAL: KF 478 (map 1) matches KF 359 (map 0) | score=0.9066 | thresh=0.8768 | dt=1310.0s
+[WARN] [1793015153.886686]: XMAP PROPOSAL: KF 479 (map 1) matches KF 227 (map 0) | score=0.8950 | thresh=0.8768 | dt=1365.3s
+[WARN] [1793015154.086146]: XMAP PROPOSAL: KF 480 (map 1) matches KF 227 (map 0) | score=0.8971 | thresh=0.8768 | dt=1365.5s
+[WARN] [1793015154.240630]: XMAP PROPOSAL: KF 481 (map 1) matches KF 359 (map 0) | score=0.8899 | thresh=0.8768 | dt=1310.5s
+[WARN] [1793015154.438038]: XMAP PROPOSAL: KF 482 (map 1) matches KF 359 (map 0) | score=0.8819 | thresh=0.8768 | dt=1310.7s
+[WARN] [1793015154.636269]: XMAP PROPOSAL: KF 483 (map 1) matches KF 358 (map 0) | score=0.9076 | thresh=0.8768 | dt=1311.5s
+[WARN] [1793015154.786136]: XMAP PROPOSAL: KF 484 (map 1) matches KF 290 (map 0) | score=0.8885 | thresh=0.8768 | dt=1343.4s
+[WARN] [1793015154.987884]: XMAP PROPOSAL: KF 485 (map 1) matches KF 107 (map 0) | score=0.8872 | thresh=0.8768 | dt=1384.8s
+[WARN] [1793015155.136470]: XMAP PROPOSAL: KF 486 (map 1) matches KF 103 (map 0) | score=0.8869 | thresh=0.8768 | dt=1385.8s
+[INFO] [1793015155.339044]: KF 487 (map 1) | xmap best=0.8742 KF 113 (map 0) | no proposal
+[WARN] [1793015155.539157]: XMAP PROPOSAL: KF 488 (map 1) matches KF 113 (map 0) | score=0.8785 | thresh=0.8768 | dt=1384.1s
+[WARN] [1793015155.739127]: XMAP PROPOSAL: KF 489 (map 1) matches KF 112 (map 0) | score=0.8782 | thresh=0.8768 | dt=1384.5s
+[WARN] [1793015155.935827]: XMAP PROPOSAL: KF 490 (map 1) matches KF 112 (map 0) | score=0.8929 | thresh=0.8768 | dt=1384.7s
+[WARN] [1793015156.085481]: XMAP PROPOSAL: KF 491 (map 1) matches KF 112 (map 0) | score=0.9082 | thresh=0.8768 | dt=1384.8s
+[WARN] [1793015156.896357]: XMAP PROPOSAL: KF 492 (map 1) matches KF 107 (map 0) | score=0.9246 | thresh=0.8768 | dt=1386.7s
+[WARN] [1793015158.043504]: XMAP PROPOSAL: KF 493 (map 1) matches KF 299 (map 0) | score=0.9292 | thresh=0.8768 | dt=1342.9s
+[WARN] [1793015158.889766]: XMAP PROPOSAL: KF 494 (map 1) matches KF 389 (map 0) | score=0.9039 | thresh=0.8768 | dt=1295.0s
+[WARN] [1793015159.591433]: XMAP PROPOSAL: KF 495 (map 1) matches KF 299 (map 0) | score=0.9044 | thresh=0.8768 | dt=1344.5s
+[WARN] [1793015160.038240]: XMAP PROPOSAL: KF 496 (map 1) matches KF 389 (map 0) | score=0.8881 | thresh=0.8768 | dt=1296.2s
+[WARN] [1793015160.738514]: XMAP PROPOSAL: KF 497 (map 1) matches KF 323 (map 0) | score=0.8947 | thresh=0.8768 | dt=1334.4s
+[WARN] [1793015161.394321]: XMAP PROPOSAL: KF 498 (map 1) matches KF 332 (map 0) | score=0.9047 | thresh=0.8768 | dt=1331.9s
+[WARN] [1793015161.788699]: XMAP PROPOSAL: KF 499 (map 1) matches KF 332 (map 0) | score=0.9087 | thresh=0.8768 | dt=1332.3s
+[WARN] [1793015162.338628]: XMAP PROPOSAL: KF 500 (map 1) matches KF 332 (map 0) | score=0.8792 | thresh=0.8768 | dt=1332.9s
+[INFO] [1793015162.737575]: KF 501 (map 1) | xmap best=0.8620 KF 324 (map 0) | no proposal
+[INFO] [1793015163.144321]: KF 502 (map 1) | xmap best=0.8562 KF 333 (map 0) | no proposal
+[INFO] [1793015163.488703]: KF 503 (map 1) | xmap best=0.8701 KF 327 (map 0) | no proposal
+[INFO] [1793015163.838449]: KF 504 (map 1) | xmap best=0.8287 KF 336 (map 0) | no proposal
+[INFO] [1793015164.140193]: KF 505 (map 1) | xmap best=0.8185 KF 327 (map 0) | no proposal
+[INFO] [1793015164.387736]: KF 506 (map 1) | xmap best=0.8489 KF 328 (map 0) | no proposal
+[INFO] [1793015164.736532]: KF 507 (map 1) | xmap best=0.8214 KF 295 (map 0) | no proposal
+[INFO] [1793015165.039820]: KF 508 (map 1) | xmap best=0.8090 KF 290 (map 0) | no proposal
+[INFO] [1793015165.336586]: KF 509 (map 1) | xmap best=0.8186 KF 290 (map 0) | no proposal
+[INFO] [1793015165.587403]: KF 510 (map 1) | xmap best=0.8137 KF 295 (map 0) | no proposal
+[INFO] [1793015165.886551]: KF 511 (map 1) | xmap best=0.8176 KF 387 (map 0) | no proposal
+[INFO] [1793015166.187568]: KF 512 (map 1) | xmap best=0.8064 KF 387 (map 0) | no proposal
+[INFO] [1793015166.489420]: KF 513 (map 1) | xmap best=0.8307 KF 290 (map 0) | no proposal
+[INFO] [1793015166.789550]: KF 514 (map 1) | xmap best=0.8311 KF 328 (map 0) | no proposal
+[INFO] [1793015167.088814]: KF 515 (map 1) | xmap best=0.8539 KF 328 (map 0) | no proposal
+[INFO] [1793015167.338132]: KF 516 (map 1) | xmap best=0.8560 KF 328 (map 0) | no proposal
+[INFO] [1793015167.640678]: KF 517 (map 1) | xmap best=0.8488 KF 328 (map 0) | no proposal
+[INFO] [1793015167.938213]: KF 518 (map 1) | xmap best=0.8492 KF 323 (map 0) | no proposal
+[INFO] [1793015168.288396]: KF 519 (map 1) | xmap best=0.8295 KF 133 (map 0) | no proposal
+[INFO] [1793015168.691319]: KF 520 (map 1) | xmap best=0.8387 KF 290 (map 0) | no proposal
+[INFO] [1793015169.040830]: KF 521 (map 1) | xmap best=0.8275 KF 290 (map 0) | no proposal
+[INFO] [1793015169.287412]: KF 522 (map 1) | xmap best=0.8133 KF 240 (map 0) | no proposal
+[INFO] [1793015169.537631]: KF 523 (map 1) | xmap best=0.7998 KF 240 (map 0) | no proposal
+[INFO] [1793015169.789443]: KF 524 (map 1) | xmap best=0.8050 KF 240 (map 0) | no proposal
+[INFO] [1793015170.037469]: KF 525 (map 1) | xmap best=0.8003 KF 240 (map 0) | no proposal
+[INFO] [1793015170.239509]: KF 526 (map 1) | xmap best=0.7832 KF 133 (map 0) | no proposal
+[INFO] [1793015170.436880]: KF 527 (map 1) | xmap best=0.7910 KF 340 (map 0) | no proposal
+[INFO] [1793015170.645140]: KF 528 (map 1) | xmap best=0.7969 KF 240 (map 0) | no proposal
+[INFO] [1793015170.888465]: KF 529 (map 1) | xmap best=0.8236 KF 240 (map 0) | no proposal
+[INFO] [1793015171.044832]: KF 530 (map 1) | xmap best=0.8200 KF 240 (map 0) | no proposal
+[INFO] [1793015171.192979]: KF 531 (map 1) | xmap best=0.7932 KF 240 (map 0) | no proposal
+[INFO] [1793015171.345956]: KF 532 (map 1) | xmap best=0.8091 KF 240 (map 0) | no proposal
+[INFO] [1793015171.440213]: KF 533 (map 1) | xmap best=0.8226 KF 240 (map 0) | no proposal
+[INFO] [1793015171.586494]: KF 534 (map 1) | xmap best=0.8440 KF 240 (map 0) | no proposal
+[INFO] [1793015171.740113]: KF 535 (map 1) | xmap best=0.8207 KF 240 (map 0) | no proposal
+[INFO] [1793015171.886086]: KF 536 (map 1) | xmap best=0.8018 KF 240 (map 0) | no proposal
+[INFO] [1793015171.991672]: KF 537 (map 1) | xmap best=0.8026 KF 240 (map 0) | no proposal
+[INFO] [1793015172.141254]: KF 538 (map 1) | xmap best=0.7979 KF 242 (map 0) | no proposal
+[INFO] [1793015172.288066]: KF 539 (map 1) | xmap best=0.8099 KF 242 (map 0) | no proposal
+[INFO] [1793015172.386106]: KF 540 (map 1) | xmap best=0.8249 KF 240 (map 0) | no proposal
+[INFO] [1793015172.536761]: KF 541 (map 1) | xmap best=0.8303 KF 240 (map 0) | no proposal
+[INFO] [1793015172.688236]: KF 542 (map 1) | xmap best=0.8402 KF 240 (map 0) | no proposal
+[INFO] [1793015172.785172]: KF 543 (map 1) | xmap best=0.8385 KF 205 (map 0) | no proposal
+[INFO] [1793015172.888128]: KF 544 (map 1) | xmap best=0.8261 KF 290 (map 0) | no proposal
+[INFO] [1793015173.034207]: KF 545 (map 1) | xmap best=0.8334 KF 374 (map 0) | no proposal
+[INFO] [1793015173.137804]: KF 546 (map 1) | xmap best=0.8404 KF 236 (map 0) | no proposal
+[INFO] [1793015173.238447]: KF 547 (map 1) | xmap best=0.8406 KF 240 (map 0) | no proposal
+[INFO] [1793015173.338410]: KF 548 (map 1) | xmap best=0.8168 KF 125 (map 0) | no proposal
+[INFO] [1793015173.438686]: KF 549 (map 1) | xmap best=0.8491 KF 240 (map 0) | no proposal
+[INFO] [1793015173.537091]: KF 550 (map 1) | xmap best=0.8404 KF 240 (map 0) | no proposal
+[INFO] [1793015173.636127]: KF 551 (map 1) | xmap best=0.8398 KF 240 (map 0) | no proposal
+[INFO] [1793015173.791788]: KF 552 (map 1) | xmap best=0.8361 KF 240 (map 0) | no proposal
+[INFO] [1793015173.889935]: KF 553 (map 1) | xmap best=0.8358 KF 240 (map 0) | no proposal
+[INFO] [1793015174.038430]: KF 554 (map 1) | xmap best=0.8281 KF 240 (map 0) | no proposal
+[INFO] [1793015174.189090]: KF 555 (map 1) | xmap best=0.8216 KF 240 (map 0) | no proposal
+[INFO] [1793015174.337779]: KF 556 (map 1) | xmap best=0.8348 KF 290 (map 0) | no proposal
+[INFO] [1793015174.488562]: KF 557 (map 1) | xmap best=0.8348 KF 290 (map 0) | no proposal
+[INFO] [1793015174.642326]: KF 558 (map 1) | xmap best=0.8339 KF 240 (map 0) | no proposal
+[INFO] [1793015174.789084]: KF 559 (map 1) | xmap best=0.8420 KF 240 (map 0) | no proposal
+[INFO] [1793015174.936151]: KF 560 (map 1) | xmap best=0.8327 KF 392 (map 0) | no proposal
+[INFO] [1793015175.086056]: KF 561 (map 1) | xmap best=0.8490 KF 236 (map 0) | no proposal
+[INFO] [1793015175.238549]: KF 562 (map 1) | xmap best=0.8425 KF 392 (map 0) | no proposal
+[INFO] [1793015175.386306]: KF 563 (map 1) | xmap best=0.8476 KF 235 (map 0) | no proposal
+[INFO] [1793015175.490192]: KF 564 (map 1) | xmap best=0.8510 KF 227 (map 0) | no proposal
+[INFO] [1793015175.585654]: KF 565 (map 1) | xmap best=0.8452 KF 235 (map 0) | no proposal
+[INFO] [1793015175.688524]: KF 566 (map 1) | xmap best=0.8460 KF 263 (map 0) | no proposal
+[INFO] [1793015175.841376]: KF 567 (map 1) | xmap best=0.8445 KF 265 (map 0) | no proposal
+[INFO] [1793015175.993230]: KF 568 (map 1) | xmap best=0.8591 KF 264 (map 0) | no proposal
+[INFO] [1793015176.136137]: KF 569 (map 1) | xmap best=0.8579 KF 264 (map 0) | no proposal
+[INFO] [1793015176.293723]: KF 570 (map 1) | xmap best=0.8438 KF 264 (map 0) | no proposal
+[INFO] [1793015176.440612]: KF 571 (map 1) | xmap best=0.8390 KF 281 (map 0) | no proposal
+[INFO] [1793015176.588709]: KF 572 (map 1) | xmap best=0.8233 KF 321 (map 0) | no proposal
+[INFO] [1793015176.686099]: KF 573 (map 1) | xmap best=0.8125 KF 321 (map 0) | no proposal
+[INFO] [1793015176.835330]: KF 574 (map 1) | xmap best=0.8324 KF 321 (map 0) | no proposal
+[INFO] [1793015176.993162]: KF 575 (map 1) | xmap best=0.8253 KF 281 (map 0) | no proposal
+[INFO] [1793015177.135505]: KF 576 (map 1) | xmap best=0.8327 KF 321 (map 0) | no proposal
+[INFO] [1793015177.288803]: KF 577 (map 1) | xmap best=0.8089 KF 264 (map 0) | no proposal
+[INFO] [1793015177.441029]: KF 578 (map 1) | xmap best=0.8102 KF 266 (map 0) | no proposal
+[INFO] [1793015177.588686]: KF 579 (map 1) | xmap best=0.8299 KF 266 (map 0) | no proposal
+[INFO] [1793015177.741320]: KF 580 (map 1) | xmap best=0.8273 KF 215 (map 0) | no proposal
+[INFO] [1793015177.883653]: KF 581 (map 1) | xmap best=0.8428 KF 215 (map 0) | no proposal
+[INFO] [1793015178.036583]: KF 582 (map 1) | xmap best=0.8527 KF 215 (map 0) | no proposal
+[INFO] [1793015178.189118]: KF 583 (map 1) | xmap best=0.8474 KF 264 (map 0) | no proposal
+[INFO] [1793015178.334399]: KF 584 (map 1) | xmap best=0.8514 KF 264 (map 0) | no proposal
+[INFO] [1793015178.487000]: KF 585 (map 1) | xmap best=0.8683 KF 264 (map 0) | no proposal
+[INFO] [1793015178.642876]: KF 586 (map 1) | xmap best=0.8658 KF 289 (map 0) | no proposal
+[WARN] [1793015178.788085]: XMAP PROPOSAL: KF 587 (map 1) matches KF 289 (map 0) | score=0.8878 | thresh=0.8768 | dt=1367.8s
+[WARN] [1793015178.936594]: XMAP PROPOSAL: KF 588 (map 1) matches KF 289 (map 0) | score=0.8838 | thresh=0.8768 | dt=1367.9s
+[WARN] [1793015179.086297]: XMAP PROPOSAL: KF 589 (map 1) matches KF 289 (map 0) | score=0.8954 | thresh=0.8768 | dt=1368.1s
+[WARN] [1793015179.238249]: XMAP PROPOSAL: KF 590 (map 1) matches KF 289 (map 0) | score=0.9156 | thresh=0.8768 | dt=1368.2s
+[WARN] [1793015179.387597]: XMAP PROPOSAL: KF 591 (map 1) matches KF 289 (map 0) | score=0.8991 | thresh=0.8768 | dt=1368.4s
+[WARN] [1793015179.540538]: XMAP PROPOSAL: KF 592 (map 1) matches KF 289 (map 0) | score=0.8932 | thresh=0.8768 | dt=1368.5s
+[WARN] [1793015179.635046]: XMAP PROPOSAL: KF 593 (map 1) matches KF 289 (map 0) | score=0.8863 | thresh=0.8768 | dt=1368.6s
+[WARN] [1793015179.794188]: XMAP PROPOSAL: KF 594 (map 1) matches KF 139 (map 0) | score=0.9226 | thresh=0.8768 | dt=1405.4s
+[WARN] [1793015179.886412]: XMAP PROPOSAL: KF 595 (map 1) matches KF 139 (map 0) | score=0.9090 | thresh=0.8768 | dt=1405.5s
+[WARN] [1793015180.041191]: XMAP PROPOSAL: KF 596 (map 1) matches KF 288 (map 0) | score=0.9109 | thresh=0.8768 | dt=1369.5s
+[WARN] [1793015180.186313]: XMAP PROPOSAL: KF 597 (map 1) matches KF 381 (map 0) | score=0.9211 | thresh=0.8768 | dt=1321.9s
+[WARN] [1793015180.336791]: XMAP PROPOSAL: KF 598 (map 1) matches KF 381 (map 0) | score=0.9179 | thresh=0.8768 | dt=1322.0s
+[WARN] [1793015180.496978]: XMAP PROPOSAL: KF 599 (map 1) matches KF 381 (map 0) | score=0.9182 | thresh=0.8768 | dt=1322.2s
+[WARN] [1793015180.637383]: XMAP PROPOSAL: KF 600 (map 1) matches KF 381 (map 0) | score=0.9244 | thresh=0.8768 | dt=1322.3s
+[WARN] [1793015180.790044]: XMAP PROPOSAL: KF 601 (map 1) matches KF 381 (map 0) | score=0.9249 | thresh=0.8768 | dt=1322.5s
+[INFO] [1793015180.794254]: dumped 600 descriptors to /home/anish/mono-slam-cnn-loop-closure/results/proposal_v2/runs/X2_MH0305_r4_resnet18/descs.npz
+[WARN] [1793015180.987444]: XMAP PROPOSAL: KF 602 (map 1) matches KF 288 (map 0) | score=0.9096 | thresh=0.8768 | dt=1370.4s
+[WARN] [1793015181.246027]: XMAP PROPOSAL: KF 603 (map 1) matches KF 288 (map 0) | score=0.9126 | thresh=0.8768 | dt=1370.7s
+[WARN] [1793015181.548828]: XMAP PROPOSAL: KF 604 (map 1) matches KF 288 (map 0) | score=0.9018 | thresh=0.8768 | dt=1371.0s
+[WARN] [1793015181.994737]: XMAP PROPOSAL: KF 605 (map 1) matches KF 200 (map 0) | score=0.9084 | thresh=0.8768 | dt=1399.9s
+[WARN] [1793015182.596551]: XMAP PROPOSAL: KF 606 (map 1) matches KF 373 (map 0) | score=0.9132 | thresh=0.8768 | dt=1330.1s
+[WARN] [1793015182.738067]: XMAP PROPOSAL: KF 607 (map 1) matches KF 373 (map 0) | score=0.9285 | thresh=0.8768 | dt=1330.3s
+[WARN] [1793015182.890322]: XMAP PROPOSAL: KF 608 (map 1) matches KF 373 (map 0) | score=0.9321 | thresh=0.8768 | dt=1330.4s
+[WARN] [1793015182.991331]: XMAP PROPOSAL: KF 609 (map 1) matches KF 373 (map 0) | score=0.9318 | thresh=0.8768 | dt=1330.5s
+[WARN] [1793015183.089900]: XMAP PROPOSAL: KF 610 (map 1) matches KF 373 (map 0) | score=0.9385 | thresh=0.8768 | dt=1330.6s
+[WARN] [1793015183.191031]: XMAP PROPOSAL: KF 611 (map 1) matches KF 373 (map 0) | score=0.9241 | thresh=0.8768 | dt=1330.7s
+[WARN] [1793015183.288870]: XMAP PROPOSAL: KF 612 (map 1) matches KF 373 (map 0) | score=0.9409 | thresh=0.8768 | dt=1330.8s
+[WARN] [1793015183.394161]: XMAP PROPOSAL: KF 613 (map 1) matches KF 373 (map 0) | score=0.9306 | thresh=0.8768 | dt=1330.9s
+[WARN] [1793015183.487033]: XMAP PROPOSAL: KF 614 (map 1) matches KF 373 (map 0) | score=0.9452 | thresh=0.8768 | dt=1331.0s
+[WARN] [1793015183.588478]: XMAP PROPOSAL: KF 615 (map 1) matches KF 373 (map 0) | score=0.9384 | thresh=0.8768 | dt=1331.1s
+[WARN] [1793015183.690036]: XMAP PROPOSAL: KF 616 (map 1) matches KF 373 (map 0) | score=0.9368 | thresh=0.8768 | dt=1331.2s
+[WARN] [1793015183.786131]: XMAP PROPOSAL: KF 617 (map 1) matches KF 373 (map 0) | score=0.9243 | thresh=0.8768 | dt=1331.3s
+[WARN] [1793015183.890161]: XMAP PROPOSAL: KF 618 (map 1) matches KF 373 (map 0) | score=0.9375 | thresh=0.8768 | dt=1331.4s
+[WARN] [1793015183.987506]: XMAP PROPOSAL: KF 619 (map 1) matches KF 373 (map 0) | score=0.9396 | thresh=0.8768 | dt=1331.5s
+[WARN] [1793015184.088142]: XMAP PROPOSAL: KF 620 (map 1) matches KF 373 (map 0) | score=0.9329 | thresh=0.8768 | dt=1331.6s
+[WARN] [1793015184.187644]: XMAP PROPOSAL: KF 621 (map 1) matches KF 373 (map 0) | score=0.9273 | thresh=0.8768 | dt=1331.7s
+[WARN] [1793015184.293366]: XMAP PROPOSAL: KF 622 (map 1) matches KF 373 (map 0) | score=0.9239 | thresh=0.8768 | dt=1331.8s
+[WARN] [1793015184.387104]: XMAP PROPOSAL: KF 623 (map 1) matches KF 363 (map 0) | score=0.8984 | thresh=0.8768 | dt=1337.2s
+[WARN] [1793015184.536561]: XMAP PROPOSAL: KF 624 (map 1) matches KF 262 (map 0) | score=0.9026 | thresh=0.8768 | dt=1383.3s
+[WARN] [1793015184.637701]: XMAP PROPOSAL: KF 625 (map 1) matches KF 262 (map 0) | score=0.8966 | thresh=0.8768 | dt=1383.4s
+[WARN] [1793015184.739976]: XMAP PROPOSAL: KF 626 (map 1) matches KF 266 (map 0) | score=0.9116 | thresh=0.8768 | dt=1381.9s
+[WARN] [1793015184.893802]: XMAP PROPOSAL: KF 627 (map 1) matches KF 266 (map 0) | score=0.9161 | thresh=0.8768 | dt=1382.1s
+[WARN] [1793015184.986228]: XMAP PROPOSAL: KF 628 (map 1) matches KF 266 (map 0) | score=0.9182 | thresh=0.8768 | dt=1382.2s
+[WARN] [1793015185.139384]: XMAP PROPOSAL: KF 629 (map 1) matches KF 266 (map 0) | score=0.9141 | thresh=0.8768 | dt=1382.3s
+[WARN] [1793015185.285925]: XMAP PROPOSAL: KF 630 (map 1) matches KF 266 (map 0) | score=0.9107 | thresh=0.8768 | dt=1382.5s
+[WARN] [1793015185.389477]: XMAP PROPOSAL: KF 631 (map 1) matches KF 266 (map 0) | score=0.9161 | thresh=0.8768 | dt=1382.6s
+[WARN] [1793015185.537139]: XMAP PROPOSAL: KF 632 (map 1) matches KF 266 (map 0) | score=0.9142 | thresh=0.8768 | dt=1382.7s
+[WARN] [1793015185.637708]: XMAP PROPOSAL: KF 633 (map 1) matches KF 266 (map 0) | score=0.9075 | thresh=0.8768 | dt=1382.8s
+[WARN] [1793015185.786745]: XMAP PROPOSAL: KF 634 (map 1) matches KF 266 (map 0) | score=0.9141 | thresh=0.8768 | dt=1383.0s
+[WARN] [1793015185.941227]: XMAP PROPOSAL: KF 635 (map 1) matches KF 266 (map 0) | score=0.9030 | thresh=0.8768 | dt=1383.1s
+[WARN] [1793015186.034410]: XMAP PROPOSAL: KF 636 (map 1) matches KF 265 (map 0) | score=0.9056 | thresh=0.8768 | dt=1383.6s
+[WARN] [1793015186.134983]: XMAP PROPOSAL: KF 637 (map 1) matches KF 265 (map 0) | score=0.8843 | thresh=0.8768 | dt=1383.7s
+[INFO] [1793015186.292659]: KF 638 (map 1) | xmap best=0.8553 KF 267 (map 0) | no proposal
+[INFO] [1793015186.386553]: KF 639 (map 1) | xmap best=0.8418 KF 273 (map 0) | no proposal
+[INFO] [1793015186.484540]: KF 640 (map 1) | xmap best=0.8222 KF 273 (map 0) | no proposal
+[INFO] [1793015186.583978]: KF 641 (map 1) | xmap best=0.8292 KF 273 (map 0) | no proposal
+[INFO] [1793015186.684101]: KF 642 (map 1) | xmap best=0.8313 KF 273 (map 0) | no proposal
+[INFO] [1793015186.835436]: KF 643 (map 1) | xmap best=0.8256 KF 273 (map 0) | no proposal
+[INFO] [1793015186.987304]: KF 644 (map 1) | xmap best=0.8269 KF 278 (map 0) | no proposal
+[INFO] [1793015187.134455]: KF 645 (map 1) | xmap best=0.8429 KF 278 (map 0) | no proposal
+[INFO] [1793015187.337884]: KF 646 (map 1) | xmap best=0.8471 KF 278 (map 0) | no proposal
+[INFO] [1793015187.489973]: KF 647 (map 1) | xmap best=0.8499 KF 278 (map 0) | no proposal
+[INFO] [1793015187.638613]: KF 648 (map 1) | xmap best=0.8491 KF 278 (map 0) | no proposal
+[INFO] [1793015187.786103]: KF 649 (map 1) | xmap best=0.8398 KF 278 (map 0) | no proposal
+[INFO] [1793015187.934041]: KF 650 (map 1) | xmap best=0.8191 KF 278 (map 0) | no proposal
+[INFO] [1793015188.093615]: KF 651 (map 1) | xmap best=0.8142 KF 278 (map 0) | no proposal
+[INFO] [1793015188.234146]: KF 652 (map 1) | xmap best=0.7932 KF 276 (map 0) | no proposal
+[INFO] [1793015188.386805]: KF 653 (map 1) | xmap best=0.7949 KF 278 (map 0) | no proposal
+[INFO] [1793015188.537780]: KF 654 (map 1) | xmap best=0.7949 KF 278 (map 0) | no proposal
+[INFO] [1793015188.684672]: KF 655 (map 1) | xmap best=0.8215 KF 278 (map 0) | no proposal
+[INFO] [1793015188.834223]: KF 656 (map 1) | xmap best=0.8209 KF 278 (map 0) | no proposal
+[INFO] [1793015188.983282]: KF 657 (map 1) | xmap best=0.8351 KF 278 (map 0) | no proposal
+[INFO] [1793015189.133282]: KF 658 (map 1) | xmap best=0.8125 KF 275 (map 0) | no proposal
+[INFO] [1793015189.286870]: KF 659 (map 1) | xmap best=0.8207 KF 280 (map 0) | no proposal
+[INFO] [1793015189.438079]: KF 660 (map 1) | xmap best=0.8187 KF 275 (map 0) | no proposal
+[INFO] [1793015189.584251]: KF 661 (map 1) | xmap best=0.8153 KF 275 (map 0) | no proposal
+[INFO] [1793015189.734082]: KF 662 (map 1) | xmap best=0.8055 KF 216 (map 0) | no proposal
+[INFO] [1793015189.884323]: KF 663 (map 1) | xmap best=0.8044 KF 216 (map 0) | no proposal
+[INFO] [1793015190.086193]: KF 664 (map 1) | xmap best=0.8231 KF 216 (map 0) | no proposal
+[INFO] [1793015190.234325]: KF 665 (map 1) | xmap best=0.8104 KF 280 (map 0) | no proposal
+[INFO] [1793015190.437443]: KF 666 (map 1) | xmap best=0.8052 KF 280 (map 0) | no proposal
+[INFO] [1793015190.633087]: KF 667 (map 1) | xmap best=0.7879 KF 275 (map 0) | no proposal
+[INFO] [1793015190.787323]: KF 668 (map 1) | xmap best=0.7876 KF 216 (map 0) | no proposal
+[INFO] [1793015190.984978]: KF 669 (map 1) | xmap best=0.7963 KF 216 (map 0) | no proposal
+[INFO] [1793015191.135744]: KF 670 (map 1) | xmap best=0.7929 KF 216 (map 0) | no proposal
+[INFO] [1793015191.333952]: KF 671 (map 1) | xmap best=0.7825 KF 216 (map 0) | no proposal
+[INFO] [1793015191.533127]: KF 672 (map 1) | xmap best=0.8009 KF 216 (map 0) | no proposal
+[INFO] [1793015191.734442]: KF 673 (map 1) | xmap best=0.7702 KF 216 (map 0) | no proposal
+[INFO] [1793015191.933465]: KF 674 (map 1) | xmap best=0.7761 KF 280 (map 0) | no proposal
+[INFO] [1793015192.134506]: KF 675 (map 1) | xmap best=0.7877 KF 216 (map 0) | no proposal
+[INFO] [1793015192.383844]: KF 676 (map 1) | xmap best=0.7837 KF 272 (map 0) | no proposal
+[INFO] [1793015192.633051]: KF 677 (map 1) | xmap best=0.7886 KF 266 (map 0) | no proposal
+[INFO] [1793015192.835416]: KF 678 (map 1) | xmap best=0.8144 KF 266 (map 0) | no proposal
+[INFO] [1793015193.083774]: KF 679 (map 1) | xmap best=0.8280 KF 266 (map 0) | no proposal
+[INFO] [1793015193.383804]: KF 680 (map 1) | xmap best=0.8247 KF 266 (map 0) | no proposal
+[INFO] [1793015193.681681]: KF 681 (map 1) | xmap best=0.8181 KF 266 (map 0) | no proposal
+[INFO] [1793015193.935421]: KF 682 (map 1) | xmap best=0.8029 KF 266 (map 0) | no proposal
+[INFO] [1793015194.135322]: KF 683 (map 1) | xmap best=0.7936 KF 266 (map 0) | no proposal
+[INFO] [1793015194.333549]: KF 684 (map 1) | xmap best=0.7962 KF 266 (map 0) | no proposal
+[INFO] [1793015194.595128]: KF 685 (map 1) | xmap best=0.7983 KF 266 (map 0) | no proposal
+[INFO] [1793015194.784326]: KF 686 (map 1) | xmap best=0.7920 KF 266 (map 0) | no proposal
+[INFO] [1793015195.035045]: KF 687 (map 1) | xmap best=0.7988 KF 270 (map 0) | no proposal
+[INFO] [1793015195.238294]: KF 688 (map 1) | xmap best=0.8004 KF 281 (map 0) | no proposal
+[INFO] [1793015195.486105]: KF 689 (map 1) | xmap best=0.8123 KF 266 (map 0) | no proposal
+[INFO] [1793015195.684261]: KF 690 (map 1) | xmap best=0.8065 KF 266 (map 0) | no proposal
+[INFO] [1793015195.933794]: KF 691 (map 1) | xmap best=0.7977 KF 266 (map 0) | no proposal
+[INFO] [1793015196.133380]: KF 692 (map 1) | xmap best=0.8008 KF 270 (map 0) | no proposal
+[INFO] [1793015196.334553]: KF 693 (map 1) | xmap best=0.8031 KF 184 (map 0) | no proposal
+[INFO] [1793015196.537086]: KF 694 (map 1) | xmap best=0.7808 KF 281 (map 0) | no proposal
+[INFO] [1793015196.789771]: KF 695 (map 1) | xmap best=0.7847 KF 266 (map 0) | no proposal
+[INFO] [1793015196.988490]: KF 696 (map 1) | xmap best=0.7934 KF 272 (map 0) | no proposal
+[INFO] [1793015197.234156]: KF 697 (map 1) | xmap best=0.8076 KF 281 (map 0) | no proposal
+[INFO] [1793015197.439945]: KF 698 (map 1) | xmap best=0.8112 KF 272 (map 0) | no proposal
+[INFO] [1793015197.637277]: KF 699 (map 1) | xmap best=0.8131 KF 272 (map 0) | no proposal
+[INFO] [1793015197.838183]: KF 700 (map 1) | xmap best=0.8193 KF 280 (map 0) | no proposal
+[INFO] [1793015198.093673]: KF 701 (map 1) | xmap best=0.8108 KF 280 (map 0) | no proposal
+[INFO] [1793015198.284485]: KF 702 (map 1) | xmap best=0.8211 KF 280 (map 0) | no proposal
+[INFO] [1793015198.484436]: KF 703 (map 1) | xmap best=0.8132 KF 280 (map 0) | no proposal
+[INFO] [1793015198.687561]: KF 704 (map 1) | xmap best=0.8109 KF 280 (map 0) | no proposal
+[INFO] [1793015198.884486]: KF 705 (map 1) | xmap best=0.8182 KF 272 (map 0) | no proposal
+[INFO] [1793015199.141590]: KF 706 (map 1) | xmap best=0.8210 KF 281 (map 0) | no proposal
+[INFO] [1793015199.339230]: KF 707 (map 1) | xmap best=0.8274 KF 280 (map 0) | no proposal
+[INFO] [1793015199.536913]: KF 708 (map 1) | xmap best=0.8137 KF 280 (map 0) | no proposal
+[INFO] [1793015199.788680]: KF 709 (map 1) | xmap best=0.8109 KF 280 (map 0) | no proposal
+[INFO] [1793015199.988050]: KF 710 (map 1) | xmap best=0.8127 KF 280 (map 0) | no proposal
+[INFO] [1793015200.240623]: KF 711 (map 1) | xmap best=0.8122 KF 280 (map 0) | no proposal
+[INFO] [1793015200.434900]: KF 712 (map 1) | xmap best=0.8047 KF 280 (map 0) | no proposal
+[INFO] [1793015200.637487]: KF 713 (map 1) | xmap best=0.8192 KF 280 (map 0) | no proposal
+[INFO] [1793015200.834167]: KF 714 (map 1) | xmap best=0.8262 KF 280 (map 0) | no proposal
+[INFO] [1793015201.034667]: KF 715 (map 1) | xmap best=0.8369 KF 280 (map 0) | no proposal
+[INFO] [1793015201.288855]: KF 716 (map 1) | xmap best=0.8535 KF 280 (map 0) | no proposal
+[INFO] [1793015201.536190]: KF 717 (map 1) | xmap best=0.8568 KF 280 (map 0) | no proposal
+[INFO] [1793015201.735656]: KF 718 (map 1) | xmap best=0.8612 KF 280 (map 0) | no proposal
+[INFO] [1793015201.987258]: KF 719 (map 1) | xmap best=0.8706 KF 280 (map 0) | no proposal
+[INFO] [1793015202.235667]: KF 720 (map 1) | xmap best=0.8661 KF 280 (map 0) | no proposal
+[INFO] [1793015202.534468]: KF 721 (map 1) | xmap best=0.8585 KF 178 (map 0) | no proposal
+[INFO] [1793015202.788177]: KF 722 (map 1) | xmap best=0.8578 KF 178 (map 0) | no proposal
+[INFO] [1793015203.086316]: KF 723 (map 1) | xmap best=0.8695 KF 280 (map 0) | no proposal
+[INFO] [1793015203.389938]: KF 724 (map 1) | xmap best=0.8613 KF 280 (map 0) | no proposal
+[WARN] [1793015203.687097]: XMAP PROPOSAL: KF 725 (map 1) matches KF 280 (map 0) | score=0.8863 | thresh=0.8768 | dt=1396.3s
+[WARN] [1793015203.985682]: XMAP PROPOSAL: KF 726 (map 1) matches KF 280 (map 0) | score=0.8906 | thresh=0.8768 | dt=1396.6s
+[WARN] [1793015204.286308]: XMAP PROPOSAL: KF 727 (map 1) matches KF 280 (map 0) | score=0.8997 | thresh=0.8768 | dt=1396.9s
+[WARN] [1793015204.637674]: XMAP PROPOSAL: KF 728 (map 1) matches KF 283 (map 0) | score=0.8814 | thresh=0.8768 | dt=1396.1s
+[INFO] [1793015204.835368]: KF 729 (map 1) | xmap best=0.8717 KF 282 (map 0) | no proposal
+[WARN] [1793015205.037479]: XMAP PROPOSAL: KF 730 (map 1) matches KF 178 (map 0) | score=0.8829 | thresh=0.8768 | dt=1426.3s
+[WARN] [1793015205.186934]: XMAP PROPOSAL: KF 731 (map 1) matches KF 178 (map 0) | score=0.8897 | thresh=0.8768 | dt=1426.4s
+[WARN] [1793015205.389663]: XMAP PROPOSAL: KF 732 (map 1) matches KF 283 (map 0) | score=0.8781 | thresh=0.8768 | dt=1396.9s
+[INFO] [1793015205.635603]: KF 733 (map 1) | xmap best=0.8763 KF 178 (map 0) | no proposal
+[INFO] [1793015205.837118]: KF 734 (map 1) | xmap best=0.8702 KF 281 (map 0) | no proposal
+[INFO] [1793015206.035753]: KF 735 (map 1) | xmap best=0.8594 KF 281 (map 0) | no proposal
+[INFO] [1793015206.187425]: KF 736 (map 1) | xmap best=0.8584 KF 281 (map 0) | no proposal
+[INFO] [1793015206.390721]: KF 737 (map 1) | xmap best=0.8534 KF 281 (map 0) | no proposal
+[INFO] [1793015206.594622]: KF 738 (map 1) | xmap best=0.8508 KF 281 (map 0) | no proposal
+[INFO] [1793015206.737250]: KF 739 (map 1) | xmap best=0.8650 KF 281 (map 0) | no proposal
+[INFO] [1793015206.938363]: KF 740 (map 1) | xmap best=0.8610 KF 281 (map 0) | no proposal
+[INFO] [1793015207.137488]: KF 741 (map 1) | xmap best=0.8568 KF 281 (map 0) | no proposal
+[INFO] [1793015207.336686]: KF 742 (map 1) | xmap best=0.8580 KF 281 (map 0) | no proposal
+[INFO] [1793015207.541156]: KF 743 (map 1) | xmap best=0.8548 KF 281 (map 0) | no proposal
+[INFO] [1793015207.740740]: KF 744 (map 1) | xmap best=0.8618 KF 281 (map 0) | no proposal
+[INFO] [1793015207.886762]: KF 745 (map 1) | xmap best=0.8626 KF 281 (map 0) | no proposal
+[INFO] [1793015208.140935]: KF 746 (map 1) | xmap best=0.8670 KF 281 (map 0) | no proposal
+[INFO] [1793015208.338757]: KF 747 (map 1) | xmap best=0.8550 KF 281 (map 0) | no proposal
+[INFO] [1793015208.539274]: KF 748 (map 1) | xmap best=0.8513 KF 281 (map 0) | no proposal
+[INFO] [1793015208.740098]: KF 749 (map 1) | xmap best=0.8594 KF 281 (map 0) | no proposal
+[INFO] [1793015208.943589]: KF 750 (map 1) | xmap best=0.8624 KF 281 (map 0) | no proposal
+[INFO] [1793015209.189523]: KF 751 (map 1) | xmap best=0.8495 KF 281 (map 0) | no proposal
+[INFO] [1793015209.385690]: KF 752 (map 1) | xmap best=0.8542 KF 284 (map 0) | no proposal
+[INFO] [1793015209.640067]: KF 753 (map 1) | xmap best=0.8323 KF 289 (map 0) | no proposal
+[INFO] [1793015209.836574]: KF 754 (map 1) | xmap best=0.8308 KF 227 (map 0) | no proposal
+[INFO] [1793015210.036576]: KF 755 (map 1) | xmap best=0.8445 KF 386 (map 0) | no proposal
+[INFO] [1793015210.235605]: KF 756 (map 1) | xmap best=0.8486 KF 289 (map 0) | no proposal
+[INFO] [1793015210.390768]: KF 757 (map 1) | xmap best=0.8229 KF 289 (map 0) | no proposal
+[INFO] [1793015210.536258]: KF 758 (map 1) | xmap best=0.8141 KF 386 (map 0) | no proposal
+[INFO] [1793015210.694297]: KF 759 (map 1) | xmap best=0.8059 KF 386 (map 0) | no proposal
+[INFO] [1793015210.837143]: KF 760 (map 1) | xmap best=0.8328 KF 289 (map 0) | no proposal
+[INFO] [1793015210.991684]: KF 761 (map 1) | xmap best=0.8370 KF 289 (map 0) | no proposal
+[INFO] [1793015211.136212]: KF 762 (map 1) | xmap best=0.8497 KF 289 (map 0) | no proposal
+[INFO] [1793015211.293038]: KF 763 (map 1) | xmap best=0.8578 KF 289 (map 0) | no proposal
+[INFO] [1793015211.487298]: KF 764 (map 1) | xmap best=0.8615 KF 289 (map 0) | no proposal
+[INFO] [1793015211.740014]: KF 765 (map 1) | xmap best=0.8591 KF 289 (map 0) | no proposal
+[INFO] [1793015211.989863]: KF 766 (map 1) | xmap best=0.8573 KF 289 (map 0) | no proposal
+[INFO] [1793015212.237496]: KF 767 (map 1) | xmap best=0.8591 KF 290 (map 0) | no proposal
+[INFO] [1793015212.492768]: KF 768 (map 1) | xmap best=0.8597 KF 217 (map 0) | no proposal
+[INFO] [1793015212.737201]: KF 769 (map 1) | xmap best=0.8560 KF 290 (map 0) | no proposal
+[INFO] [1793015212.989763]: KF 770 (map 1) | xmap best=0.8438 KF 268 (map 0) | no proposal
+[INFO] [1793015213.238187]: KF 771 (map 1) | xmap best=0.8427 KF 265 (map 0) | no proposal
+[INFO] [1793015213.593550]: KF 772 (map 1) | xmap best=0.8483 KF 264 (map 0) | no proposal
+[INFO] [1793015213.890581]: KF 773 (map 1) | xmap best=0.8594 KF 262 (map 0) | no proposal
+[INFO] [1793015214.192410]: KF 774 (map 1) | xmap best=0.8356 KF 240 (map 0) | no proposal
+[INFO] [1793015214.438260]: KF 775 (map 1) | xmap best=0.8305 KF 392 (map 0) | no proposal
+[INFO] [1793015214.738178]: KF 776 (map 1) | xmap best=0.8375 KF 392 (map 0) | no proposal
+[INFO] [1793015215.039842]: KF 777 (map 1) | xmap best=0.8278 KF 125 (map 0) | no proposal
+[INFO] [1793015215.338278]: KF 778 (map 1) | xmap best=0.8519 KF 374 (map 0) | no proposal
+[INFO] [1793015215.686541]: KF 779 (map 1) | xmap best=0.8562 KF 240 (map 0) | no proposal
+[INFO] [1793015215.942311]: KF 780 (map 1) | xmap best=0.8414 KF 240 (map 0) | no proposal
+[INFO] [1793015216.188733]: KF 781 (map 1) | xmap best=0.8316 KF 240 (map 0) | no proposal
+[INFO] [1793015216.444118]: KF 782 (map 1) | xmap best=0.8243 KF 205 (map 0) | no proposal
+[INFO] [1793015216.741245]: KF 783 (map 1) | xmap best=0.8143 KF 240 (map 0) | no proposal
+[INFO] [1793015217.043373]: KF 784 (map 1) | xmap best=0.8170 KF 240 (map 0) | no proposal
+[INFO] [1793015217.288752]: KF 785 (map 1) | xmap best=0.8204 KF 240 (map 0) | no proposal
+[INFO] [1793015217.542988]: KF 786 (map 1) | xmap best=0.8088 KF 240 (map 0) | no proposal
+[INFO] [1793015217.989219]: KF 787 (map 1) | xmap best=0.8137 KF 240 (map 0) | no proposal
+[INFO] [1793015218.287468]: KF 788 (map 1) | xmap best=0.8012 KF 240 (map 0) | no proposal
+[INFO] [1793015218.641789]: KF 789 (map 1) | xmap best=0.7917 KF 338 (map 0) | no proposal
+[INFO] [1793015218.992067]: KF 790 (map 1) | xmap best=0.7830 KF 97 (map 0) | no proposal
+[INFO] [1793015219.239095]: KF 791 (map 1) | xmap best=0.7987 KF 340 (map 0) | no proposal
+[INFO] [1793015219.643781]: KF 792 (map 1) | xmap best=0.8420 KF 290 (map 0) | no proposal
+[INFO] [1793015220.249308]: KF 793 (map 1) | xmap best=0.8510 KF 290 (map 0) | no proposal
+[INFO] [1793015220.742142]: KF 794 (map 1) | xmap best=0.8593 KF 328 (map 0) | no proposal
+[INFO] [1793015221.241579]: KF 795 (map 1) | xmap best=0.8441 KF 325 (map 0) | no proposal
+[INFO] [1793015221.640481]: KF 796 (map 1) | xmap best=0.8447 KF 250 (map 0) | no proposal
+[INFO] [1793015222.089360]: KF 797 (map 1) | xmap best=0.8590 KF 324 (map 0) | no proposal
+[INFO] [1793015222.597867]: KF 798 (map 1) | xmap best=0.8645 KF 324 (map 0) | no proposal
+[WARN] [1793015223.038305]: XMAP PROPOSAL: KF 799 (map 1) matches KF 327 (map 0) | score=0.8858 | thresh=0.8768 | dt=1395.5s
+[WARN] [1793015223.541507]: XMAP PROPOSAL: KF 800 (map 1) matches KF 324 (map 0) | score=0.8949 | thresh=0.8768 | dt=1397.0s
+[WARN] [1793015224.041210]: XMAP PROPOSAL: KF 801 (map 1) matches KF 324 (map 0) | score=0.8921 | thresh=0.8768 | dt=1397.5s
+[INFO] [1793015224.046170]: dumped 800 descriptors to /home/anish/mono-slam-cnn-loop-closure/results/proposal_v2/runs/X2_MH0305_r4_resnet18/descs.npz
+[WARN] [1793015224.489341]: XMAP PROPOSAL: KF 802 (map 1) matches KF 324 (map 0) | score=0.9065 | thresh=0.8768 | dt=1397.9s
+[WARN] [1793015225.244981]: XMAP PROPOSAL: KF 803 (map 1) matches KF 324 (map 0) | score=0.9132 | thresh=0.8768 | dt=1398.7s
+[WARN] [1793015225.941916]: XMAP PROPOSAL: KF 804 (map 1) matches KF 324 (map 0) | score=0.8818 | thresh=0.8768 | dt=1399.4s
+[INFO] [1793015226.744081]: KF 805 (map 1) | xmap best=0.8629 KF 381 (map 0) | no proposal
+[INFO] [1793015227.341995]: KF 806 (map 1) | xmap best=0.8568 KF 381 (map 0) | no proposal
+[WARN] [1793015227.793308]: XMAP PROPOSAL: KF 807 (map 1) matches KF 290 (map 0) | score=0.8802 | thresh=0.8768 | dt=1416.4s
+[INFO] [1793015227.988539]: KF 808 (map 1) | xmap best=0.8621 KF 302 (map 0) | no proposal
+[INFO] [1793015228.298437]: KF 809 (map 1) | xmap best=0.8504 KF 300 (map 0) | no proposal
+[INFO] [1793015228.686425]: KF 810 (map 1) | xmap best=0.8699 KF 372 (map 0) | no proposal
+[WARN] [1793015229.744414]: XMAP PROPOSAL: KF 811 (map 1) matches KF 217 (map 0) | score=0.8854 | thresh=0.8768 | dt=1443.9s
+[WARN] [1793015231.742940]: XMAP PROPOSAL: KF 812 (map 1) matches KF 373 (map 0) | score=0.9038 | thresh=0.8768 | dt=1379.3s
+[WARN] [1793015233.398824]: XMAP PROPOSAL: KF 813 (map 1) matches KF 373 (map 0) | score=0.9440 | thresh=0.8768 | dt=1380.9s
+[INFO] [1793015241.554137]: KF 814 (map 1) | xmap best=0.7960 KF 275 (map 0) | no proposal
+[INFO] [1793015242.747270]: KF 815 (map 1) | xmap best=0.7933 KF 403 (map 0) | no proposal
+[INFO] [1793015243.798085]: KF 816 (map 1) | xmap best=0.7883 KF 403 (map 0) | no proposal
+[INFO] [1793015252.946860]: dumped 815 descriptors to /home/anish/mono-slam-cnn-loop-closure/results/proposal_v2/runs/X2_MH0305_r4_resnet18/descs.npz
+[INFO] [1793015252.947831]: node counts: {'kf': 817, 'no_frame': 2, 'xmap_no_other_map': 407, 'xmap_scored': 407, 'xmap_proposals': 105}
