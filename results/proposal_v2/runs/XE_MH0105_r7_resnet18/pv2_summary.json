@@ -1,0 +1,113 @@
+{
+ "run": "XE_MH0105_r7_resnet18",
+ "meta": {
+  "mode": "resnet18",
+  "rate": null,
+  "start": null,
+  "duration": null,
+  "yaml": "/home/anish/ORB_SLAM3/Examples/Monocular/EuRoC.yaml",
+  "relay": null,
+  "mono_exit": "0"
+ },
+ "counts_log": {
+  "new_map": 2,
+  "merge": 0,
+  "loop_detected": 0,
+  "fail_track_local_map": 18,
+  "injected": 71,
+  "abort_near": 398,
+  "sophus_crash": 0,
+  "final_stats_printed": 1
+ },
+ "kfs_per_map": [
+  531,
+  505
+ ],
+ "kf_total": 1036,
+ "mono_image_delivered": 5928,
+ "mono_image_dropped": 0,
+ "mono_drop_pct": 0.0,
+ "cpu_mean": {
+  "gpu_util_mean": 3.7,
+  "Mono": 132.9,
+  "desc": 4.3
+ },
+ "gpu_mem_max_mb": 804.0,
+ "counts_events": {
+  "new_map": 2,
+  "merge": 0,
+  "loop_detected": 0,
+  "correction": 0,
+  "injected": 71,
+  "abort_near": 398,
+  "proposal": 0,
+  "sophus_crash": 0,
+  "lost": 20,
+  "reset_map": 0
+ },
+ "traj_kfs_final_map": 340,
+ "prop_src": "final",
+ "prop": {
+  "abort_near_dbow2": 398,
+  "n_dbow2_stage0": 398,
+  "n_dbow2_stage1": 36,
+  "n_dbow2_stage2": 1599,
+  "n_detect_calls": 1035,
+  "n_ext_stage2": 54,
+  "n_ext_stage3": 17,
+  "received": 71,
+  "redirect_hops": 13,
+  "redirected": 11,
+  "sim3_fail": 71,
+  "to_merge_list": 71,
+  "us_dbow2_stage0": 23049,
+  "us_dbow2_stage1": 60696,
+  "us_dbow2_stage2": 5290287,
+  "us_detect_total": 6773494,
+  "us_ext_stage2": 101795,
+  "us_ext_stage3": 88373,
+  "queued": 0,
+  "pending_loop": 0,
+  "pending_merge": 0
+ },
+ "accepted": [],
+ "session_events": [
+  "[SESSION] ChangeDataset requested"
+ ],
+ "session_bounds": [
+  [
+   1403636579.763556,
+   1403636763.813555
+  ],
+  [
+   1403638518.077829,
+   1403638631.677829
+  ]
+ ],
+ "live_maps": [
+  {
+   "map_id": 0,
+   "kfs": 356,
+   "t0": 1403636579.76,
+   "t1": 1403636762.71,
+   "kfs_per_session": [
+    356,
+    0
+   ],
+   "ate_sim3_m": 0.0465,
+   "ate_n": 347
+  },
+  {
+   "map_id": 1,
+   "kfs": 340,
+   "t0": 1403638522.53,
+   "t1": 1403638630.88,
+   "kfs_per_session": [
+    0,
+    340
+   ],
+   "ate_sim3_m": 0.0509,
+   "ate_n": 339
+  }
+ ]
+}

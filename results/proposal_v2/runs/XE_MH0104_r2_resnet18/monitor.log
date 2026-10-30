@@ -1,0 +1,24 @@
+Exception in thread Thread-6:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/psutil/_common.py", line 341, in wrapper
+    ret = self._cache[fun]
+KeyError: <function Process._parse_stat_file at 0x7f2d9b2f0430>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/anish/mono-slam-cnn-loop-closure/tools/diag/monitor.py", line 137, in resources
+    cpu = p.cpu_percent(None); rss = p.memory_info().rss / 2 ** 20
+  File "/usr/lib/python3/dist-packages/psutil/__init__.py", line 1092, in cpu_percent
+    pt2 = self._proc.cpu_times()
+  File "/usr/lib/python3/dist-packages/psutil/_pslinux.py", line 1514, in wrapper
+    return fun(self, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/psutil/_pslinux.py", line 1697, in cpu_times
+    values = self._parse_stat_file()
+  File "/usr/lib/python3/dist-packages/psutil/_common.py", line 348, in wrapper
+    ret = self._cache[fun] = fun(self)
+AttributeError: _cache

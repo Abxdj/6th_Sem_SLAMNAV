@@ -1,0 +1,120 @@
+{
+ "run": "XE_MH0205_r4_resnet18",
+ "meta": {
+  "mode": "resnet18",
+  "rate": null,
+  "start": null,
+  "duration": null,
+  "yaml": "/home/anish/ORB_SLAM3/Examples/Monocular/EuRoC.yaml",
+  "relay": null,
+  "mono_exit": "0"
+ },
+ "counts_log": {
+  "new_map": 2,
+  "merge": 1,
+  "loop_detected": 0,
+  "fail_track_local_map": 0,
+  "injected": 37,
+  "abort_near": 397,
+  "sophus_crash": 0,
+  "final_stats_printed": 1
+ },
+ "kfs_per_map": [
+  489,
+  429
+ ],
+ "kf_total": 918,
+ "mono_image_delivered": 5276,
+ "mono_image_dropped": 0,
+ "mono_drop_pct": 0.0,
+ "cpu_mean": {
+  "gpu_util_mean": 3.5,
+  "Mono": 130.8,
+  "desc": 5.0
+ },
+ "gpu_mem_max_mb": 959.0,
+ "counts_events": {
+  "new_map": 2,
+  "merge": 1,
+  "loop_detected": 0,
+  "correction": 0,
+  "injected": 37,
+  "abort_near": 397,
+  "proposal": 0,
+  "sophus_crash": 0,
+  "lost": 0,
+  "reset_map": 0
+ },
+ "traj_kfs_final_map": 616,
+ "prop_src": "final",
+ "prop": {
+  "abort_near": 6,
+  "abort_near_dbow2": 391,
+  "accepted_merge": 1,
+  "geom_pass_best": 1,
+  "n_dbow2_stage0": 391,
+  "n_dbow2_stage1": 20,
+  "n_dbow2_stage2": 889,
+  "n_dbow2_stage3": 1,
+  "n_detect_calls": 917,
+  "n_ext_stage0": 6,
+  "n_ext_stage2": 22,
+  "n_ext_stage3": 8,
+  "n_ext_stage4": 1,
+  "received": 37,
+  "redirect_hops": 17,
+  "redirected": 10,
+  "sim3_fail": 30,
+  "to_loop_list": 7,
+  "to_merge_list": 30,
+  "us_dbow2_stage0": 23345,
+  "us_dbow2_stage1": 35851,
+  "us_dbow2_stage2": 2714266,
+  "us_dbow2_stage3": 5762,
+  "us_detect_total": 3938357,
+  "us_ext_stage0": 94,
+  "us_ext_stage2": 42325,
+  "us_ext_stage3": 39940,
+  "us_ext_stage4": 11094,
+  "queued": 0,
+  "pending_loop": 0,
+  "pending_merge": 0
+ },
+ "accepted": [
+  {
+   "list": "merge",
+   "src": "ext",
+   "ext_cand": "236",
+   "matchedKF": "236",
+   "curKF": "622",
+   "t": "1403638549.9778295"
+  }
+ ],
+ "session_events": [
+  "[SESSION] ChangeDataset requested"
+ ],
+ "session_bounds": [
+  [
+   1403636858.651666,
+   1403637010.601666
+  ],
+  [
+   1403638518.077829,
+   1403638631.677829
+  ]
+ ],
+ "live_maps": [
+  {
+   "map_id": 1,
+   "kfs": 616,
+   "t0": 1403636858.65,
+   "t1": 1403638630.98,
+   "kfs_per_session": [
+    314,
+    302
+   ],
+   "ate_sim3_m": 0.0763,
+   "ate_n": 605
+  }
+ ]
+}

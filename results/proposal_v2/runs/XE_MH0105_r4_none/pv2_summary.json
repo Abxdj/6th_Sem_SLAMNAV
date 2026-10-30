@@ -1,0 +1,103 @@
+{
+ "run": "XE_MH0105_r4_none",
+ "meta": {
+  "mode": "none",
+  "rate": null,
+  "start": null,
+  "duration": null,
+  "yaml": "/home/anish/ORB_SLAM3/Examples/Monocular/EuRoC.yaml",
+  "relay": null,
+  "mono_exit": "0"
+ },
+ "counts_log": {
+  "new_map": 2,
+  "merge": 0,
+  "loop_detected": 0,
+  "fail_track_local_map": 1,
+  "injected": 0,
+  "abort_near": 466,
+  "sophus_crash": 0,
+  "final_stats_printed": 1
+ },
+ "kfs_per_map": [
+  557,
+  495
+ ],
+ "kf_total": 1052,
+ "mono_image_delivered": 5922,
+ "mono_image_dropped": 0,
+ "mono_drop_pct": 0.0,
+ "cpu_mean": {
+  "gpu_util_mean": 13.5,
+  "Mono": 134.8
+ },
+ "gpu_mem_max_mb": 744.0,
+ "counts_events": {
+  "new_map": 2,
+  "merge": 0,
+  "loop_detected": 0,
+  "correction": 0,
+  "injected": 0,
+  "abort_near": 466,
+  "proposal": 0,
+  "sophus_crash": 0,
+  "lost": 3,
+  "reset_map": 0
+ },
+ "traj_kfs_final_map": 342,
+ "prop_src": "final",
+ "prop": {
+  "abort_near_dbow2": 466,
+  "n_dbow2_stage0": 466,
+  "n_dbow2_stage1": 33,
+  "n_dbow2_stage2": 1762,
+  "n_detect_calls": 1051,
+  "us_dbow2_stage0": 17351,
+  "us_dbow2_stage1": 50345,
+  "us_dbow2_stage2": 4828816,
+  "us_detect_total": 6098707,
+  "queued": 0,
+  "pending_loop": 0,
+  "pending_merge": 0
+ },
+ "accepted": [],
+ "session_events": [
+  "[SESSION] ChangeDataset requested"
+ ],
+ "session_bounds": [
+  [
+   1403636579.763556,
+   1403636763.813555
+  ],
+  [
+   1403638518.077829,
+   1403638631.677829
+  ]
+ ],
+ "live_maps": [
+  {
+   "map_id": 0,
+   "kfs": 367,
+   "t0": 1403636579.76,
+   "t1": 1403636763.41,
+   "kfs_per_session": [
+    367,
+    0
+   ],
+   "ate_sim3_m": 0.0473,
+   "ate_n": 355
+  },
+  {
+   "map_id": 1,
+   "kfs": 342,
+   "t0": 1403638522.28,
+   "t1": 1403638630.88,
+   "kfs_per_session": [
+    0,
+    342
+   ],
+   "ate_sim3_m": 0.0543,
+   "ate_n": 340
+  }
+ ]
+}
