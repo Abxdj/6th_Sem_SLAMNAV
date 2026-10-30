@@ -215,6 +215,7 @@ All pairs run forward in time, so there are no reversed timestamps. The concaten
 - **Tags:** `XE_<PAIR>_r<k>_<arm>`.
 - **Invocation:** `LOAD_KF_HZ=3.55 NODE_ARGS="_mode:=xmap _xmap_thresh:=0.8768" tools/proposal_v2/run_batch.sh results/proposal_v2/plans/XMAPE_TEST.plan results/proposal_v2/XMAPE_TEST_batch.log`
 - **Expected machine time:** about **8.5 h**. This is (session 1 + session 2 + 60 s) per run, where 60 s is Part C's measured median overhead, times 90. That is above the ~8 h approved per batch so far, so the batch starts only after the owner explicitly approves this time.
+- Owner approved 9.5 h cap, 2026-10-30.
 
 ### Outcomes and analysis (`analyze_xmap2.py`, exactly as committed)
 - **Primary outcome:** maps merged (≥ 1 `Merge finished`) per run.
