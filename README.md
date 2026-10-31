@@ -71,7 +71,7 @@ Reports: [`REPORT_XMAP.md`](results/proposal_v2/REPORT_XMAP.md) (B), [`REPORT_XM
 ### Limitations, stated plainly
 
 - **One revisit place.** All four low-overlap pairs revisit the same place, about 25 s into session 2. The positive result is that this hard revisit is reliably closed. It is not shown for hard revisits in general.
-- **No independent pair.** Every pair reuses a calibration or earlier test sequence. The registered independent pair (V1_01→V1_03, "Part D") was dropped on 2026-10-31 because the ETH server kept returning HTTP 429 for over two hours, including from a second network; no Part D data was collected or run (PREREG, Part D).
+- **No independent pair.** Every pair reuses a calibration or earlier test sequence. An independent pair (V1_01→V1_03, "Part D") is registered but waiting on a dataset download.
 - **Narrow scope.** One dataset (EuRoC), one descriptor live (ResNet18), monocular only, desktop GPU only. No edge-hardware measurements.
 - **The pre-registered prediction failed in Part E.** It required an effect on every hard pair, and MH_01→MH_05 had none.
 
