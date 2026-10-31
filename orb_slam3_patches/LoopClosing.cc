@@ -27,6 +27,7 @@
 
 #include<mutex>
 #include<thread>
+#include<chrono>
 
 
 namespace ORB_SLAM3
@@ -215,7 +216,10 @@ void LoopClosing::Run()
             std::chrono::steady_clock::time_point time_StartPR = std::chrono::steady_clock::now();
 #endif
 
+            const auto tC7Detect = std::chrono::steady_clock::now();   // C7: place-recognition wall time per KF
             bool bFindedRegion = NewDetectCommonRegions();
+            PropCount("us_detect_total", (int)std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - tC7Detect).count());
+            PropCount("n_detect_calls");
 
 #ifdef REGISTER_TIMES
             std::chrono::steady_clock::time_point time_EndPR = std::chrono::steady_clock::now();
@@ -828,6 +832,17 @@ bool LoopClosing::DetectCommonRegionsFromBoW(std::vector<KeyFrame*> &vpBowCand, 
     {
         const bool bExt = mspExtThisPass.count(pKFi) > 0;
         int nExtStage = 0;   // 1 gate passed, 2 BoW matches, 3 Sim3 converged, 4 fully verified
+        // C7: time this candidate's evaluation, keyed by source and the stage reached (0 bad/abort_near,
+        // 1 < nBoWMatches, 2 RANSAC did not converge, 3 converged but projection/optimisation failed, 4 verified)
+        struct C7Timer {
+            LoopClosing* lc; bool ext; const int &stage; std::chrono::steady_clock::time_point t0;
+            ~C7Timer()
+            {
+                const std::string s = std::string(ext ? "ext" : "dbow2") + "_stage" + std::to_string(stage);
+                lc->PropCount("us_" + s, (int)std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - t0).count());
+                lc->PropCount("n_" + s);
+            }
+        } tC7Cand{this, bExt, nExtStage, std::chrono::steady_clock::now()};
         if(!pKFi || pKFi->isBad())
         {
             if(bExt) { PropCount("bad_at_eval"); }

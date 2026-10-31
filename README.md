@@ -1,362 +1,221 @@
-# Monochromatic Monocular SLAM with Sensor-Aware Preprocessing and CNN/ViT Loop Closure
+# Proposal or Verification? Learned Place Recognition in ORB-SLAM3 Multi-Session Mapping
 
-**Major Project Phase 1 | Dept. of Computer Science & Engineering**  
-**Nitte Meenakshi Institute of Technology, Bengaluru | AY 2025–26**
+**Major Project | Dept. of Computer Science & Engineering**
+**Nitte Meenakshi Institute of Technology (NMIT), Bengaluru | AY 2026–27**
 
-> **Guide:** Dr. Krishna Rao Venkatesh, Professor, Dept. of CSE, NMIT  
-> **Students:** Anish Bharadwaj | 1NT23CS024 &nbsp;&nbsp; Dhanush Paturu | 1NT23CS060 &nbsp;&nbsp; Dhruva P S | 1NT23CS064
+> 
+> **Students:** Anish Bharadwaj (1NT23CS024) · Dhanush Paturu (1NT23CS060) · Dhruva P S (1NT23CS064)
 
----
-
-## What This Project Does
-
-This project builds a **monocular SLAM system** (Simultaneous Localisation and Mapping) specifically optimised for **monochromatic cameras** — cameras that capture a single luminance channel rather than colour. Such cameras are increasingly used in industrial robots and drones because they are cheaper, sharper, and more sensitive in low light than colour cameras.
-
-The problem is that all existing SLAM systems treat monochromatic input the same way they treat colour camera input — by applying a fixed greyscale formula designed for colour sensors. This project asks: *does applying sensor-specific preprocessing improve SLAM accuracy, and which deep learning descriptor works best for loop closure on edge hardware?*
-
-**SLAM** means the robot builds a map of its environment and estimates its own position at the same time — using only a camera, no GPS, no depth sensor.
-
-**Loop closure** means the robot recognises when it has returned to a previously visited location and uses that recognition to correct accumulated position drift.
+> **Status (Oct 2026):** the experiments are complete, and a paper is in preparation. The active branch is `proposal-v2`. Every claim below links to the report or result file that produced it. Pre-registered results are marked **[pre-reg]**; analyses done afterwards are marked **[post hoc]**.
 
 ---
 
-## Research Contribution
+## The question
 
-> First systematic evaluation of monochromatic-specific CLAHE preprocessing combined with CNN (ResNet18) versus Vision Transformer (DINO ViT-S/8) loop closure descriptors for monocular SLAM — benchmarked on standard TUM RGB-D sequences.
+Monocular ORB-SLAM3 corrects drift (**loop closure**) and joins maps from separate sessions (**map merging**) in two steps:
 
-Three specific gaps in existing literature are addressed:
+1. **Proposal.** DBoW2, a bag-of-binary-words index over ORB features, suggests a keyframe that looks like the current one.
+2. **Verification.** A geometric check (Sim3 with RANSAC, then guided matching and covisibility consistency) accepts or rejects the suggestion.
 
-1. No SLAM system applies sensor-specific preprocessing for monochromatic cameras
-2. No published benchmark measures the effect of preprocessing on monocular SLAM trajectory accuracy
-3. No comparison of CNN vs Vision Transformer loop closure descriptors within a real-time SLAM thread on edge hardware
+Learned global image descriptors (CNN or ViT) are generally better at recognising places than DBoW2. This project asks **where ORB-SLAM3's multi-session merging actually fails, at proposal or at verification, and whether learned proposals help.**
 
----
+We added a learned proposer that runs alongside ORB-SLAM3 (ResNet18 in a ROS node) and injects its candidates into ORB-SLAM3's own verification. Then we measured the effect in **pre-registered** experiments: the threshold, code, pairs, run counts and statistical tests were committed and pushed before any test run.
 
-## What Was Built
+## Key results
 
-### Contribution 1 — CLAHE Preprocessing Node
-A ROS node that replaces the naive RGB-to-greyscale conversion in ORB-SLAM3 with **Contrast Limited Adaptive Histogram Equalisation (CLAHE)** tuned for monochromatic sensor characteristics. CLAHE enhances local contrast in 8×8 tiles without amplifying noise — making corners and edges more visible for ORB feature detection.
+Setup for every pre-registered test:
+- Data: EuRoC MAV, monocular camera, real time.
+- Each run feeds two flights ("sessions") to **one** ORB-SLAM3 process.
+- Outcome: whether the two sessions' maps merge.
+- 10 runs per arm.
+- Arms:
+  - **control** (plain ORB-SLAM3);
+  - **load-only** (a GPU process with the same compute load, sending no candidates);
+  - **injection** (our proposer, fixed threshold τ = 0.8768, calibrated beforehand on MH_01→MH_03).
 
-### Contribution 2 — ResNet18 CNN Loop Closure Module
-A Python ROS node that extracts a **512-dimensional scene descriptor** from each keyframe using a pretrained ResNet18 CNN. If the cosine similarity between two keyframe descriptors exceeds 0.85, a loop closure candidate is flagged. Achieves **1.5ms per frame** — viable for real-time edge deployment.
+| Test | Session pair | GT overlap | Control | Load-only | Injection (merges by our proposer) | Bottleneck |
+|---|---|---|---|---|---|---|
+| B **[pre-reg]** | MH_02→MH_04 | 0.127 | 4/10 | 2/10 | **9/10** (8) | proposal |
+| C **[pre-reg]** | MH_03→MH_05 | 0.554 | 8/10 | 9/10 | 10/10 (5) | none: DBoW2 already succeeds |
+| C **[pre-reg]** | MH_04→MH_02 | 0.352 | 10/10 | 10/10 | 10/10 (4) | none |
+| E **[pre-reg]** | MH_02→MH_05 | 0.140 | 0/10 | 0/10 | **10/10** (9) | proposal |
+| E **[pre-reg]** | MH_01→MH_04 | 0.145 | 0/10 | 0/10 | **5/10** (5) | proposal |
+| E **[pre-reg]** | MH_01→MH_05 | 0.166 | 0/10 | 0/10 | 0/10 | **verification** |
 
-### Contribution 3 — DINO ViT-S/8 Loop Closure Module
-An alternative loop closure module using a **DINO Vision Transformer** (ViT-S/8). The image is split into 8×8 patches and processed with global self-attention, producing a 384-dimensional [CLS] token descriptor. Achieves stronger semantic understanding than ResNet18 at the cost of higher latency (**18.2ms per frame**).
+Statistics:
 
----
+| Test | Comparison | p |
+|---|---|---|
+| B | injection vs control (Fisher) | 0.057 |
+| C | injection vs control (CMH) | 0.146 |
+| E | injection vs control (CMH) | 7.7×10⁻⁷ |
+| E | exact stratified test | 1.8×10⁻⁷ |
 
-## Key Results
+Reports: [`REPORT_XMAP.md`](results/proposal_v2/REPORT_XMAP.md) (B), [`REPORT_XMAP2.md`](results/proposal_v2/REPORT_XMAP2.md) (C), [`REPORT_XMAPE.md`](results/proposal_v2/REPORT_XMAPE.md) (E). Plan: [`PREREG.md`](results/proposal_v2/PREREG.md).
 
-### Trajectory Accuracy on TUM RGB-D Benchmark
+**What this shows**
 
-| Sequence | Configuration | ATE RMSE | RPE RMSE | Improvement |
-|---|---|---|---|---|
-| TUM fr1/desk | Baseline ORB-SLAM3 | 0.0307 m | 0.0142 m | — |
-| TUM fr1/desk | **CLAHE Variant** | **0.0155 m** | 0.0144 m | **↓ 49.5%** |
-| TUM fr2/xyz | Baseline ORB-SLAM3 | 0.0027 m | 0.0055 m | — |
-| TUM fr2/xyz | CLAHE Variant | 0.0031 m | 0.0054 m | Marginal |
+- **Three regimes.**
+  - **High overlap:** DBoW2 already merges, so there is nothing to add.
+  - **Some low-overlap pairs:** DBoW2 never proposes the right match. Learned proposals let ORB-SLAM3 merge in most runs (0/60 control and load-only vs 15/30 injection in Part E).
+  - **MH_01→MH_05:** about half of our proposals pointed at the right place by ground truth, yet geometric verification rejected all of them. The bottleneck there is verification.
+- **Verification keeps learned proposals safe.** Across all tests, no wrong proposal led to an accepted merge.
+  - Cost: up to about +0.6 ms per keyframe of verification work (measured in Part C), plus the descriptor network.
+  - Part E: one DBoW2 merge joined keyframes 2.005 m apart, just outside the 2 m / 45° correctness check, and is reported as such.
+- **More merging, not more accuracy.** Trajectory error (ATE) did not improve. In 4 of 15 merged injection runs in Part E, session-2 error rose to 0.25–0.52 m.
+  - **[post hoc]** The merges themselves were accurate (0.03–0.04 m just after merging). The error is drift that builds 10–40 s later.
+  - It appears only in merged maps; the mechanism is unresolved.
+  - See [`POSTHOC_E.md`](results/proposal_v2/POSTHOC_E.md).
+- **[post hoc] Why verification fails on MH_01→MH_05 isn't explained by pose difference.** The correct-but-rejected proposals were no farther or more rotated than ones that passed elsewhere. Passing appears to depend on the specific image pair.
 
-**ATE** (Absolute Trajectory Error) measures overall path drift from ground truth.  
-**RPE** (Relative Pose Error) measures local step-by-step accuracy.
+### Limitations, stated plainly
 
-**Finding:** CLAHE reduces ATE by 49.5% on challenging indoor scenes (fr1/desk). Negligible effect on well-lit, high-texture scenes (fr2/xyz) where the baseline already performs near-perfectly.
+- **One revisit place.** All four low-overlap pairs revisit the same place, about 25 s into session 2. The positive result is that this hard revisit is reliably closed. It is not shown for hard revisits in general.
+- **No independent pair.** Every pair reuses a calibration or earlier test sequence. An independent pair (V1_01→V1_03, "Part D") is registered but waiting on a dataset download.
+- **Narrow scope.** One dataset (EuRoC), one descriptor live (ResNet18), monocular only, desktop GPU only. No edge-hardware measurements.
+- **The pre-registered prediction failed in Part E.** It required an effect on every hard pair, and MH_01→MH_05 had none.
 
-### Descriptor Latency Comparison
+### Supporting findings
 
-| Descriptor | Latency | Loop Closure Score | Edge Viable |
-|---|---|---|---|
-| DBoW2 (ORB-SLAM3 default) | <1 ms | — | Yes |
-| ResNet18 (CNN) | 1.5 ms/frame | 0.96–0.99 | Yes |
-| DINO ViT-S/8 | 18.2 ms/frame | 0.90–0.93 | Marginal |
+- **Live pipeline matches standalone ORB-SLAM3 (Gate A).** KITTI 00, 3 runs each: median ATE 9.40 m live vs 8.86 m with standalone `mono_kitti`. See [`results/README.md`](results/README.md).
+- **Offline, at equal precision, learned descriptors beat DBoW2's raw top-1 ranking.** ResNet18, EfficientNet-B0 and DINO ViT-S/8 are statistically tied, and DINO costs more. See [`results/proposal_v2/gate_b/`](results/proposal_v2/gate_b/).
+- **Methodological lessons, each with its evidence:**
 
----
+  | Lesson | Evidence |
+  |---|---|
+  | ORB-SLAM3 **culls keyframes**, which silently dropped 95% of external proposals until we redirected them to the surviving parent keyframe | [`DIAGNOSIS_REPORT.md`](results/diagnosis/DIAGNOSIS_REPORT.md) H8 |
+  | A GPU network running beside ORB-SLAM3 changes its behaviour **through compute load alone** (input frame drops roughly doubled), so a load-matched control is needed | diagnosis H5 |
+  | Similarity thresholds tuned within one session **don't transfer** across sessions, or between sequences | |
+  | Monocular SLAM varies a lot between identical runs, so **single runs prove nothing** | |
 
-## System Architecture
+## Withdrawn claims (earlier versions of this repo)
+
+- **"CLAHE preprocessing reduces ATE by 49.5%."** Over repeated runs the effect was about 16% and not statistically significant. CLAHE is still in the pipeline but is not a contribution.
+- **Phase-2 accuracy comparisons with ResNet18, DINO and EfficientNet.** Instrumentation later showed that **no injected candidate had ever been accepted**, so those comparisons measured run-to-run noise. They are kept only for the record, in `results/` (see [`results/README.md`](results/README.md)).
+- **"First systematic evaluation…", and descriptor latency claims labelled "edge viable".** Withdrawn: not supported.
+- **KITTI through ROS (130–165 m).** This was a bug: `ros_mono.cc` resized every frame to 640×480. It is fixed.
+
+## Architecture
 
 ```
-Gazebo RGB Camera
-       |
-       | /camera/rgb/image_raw
-       v
-CLAHE Preprocessing Node        <-- Novel contribution 1
-       |
-       | /camera/image_raw (enhanced greyscale)
-       v
-ORB-SLAM3 Monocular Tracking
-       |
-       |-- Keyframes + Pose
-       |
-       v
-ResNet18 Loop Closure Module    <-- Novel contribution 2a
-       | /loop_closure/resnet18
-
-DINO ViT Loop Closure Module    <-- Novel contribution 2b
-       | /loop_closure/dino
+EuRoC publisher ──/camera/rgb/image_raw──▶ CLAHE node ──/camera/image_raw──▶ ORB-SLAM3 Mono (patched)
+   │  /orb_slam3/new_session (between flights → new map)                        │
+   │                                                                             ├─ /orb_slam3/new_keyframe  [id, stamp, map id]
+   │                                                                             ▼
+   │                                                              ResNet18 proposer (loop_closure_node.py)
+   │                                                               xmap mode: top-1 cosine over other-map KFs,
+   │                                                               |Δt| ≥ 30 s, score ≥ τ
+   │                                                                             │
+   └────────────────────────────────────────────── /loop_closure/candidate_kfids ◀┘
+                                                    ▼
+                         LoopClosing: redirect culled KFs → route other-map candidates to the merge list
+                         → ORB-SLAM3's own verification (BoW → Sim3 RANSAC → guided matching → covisibility)
+                         → one logged outcome per proposal ([PROP] lines), with attribution of each merge
 ```
 
-All components communicate via ROS publish-subscribe topics. The two loop closure modules run in parallel — switch between them using the launch script argument.
+ORB-SLAM3 changes, as commits on top of upstream `4452a3c`:
 
----
+| Commit | What it adds |
+|---|---|
+| C1 | Redirect culled keyframes to their surviving parent |
+| C2 | Look across all maps; route other-map candidates to the merge list |
+| C3 | Keyframe id and timestamp topic |
+| C5 | Outcome accounting for every proposal |
+| C6 | Map id in the keyframe message |
+| S | Session switch through `ChangeDataset` |
+| C7 | Timing counters only |
 
-## Documents
+Details: [`orb_slam3_patches/ORB_SLAM3_COMMIT.txt`](orb_slam3_patches/ORB_SLAM3_COMMIT.txt).
 
-- `docs/SLAM_Report.pdf` — Full synopsis report with results, methodology, literature review, and 10 figures
-- `docs/SLAM_Presentation.pptx` —  Presentation
+## Reproducing
 
----
-
-## Execution Environment
-
-### Hardware
-- CPU: Intel i7 12th Gen (tested environment)
-- GPU: NVIDIA RTX 3060 (CUDA 12.1)
-- RAM: 16 GB
-
-> All results were obtained on this hardware configuration.
-> Performance on other hardware may vary, particularly for 
-> deep learning inference latency.
-
-### Software
+### Environment (as tested)
 
 | Component | Version |
 |---|---|
-| OS | Ubuntu 20.04 LTS |
-| ROS | Noetic (desktop-full) |
-| Gazebo | 11 |
-| Python | 3.8 |
-| OpenCV | 4.4.0 (built from source) |
-| PyTorch | 2.4.1 + CUDA 12.1 |
-| ORB-SLAM3 | UZ-SLAMLab/ORB_SLAM3 (latest) |
+| OS / ROS | Ubuntu 20.04, ROS Noetic |
+| OpenCV | 4.4.0, built from source |
+| cv_bridge | rebuilt against OpenCV 4.4 |
 | Pangolin | v0.6 |
+| Python | 3.8 |
+| PyTorch | 2.4.1 + CUDA 12.1 |
 | evo | 1.31.1 |
+| Hardware | Intel i7 12th Gen, NVIDIA RTX 3060, 16 GB RAM |
 
-### Python Dependencies
-```bash
-pip3 install torch torchvision timm evo
-```
+> **cv_bridge must be rebuilt against OpenCV 4.4.** The system cv_bridge links OpenCV 4.2, and images get silently corrupted at the ROS/C++ boundary: ORB-SLAM3 waits for images forever.
+> ```bash
+> mkdir -p ~/cv_bridge_ws/src && cd ~/cv_bridge_ws/src
+> git clone https://github.com/ros-perception/vision_opencv.git -b noetic
+> cd ~/cv_bridge_ws && catkin_make -DOpenCV_DIR=/usr/local/lib/cmake/opencv4
+> ```
 
----
-
-## Installation and Setup
-
-### Step 1 — Install ROS Noetic
-```bash
-sudo apt install ros-noetic-desktop-full
-sudo apt install ros-noetic-turtlebot3 ros-noetic-turtlebot3-simulations
-echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
-source ~/.bashrc
-```
-
-### Step 2 — Build OpenCV 4.4 from Source
-The system OpenCV (4.2) is incompatible with ORB-SLAM3. Build 4.4 from source:
-```bash
-cd ~
-git clone https://github.com/opencv/opencv.git
-cd opencv && git checkout 4.4.0
-mkdir build && cd build
-cmake -D CMAKE_BUILD_TYPE=RELEASE \
-      -D CMAKE_INSTALL_PREFIX=/usr/local \
-      -D BUILD_EXAMPLES=OFF ..
-make -j$(nproc)
-sudo make install
-```
-
-### Step 3 — Build Pangolin v0.6
-```bash
-cd ~
-git clone https://github.com/stevenlovegrove/Pangolin.git
-cd Pangolin && git checkout v0.6
-mkdir build && cd build
-cmake ..
-make -j$(nproc)
-sudo make install
-```
-
-### Step 4 — Build ORB-SLAM3
-```bash
-cd ~
-git clone https://github.com/UZ-SLAMLab/ORB_SLAM3.git
-cd ORB_SLAM3
-chmod +x build.sh
-./build.sh
-```
-
-### Step 5 — Rebuild cv_bridge Against OpenCV 4.4 (CRITICAL)
-
-> **Why this is required:** The ROS system cv_bridge library is linked against OpenCV 4.2. When it passes image data to ORB-SLAM3 (which uses OpenCV 4.4), the internal cv::Mat data structures are incompatible — images are silently corrupted at the ROS/C++ boundary. This causes ORB-SLAM3 to print "WAITING FOR IMAGES" indefinitely despite images arriving correctly at 40Hz. Rebuilding cv_bridge from source against OpenCV 4.4 resolves this completely.
+### Build the patched ORB-SLAM3
 
 ```bash
-mkdir -p ~/cv_bridge_ws/src && cd ~/cv_bridge_ws/src
-git clone https://github.com/ros-perception/vision_opencv.git -b noetic
-cd ~/cv_bridge_ws
-catkin_make -DOpenCV_DIR=/usr/local/lib/cmake/opencv4
-echo "source ~/cv_bridge_ws/devel/setup.bash" >> ~/.bashrc
-source ~/.bashrc
-```
-
-### Step 6 — Install Python Dependencies
-```bash
-pip3 install torch torchvision timm evo
-```
-
-### Step 7 — Clone This Repository
-```bash
-cd ~
-git clone https://github.com/anishb12/6th_Sem_SLAMNAV.git mono-slam-cnn-loop-closure
-```
-
-### Step 8 — Build the ROS Workspace
-```bash
-mkdir -p ~/catkin_ws/src/clahe_preprocessor/src
-cp ~/mono-slam-cnn-loop-closure/ros_nodes/*.py ~/catkin_ws/src/clahe_preprocessor/src/
-cd ~/catkin_ws
-catkin_make
-source devel/setup.bash
-```
-
----
-
-## Running the Pipeline
-
-### Launch Everything with One Command
-
-```bash
-chmod +x ~/mono-slam-cnn-loop-closure/scripts/launch.sh
-
-# ResNet18 loop closure (default)
-~/mono-slam-cnn-loop-closure/scripts/launch.sh
-
-# DINO ViT-S/8 loop closure
-~/mono-slam-cnn-loop-closure/scripts/launch.sh dino
-```
-
-This opens 6 terminals automatically:
-1. roscore
-2. Gazebo house world with TurtleBot3 Waffle
-3. CLAHE preprocessing node
-4. ORB-SLAM3 monocular tracking
-5. Loop closure module (ResNet18 or DINO ViT)
-6. Teleop keyboard control (W/A/S/D keys to drive)
-
-### Manual Launch (fallback)
-
-```bash
-# Terminal 1
-roscore
-
-# Terminal 2
-export TURTLEBOT3_MODEL=waffle
-roslaunch turtlebot3_gazebo turtlebot3_house.launch
-
-# Terminal 3
-python3 ~/mono-slam-cnn-loop-closure/ros_nodes/clahe_node.py
-
-# Terminal 4
+git clone https://github.com/UZ-SLAMLab/ORB_SLAM3.git ~/ORB_SLAM3
+cd ~/ORB_SLAM3 && git checkout 4452a3c
+git apply ~/mono-slam-cnn-loop-closure/orb_slam3_patches/proposal_v2.patch
+./build.sh                                   # core library
 export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:~/ORB_SLAM3/Examples_old/ROS
-rosrun ORB_SLAM3 Mono ~/ORB_SLAM3/Vocabulary/ORBvoc.txt \
-    ~/mono-slam-cnn-loop-closure/config/turtlebot3_waffle.yaml
-
-# Terminal 5 — choose one
-python3 ~/mono-slam-cnn-loop-closure/ros_nodes/loop_closure_node.py   # ResNet18
-python3 ~/mono-slam-cnn-loop-closure/ros_nodes/loop_closure_dino.py   # DINO ViT
-
-# Terminal 6
-export TURTLEBOT3_MODEL=waffle
-roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+cd Examples_old/ROS/ORB_SLAM3 && mkdir -p build && cd build && cmake .. -DROS_BUILD_TYPE=Release && make Mono
 ```
 
----
+### Data layout
 
-## TUM Dataset Evaluation
+- EuRoC sequences go under `~/euroc_mh/machine_hall/<SEQ>/extracted/mav0/`.
+- Ground truth is converted to TUM format with `evaluation/euroc_gt_to_tum.py`, giving `~/euroc_mh/<SEQ>_groundtruth_tum.txt`.
+- Two-session ground-truth files are the two files concatenated and sorted by time.
 
-To reproduce the ATE/RPE results:
+### Run one two-session experiment
 
 ```bash
-# Download TUM fr1/desk sequence
-wget https://cvg.cit.tum.de/rgbd/dataset/freiburg1/rgbd_dataset_freiburg1_desk.tgz
-tar -xzf rgbd_dataset_freiburg1_desk.tgz
-
-# Apply CLAHE preprocessing
-python3 ~/mono-slam-cnn-loop-closure/evaluation/apply_clahe_tum.py
-
-# Run ORB-SLAM3 on baseline
-cd ~/ORB_SLAM3
-./Examples/Monocular/mono_tum \
-    Vocabulary/ORBvoc.txt \
-    Examples/Monocular/TUM1.yaml \
-    ~/rgbd_dataset_freiburg1_desk
-
-# Evaluate ATE
-evo_ape tum \
-    ~/rgbd_dataset_freiburg1_desk/groundtruth.txt \
-    KeyFrameTrajectory.txt \
-    --align --correct_scale -v
-
-# Evaluate RPE
-evo_rpe tum \
-    ~/rgbd_dataset_freiburg1_desk/groundtruth.txt \
-    KeyFrameTrajectory.txt \
-    --align --correct_scale -v
+cd ~/mono-slam-cnn-loop-closure
+NODE_ARGS="_mode:=xmap _xmap_thresh:=0.8768" LOAD_KF_HZ=3.55 \
+  tools/proposal_v2/run_euroc.sh resnet18 MYTEST 1.0 \
+  ~/euroc_mh/machine_hall/MH_02_easy/extracted ~/euroc_mh/machine_hall/MH_05_difficult/extracted
 ```
 
-Repeat with `~/rgbd_dataset_freiburg1_desk_clahe` for CLAHE results.  
-Use `TUM2.yaml` and `rgbd_dataset_freiburg2_xyz` for the fr2/xyz sequence.
+- **Arms:** `none` (control), `load_only`, `resnet18` (injection), `resnet18_dry` (node runs, output discarded).
+- **Speed:** `1.0` is real time; higher is slower.
+- **Output:** `results/proposal_v2/runs/MYTEST_<arm>/`. It contains `meta.txt` (build, node and checksum provenance), `mono.log`, `kf_log.csv` and `KeyFrameTrajectory.txt`.
 
-Pre-computed trajectory files for all runs are in `results/`.
+### Re-run a pre-registered test, and its analysis
 
----
-
-## Repository Structure
-
-```
-├── config/
-│   └── turtlebot3_waffle.yaml      Camera calibration (640x480, fx=403)
-├── ros_nodes/
-│   ├── clahe_node.py               CLAHE preprocessing node
-│   ├── loop_closure_node.py        ResNet18 loop closure (512-d)
-│   ├── loop_closure_dino.py        DINO ViT-S/8 loop closure (384-d)
-│   └── ros_mono.cc                 Modified ORB-SLAM3 ROS wrapper
-├── scripts/
-│   └── launch.sh                   ./launch.sh or ./launch.sh dino
-├── evaluation/
-│   └── apply_clahe_tum.py          Applies CLAHE to TUM sequences
-├── results/
-│   ├── results_baseline.txt        fr1/desk baseline trajectory
-│   ├── results_clahe.txt           fr1/desk CLAHE trajectory
-│   ├── results_fr2_baseline.txt    fr2/xyz baseline trajectory
-│   └── results_fr2_clahe.txt       fr2/xyz CLAHE trajectory
-├── figures/                        All result charts and diagrams
-└── docs/
-    ├── SLAM_Report.docx
-    └── SLAM_Final_Presentation.pptx
+```bash
+LOAD_KF_HZ=3.55 NODE_ARGS="_mode:=xmap _xmap_thresh:=0.8768" \
+  tools/proposal_v2/run_batch.sh results/proposal_v2/plans/XMAPE_TEST.plan my_batch.log
+python3 tools/proposal_v2/analyze_xmap2.py results/proposal_v2/plans/XMAPE_pairs.json my_results.json
 ```
 
----
+The plan files contain absolute paths from the original machine, so edit them to match yours. The full Part E batch (90 runs) took about 8.3 h.
 
-## Limitations
+## Repository map
 
-- Monochromatic input is simulated by applying CLAHE to colour camera footage — a real monochromatic sensor has not been used
-- The ResNet18 and DINO ViT modules detect loop closure candidates and publish them via ROS topics, but are not yet integrated into ORB-SLAM3's C++ pose graph optimisation. The 49.5% ATE improvement is entirely from CLAHE preprocessing
-- 2 valid runs per configuration — 5+ runs would give stronger statistical significance
+| Path | Contents |
+|---|---|
+| `ros_nodes/` | `loop_closure_node.py` (ResNet18 proposer, xmap mode); `clahe_node.py`; DINO and EfficientNet nodes (older; not used in the pre-registered tests) |
+| `orb_slam3_patches/` | `proposal_v2.patch` against upstream `4452a3c`, plus full-file copies |
+| `tools/proposal_v2/` | Harness (`run_euroc.sh`, `run_batch.sh`, `euroc_session_publisher.py`, `load_only_v2.py`, `kf_logger.py`), calibration, Gate B, pair overlap, and pre-registered analysis scripts |
+| `tools/diag/` | Gazebo diagnosis tooling (monitor, bag analysis) |
+| `results/proposal_v2/` | `PREREG.md`, reports, per-run folders `runs/`, batch logs, result JSONs |
+| `results/diagnosis/` | Gazebo diagnosis report (keyframe culling, compute contention, route-limited bag) |
+| `results/` (top level) | Older trajectories; validity status in `results/README.md` |
+| `evaluation/`, `scripts/` | TUM, EuRoC and KITTI publishers, GT converters, earlier launch scripts |
 
----
+## Licence
 
-## Future Work
-
-- Integrate loop closure candidates into ORB-SLAM3's LoopClosing.cc pose graph thread
-- Deploy on NVIDIA Jetson Orin Nano — measure accuracy vs latency tradeoff
-- Evaluate on real monochromatic camera hardware
-- Extend benchmark to TUM fr3 sequences
-
----
+GPLv3, because this repository contains modified ORB-SLAM3 source. See [`LICENSE`](LICENSE).
 
 ## References
 
-1. C. Campos et al., "ORB-SLAM3," IEEE T-RO, vol. 37, no. 6, 2021
-2. R. Arandjelovic et al., "NetVLAD," CVPR, 2016
-3. M. Caron et al., "DINO," ICCV, 2021
-4. J. Engel et al., "DSO," IEEE T-PAMI, vol. 40, no. 3, 2018
-5. N. Keetha et al., "AnyLoc," IEEE RA-L, 2024
-6. J. Sturm et al., "TUM RGB-D Benchmark," IROS, 2012
-7. K. He et al., "ResNet," CVPR, 2016
-8. S. Lowry et al., "Visual Place Recognition Survey," IEEE T-RO, vol. 32, no. 1, 2016
+1. C. Campos et al., "ORB-SLAM3: An accurate open-source library for visual, visual-inertial, and multimap SLAM," *IEEE Trans. Robot.*, 37(6), 2021.
+2. D. Gálvez-López and J. D. Tardós, "Bags of binary words for fast place recognition in image sequences," *IEEE Trans. Robot.*, 28(5), 2012.
+3. M. Burri et al., "The EuRoC micro aerial vehicle datasets," *Int. J. Robot. Res.*, 35(10), 2016.
+4. A. Geiger, P. Lenz, R. Urtasun, "Are we ready for autonomous driving? The KITTI vision benchmark suite," *CVPR*, 2012.
+5. K. He et al., "Deep residual learning for image recognition," *CVPR*, 2016.
+6. M. Tan and Q. V. Le, "EfficientNet," *ICML*, 2019.
+7. M. Caron et al., "Emerging properties in self-supervised vision transformers," *ICCV*, 2021.
+8. R. Arandjelović et al., "NetVLAD," *CVPR*, 2016.
+9. N. Keetha et al., "AnyLoc: Towards universal visual place recognition," *IEEE RA-L*, 2024.
+10. S. Lowry et al., "Visual place recognition: A survey," *IEEE Trans. Robot.*, 32(1), 2016.
+11. M. Grupp, "evo: Python package for the evaluation of odometry and SLAM," 2017.

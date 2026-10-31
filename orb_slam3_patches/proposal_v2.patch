@@ -237,10 +237,18 @@ index 863c98e..c20cf4e 100644
  
  } //namespace ORB_SLAM
 diff --git a/src/LoopClosing.cc b/src/LoopClosing.cc
-index 319afb5..ddcb9ae 100644
+index 319afb5..681bd39 100644
 --- a/src/LoopClosing.cc
 +++ b/src/LoopClosing.cc
-@@ -76,6 +76,112 @@ LoopClosing::LoopClosing(Atlas *pAtlas, KeyFrameDatabase *pDB, ORBVocabulary *pV
+@@ -27,6 +27,7 @@
+ 
+ #include<mutex>
+ #include<thread>
++#include<chrono>
+ 
+ 
+ namespace ORB_SLAM3
+@@ -76,6 +77,112 @@ LoopClosing::LoopClosing(Atlas *pAtlas, KeyFrameDatabase *pDB, ORBVocabulary *pV
      mnCorrectionGBA = 0;
  }
  
@@ -353,7 +361,18 @@ index 319afb5..ddcb9ae 100644
  void LoopClosing::SetTracker(Tracking *pTracker)
  {
      mpTracker=pTracker;
-@@ -310,6 +416,10 @@ void LoopClosing::Run()
+@@ -109,7 +216,10 @@ void LoopClosing::Run()
+             std::chrono::steady_clock::time_point time_StartPR = std::chrono::steady_clock::now();
+ #endif
+ 
++            const auto tC7Detect = std::chrono::steady_clock::now();   // C7: place-recognition wall time per KF
+             bool bFindedRegion = NewDetectCommonRegions();
++            PropCount("us_detect_total", (int)std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - tC7Detect).count());
++            PropCount("n_detect_calls");
+ 
+ #ifdef REGISTER_TIMES
+             std::chrono::steady_clock::time_point time_EndPR = std::chrono::steady_clock::now();
+@@ -310,6 +420,10 @@ void LoopClosing::Run()
  
  void LoopClosing::InsertKeyFrame(KeyFrame *pKF)
  {
@@ -364,7 +383,7 @@ index 319afb5..ddcb9ae 100644
      unique_lock<mutex> lock(mMutexLoopQueue);
      if(pKF->mnId!=0)
          mlpLoopKeyFrameQueue.push_back(pKF);
-@@ -334,8 +444,7 @@ bool LoopClosing::NewDetectCommonRegions()
+@@ -334,8 +448,7 @@ bool LoopClosing::NewDetectCommonRegions()
          // Avoid that a keyframe can be erased while it is being process by this thread
          mpCurrentKF->SetNotErase();
          mpCurrentKF->mbCurrentPlaceRecognition = true;
@@ -374,7 +393,7 @@ index 319afb5..ddcb9ae 100644
      }
  
      if(mpLastMap->IsInertial() && !mpLastMap->GetIniertialBA2())
-@@ -408,6 +517,8 @@ bool LoopClosing::NewDetectCommonRegions()
+@@ -408,6 +521,8 @@ bool LoopClosing::NewDetectCommonRegions()
              mnLoopNumNotFound++;
              if(mnLoopNumNotFound >= 2)
              {
@@ -383,7 +402,7 @@ index 319afb5..ddcb9ae 100644
                  mpLoopLastCurrentKF->SetErase();
                  mpLoopMatchedKF->SetErase();
                  mnLoopNumCoincidences = 0;
-@@ -451,6 +562,8 @@ bool LoopClosing::NewDetectCommonRegions()
+@@ -451,6 +566,8 @@ bool LoopClosing::NewDetectCommonRegions()
              mnMergeNumNotFound++;
              if(mnMergeNumNotFound >= 2)
              {
@@ -392,7 +411,7 @@ index 319afb5..ddcb9ae 100644
                  mpMergeLastCurrentKF->SetErase();
                  mpMergeMatchedKF->SetErase();
                  mnMergeNumCoincidences = 0;
-@@ -482,6 +595,8 @@ bool LoopClosing::NewDetectCommonRegions()
+@@ -482,6 +599,8 @@ bool LoopClosing::NewDetectCommonRegions()
  
      // Extract candidates from the bag of words
      vector<KeyFrame*> vpMergeBowCand, vpLoopBowCand;
@@ -401,7 +420,7 @@ index 319afb5..ddcb9ae 100644
      if(!bMergeDetectedInKF || !bLoopDetectedInKF)
      {
          // Search in BoW
-@@ -489,6 +604,82 @@ bool LoopClosing::NewDetectCommonRegions()
+@@ -489,6 +608,82 @@ bool LoopClosing::NewDetectCommonRegions()
          std::chrono::steady_clock::time_point time_StartQuery = std::chrono::steady_clock::now();
  #endif
          mpKeyFrameDB->DetectNBestCandidates(mpCurrentKF, vpLoopBowCand, vpMergeBowCand,3);
@@ -484,7 +503,7 @@ index 319afb5..ddcb9ae 100644
  #ifdef REGISTER_TIMES
          std::chrono::steady_clock::time_point time_EndQuery = std::chrono::steady_clock::now();
  
-@@ -501,16 +692,41 @@ bool LoopClosing::NewDetectCommonRegions()
+@@ -501,16 +696,41 @@ bool LoopClosing::NewDetectCommonRegions()
          std::chrono::steady_clock::time_point time_StartEstSim3_2 = std::chrono::steady_clock::now();
  #endif
      // Check the BoW candidates if the geometric candidate list is empty
@@ -526,7 +545,7 @@ index 319afb5..ddcb9ae 100644
  
  #ifdef REGISTER_TIMES
          std::chrono::steady_clock::time_point time_EndEstSim3_2 = std::chrono::steady_clock::now();
-@@ -604,11 +820,19 @@ bool LoopClosing::DetectCommonRegionsFromBoW(std::vector<KeyFrame*> &vpBowCand,
+@@ -604,11 +824,30 @@ bool LoopClosing::DetectCommonRegionsFromBoW(std::vector<KeyFrame*> &vpBowCand,
      vector<int> vnMatchesStage(numCandidates, 0);
  
      int index = 0;
@@ -538,6 +557,17 @@ index 319afb5..ddcb9ae 100644
      {
 +        const bool bExt = mspExtThisPass.count(pKFi) > 0;
 +        int nExtStage = 0;   // 1 gate passed, 2 BoW matches, 3 Sim3 converged, 4 fully verified
++        // C7: time this candidate's evaluation, keyed by source and the stage reached (0 bad/abort_near,
++        // 1 < nBoWMatches, 2 RANSAC did not converge, 3 converged but projection/optimisation failed, 4 verified)
++        struct C7Timer {
++            LoopClosing* lc; bool ext; const int &stage; std::chrono::steady_clock::time_point t0;
++            ~C7Timer()
++            {
++                const std::string s = std::string(ext ? "ext" : "dbow2") + "_stage" + std::to_string(stage);
++                lc->PropCount("us_" + s, (int)std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - t0).count());
++                lc->PropCount("n_" + s);
++            }
++        } tC7Cand{this, bExt, nExtStage, std::chrono::steady_clock::now()};
          if(!pKFi || pKFi->isBad())
 +        {
 +            if(bExt) { PropCount("bad_at_eval"); }
@@ -546,7 +576,7 @@ index 319afb5..ddcb9ae 100644
  
          // std::cout << "KF candidate: " << pKFi->mnId << std::endl;
          // Current KF against KF with covisibles version
-@@ -636,7 +860,11 @@ bool LoopClosing::DetectCommonRegionsFromBoW(std::vector<KeyFrame*> &vpBowCand,
+@@ -636,7 +875,11 @@ bool LoopClosing::DetectCommonRegionsFromBoW(std::vector<KeyFrame*> &vpBowCand,
          }
          if(bAbortByNearKF)
          {
@@ -559,7 +589,7 @@ index 319afb5..ddcb9ae 100644
              continue;
          }
          //std::cout << "Check BoW continue because is far to the matched one " << std::endl;
-@@ -688,8 +916,10 @@ bool LoopClosing::DetectCommonRegionsFromBoW(std::vector<KeyFrame*> &vpBowCand,
+@@ -688,8 +931,10 @@ bool LoopClosing::DetectCommonRegionsFromBoW(std::vector<KeyFrame*> &vpBowCand,
  
          //pMostBoWMatchesKF = vpCovKFi[pMostBoWMatchesKF];
  
@@ -570,7 +600,7 @@ index 319afb5..ddcb9ae 100644
              // Geometric validation
              bool bFixedScale = mbFixScale;
              if(mpTracker->mSensor==System::IMU_MONOCULAR && !mpCurrentKF->GetMap()->GetIniertialBA2())
-@@ -711,6 +941,7 @@ bool LoopClosing::DetectCommonRegionsFromBoW(std::vector<KeyFrame*> &vpBowCand,
+@@ -711,6 +956,7 @@ bool LoopClosing::DetectCommonRegionsFromBoW(std::vector<KeyFrame*> &vpBowCand,
  
              if(bConverge)
              {
@@ -578,7 +608,7 @@ index 319afb5..ddcb9ae 100644
                  //std::cout << "Check BoW: SolverSim3 converged" << std::endl;
  
                  //Verbose::PrintMess("BoW guess: Convergende with " + to_string(nInliers) + " geometrical inliers among " + to_string(nBoWInliers) + " BoW matches", Verbose::VERBOSITY_DEBUG);
-@@ -846,8 +1077,12 @@ bool LoopClosing::DetectCommonRegionsFromBoW(std::vector<KeyFrame*> &vpBowCand,
+@@ -846,8 +1092,12 @@ bool LoopClosing::DetectCommonRegionsFromBoW(std::vector<KeyFrame*> &vpBowCand,
                                  vnMatchesStage[index] = nNumKFs;
                              }
  
@@ -591,7 +621,7 @@ index 319afb5..ddcb9ae 100644
                                  nBestMatchesReproj = numProjOptMatches;
                                  nBestNumCoindicendes = nNumKFs;
                                  pBestMatchedKF = pMostBoWMatchesKF;
-@@ -864,11 +1099,26 @@ bool LoopClosing::DetectCommonRegionsFromBoW(std::vector<KeyFrame*> &vpBowCand,
+@@ -864,11 +1114,26 @@ bool LoopClosing::DetectCommonRegionsFromBoW(std::vector<KeyFrame*> &vpBowCand,
                  Verbose::PrintMess("BoW candidate: it don't match with the current one", Verbose::VERBOSITY_DEBUG);
              }*/
          }
@@ -618,7 +648,7 @@ index 319afb5..ddcb9ae 100644
          pLastCurrentKF = mpCurrentKF;
          nNumCoincidences = nBestNumCoindicendes;
          pMatchedKF2 = pBestMatchedKF;
-@@ -968,6 +1218,18 @@ int LoopClosing::FindMatchesByProjection(KeyFrame* pCurrentKF, KeyFrame* pMatche
+@@ -968,6 +1233,18 @@ int LoopClosing::FindMatchesByProjection(KeyFrame* pCurrentKF, KeyFrame* pMatche
  
  void LoopClosing::CorrectLoop()
  {
@@ -637,7 +667,7 @@ index 319afb5..ddcb9ae 100644
      //cout << "Loop detected!" << endl;
  
      // Send a stop signal to Local Mapping
-@@ -1214,6 +1476,11 @@ void LoopClosing::CorrectLoop()
+@@ -1214,6 +1491,11 @@ void LoopClosing::CorrectLoop()
  
  void LoopClosing::MergeLocal()
  {
@@ -649,7 +679,7 @@ index 319afb5..ddcb9ae 100644
      int numTemporalKFs = 25; //Temporal KFs in the local window if the map is inertial.
  
      //Relationship to rebuild the essential graph, it is used two times, first in the local window and later in the rest of the map
-@@ -2525,6 +2792,11 @@ bool LoopClosing::CheckFinish()
+@@ -2525,6 +2807,11 @@ bool LoopClosing::CheckFinish()
  
  void LoopClosing::SetFinish()
  {
