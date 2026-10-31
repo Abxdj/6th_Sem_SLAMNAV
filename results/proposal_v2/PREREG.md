@@ -251,3 +251,62 @@ All pairs run forward in time, so there are no reversed timestamps. The concaten
 - If the batch stops early, the analysis uses complete blocks only (`--max-block K`). The incomplete block is reported separately.
 - Crashed runs are reported, not replaced.
 - **Part D** (V1_01 → V1_03) is not run or pooled with Part E.
+
+## Part D: independent-pair cross-map test (V1_01 → V1_03)
+
+- 2026-10-31: data obtained by the owner via a manual browser download of the V1 bundle; the V1_03 zip passed its CRC32 (d12f04fa) and matched all 46 previously downloaded chunks byte for byte. Part D proceeds as registered: frozen as Part C, not pooled with C or E.
+
+Written 2026-10-31, **before** any run of this test. Committed and pushed by the owner before the first run. Not changed afterwards; any deviation is reported as a deviation. Parts A, B, C and E are unchanged; τ = 0.8768 is not recalibrated. An earlier record dropping Part D (`55e0ce1`) was reverted (`e105645`) before any Part D work.
+
+### Data
+- **Source:** `vicon_room1/V1_03_difficult/V1_03_difficult.zip` taken from the owner's download of the ETH `vicon_room1` bundle. Compressed size 801,206,634 bytes, the same as the server's central directory as read by `~/dl_tools_v103/v103_get.py`. Uncompressed 801,343,542 bytes, CRC32 `d12f04fa`, checked by `unzip -t` and recomputed on the copy on disk.
+- **Extracted** to `~/euroc_v1/vicon_room1/V1_03_difficult/extracted/mav0` (the V1_01 layout). cam0: 2,149 frames, every `data.csv` row has its PNG and vice versa, all readable 752×480 8-bit, 20 Hz, 107.4 s.
+- **GT:** `evaluation/euroc_gt_to_tum.py` → `~/euroc_v1/V1_03_difficult_groundtruth_tum.txt`, 20,932 poses, equal to the CSV rows. Checked against the CSV: timestamps (ns → s), positions, and quaternion reorder (qw qx qy qz → qx qy qz qw) all match; timestamps strictly increasing; 2,094 cam0 frames fall inside the GT span.
+- **Pair GT:** `~/euroc_v1/V1_01_V1_03_groundtruth_tum.txt`, built with `cat` then `sort -g`; 49,644 lines = 28,712 + 20,932. The pair runs forward in time (V1_03 starts 470.5 s after V1_01's GT ends), so there are no reversed timestamps.
+
+### Pair (overlap computed after the data check, `tools/proposal_v2/pair_overlap.py`, 2 m / 45°, unchanged since `5ae6db4`)
+Definitions of overlap, region and place are those of Part C. Output: `results/proposal_v2/partD/overlap_V0103.json`.
+
+| pair (session 1 → 2) | overlap | regions / distinct places | label | why |
+|---|---|---|---|---|
+| V1_01 → V1_03 | 0.962 | 2 / 1 | **independent** | neither sequence was used to set τ (MH_01, MH_03); neither was in any earlier live test pair (Parts B, C, E) |
+
+- Regions: 0.0–70.8 s and 73.6–104.6 s into session 2 (104.6 s of GT); the second is within 3 m of the first, so one place.
+- **This is a high-overlap pair**, like Part C's (0.554, 0.352), not a low-overlap one like Part E's. It was registered in Part C before its overlap was known, and it is run as registered; it is not replaced by a lower-overlap pair.
+- **Prior use of V1_01:** session 1 of the Part C smoke run (V1_01 → V1_02, not a test pair) and earlier offline work before proposal-v2. V1_03 has never been used, and has never been run live through this pipeline; any tracking failure is reported.
+
+### Frozen (identical to Parts C and E; nothing rebuilt)
+- **ORB-SLAM3** `9aad4f8`, with an empty working-tree diff. `libORB_SLAM3.so` dated 2026-10-26 11:16:45 and `Mono` 11:17:21.
+- **Node** md5 `781802e997edfb22b6d31bf08184ecf4`, run with `_mode:=xmap _xmap_thresh:=0.8768`.
+- **Harness:** `run_euroc.sh`, `run_batch.sh`, `kf_logger.py` and `load_only_v2.py` with `LOAD_KF_HZ=3.55`. `ros_nodes/` and the harness are unchanged since `b830bee`; the only change in `tools/` since then is the post hoc `posthoc_e.py`, which the batch does not use.
+- **Analysis:** `tools/proposal_v2/analyze_xmap2.py`, md5 `e1cc90d9b4ce7b0bba3cc2d1f42c91cb`, unchanged. Inputs `results/proposal_v2/plans/XMAPD_pairs.json`; output `results/proposal_v2/xmapD_test_results.json`. Dry-run with a one-pair config on the Part E MH0205 runs: it reproduces that pair's table (10/0 vs 0/10) with one stratum.
+- **No smoke run**, as in Part E: code and build are byte-identical to the Part C and Part E batches. Every run's `meta.txt` is checked against the values above before analysis; any mismatch is reported as a deviation.
+
+### Design (as Part C)
+- **Arms:** control (`none`), load-only (`load_only`), injection (`resnet18`, xmap, τ = 0.8768).
+- **Runs:** 10 runs per arm, **30 runs**. Real time (speed 1.0), one ORB-SLAM3 process per run, `/orb_slam3/new_session` → ChangeDataset, 5 s gap.
+- **Plan:** `results/proposal_v2/plans/XMAPD_TEST.plan`, from `make_plan_xmap2.py XMAPD_pairs.json 10`. Blocks k = 1..10; arm order rotates with k mod 3, as in Part C.
+- **Tags:** `XD_V0103_r<k>_<arm>`.
+- **Invocation:** `LOAD_KF_HZ=3.55 NODE_ARGS="_mode:=xmap _xmap_thresh:=0.8768" tools/proposal_v2/run_batch.sh results/proposal_v2/plans/XMAPD_TEST.plan results/proposal_v2/XMAPD_TEST_batch.log`
+- **Expected machine time:** about **2.6 h**: (session 1 145.6 s + session 2 107.4 s + 60 s Part C median overhead) × 30.
+- Owner approved 4 h cap, 2026-10-31. `run_batch.sh` has no time limit, so the cap is enforced by a separate watchdog, dry-run (cap time and target process printed) before it is armed.
+
+### Outcomes and analysis (`analyze_xmap2.py`, exactly as committed)
+- **Primary outcome:** maps merged (≥ 1 `Merge finished`) per run.
+- **Primary test:** injection vs control, CMH χ² as in Part C (1 df, no continuity correction, two-sided), here with a single stratum, V0103. Reported with the MH odds ratio.
+- **Pre-registered sensitivity analyses:**
+  1. The exact conditional stratified test; with one stratum this is Fisher's exact test (two-sided).
+  2. Independent pairs only: **applicable**, and identical to the primary test, since the one pair is independent.
+- **Secondary tests** (as Part C): CMH and exact test, injection vs load-only; Fisher and MWU on merge counts vs control and vs load-only; time to first merge into session 2 (never-merged runs censored), MWU; detect ms per KF, MWU.
+- **α:** 0.05, descriptive. No multiplicity correction beyond reporting every comparison.
+- **Prediction (pre-registered, the Part C rule):** with d = injection rate − control rate:
+  - control rate **≥ 0.8**: holds if **d ≤ 0.2**;
+  - control rate **≤ 0.5**: holds if **d ≥ 0.3**;
+  - control rate 0.6–0.7: uninformative.
+- **Reported** (as Part C): merge tables and attribution (ext / dbow2); GT check of every merge and loop in every arm; proposal outcomes; ATE per session and of the spanning map; Sim3 cost of failed external candidates (C7 stages 1–3); live proposal precision; exit codes, crashes and drop %.
+- **Not pooled:** Part D is not added to the Part C or Part E analyses.
+
+### Stopping
+- The batch stops on any of: 3 consecutive mid-run crashes (`run_batch.sh`); disk below 10 GB; the 4 h cap.
+- If the batch stops early, the analysis uses complete blocks only (`--max-block K`). The incomplete block is reported separately.
+- Crashed runs are reported, not replaced.
