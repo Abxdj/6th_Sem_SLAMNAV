@@ -1,70 +1,61 @@
-# SLAM project status (26 Oct 2026)
+# SLAM project status (30 Oct 2026)
 
-Repo: github.com/Abxdj/6th_Sem_SLAMNAV.
-- **`proposal-v2`** is the current branch. Part C results are pushed (`bdecde1`).
-- Part E is committed locally (`b96908c` rule, `aaf06b1` pairs and plan). It may already be pushed. **No Part E run has started.**
+**Repo:** github.com/Abxdj/6th_Sem_SLAMNAV, branch `proposal-v2`.
+- Part E results are committed locally. **Push them first** (`git push`). If git asks for a password, use the token, not the GitHub password; it's cached for a day.
 
-ORB-SLAM3 changes are exported as `orb_slam3_patches/proposal_v2.patch`. The current build is `9aad4f8` (adds timing counters). Never push `~/ORB_SLAM3`.
+**Code state:**
+- ORB-SLAM3 build `9aad4f8`, exported as `orb_slam3_patches/proposal_v2.patch`. Never push `~/ORB_SLAM3`.
+- Pre-registration lives in `results/proposal_v2/PREREG.md`. Reports: `REPORT_XMAP.md` (B), `REPORT_XMAP2.md` (C), `REPORT_XMAPE.md` (E).
 
-Pre-registration lives in `results/proposal_v2/PREREG.md`. Rule: **push each Part to GitHub before its first run.**
+## Pre-registered results
 
-## Established results
+Fixed settings throughout: τ = 0.8768 (calibrated on MH_01→MH_03); 10 runs per arm.
 
-**1. Infrastructure.**
-- The `ros_mono.cc` resize bug is fixed. KITTI 00 live median ATE 9.40 m vs 8.86 m standalone.
-- The culled-keyframe redirect fixed the 95% proposal loss.
-- Exclusion is now time-based.
-- Descriptors are computed on the keyframe image.
-- Every proposal's outcome is accounted for.
+| Part | Pair | Overlap | Control | Load-only | Injection | Bottleneck |
+|---|---|---|---|---|---|---|
+| B | MH_02→MH_04 | 0.127 | 4/10 | 2/10 | 9/10 (8 ours) | proposal (Fisher p=0.057) |
+| C | MH_03→MH_05 | 0.554 | 8/10 | 9/10 | 10/10 | none: DBoW2 suffices (CMH p=0.146) |
+| C | MH_04→MH_02 | 0.352 | 10/10 | 10/10 | 10/10 | none |
+| E | MH_02→MH_05 | 0.140 | 0/10 | 0/10 | 10/10 (9 ours) | proposal |
+| E | MH_01→MH_04 | 0.145 | 0/10 | 0/10 | 5/10 (5 ours) | proposal |
+| E | MH_01→MH_05 | 0.166 | 0/10 | 0/10 | 0/10 | **verification**: 355/672 of our proposals pointed at the right place, all rejected by geometry |
 
-**2. Single-session and easy multi-session: DBoW2 saturates.**
-- KITTI: 4–5 loops per run from DBoW2 alone.
-- V1_01→V1_02: 12/12 merges.
+**Part E primary test:** CMH p = 7.7e-7 (exact 1.8e-7). **The pre-registered prediction fails overall,** because MH_01→MH_05 shows no effect.
 
-**3. Pre-registered cross-map tests** (τ=0.8768, calibrated on MH_01→MH_03; arms control / load-only / injection, 10 runs each):
+**Caveats:**
+- All low-overlap pairs revisit the **same place** (~25 s into session 2).
+- **No independent pair yet.** Part D (V1_01→V1_03) is pending its download (42/48 chunks).
+- **Merges sometimes hurt accuracy.** In 4/15 merged injection runs in Part E, session-2 ATE was 0.25–0.52 m (vs about 0.06 m). Learned merges join keyframes 1.4–2.0 m apart.
+- **Safety:** thousands of wrong proposals, and no wrong merges. One DBoW2 merge sat at 2.005 m and was reported as outside the check.
+- **Cost:** about +0.2–0.6 ms per keyframe of verification time.
 
-| Part | Pair | Control | Load-only | Injection | Notes |
-|---|---|---|---|---|---|
-| B | MH_02→MH_04 (overlap 0.127) | 4/10 | 2/10 | 9/10 (8 by learned) | Fisher **p=0.057** vs control, p=0.0055 vs load-only |
-| C | MH_03→MH_05 (0.554) | 8/10 | 9/10 | 10/10 (5 by learned) | **Null.** CMH p=0.146, exact p=0.474 |
-| C | MH_04→MH_02 (0.352) | 10/10 | 10/10 | 10/10 (4 by learned) | Learned merges happen at the same revisit DBoW2 uses |
-
-- The prediction ("near zero effect where control usually merges") held in Part C. The other half ("large effect where control rarely merges") rests only on Part B.
-- **Safety:** about 1,280 wrong proposals across Parts B and C, and 0 wrong merges. Every merge in every arm is within 2 m / 45° of ground truth.
-- **Cost:** +0.20 to +0.56 ms per keyframe of place recognition (on a baseline of about 3.2 ms), mostly failed Sim3 attempts. The GPU descriptor cost comes on top.
-- **ATE:** not improved in any test.
-
-**4. Offline (fair Gate B, matched precision).**
-- Learned beats raw DBoW2 top-1.
-- ResNet18, DINO and EfficientNet are statistically tied. DINO costs more for nothing.
-
-**5. Methodological lessons.**
-- A GPU node perturbs ORB-SLAM3 through compute alone, so a load-matched control is needed.
-- Within-session thresholds don't transfer across sessions.
-- Keyframe culling silently drops external proposals.
-- The Gazebo bag is limited by its route; use it for smoke tests only.
+**Other findings:**
+- KITTI live matches standalone ORB-SLAM3 (Gate A).
+- Single-session and easy multi-session pairs: DBoW2 saturates.
+- Offline Gate B: learned descriptors beat DBoW2; ResNet18, EfficientNet and DINO are tied.
+- Methodological lessons: keyframe culling drops external proposals; a load-matched control is needed; thresholds don't transfer across sessions; single runs are meaningless.
 
 ## Next session
 
-**1. Part E: hard-pair replication.**
-- Pairs: MH_02→MH_05 (0.140), MH_01→MH_04 (0.145), MH_01→MH_05 (0.166). All are labelled related.
-- Caveat: all three revisit the **same spot** as Part B (about 25 s in). So this is a replication at one place, not a test of new places.
-- 90 runs, about 8.5 h. Primary test: CMH injection vs control.
-- **Tell Claude Code** (`claude --continue` in the repo):
-  > "Approved: the full 90-run batch with a 9.5 h stopping cap. Add one line to Part E recording that ("Owner approved 9.5 h cap, <date>"), commit it, and stop. I'll push, then you start."
-- Then `git push`, then "Pushed. Start." Run it overnight with the laptop plugged in and sleep turned off.
+**1.** `git push` the Part E results.
 
-**2. How to read Part E.**
-- Injection beats control where control often fails: the paper reports a narrow positive ("reliably closes a hard revisit") plus the null on easy pairs.
-- Control merges most of the time: Part B was likely luck, and the paper is a clean, mostly negative, pre-registered study.
+**2.** Send to Claude Code (`claude --continue` inside `tmux new -s diag`):
+> Pushed. Two offline analyses, labelled post hoc in `results/proposal_v2/POSTHOC_E.md`; don't change any pre-registered report:
+> 1. MH_01→MH_05 verification failure: at which stage did our ground-truth-correct proposals fail (BoW / Sim3 inliers / guided matching), and what were their distance and angle vs the passing merges on MH_02→MH_05 and MH_01→MH_04?
+> 2. Merged-run accuracy: 4 degraded vs 11 good injection runs. Compare the merge pair's distance and angle, Sim3 inliers, and whether the error comes right after the merge or from later drift.
+> 3. Part D: when V1_03 completes, assemble and check it, run the overlap check, and write Part D frozen as in Part C; then stop for me to push. If it isn't complete by 6 Nov, record that in PREREG and drop Part D.
 
-**3. Then stop experimenting and write the paper.**
-- Working title: "Proposal or Verification? Learned Place Recognition in ORB-SLAM3 Multi-Session Mapping".
-- Venue: an ICRA or IROS 2027 workshop, plus arXiv.
+**3.** Bring `POSTHOC_E.md` back to the chat. Then: the README rewrite, a reproducibility pass, and the paper outline.
 
-**4. Part D (V1_01→V1_03, independent).** Run only if the ETH download ever finishes; it's stuck on HTTP 429. It's registered as separate and not pooled.
+## Paper
 
-**5. Later:**
-- README update, then merge into master.
-- Fill in the guide's name in the docs.
-- Jetson Orin request.
+- **Title:** "Proposal or Verification? Learned Place Recognition in ORB-SLAM3 Multi-Session Mapping".
+- **Story:** three regimes:
+  - no bottleneck (DBoW2 suffices);
+  - proposal-limited (learned proposals rescue the merge);
+  - verification-limited (correct proposals, rejected by geometry).
+- **Venues:**
+  - IROS 2027 main track (deadline **1 Mar 2027**, Florence);
+  - ICRA 2027 workshops (accepted workshops announced 31 Jan 2027; paper deadlines likely Feb–Apr; Seoul, 24–28 May);
+  - arXiv in mid-Feb.
+- **Plan:** draft in Dec, guide review in Jan.
