@@ -251,3 +251,11 @@ All pairs run forward in time, so there are no reversed timestamps. The concaten
 - If the batch stops early, the analysis uses complete blocks only (`--max-block K`). The incomplete block is reported separately.
 - Crashed runs are reported, not replaced.
 - **Part D** (V1_01 → V1_03) is not run or pooled with Part E.
+
+## Part D: dropped (2026-10-31)
+
+Part D (V1_01 → V1_03, registered in Part C) is **dropped**, recorded 2026-10-31.
+- **Reason:** the V1_03 download could not be completed. The ETH Research Collection server kept returning HTTP 429 (Too Many Requests) for over two hours, including from a second network. The last chunk request was retried from 15:04 to 17:05 on 2026-10-31 without success (`~/dl_tools_v103/v103_dl.log`).
+- **State at drop:** 46 of 48 chunks present (`V1_03_difficult.zip.parts/00000`–`00045`); no zip was assembled, so no CRC check, extraction or overlap check was done.
+- **No Part D data was collected or run.** No Part D pairs, design or runs exist; nothing in Parts A–C or E changes.
+- Consequently every pair tested so far reuses a calibration or earlier test sequence; no independent-pair test exists.
