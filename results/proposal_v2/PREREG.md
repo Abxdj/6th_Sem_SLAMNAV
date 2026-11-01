@@ -310,3 +310,45 @@ Definitions of overlap, region and place are those of Part C. Output: `results/p
 - The batch stops on any of: 3 consecutive mid-run crashes (`run_batch.sh`); disk below 10 GB; the 4 h cap.
 - If the batch stops early, the analysis uses complete blocks only (`--max-block K`). The incomplete block is reported separately.
 - Crashed runs are reported, not replaced.
+
+## Part F: replication of Part D with a cross-session outcome (V1_01 → V1_03)
+
+Written 2026-11-01, **after Part D's results were seen** (`c74e22d`, `60487a6`) and after the post hoc fragment analysis (`612ae22`). The outcome below was chosen because of what Part D showed: Part D's registered outcome ("≥ 1 merge") counted merges between pieces of session 2, and the post hoc breakdown found injection 9/10 vs control 2/10 on cross-session merges. Part F tests whether that post hoc pattern recurs in **fresh runs**, with the outcome fixed in advance. It is a replication on the **same pair and sequences** as Part D, not a test on new data or a new environment. Committed and pushed by the owner before the first run; not changed afterwards; any deviation is reported as a deviation. Parts A–E are unchanged; τ = 0.8768 is not recalibrated.
+
+### Pair
+V1_01 → V1_03, as in Part D (overlap 0.962, 2 regions / 1 place; data and GT as checked in Part D). Config `results/proposal_v2/plans/XMAPF_pairs.json`: identical to `XMAPD_pairs.json` except the pair key (`V0103F`) and tag (`XF_V0103`).
+
+### Frozen (identical to Part D; nothing rebuilt)
+- **ORB-SLAM3** `9aad4f8`, empty working-tree diff; `libORB_SLAM3.so` 2026-10-26 11:16:45, `Mono` 11:17:21.
+- **Node** md5 `781802e997edfb22b6d31bf08184ecf4`, `_mode:=xmap _xmap_thresh:=0.8768`.
+- **Harness:** `run_euroc.sh`, `run_batch.sh`, `kf_logger.py`, `load_only_v2.py` with `LOAD_KF_HZ=3.55`, unchanged.
+- **Classifier:** `tools/proposal_v2/posthoc_frag.py`, md5 **`610bdb7afcade9ba4d54b8db36e8d92a`**, unchanged. Its `run()` classifies each accepted merge by the **interval (stamp) method**: KF stamps from `kf_log.csv` tested against each session's stamp interval (±1 s) from `session_bounds` in `pv2_summary.json`. Its tag list is hard-coded to Parts B–E, so it is not run directly; it is imported by the Part F script below, which refuses to run if its md5 differs.
+- **Part F analysis:** `tools/proposal_v2/analyze_partF.py`, md5 **`c50bd2f8c2f7f54ecb29a217f0bf3627`**, committed with this section. It regenerates `pv2_summary.json` with `analyze_pv2.py` (as `analyze_xmap2.py` does), calls `posthoc_frag.run()` on every run, and computes the tests below. Dry-run on the Part D runs: it reproduces the post hoc Part D result exactly (9/10 vs 2/10, Fisher p = 0.0055; 0 unclassified merges; id and stamp methods agree on 28/28). Output: `results/proposal_v2/xmapF_test_results.json`.
+- **Secondary analysis:** `tools/proposal_v2/analyze_xmap2.py`, md5 `e1cc90d9b4ce7b0bba3cc2d1f42c91cb`, with `XMAPF_pairs.json`; output `results/proposal_v2/xmapF_xmap2_results.json`.
+- **No smoke run**, as in Parts D and E. Every run's `meta.txt` is checked against the values above before analysis; any mismatch is reported as a deviation.
+
+### Design (as Part D)
+- **Arms:** control (`none`), load-only (`load_only`), injection (`resnet18`, xmap, τ = 0.8768).
+- **Runs:** 10 fresh runs per arm, **30 runs**. No Part D run is reused. Real time (speed 1.0), one ORB-SLAM3 process per run, `/orb_slam3/new_session` → ChangeDataset, 5 s gap.
+- **Plan:** `results/proposal_v2/plans/XMAPF_TEST.plan`, from `make_plan_xmap2.py XMAPF_pairs.json 10`: the Part D plan with `XF_` tags (same block and arm order, checked by `diff`).
+- **Tags:** `XF_V0103_r<k>_<arm>`.
+- **Invocation:** `LOAD_KF_HZ=3.55 NODE_ARGS="_mode:=xmap _xmap_thresh:=0.8768" tools/proposal_v2/run_batch.sh results/proposal_v2/plans/XMAPF_TEST.plan results/proposal_v2/XMAPF_TEST_batch.log`
+- **Expected machine time:** about 2.5 h (Part D took 2.5 h for the same plan).
+- Owner set 4 h cap, 2026-11-01. Enforced by a separate watchdog on the `run_batch.sh` loop, dry-run before arming; a run in progress at the cap finishes.
+
+### Outcomes and analysis (`analyze_partF.py`, exactly as committed)
+- **Primary outcome:** per run, **≥ 1 cross-session merge**: an accepted merge (`[PROP] accepted list=merge` in `mono.log`) whose matched KF is in session 1 and current KF in session 2, by `posthoc_frag.run()`. Fragment merges (both KFs in session 2) and session-1 merges do not count. A merge the classifier cannot place (`None` / `other`) does not count, and is reported.
+- **Primary test:** **Fisher exact, injection vs control, two-sided**, on the 2 × 2 table of runs with / without a cross-session merge. α = 0.05.
+- **Prediction (pre-registered):** injection rate − control rate **≥ 0.3** on the primary outcome. Reported as holds / fails.
+- **Crashed runs (stated in advance):** scored from `mono.log` up to the crash, as Part D was. A run that crashes is kept in its arm's n and not replaced; it is a cross-session run if a cross-session merge was accepted before the crash, otherwise not. Crashed runs have no ATE and are excluded from ATE only. Every crash is reported with its exit code and point of failure.
+- **Secondary (descriptive, α 0.05, no multiplicity correction beyond reporting every comparison):**
+  - Fisher, injection vs load-only, on the primary outcome;
+  - the Part D registered outcome (≥ 1 merge of any kind) and every `analyze_xmap2.py` output, as in Part D: merge tables and attribution (ext / dbow2), GT check of every merge and loop (2 m / 45°), proposal outcomes and C7 stage counts, ATE per session and of the spanning map, Sim3 cost of failed external candidates, detect ms per KF, time to first merge, live proposal precision, exit codes, crashes and drop %;
+  - cross-session merges by source (ext / dbow2), and fragment merges per arm;
+  - checks: accepted merges vs `Merge finished` per run; id vs stamp classification agreement; unclassified merges.
+- **Not pooled** with Part D or any other part.
+
+### Stopping
+- The batch stops on any of: 3 consecutive mid-run crashes (`run_batch.sh`); disk below 10 GB; the 4 h cap.
+- If the batch stops early, the analysis uses complete blocks only (`--max-block K`, both scripts). The incomplete block is reported separately.
+- Crashed runs are reported, not replaced.

@@ -41,7 +41,7 @@ Setup for every pre-registered test:
 | E **[pre-reg]** | MH_02→MH_05 | 0.140 | 0/10 | 0/10 | **10/10** (9) | proposal |
 | E **[pre-reg]** | MH_01→MH_04 | 0.145 | 0/10 | 0/10 | **5/10** (5) | proposal |
 | E **[pre-reg]** | MH_01→MH_05 | 0.166 | 0/10 | 0/10 | 0/10 | **verification** |
-| D **[pre-reg]** | V1_01→V1_03 | 0.962 | 7/10 | 6/10 | 10/10 (7) | none: DBoW2 merges in most runs |
+| D **[pre-reg]** | V1_01→V1_03 | 0.962 | 7/10 | 6/10 | 10/10 (7) | null on the registered outcome; confounded by session-2 fragment merges (see [REPORT_XMAPD.md](results/proposal_v2/REPORT_XMAPD.md), [POSTHOC_FRAG.md](results/proposal_v2/POSTHOC_FRAG.md)) |
 
 Statistics:
 
