@@ -42,6 +42,7 @@ Setup for every pre-registered test:
 | E **[pre-reg]** | MH_01→MH_04 | 0.145 | 0/10 | 0/10 | **5/10** (5) | proposal |
 | E **[pre-reg]** | MH_01→MH_05 | 0.166 | 0/10 | 0/10 | 0/10 | **verification** |
 | D **[pre-reg]** | V1_01→V1_03 | 0.962 | 7/10 | 6/10 | 10/10 (7) | null on the registered outcome; confounded by session-2 fragment merges (see [REPORT_XMAPD.md](results/proposal_v2/REPORT_XMAPD.md), [POSTHOC_FRAG.md](results/proposal_v2/POSTHOC_FRAG.md)) |
+| F **[pre-reg]** | V1_01→V1_03 | 0.962 | 3/10 | 3/10 | 7/10 (3) | counts are runs with ≥ 1 cross-session merge; null, direction consistent with D (see [REPORT_XMAPF.md](results/proposal_v2/REPORT_XMAPF.md)) |
 
 Statistics:
 
@@ -52,6 +53,7 @@ Statistics:
 | E | injection vs control (CMH) | 7.7×10⁻⁷ |
 | E | exact stratified test | 1.8×10⁻⁷ |
 | D | injection vs control (CMH) | 0.067 |
+| F | injection vs control, cross-session (Fisher) | 0.18 |
 
 Reports: [`REPORT_XMAP.md`](results/proposal_v2/REPORT_XMAP.md) (B), [`REPORT_XMAP2.md`](results/proposal_v2/REPORT_XMAP2.md) (C), [`REPORT_XMAPE.md`](results/proposal_v2/REPORT_XMAPE.md) (E). Plan: [`PREREG.md`](results/proposal_v2/PREREG.md).
 
@@ -73,7 +75,7 @@ Reports: [`REPORT_XMAP.md`](results/proposal_v2/REPORT_XMAP.md) (B), [`REPORT_XM
 ### Limitations, stated plainly
 
 - **One revisit place.** All four low-overlap pairs revisit the same place, about 25 s into session 2. The positive result is that this hard revisit is reliably closed. It is not shown for hard revisits in general.
-- **The independent pair is null.** Part D (V1_01→V1_03, the only independent pair) merged in 10/10 injection runs vs 7/10 control: CMH p = 0.067, not significant.
+- **The independent pair is null.** Part D (V1_01→V1_03, the only independent pair) was null on its registered outcome (CMH p = 0.067), confounded by session-2 fragment merges; Part F, a pre-registered replication on the same pair with a cross-session outcome, gave injection 7/10 vs control 3/10, Fisher p = 0.18: not significant, direction consistent.
 - **Narrow scope.** One dataset (EuRoC), one descriptor live (ResNet18), monocular only, desktop GPU only. No edge-hardware measurements.
 - **The pre-registered prediction failed in Part E.** It required an effect on every hard pair, and MH_01→MH_05 had none.
 
