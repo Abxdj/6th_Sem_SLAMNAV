@@ -41,6 +41,7 @@ Setup for every pre-registered test:
 | E **[pre-reg]** | MH_02→MH_05 | 0.140 | 0/10 | 0/10 | **10/10** (9) | proposal |
 | E **[pre-reg]** | MH_01→MH_04 | 0.145 | 0/10 | 0/10 | **5/10** (5) | proposal |
 | E **[pre-reg]** | MH_01→MH_05 | 0.166 | 0/10 | 0/10 | 0/10 | **verification** |
+| D **[pre-reg]** | V1_01→V1_03 | 0.962 | 7/10 | 6/10 | 10/10 (7) | none: DBoW2 merges in most runs |
 
 Statistics:
 
@@ -71,7 +72,7 @@ Reports: [`REPORT_XMAP.md`](results/proposal_v2/REPORT_XMAP.md) (B), [`REPORT_XM
 ### Limitations, stated plainly
 
 - **One revisit place.** All four low-overlap pairs revisit the same place, about 25 s into session 2. The positive result is that this hard revisit is reliably closed. It is not shown for hard revisits in general.
-- **No independent pair.** Every pair reuses a calibration or earlier test sequence. An independent pair (V1_01→V1_03, "Part D") is registered but waiting on a dataset download.
+- **The independent pair is null.** Part D (V1_01→V1_03, the only independent pair) merged in 10/10 injection runs vs 7/10 control: CMH p = 0.067, not significant.
 - **Narrow scope.** One dataset (EuRoC), one descriptor live (ResNet18), monocular only, desktop GPU only. No edge-hardware measurements.
 - **The pre-registered prediction failed in Part E.** It required an effect on every hard pair, and MH_01→MH_05 had none.
 

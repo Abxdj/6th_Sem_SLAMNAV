@@ -78,13 +78,31 @@
 - **ATE after merging is mixed.** Spanning-map ATE across the 8 injection runs is 0.083–0.688 m. It is high in r6 (0.688 m), r2 (0.381 m) and r7 (0.330 m). It also varies widely in the other arms; load-only r2 is at 0.914 m. As in Part E, this is descriptive; no ATE test is pre-registered.
 - **Our proposer's candidates (injection arm, 10 runs):**
 
-  | stage 0 (covisible-near) | stage 1 | stage 2 | stage 3 | verified |
+  | stage 0 (covisible-near) | stage 1 | stage 2 | stage 3 | verified¹ |
   |---|---|---|---|---|
   | 186 | 29 | 684 | 358 | 10 |
 
-  - 11 external matches were accepted; r4's verification falls after its last counter line.
+  ¹ *Post hoc note.* The table shows 10 verified, but 11 external matches were accepted (7 merges, 4 loops). The gap is r4: it aborted before `[PROP-FINAL]`, so its counters come from its last periodic `[PROP-STATS]` line (`mono.log:1594`). That line was printed before its external merge was verified (`Merge finished` at `mono.log:1617`). So r4's verified candidate is in the accepted list but not in the stage counts. Its other stage counts are short for the same reason.
   - Sim3 cost of failed external candidates: 1,071 attempts, 3,593 ms in total over 10 runs, about 0.36 s per run.
 - **Live proposal precision vs GT: 1,368 / 1,427 = 0.96.** This is about the pair's overlap (0.962), so on this pair it says little about the descriptor: almost any session-2 KF has a correct session-1 place.
+
+## Crash sensitivity and GT confirmation (POST HOC, added after the results)
+
+**How r4 is scored.** PREREG's crash rule says crashed runs are "reported, not replaced". It does not say how they are scored, so the committed analysis decides:
+- **Merge table:** r4 is in the injection arm's n = 10 and counts as merged. Its `Merge finished` (`mono.log:1617`) comes before the abort (`mono.log:1636`).
+- **ATE:** r4 is excluded, because no trajectory was saved. Injection ATE values use 9 runs.
+
+**Sensitivity: r4 scored as not merged.**
+- Injection becomes 9/10 vs control's 7/10.
+- With the committed functions, the exact test gives **p = 0.58** (the same as Fisher, two-sided), and the CMH test gives χ² = 1.19, p = 0.28.
+- The primary conclusion (not significant) does not depend on how r4 is scored.
+
+**GT check of every merge and loop in every arm (2 m / 45°), confirmed.**
+- **Coverage:** every accepted match in all 30 runs has a GT distance and angle, from `kf_log.csv` stamps. None is missing, crashed r4 included.
+- **The log agrees:** in every run, the `Merge finished` and `*Loop detected` lines in `mono.log` match the accepted merge and loop records one for one, 28 merges and 38 loops in total.
+- **Merges: 28/28 are within the criterion** (≤ 1.34 m, ≤ 31.9°): control 8, load-only 6, injection 14. **No wrong merge was accepted in any arm.**
+- **Loops: 31/38 are within; 7 are outside, on angle only** (48.0–56.5°, ≤ 1.18 m). All 7 are DBoW2 loops: 4 control, 1 load-only, 2 injection. They are reported as outside the GT criterion.
+- **Our proposer:** all 11 accepted matches (7 merges, 4 loops) are within the criterion.
 
 ## Descriptive breakdown: which merges join V1_03 to V1_01 (POST HOC, not pre-registered)
 
