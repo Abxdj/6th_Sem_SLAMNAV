@@ -51,6 +51,7 @@ Statistics:
 | C | injection vs control (CMH) | 0.146 |
 | E | injection vs control (CMH) | 7.7×10⁻⁷ |
 | E | exact stratified test | 1.8×10⁻⁷ |
+| D | injection vs control (CMH) | 0.067 |
 
 Reports: [`REPORT_XMAP.md`](results/proposal_v2/REPORT_XMAP.md) (B), [`REPORT_XMAP2.md`](results/proposal_v2/REPORT_XMAP2.md) (C), [`REPORT_XMAPE.md`](results/proposal_v2/REPORT_XMAPE.md) (E). Plan: [`PREREG.md`](results/proposal_v2/PREREG.md).
 
