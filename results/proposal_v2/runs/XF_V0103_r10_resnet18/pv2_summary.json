@@ -1,0 +1,167 @@
+{
+ "run": "XF_V0103_r10_resnet18",
+ "meta": {
+  "mode": "resnet18",
+  "rate": null,
+  "start": null,
+  "duration": null,
+  "yaml": "/home/anish/ORB_SLAM3/Examples/Monocular/EuRoC.yaml",
+  "relay": null,
+  "mono_exit": "0"
+ },
+ "counts_log": {
+  "new_map": 5,
+  "merge": 3,
+  "loop_detected": 1,
+  "fail_track_local_map": 187,
+  "injected": 183,
+  "abort_near": 204,
+  "sophus_crash": 0,
+  "final_stats_printed": 1
+ },
+ "kfs_per_map": [
+  458,
+  141,
+  288,
+  46,
+  62
+ ],
+ "kf_total": 995,
+ "mono_image_delivered": 5032,
+ "mono_image_dropped": 0,
+ "mono_drop_pct": 0.0,
+ "cpu_mean": {
+  "gpu_util_mean": 3.8,
+  "Mono": 127.8,
+  "desc": 4.8
+ },
+ "gpu_mem_max_mb": 902.0,
+ "counts_events": {
+  "new_map": 5,
+  "merge": 3,
+  "loop_detected": 1,
+  "correction": 1,
+  "injected": 183,
+  "abort_near": 204,
+  "proposal": 0,
+  "sophus_crash": 0,
+  "lost": 189,
+  "reset_map": 0
+ },
+ "traj_kfs_final_map": 371,
+ "prop_src": "final",
+ "prop": {
+  "abort_near": 26,
+  "abort_near_dbow2": 178,
+  "accepted_loop": 1,
+  "accepted_merge_dbow2": 3,
+  "bow_fail": 13,
+  "drop_dup_with_dbow2": 25,
+  "geom_pass_best": 1,
+  "geom_pass_not_best": 1,
+  "n_dbow2_stage0": 178,
+  "n_dbow2_stage1": 45,
+  "n_dbow2_stage2": 1110,
+  "n_dbow2_stage3": 27,
+  "n_dbow2_stage4": 3,
+  "n_detect_calls": 994,
+  "n_ext_stage0": 26,
+  "n_ext_stage1": 13,
+  "n_ext_stage2": 99,
+  "n_ext_stage3": 43,
+  "n_ext_stage4": 2,
+  "received": 208,
+  "redirect_hops": 61,
+  "redirected": 49,
+  "sim3_fail": 142,
+  "to_loop_list": 44,
+  "to_merge_list": 139,
+  "us_dbow2_stage0": 15294,
+  "us_dbow2_stage1": 54792,
+  "us_dbow2_stage2": 2223368,
+  "us_dbow2_stage3": 154417,
+  "us_dbow2_stage4": 34662,
+  "us_detect_total": 3805819,
+  "us_ext_stage0": 177,
+  "us_ext_stage1": 7476,
+  "us_ext_stage2": 155292,
+  "us_ext_stage3": 268514,
+  "us_ext_stage4": 20122,
+  "queued": 0,
+  "pending_loop": 0,
+  "pending_merge": 0
+ },
+ "accepted": [
+  {
+   "list": "merge",
+   "src": "dbow2",
+   "ext_cand": "0",
+   "matchedKF": "505",
+   "curKF": "790",
+   "t": "1403715940.4840581"
+  },
+  {
+   "list": "loop",
+   "src": "ext",
+   "ext_cand": "583",
+   "matchedKF": "583",
+   "curKF": "886",
+   "t": "1403715966.434058"
+  },
+  {
+   "list": "merge",
+   "src": "dbow2",
+   "ext_cand": "0",
+   "matchedKF": "119",
+   "curKF": "920",
+   "t": "1403715972.884058"
+  },
+  {
+   "list": "merge",
+   "src": "dbow2",
+   "ext_cand": "0",
+   "matchedKF": "494",
+   "curKF": "955",
+   "t": "1403715985.7840581"
+  }
+ ],
+ "session_events": [
+  "[SESSION] ChangeDataset requested"
+ ],
+ "session_bounds": [
+  [
+   1403715273.262143,
+   1403715418.812143
+  ],
+  [
+   1403715886.584058,
+   1403715993.984058
+  ]
+ ],
+ "live_maps": [
+  {
+   "map_id": 3,
+   "kfs": 307,
+   "t0": 1403715273.26,
+   "t1": 1403715980.83,
+   "kfs_per_session": [
+    268,
+    39
+   ],
+   "ate_sim3_m": 0.1202,
+   "ate_n": 306
+  },
+  {
+   "map_id": 4,
+   "kfs": 371,
+   "t0": 1403715894.18,
+   "t1": 1403715993.78,
+   "kfs_per_session": [
+    0,
+    371
+   ],
+   "ate_sim3_m": 0.2223,
+   "ate_n": 367
+  }
+ ]
+}

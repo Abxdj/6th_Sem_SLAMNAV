@@ -1,0 +1,128 @@
+{
+ "run": "XF_V0103_r7_load_only",
+ "meta": {
+  "mode": "load_only",
+  "rate": null,
+  "start": null,
+  "duration": null,
+  "yaml": "/home/anish/ORB_SLAM3/Examples/Monocular/EuRoC.yaml",
+  "relay": null,
+  "mono_exit": "0"
+ },
+ "counts_log": {
+  "new_map": 3,
+  "merge": 1,
+  "loop_detected": 1,
+  "fail_track_local_map": 64,
+  "injected": 0,
+  "abort_near": 195,
+  "sophus_crash": 0,
+  "final_stats_printed": 1
+ },
+ "kfs_per_map": [
+  456,
+  102,
+  374
+ ],
+ "kf_total": 932,
+ "mono_image_delivered": 5035,
+ "mono_image_dropped": 0,
+ "mono_drop_pct": 0.0,
+ "cpu_mean": {
+  "gpu_util_mean": 3.7,
+  "Mono": 129.1,
+  "load": 16.9
+ },
+ "gpu_mem_max_mb": 846.0,
+ "counts_events": {
+  "new_map": 3,
+  "merge": 1,
+  "loop_detected": 1,
+  "correction": 1,
+  "injected": 0,
+  "abort_near": 195,
+  "proposal": 0,
+  "sophus_crash": 0,
+  "lost": 66,
+  "reset_map": 0
+ },
+ "traj_kfs_final_map": 350,
+ "prop_src": "final",
+ "prop": {
+  "abort_near_dbow2": 195,
+  "accepted_loop_dbow2": 1,
+  "accepted_merge_dbow2": 1,
+  "n_dbow2_stage0": 195,
+  "n_dbow2_stage1": 21,
+  "n_dbow2_stage2": 1129,
+  "n_dbow2_stage3": 25,
+  "n_dbow2_stage4": 2,
+  "n_detect_calls": 931,
+  "us_dbow2_stage0": 6517,
+  "us_dbow2_stage1": 31173,
+  "us_dbow2_stage2": 2257227,
+  "us_dbow2_stage3": 147471,
+  "us_dbow2_stage4": 16438,
+  "us_detect_total": 3284360,
+  "queued": 0,
+  "pending_loop": 0,
+  "pending_merge": 0
+ },
+ "accepted": [
+  {
+   "list": "merge",
+   "src": "dbow2",
+   "ext_cand": "0",
+   "matchedKF": "505",
+   "curKF": "766",
+   "t": "1403715940.2840581"
+  },
+  {
+   "list": "loop",
+   "src": "dbow2",
+   "ext_cand": "0",
+   "matchedKF": "559",
+   "curKF": "881",
+   "t": "1403715970.2340579"
+  }
+ ],
+ "session_events": [
+  "[SESSION] ChangeDataset requested"
+ ],
+ "session_bounds": [
+  [
+   1403715273.262143,
+   1403715418.812143
+  ],
+  [
+   1403715886.584058,
+   1403715993.984058
+  ]
+ ],
+ "live_maps": [
+  {
+   "map_id": 0,
+   "kfs": 282,
+   "t0": 1403715273.26,
+   "t1": 1403715418.36,
+   "kfs_per_session": [
+    282,
+    0
+   ],
+   "ate_sim3_m": 0.096,
+   "ate_n": 280
+  },
+  {
+   "map_id": 2,
+   "kfs": 350,
+   "t0": 1403715893.93,
+   "t1": 1403715991.33,
+   "kfs_per_session": [
+    0,
+    350
+   ],
+   "ate_sim3_m": 0.0691,
+   "ate_n": 350
+  }
+ ]
+}

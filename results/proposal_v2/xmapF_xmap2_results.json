@@ -1,0 +1,2645 @@
+{
+ "pairs": {
+  "V0103F": {
+   "arms": {
+    "none": {
+     "n": 10,
+     "merged": 8,
+     "merge_counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1
+     ],
+     "src": {
+      "ext": 0,
+      "dbow2": 8
+     },
+     "midrun_crashes": 0,
+     "ate_spanning_merged": [
+      null,
+      null,
+      0.2016,
+      null,
+      null,
+      0.0847,
+      0.0842,
+      null
+     ],
+     "ate_session1": [
+      0.1013,
+      0.0945,
+      0.094,
+      0.0951,
+      0.0952,
+      0.0953,
+      0.0957,
+      0.0955,
+      0.0953,
+      0.0958
+     ],
+     "ate_session2": [
+      0.1454,
+      0.0862,
+      0.1913,
+      0.4027,
+      0.504,
+      0.0619,
+      0.063,
+      0.0641,
+      0.3117,
+      0.099
+     ],
+     "detect_ms_per_kf": [
+      3.619,
+      3.669,
+      3.405,
+      3.272,
+      3.628,
+      3.501,
+      3.386,
+      3.186,
+      3.362,
+      3.677
+     ],
+     "first_merge_t_into_s2": [
+      58.7,
+      92.7,
+      13.8,
+      101.4,
+      99.2,
+      13.9,
+      13.7,
+      null,
+      null,
+      93.2
+     ],
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0
+    },
+    "load_only": {
+     "n": 10,
+     "merged": 9,
+     "merge_counts": [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     "src": {
+      "ext": 0,
+      "dbow2": 9
+     },
+     "midrun_crashes": 1,
+     "ate_spanning_merged": [
+      null,
+      0.4417,
+      null,
+      null,
+      0.1492,
+      null,
+      null,
+      0.3834,
+      null
+     ],
+     "ate_session1": [
+      0.0948,
+      0.0965,
+      0.0945,
+      0.0959,
+      0.096,
+      0.095,
+      0.096,
+      0.0953,
+      0.0961,
+      0.0949
+     ],
+     "ate_session2": [
+      0.0662,
+      0.0778,
+      0.4406,
+      0.0628,
+      0.0827,
+      0.1279,
+      0.0691,
+      0.0669,
+      0.4284,
+      0.0635
+     ],
+     "detect_ms_per_kf": [
+      3.488,
+      3.494,
+      3.348,
+      3.616,
+      3.622,
+      3.973,
+      3.528,
+      3.366,
+      3.879,
+      3.61
+     ],
+     "first_merge_t_into_s2": [
+      null,
+      58.8,
+      14.3,
+      58.7,
+      53.7,
+      13.9,
+      53.7,
+      62.1,
+      14.0,
+      59.3
+     ],
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0
+    },
+    "resnet18": {
+     "n": 10,
+     "merged": 9,
+     "merge_counts": [
+      0,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      3
+     ],
+     "src": {
+      "ext": 4,
+      "dbow2": 9
+     },
+     "midrun_crashes": 0,
+     "ate_spanning_merged": [
+      0.1337,
+      0.087,
+      null,
+      0.9125,
+      0.2414,
+      0.1098,
+      null,
+      0.0918,
+      0.1202
+     ],
+     "ate_session1": [
+      0.0957,
+      0.0951,
+      0.0958,
+      0.0971,
+      0.0961,
+      0.0974,
+      0.0957,
+      0.0954,
+      0.0971,
+      0.0955
+     ],
+     "ate_session2": [
+      0.065,
+      0.1565,
+      0.0623,
+      0.0747,
+      1.1366,
+      0.2923,
+      0.1125,
+      0.0686,
+      0.0699,
+      0.2223
+     ],
+     "detect_ms_per_kf": [
+      4.274,
+      3.616,
+      3.897,
+      4.151,
+      3.858,
+      3.733,
+      4.066,
+      3.988,
+      4.157,
+      3.829
+     ],
+     "first_merge_t_into_s2": [
+      null,
+      13.8,
+      13.2,
+      53.0,
+      14.2,
+      53.7,
+      14.2,
+      53.1,
+      13.8,
+      53.9
+     ],
+     "ext_failed_attempts": 1138,
+     "ext_failed_ms": 3792.4
+    }
+   },
+   "runs": {
+    "XF_V0103_r1_none": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 513,
+       "curKF": 812,
+       "t_into_s2": 58.7,
+       "gt_dist_ang": [
+        0.3,
+        17.6
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 568,
+       "curKF": 945,
+       "t_into_s2": 83.6,
+       "gt_dist_ang": [
+        0.55,
+        58.9
+       ]
+      }
+     ],
+     "n_kf_logged": 1001,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.1013,
+      0.1454
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.619,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2722.0,
+     "prop": null,
+     "first_merge_t_into_s2": 58.7
+    },
+    "XF_V0103_r2_none": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 584,
+       "curKF": 929,
+       "t_into_s2": 81.7,
+       "gt_dist_ang": [
+        0.4,
+        53.2
+       ]
+      },
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 568,
+       "curKF": 960,
+       "t_into_s2": 92.7,
+       "gt_dist_ang": [
+        0.39,
+        7.8
+       ]
+      }
+     ],
+     "n_kf_logged": 990,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0945,
+      0.0862
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.669,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2759.7,
+     "prop": null,
+     "first_merge_t_into_s2": 92.7
+    },
+    "XF_V0103_r3_none": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 225,
+       "curKF": 537,
+       "t_into_s2": 13.8,
+       "gt_dist_ang": [
+        0.48,
+        27.5
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 526,
+       "curKF": 817,
+       "t_into_s2": 55.8,
+       "gt_dist_ang": [
+        0.46,
+        23.7
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 546,
+       "curKF": 977,
+       "t_into_s2": 93.2,
+       "gt_dist_ang": [
+        0.57,
+        5.5
+       ]
+      }
+     ],
+     "n_kf_logged": 1012,
+     "ate_spanning_map": 0.2016,
+     "ate_per_session": [
+      0.094,
+      0.1913
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.405,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2456.3,
+     "prop": null,
+     "first_merge_t_into_s2": 13.8
+    },
+    "XF_V0103_r4_none": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 548,
+       "curKF": 851,
+       "t_into_s2": 58.5,
+       "gt_dist_ang": [
+        0.76,
+        11.9
+       ]
+      },
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 470,
+       "curKF": 977,
+       "t_into_s2": 101.4,
+       "gt_dist_ang": [
+        0.56,
+        6.8
+       ]
+      }
+     ],
+     "n_kf_logged": 983,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0951,
+      0.4027
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.272,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2348.4,
+     "prop": null,
+     "first_merge_t_into_s2": 101.4
+    },
+    "XF_V0103_r5_none": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 555,
+       "curKF": 873,
+       "t_into_s2": 58.8,
+       "gt_dist_ang": [
+        0.68,
+        17.2
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 700,
+       "curKF": 952,
+       "t_into_s2": 71.8,
+       "gt_dist_ang": [
+        0.76,
+        15.0
+       ]
+      },
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 529,
+       "curKF": 1122,
+       "t_into_s2": 99.2,
+       "gt_dist_ang": [
+        0.47,
+        9.7
+       ]
+      }
+     ],
+     "n_kf_logged": 1153,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0952,
+      0.504
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.628,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 3043.9,
+     "prop": null,
+     "first_merge_t_into_s2": 99.2
+    },
+    "XF_V0103_r6_none": {
+     "exit": "139",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 225,
+       "curKF": 537,
+       "t_into_s2": 13.9,
+       "gt_dist_ang": [
+        0.3,
+        14.8
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 524,
+       "curKF": 805,
+       "t_into_s2": 57.0,
+       "gt_dist_ang": [
+        0.53,
+        23.7
+       ]
+      }
+     ],
+     "n_kf_logged": 886,
+     "ate_spanning_map": 0.0847,
+     "ate_per_session": [
+      0.0953,
+      0.0619
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.501,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2285.7,
+     "prop": null,
+     "first_merge_t_into_s2": 13.9
+    },
+    "XF_V0103_r7_none": {
+     "exit": "133",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 220,
+       "curKF": 531,
+       "t_into_s2": 13.7,
+       "gt_dist_ang": [
+        0.47,
+        18.7
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 520,
+       "curKF": 802,
+       "t_into_s2": 59.1,
+       "gt_dist_ang": [
+        0.22,
+        17.0
+       ]
+      }
+     ],
+     "n_kf_logged": 875,
+     "ate_spanning_map": 0.0842,
+     "ate_per_session": [
+      0.0957,
+      0.063
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.386,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2175.1,
+     "prop": null,
+     "first_merge_t_into_s2": 13.7
+    },
+    "XF_V0103_r8_none": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 0,
+     "merged": false,
+     "accepted": [
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 592,
+       "curKF": 672,
+       "t_into_s2": 25.5,
+       "gt_dist_ang": [
+        1.2,
+        27.4
+       ]
+      }
+     ],
+     "n_kf_logged": 998,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0955,
+      0.0641
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.186,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2307.1,
+     "prop": null,
+     "first_merge_t_into_s2": null
+    },
+    "XF_V0103_r9_none": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 0,
+     "merged": false,
+     "accepted": [
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 511,
+       "curKF": 1000,
+       "t_into_s2": 99.1,
+       "gt_dist_ang": [
+        0.41,
+        10.1
+       ]
+      }
+     ],
+     "n_kf_logged": 1027,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0953,
+      0.3117
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.362,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2542.5,
+     "prop": null,
+     "first_merge_t_into_s2": null
+    },
+    "XF_V0103_r10_none": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 564,
+       "curKF": 927,
+       "t_into_s2": 83.8,
+       "gt_dist_ang": [
+        0.68,
+        51.3
+       ]
+      },
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 553,
+       "curKF": 950,
+       "t_into_s2": 93.2,
+       "gt_dist_ang": [
+        0.45,
+        14.9
+       ]
+      }
+     ],
+     "n_kf_logged": 992,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0958,
+      0.099
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.677,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2730.6,
+     "prop": null,
+     "first_merge_t_into_s2": 93.2
+    },
+    "XF_V0103_r1_load_only": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 0,
+     "merged": false,
+     "accepted": [
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 760,
+       "curKF": 927,
+       "t_into_s2": 91.0,
+       "gt_dist_ang": [
+        0.52,
+        16.8
+       ]
+      }
+     ],
+     "n_kf_logged": 980,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0948,
+      0.0662
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.488,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2564.7,
+     "prop": null,
+     "first_merge_t_into_s2": null
+    },
+    "XF_V0103_r2_load_only": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 528,
+       "curKF": 817,
+       "t_into_s2": 58.8,
+       "gt_dist_ang": [
+        0.85,
+        20.6
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 574,
+       "curKF": 931,
+       "t_into_s2": 85.0,
+       "gt_dist_ang": [
+        0.67,
+        41.6
+       ]
+      }
+     ],
+     "n_kf_logged": 984,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0965,
+      0.0778
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.494,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2561.2,
+     "prop": null,
+     "first_merge_t_into_s2": 58.8
+    },
+    "XF_V0103_r3_load_only": {
+     "exit": "0",
+     "crash_midrun": true,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 382,
+       "curKF": 558,
+       "t_into_s2": 14.3,
+       "gt_dist_ang": [
+        0.39,
+        20.7
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 593,
+       "curKF": 932,
+       "t_into_s2": 82.3,
+       "gt_dist_ang": [
+        0.55,
+        15.1
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 567,
+       "curKF": 951,
+       "t_into_s2": 93.3,
+       "gt_dist_ang": [
+        0.61,
+        6.0
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 519,
+       "curKF": 977,
+       "t_into_s2": 100.1,
+       "gt_dist_ang": [
+        0.41,
+        7.9
+       ]
+      }
+     ],
+     "n_kf_logged": 992,
+     "ate_spanning_map": 0.4417,
+     "ate_per_session": [
+      0.0945,
+      0.4406
+     ],
+     "drop_pct": 0.02,
+     "detect_ms_per_kf": 3.348,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2348.3,
+     "prop": null,
+     "first_merge_t_into_s2": 14.3
+    },
+    "XF_V0103_r4_load_only": {
+     "exit": "133",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 518,
+       "curKF": 807,
+       "t_into_s2": 58.7,
+       "gt_dist_ang": [
+        0.36,
+        18.7
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 568,
+       "curKF": 906,
+       "t_into_s2": 83.8,
+       "gt_dist_ang": [
+        0.68,
+        51.3
+       ]
+      }
+     ],
+     "n_kf_logged": 967,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0959,
+      0.0628
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.616,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2634.9,
+     "prop": null,
+     "first_merge_t_into_s2": 58.7
+    },
+    "XF_V0103_r5_load_only": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 517,
+       "curKF": 784,
+       "t_into_s2": 53.7,
+       "gt_dist_ang": [
+        0.47,
+        24.1
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 568,
+       "curKF": 925,
+       "t_into_s2": 84.0,
+       "gt_dist_ang": [
+        0.76,
+        50.7
+       ]
+      }
+     ],
+     "n_kf_logged": 972,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.096,
+      0.0827
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.622,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2654.9,
+     "prop": null,
+     "first_merge_t_into_s2": 53.7
+    },
+    "XF_V0103_r6_load_only": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 218,
+       "curKF": 513,
+       "t_into_s2": 13.9,
+       "gt_dist_ang": [
+        0.3,
+        14.8
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 546,
+       "curKF": 886,
+       "t_into_s2": 79.7,
+       "gt_dist_ang": [
+        0.4,
+        15.6
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 494,
+       "curKF": 934,
+       "t_into_s2": 100.4,
+       "gt_dist_ang": [
+        0.36,
+        6.9
+       ]
+      }
+     ],
+     "n_kf_logged": 941,
+     "ate_spanning_map": 0.1492,
+     "ate_per_session": [
+      0.095,
+      0.1279
+     ],
+     "drop_pct": 0.02,
+     "detect_ms_per_kf": 3.973,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2857.1,
+     "prop": null,
+     "first_merge_t_into_s2": 13.9
+    },
+    "XF_V0103_r7_load_only": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 505,
+       "curKF": 766,
+       "t_into_s2": 53.7,
+       "gt_dist_ang": [
+        0.45,
+        23.9
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 559,
+       "curKF": 881,
+       "t_into_s2": 83.6,
+       "gt_dist_ang": [
+        0.51,
+        63.0
+       ]
+      }
+     ],
+     "n_kf_logged": 932,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.096,
+      0.0691
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.528,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2458.8,
+     "prop": null,
+     "first_merge_t_into_s2": 53.7
+    },
+    "XF_V0103_r8_load_only": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 534,
+       "curKF": 811,
+       "t_into_s2": 62.1,
+       "gt_dist_ang": [
+        0.9,
+        12.5
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 568,
+       "curKF": 908,
+       "t_into_s2": 84.0,
+       "gt_dist_ang": [
+        0.76,
+        50.7
+       ]
+      }
+     ],
+     "n_kf_logged": 980,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0953,
+      0.0669
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.366,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2399.0,
+     "prop": null,
+     "first_merge_t_into_s2": 62.1
+    },
+    "XF_V0103_r9_load_only": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 221,
+       "curKF": 525,
+       "t_into_s2": 14.0,
+       "gt_dist_ang": [
+        0.15,
+        9.0
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 516,
+       "curKF": 759,
+       "t_into_s2": 53.8,
+       "gt_dist_ang": [
+        0.81,
+        24.0
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 599,
+       "curKF": 772,
+       "t_into_s2": 66.6,
+       "gt_dist_ang": [
+        0.88,
+        5.3
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 802,
+       "curKF": 931,
+       "t_into_s2": 95.5,
+       "gt_dist_ang": [
+        0.58,
+        15.4
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 502,
+       "curKF": 954,
+       "t_into_s2": 99.2,
+       "gt_dist_ang": [
+        0.39,
+        9.7
+       ]
+      }
+     ],
+     "n_kf_logged": 963,
+     "ate_spanning_map": 0.3834,
+     "ate_per_session": [
+      0.0961,
+      0.4284
+     ],
+     "drop_pct": 0.06,
+     "detect_ms_per_kf": 3.879,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2787.5,
+     "prop": null,
+     "first_merge_t_into_s2": 14.0
+    },
+    "XF_V0103_r10_load_only": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 512,
+       "curKF": 802,
+       "t_into_s2": 59.3,
+       "gt_dist_ang": [
+        0.39,
+        9.9
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 564,
+       "curKF": 910,
+       "t_into_s2": 85.0,
+       "gt_dist_ang": [
+        0.67,
+        41.6
+       ]
+      }
+     ],
+     "n_kf_logged": 970,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0949,
+      0.0635
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.61,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2638.2,
+     "prop": null,
+     "first_merge_t_into_s2": 59.3
+    },
+    "XF_V0103_r1_resnet18": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 0,
+     "merged": false,
+     "accepted": [
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 603,
+       "curKF": 971,
+       "t_into_s2": 88.0,
+       "gt_dist_ang": [
+        0.76,
+        8.6
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 509,
+       "curKF": 975,
+       "t_into_s2": 91.9,
+       "gt_dist_ang": [
+        0.23,
+        7.0
+       ]
+      }
+     ],
+     "n_kf_logged": 1007,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0957,
+      0.065
+     ],
+     "drop_pct": 0.06,
+     "detect_ms_per_kf": 4.274,
+     "ext_failed_attempts": 134,
+     "ext_failed_ms": 468.5,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 2,
+       "ms": 1.3
+      },
+      "2": {
+       "n": 86,
+       "ms": 156.6
+      },
+      "3": {
+       "n": 46,
+       "ms": 310.5
+      }
+     },
+     "dbow2_eval_ms": 2881.9,
+     "prop": {
+      "abort_near_dbow2": 173,
+      "accepted_loop_dbow2": 2,
+      "bow_fail": 2,
+      "drop_dup_with_dbow2": 19,
+      "n_dbow2_stage0": 173,
+      "n_dbow2_stage1": 26,
+      "n_dbow2_stage2": 1226,
+      "n_dbow2_stage3": 46,
+      "n_dbow2_stage4": 2,
+      "n_detect_calls": 1006,
+      "n_ext_stage1": 2,
+      "n_ext_stage2": 86,
+      "n_ext_stage3": 46,
+      "received": 153,
+      "redirect_hops": 50,
+      "redirected": 34,
+      "sim3_fail": 132,
+      "to_merge_list": 134,
+      "us_dbow2_stage0": 1448,
+      "us_dbow2_stage1": 30961,
+      "us_dbow2_stage2": 2548048,
+      "us_dbow2_stage3": 276006,
+      "us_dbow2_stage4": 25391,
+      "us_detect_total": 4299466,
+      "us_ext_stage1": 1334,
+      "us_ext_stage2": 156627,
+      "us_ext_stage3": 310534,
+      "queued": 0,
+      "pending_loop": 0,
+      "pending_merge": 0
+     },
+     "first_merge_t_into_s2": null,
+     "xmap_proposals_with_gt": 151,
+     "xmap_proposals_correct_2m45": 148
+    },
+    "XF_V0103_r2_resnet18": {
+     "exit": "139",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 220,
+       "curKF": 524,
+       "t_into_s2": 13.8,
+       "gt_dist_ang": [
+        0.53,
+        27.5
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "ext",
+       "matchedKF": 273,
+       "curKF": 770,
+       "t_into_s2": 89.1,
+       "gt_dist_ang": [
+        1.07,
+        5.4
+       ]
+      }
+     ],
+     "n_kf_logged": 791,
+     "ate_spanning_map": 0.1337,
+     "ate_per_session": [
+      0.0951,
+      0.1565
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.616,
+     "ext_failed_attempts": 66,
+     "ext_failed_ms": 214.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 4,
+       "ms": 2.2
+      },
+      "2": {
+       "n": 44,
+       "ms": 88.1
+      },
+      "3": {
+       "n": 18,
+       "ms": 123.7
+      }
+     },
+     "dbow2_eval_ms": 1955.8,
+     "prop": {
+      "abort_near": 19,
+      "abort_near_dbow2": 195,
+      "accepted_loop": 1,
+      "accepted_merge_dbow2": 1,
+      "bow_fail": 4,
+      "drop_dup_with_dbow2": 9,
+      "geom_pass_best": 1,
+      "n_dbow2_stage0": 195,
+      "n_dbow2_stage1": 32,
+      "n_dbow2_stage2": 925,
+      "n_dbow2_stage3": 9,
+      "n_dbow2_stage4": 1,
+      "n_detect_calls": 790,
+      "n_ext_stage0": 19,
+      "n_ext_stage1": 4,
+      "n_ext_stage2": 44,
+      "n_ext_stage3": 18,
+      "n_ext_stage4": 1,
+      "received": 95,
+      "redirect_hops": 24,
+      "redirected": 18,
+      "sim3_fail": 62,
+      "to_loop_list": 45,
+      "to_merge_list": 41,
+      "us_dbow2_stage0": 23375,
+      "us_dbow2_stage1": 33990,
+      "us_dbow2_stage2": 1833845,
+      "us_dbow2_stage3": 53159,
+      "us_dbow2_stage4": 11438,
+      "us_detect_total": 2856371,
+      "us_ext_stage0": 269,
+      "us_ext_stage1": 2232,
+      "us_ext_stage2": 88108,
+      "us_ext_stage3": 123659,
+      "us_ext_stage4": 11964,
+      "queued": 0,
+      "pending_loop": 0,
+      "pending_merge": 0
+     },
+     "first_merge_t_into_s2": 13.8,
+     "xmap_proposals_with_gt": 95,
+     "xmap_proposals_correct_2m45": 92
+    },
+    "XF_V0103_r3_resnet18": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "ext",
+       "matchedKF": 316,
+       "curKF": 525,
+       "t_into_s2": 13.2,
+       "gt_dist_ang": [
+        0.64,
+        12.3
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 522,
+       "curKF": 785,
+       "t_into_s2": 58.6,
+       "gt_dist_ang": [
+        0.44,
+        14.6
+       ]
+      }
+     ],
+     "n_kf_logged": 861,
+     "ate_spanning_map": 0.087,
+     "ate_per_session": [
+      0.0958,
+      0.0623
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.897,
+     "ext_failed_attempts": 81,
+     "ext_failed_ms": 300.1,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 54,
+       "ms": 107.7
+      },
+      "3": {
+       "n": 27,
+       "ms": 192.4
+      }
+     },
+     "dbow2_eval_ms": 2257.8,
+     "prop": {
+      "abort_near": 21,
+      "abort_near_dbow2": 195,
+      "accepted_loop_dbow2": 1,
+      "accepted_merge": 1,
+      "drop_dup_with_dbow2": 8,
+      "geom_pass_best": 1,
+      "n_dbow2_stage0": 195,
+      "n_dbow2_stage1": 44,
+      "n_dbow2_stage2": 1015,
+      "n_dbow2_stage3": 14,
+      "n_dbow2_stage4": 1,
+      "n_detect_calls": 860,
+      "n_ext_stage0": 21,
+      "n_ext_stage2": 54,
+      "n_ext_stage3": 27,
+      "n_ext_stage4": 1,
+      "received": 111,
+      "redirect_hops": 34,
+      "redirected": 23,
+      "sim3_fail": 81,
+      "to_loop_list": 75,
+      "to_merge_list": 28,
+      "us_dbow2_stage0": 25664,
+      "us_dbow2_stage1": 48442,
+      "us_dbow2_stage2": 2084181,
+      "us_dbow2_stage3": 89482,
+      "us_dbow2_stage4": 9991,
+      "us_detect_total": 3351704,
+      "us_ext_stage0": 234,
+      "us_ext_stage2": 107734,
+      "us_ext_stage3": 192362,
+      "us_ext_stage4": 10631,
+      "queued": 0,
+      "pending_loop": 0,
+      "pending_merge": 0
+     },
+     "first_merge_t_into_s2": 13.2,
+     "xmap_proposals_with_gt": 108,
+     "xmap_proposals_correct_2m45": 101
+    },
+    "XF_V0103_r4_resnet18": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 523,
+       "curKF": 772,
+       "t_into_s2": 53.0,
+       "gt_dist_ang": [
+        0.7,
+        26.6
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 571,
+       "curKF": 914,
+       "t_into_s2": 83.7,
+       "gt_dist_ang": [
+        0.64,
+        50.5
+       ]
+      }
+     ],
+     "n_kf_logged": 988,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0971,
+      0.0747
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 4.151,
+     "ext_failed_attempts": 111,
+     "ext_failed_ms": 446.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 62,
+       "ms": 116.7
+      },
+      "3": {
+       "n": 49,
+       "ms": 329.2
+      }
+     },
+     "dbow2_eval_ms": 2741.4,
+     "prop": {
+      "abort_near": 43,
+      "abort_near_dbow2": 239,
+      "accepted_loop_dbow2": 1,
+      "accepted_merge_dbow2": 1,
+      "drop_dup_with_dbow2": 18,
+      "n_dbow2_stage0": 239,
+      "n_dbow2_stage1": 30,
+      "n_dbow2_stage2": 1263,
+      "n_dbow2_stage3": 18,
+      "n_dbow2_stage4": 2,
+      "n_detect_calls": 987,
+      "n_ext_stage0": 43,
+      "n_ext_stage2": 62,
+      "n_ext_stage3": 49,
+      "received": 172,
+      "redirect_hops": 59,
+      "redirected": 46,
+      "sim3_fail": 111,
+      "to_loop_list": 43,
+      "to_merge_list": 111,
+      "us_dbow2_stage0": 22754,
+      "us_dbow2_stage1": 40434,
+      "us_dbow2_stage2": 2546161,
+      "us_dbow2_stage3": 114378,
+      "us_dbow2_stage4": 17655,
+      "us_detect_total": 4097321,
+      "us_ext_stage0": 396,
+      "us_ext_stage2": 116737,
+      "us_ext_stage3": 329223,
+      "queued": 0,
+      "pending_loop": 0,
+      "pending_merge": 0
+     },
+     "first_merge_t_into_s2": 53.0,
+     "xmap_proposals_with_gt": 170,
+     "xmap_proposals_correct_2m45": 165
+    },
+    "XF_V0103_r5_resnet18": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "ext",
+       "matchedKF": 213,
+       "curKF": 548,
+       "t_into_s2": 14.2,
+       "gt_dist_ang": [
+        0.22,
+        19.5
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 594,
+       "curKF": 970,
+       "t_into_s2": 87.7,
+       "gt_dist_ang": [
+        0.84,
+        15.1
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "ext",
+       "matchedKF": 277,
+       "curKF": 974,
+       "t_into_s2": 90.5,
+       "gt_dist_ang": [
+        0.66,
+        10.0
+       ]
+      }
+     ],
+     "n_kf_logged": 1010,
+     "ate_spanning_map": 0.9125,
+     "ate_per_session": [
+      0.0961,
+      1.1366
+     ],
+     "drop_pct": 0.1,
+     "detect_ms_per_kf": 3.858,
+     "ext_failed_attempts": 159,
+     "ext_failed_ms": 425.2,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 18,
+       "ms": 12.1
+      },
+      "2": {
+       "n": 106,
+       "ms": 175.8
+      },
+      "3": {
+       "n": 35,
+       "ms": 237.3
+      }
+     },
+     "dbow2_eval_ms": 2444.8,
+     "prop": {
+      "abort_near": 8,
+      "abort_near_dbow2": 167,
+      "accepted_loop": 1,
+      "accepted_loop_dbow2": 1,
+      "accepted_merge": 1,
+      "bow_fail": 18,
+      "drop_dup_with_dbow2": 7,
+      "geom_pass_best": 2,
+      "n_dbow2_stage0": 167,
+      "n_dbow2_stage1": 46,
+      "n_dbow2_stage2": 1218,
+      "n_dbow2_stage3": 20,
+      "n_dbow2_stage4": 1,
+      "n_detect_calls": 1009,
+      "n_ext_stage0": 8,
+      "n_ext_stage1": 18,
+      "n_ext_stage2": 106,
+      "n_ext_stage3": 35,
+      "n_ext_stage4": 2,
+      "received": 176,
+      "redirect_hops": 64,
+      "redirected": 51,
+      "sim3_fail": 141,
+      "to_loop_list": 116,
+      "to_merge_list": 53,
+      "us_dbow2_stage0": 9758,
+      "us_dbow2_stage1": 47711,
+      "us_dbow2_stage2": 2251164,
+      "us_dbow2_stage3": 125550,
+      "us_dbow2_stage4": 10661,
+      "us_detect_total": 3892271,
+      "us_ext_stage0": 98,
+      "us_ext_stage1": 12051,
+      "us_ext_stage2": 175837,
+      "us_ext_stage3": 237323,
+      "us_ext_stage4": 24195,
+      "queued": 0,
+      "pending_loop": 0,
+      "pending_merge": 0
+     },
+     "first_merge_t_into_s2": 14.2,
+     "xmap_proposals_with_gt": 171,
+     "xmap_proposals_correct_2m45": 166
+    },
+    "XF_V0103_r6_resnet18": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 2,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 528,
+       "curKF": 802,
+       "t_into_s2": 53.7,
+       "gt_dist_ang": [
+        0.64,
+        24.6
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 584,
+       "curKF": 921,
+       "t_into_s2": 83.8,
+       "gt_dist_ang": [
+        0.62,
+        59.9
+       ]
+      },
+      {
+       "list": "merge",
+       "src": "ext",
+       "matchedKF": 267,
+       "curKF": 932,
+       "t_into_s2": 90.0,
+       "gt_dist_ang": [
+        0.81,
+        7.8
+       ]
+      }
+     ],
+     "n_kf_logged": 960,
+     "ate_spanning_map": 0.2414,
+     "ate_per_session": [
+      0.0974,
+      0.2923
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.733,
+     "ext_failed_attempts": 112,
+     "ext_failed_ms": 360.8,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 81,
+       "ms": 146.0
+      },
+      "3": {
+       "n": 31,
+       "ms": 214.9
+      }
+     },
+     "dbow2_eval_ms": 2323.7,
+     "prop": {
+      "abort_near": 37,
+      "abort_near_dbow2": 194,
+      "accepted_loop_dbow2": 1,
+      "accepted_merge": 1,
+      "accepted_merge_dbow2": 1,
+      "drop_dup_with_dbow2": 18,
+      "geom_pass_best": 1,
+      "n_dbow2_stage0": 194,
+      "n_dbow2_stage1": 56,
+      "n_dbow2_stage2": 1134,
+      "n_dbow2_stage3": 11,
+      "n_dbow2_stage4": 2,
+      "n_detect_calls": 959,
+      "n_ext_stage0": 37,
+      "n_ext_stage2": 81,
+      "n_ext_stage3": 31,
+      "n_ext_stage4": 1,
+      "received": 168,
+      "redirect_hops": 49,
+      "redirected": 24,
+      "sim3_fail": 112,
+      "to_loop_list": 38,
+      "to_merge_list": 112,
+      "us_dbow2_stage0": 15711,
+      "us_dbow2_stage1": 58173,
+      "us_dbow2_stage2": 2156295,
+      "us_dbow2_stage3": 73216,
+      "us_dbow2_stage4": 20263,
+      "us_detect_total": 3580277,
+      "us_ext_stage0": 396,
+      "us_ext_stage2": 145971,
+      "us_ext_stage3": 214857,
+      "us_ext_stage4": 14482,
+      "queued": 0,
+      "pending_loop": 0,
+      "pending_merge": 0
+     },
+     "first_merge_t_into_s2": 53.7,
+     "xmap_proposals_with_gt": 168,
+     "xmap_proposals_correct_2m45": 161
+    },
+    "XF_V0103_r7_resnet18": {
+     "exit": "139",
+     "crash_midrun": false,
+     "merges": 2,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 208,
+       "curKF": 517,
+       "t_into_s2": 14.2,
+       "gt_dist_ang": [
+        0.17,
+        18.7
+       ]
+      },
+      {
+       "list": "merge",
+       "src": "ext",
+       "matchedKF": 503,
+       "curKF": 765,
+       "t_into_s2": 56.9,
+       "gt_dist_ang": [
+        0.61,
+        22.3
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 744,
+       "curKF": 878,
+       "t_into_s2": 90.7,
+       "gt_dist_ang": [
+        0.79,
+        35.0
+       ]
+      }
+     ],
+     "n_kf_logged": 897,
+     "ate_spanning_map": 0.1098,
+     "ate_per_session": [
+      0.0957,
+      0.1125
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 4.066,
+     "ext_failed_attempts": 83,
+     "ext_failed_ms": 307.7,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 3,
+       "ms": 1.9
+      },
+      "2": {
+       "n": 45,
+       "ms": 86.2
+      },
+      "3": {
+       "n": 35,
+       "ms": 219.6
+      }
+     },
+     "dbow2_eval_ms": 2476.0,
+     "prop": {
+      "abort_near": 64,
+      "abort_near_dbow2": 193,
+      "accepted_loop_dbow2": 1,
+      "accepted_merge": 1,
+      "accepted_merge_dbow2": 1,
+      "bow_fail": 3,
+      "drop_dup_with_dbow2": 12,
+      "geom_pass_best": 1,
+      "n_dbow2_stage0": 193,
+      "n_dbow2_stage1": 46,
+      "n_dbow2_stage2": 1228,
+      "n_dbow2_stage3": 12,
+      "n_dbow2_stage4": 2,
+      "n_detect_calls": 896,
+      "n_ext_stage0": 64,
+      "n_ext_stage1": 3,
+      "n_ext_stage2": 45,
+      "n_ext_stage3": 35,
+      "n_ext_stage4": 1,
+      "received": 160,
+      "redirect_hops": 49,
+      "redirected": 36,
+      "sim3_fail": 80,
+      "to_loop_list": 90,
+      "to_merge_list": 58,
+      "us_dbow2_stage0": 33555,
+      "us_dbow2_stage1": 45311,
+      "us_dbow2_stage2": 2302930,
+      "us_dbow2_stage3": 75277,
+      "us_dbow2_stage4": 18913,
+      "us_detect_total": 3643113,
+      "us_ext_stage0": 29515,
+      "us_ext_stage1": 1868,
+      "us_ext_stage2": 86167,
+      "us_ext_stage3": 219616,
+      "us_ext_stage4": 8046,
+      "queued": 0,
+      "pending_loop": 0,
+      "pending_merge": 0
+     },
+     "first_merge_t_into_s2": 14.2,
+     "xmap_proposals_with_gt": 161,
+     "xmap_proposals_correct_2m45": 157
+    },
+    "XF_V0103_r8_resnet18": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 515,
+       "curKF": 775,
+       "t_into_s2": 53.1,
+       "gt_dist_ang": [
+        0.68,
+        30.2
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 569,
+       "curKF": 886,
+       "t_into_s2": 83.8,
+       "gt_dist_ang": [
+        0.66,
+        53.6
+       ]
+      }
+     ],
+     "n_kf_logged": 938,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0954,
+      0.0686
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.988,
+     "ext_failed_attempts": 124,
+     "ext_failed_ms": 457.5,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 82,
+       "ms": 162.0
+      },
+      "3": {
+       "n": 42,
+       "ms": 295.5
+      }
+     },
+     "dbow2_eval_ms": 2424.9,
+     "prop": {
+      "abort_near": 35,
+      "abort_near_dbow2": 197,
+      "accepted_loop_dbow2": 1,
+      "accepted_merge_dbow2": 1,
+      "drop_dup_with_dbow2": 9,
+      "n_dbow2_stage0": 197,
+      "n_dbow2_stage1": 17,
+      "n_dbow2_stage2": 1128,
+      "n_dbow2_stage3": 14,
+      "n_dbow2_stage4": 2,
+      "n_detect_calls": 937,
+      "n_ext_stage0": 35,
+      "n_ext_stage2": 82,
+      "n_ext_stage3": 42,
+      "received": 168,
+      "redirect_hops": 55,
+      "redirected": 49,
+      "sim3_fail": 124,
+      "to_loop_list": 35,
+      "to_merge_list": 124,
+      "us_dbow2_stage0": 11388,
+      "us_dbow2_stage1": 17891,
+      "us_dbow2_stage2": 2287685,
+      "us_dbow2_stage3": 88559,
+      "us_dbow2_stage4": 19412,
+      "us_detect_total": 3736453,
+      "us_ext_stage0": 245,
+      "us_ext_stage2": 162022,
+      "us_ext_stage3": 295486,
+      "queued": 0,
+      "pending_loop": 0,
+      "pending_merge": 0
+     },
+     "first_merge_t_into_s2": 53.1,
+     "xmap_proposals_with_gt": 169,
+     "xmap_proposals_correct_2m45": 165
+    },
+    "XF_V0103_r9_resnet18": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 224,
+       "curKF": 546,
+       "t_into_s2": 13.8,
+       "gt_dist_ang": [
+        0.42,
+        20.2
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 578,
+       "curKF": 908,
+       "t_into_s2": 79.5,
+       "gt_dist_ang": [
+        0.43,
+        14.2
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 526,
+       "curKF": 953,
+       "t_into_s2": 99.1,
+       "gt_dist_ang": [
+        0.51,
+        10.4
+       ]
+      }
+     ],
+     "n_kf_logged": 959,
+     "ate_spanning_map": 0.0918,
+     "ate_per_session": [
+      0.0971,
+      0.0699
+     ],
+     "drop_pct": 0.02,
+     "detect_ms_per_kf": 4.157,
+     "ext_failed_attempts": 113,
+     "ext_failed_ms": 381.3,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 78,
+       "ms": 136.2
+      },
+      "3": {
+       "n": 35,
+       "ms": 245.1
+      }
+     },
+     "dbow2_eval_ms": 2669.1,
+     "prop": {
+      "abort_near": 6,
+      "abort_near_dbow2": 164,
+      "accepted_loop_dbow2": 2,
+      "accepted_merge_dbow2": 1,
+      "drop_dup_with_dbow2": 6,
+      "n_dbow2_stage0": 164,
+      "n_dbow2_stage1": 35,
+      "n_dbow2_stage2": 1284,
+      "n_dbow2_stage3": 27,
+      "n_dbow2_stage4": 3,
+      "n_detect_calls": 957,
+      "n_ext_stage0": 6,
+      "n_ext_stage2": 78,
+      "n_ext_stage3": 35,
+      "received": 125,
+      "redirect_hops": 45,
+      "redirected": 36,
+      "sim3_fail": 113,
+      "to_loop_list": 80,
+      "to_merge_list": 39,
+      "us_dbow2_stage0": 14894,
+      "us_dbow2_stage1": 34786,
+      "us_dbow2_stage2": 2437706,
+      "us_dbow2_stage3": 152996,
+      "us_dbow2_stage4": 28765,
+      "us_detect_total": 3978417,
+      "us_ext_stage0": 7571,
+      "us_ext_stage2": 136153,
+      "us_ext_stage3": 245135,
+      "queued": 0,
+      "pending_loop": 0,
+      "pending_merge": 0
+     },
+     "first_merge_t_into_s2": 13.8,
+     "xmap_proposals_with_gt": 125,
+     "xmap_proposals_correct_2m45": 118
+    },
+    "XF_V0103_r10_resnet18": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 3,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 505,
+       "curKF": 790,
+       "t_into_s2": 53.9,
+       "gt_dist_ang": [
+        0.55,
+        24.0
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "ext",
+       "matchedKF": 583,
+       "curKF": 886,
+       "t_into_s2": 79.8,
+       "gt_dist_ang": [
+        0.39,
+        2.5
+       ]
+      },
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 119,
+       "curKF": 920,
+       "t_into_s2": 86.3,
+       "gt_dist_ang": [
+        0.85,
+        5.0
+       ]
+      },
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 494,
+       "curKF": 955,
+       "t_into_s2": 99.2,
+       "gt_dist_ang": [
+        0.47,
+        9.7
+       ]
+      }
+     ],
+     "n_kf_logged": 995,
+     "ate_spanning_map": 0.1202,
+     "ate_per_session": [
+      0.0955,
+      0.2223
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.829,
+     "ext_failed_attempts": 155,
+     "ext_failed_ms": 431.3,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 13,
+       "ms": 7.5
+      },
+      "2": {
+       "n": 99,
+       "ms": 155.3
+      },
+      "3": {
+       "n": 43,
+       "ms": 268.5
+      }
+     },
+     "dbow2_eval_ms": 2482.5,
+     "prop": {
+      "abort_near": 26,
+      "abort_near_dbow2": 178,
+      "accepted_loop": 1,
+      "accepted_merge_dbow2": 3,
+      "bow_fail": 13,
+      "drop_dup_with_dbow2": 25,
+      "geom_pass_best": 1,
+      "geom_pass_not_best": 1,
+      "n_dbow2_stage0": 178,
+      "n_dbow2_stage1": 45,
+      "n_dbow2_stage2": 1110,
+      "n_dbow2_stage3": 27,
+      "n_dbow2_stage4": 3,
+      "n_detect_calls": 994,
+      "n_ext_stage0": 26,
+      "n_ext_stage1": 13,
+      "n_ext_stage2": 99,
+      "n_ext_stage3": 43,
+      "n_ext_stage4": 2,
+      "received": 208,
+      "redirect_hops": 61,
+      "redirected": 49,
+      "sim3_fail": 142,
+      "to_loop_list": 44,
+      "to_merge_list": 139,
+      "us_dbow2_stage0": 15294,
+      "us_dbow2_stage1": 54792,
+      "us_dbow2_stage2": 2223368,
+      "us_dbow2_stage3": 154417,
+      "us_dbow2_stage4": 34662,
+      "us_detect_total": 3805819,
+      "us_ext_stage0": 177,
+      "us_ext_stage1": 7476,
+      "us_ext_stage2": 155292,
+      "us_ext_stage3": 268514,
+      "us_ext_stage4": 20122,
+      "queued": 0,
+      "pending_loop": 0,
+      "pending_merge": 0
+     },
+     "first_merge_t_into_s2": 53.9,
+     "xmap_proposals_with_gt": 202,
+     "xmap_proposals_correct_2m45": 198
+    }
+   },
+   "tests": {
+    "resnet18_vs_none": {
+     "table": [
+      [
+       9,
+       1
+      ],
+      [
+       8,
+       2
+      ]
+     ],
+     "fisher_p": 1.0,
+     "mannwhitney_p": 0.123
+    },
+    "time_to_first_merge_resnet18_vs_none": {
+     "n": [
+      10,
+      10
+     ],
+     "mannwhitney_p": 0.1391
+    },
+    "detect_ms_per_kf_resnet18_vs_none": {
+     "median": [
+      3.9425,
+      3.453
+     ],
+     "mannwhitney_p": 0.0006
+    },
+    "resnet18_vs_load_only": {
+     "table": [
+      [
+       9,
+       1
+      ],
+      [
+       9,
+       1
+      ]
+     ],
+     "fisher_p": 1.0,
+     "mannwhitney_p": 0.1959
+    },
+    "time_to_first_merge_resnet18_vs_load_only": {
+     "n": [
+      10,
+      10
+     ],
+     "mannwhitney_p": 0.1115
+    },
+    "detect_ms_per_kf_resnet18_vs_load_only": {
+     "median": [
+      3.9425,
+      3.569
+     ],
+     "mannwhitney_p": 0.0032
+    }
+   },
+   "independent": true,
+   "injection_outcomes_total": {
+    "abort_near_dbow2": 1895,
+    "accepted_loop_dbow2": 10,
+    "bow_fail": 40,
+    "drop_dup_with_dbow2": 131,
+    "n_dbow2_stage0": 1895,
+    "n_dbow2_stage1": 377,
+    "n_dbow2_stage2": 11531,
+    "n_dbow2_stage3": 198,
+    "n_dbow2_stage4": 19,
+    "n_detect_calls": 9395,
+    "n_ext_stage1": 40,
+    "n_ext_stage2": 737,
+    "n_ext_stage3": 361,
+    "received": 1536,
+    "redirect_hops": 490,
+    "redirected": 366,
+    "sim3_fail": 1098,
+    "to_merge_list": 839,
+    "us_dbow2_stage0": 173841,
+    "us_dbow2_stage1": 412491,
+    "us_dbow2_stage2": 22671383,
+    "us_dbow2_stage3": 1203040,
+    "us_dbow2_stage4": 197151,
+    "us_detect_total": 37241212,
+    "us_ext_stage1": 24961,
+    "us_ext_stage2": 1330648,
+    "us_ext_stage3": 2436709,
+    "queued": 0,
+    "pending_loop": 0,
+    "pending_merge": 0,
+    "abort_near": 259,
+    "accepted_loop": 3,
+    "accepted_merge_dbow2": 9,
+    "geom_pass_best": 7,
+    "n_ext_stage0": 259,
+    "n_ext_stage4": 8,
+    "to_loop_list": 566,
+    "us_ext_stage0": 38901,
+    "us_ext_stage4": 89440,
+    "accepted_merge": 4,
+    "geom_pass_not_best": 1
+   },
+   "xmap_live_precision_2m45": [
+    1471,
+    1520
+   ]
+  }
+ },
+ "primary": {
+  "cmh_resnet18_vs_none": {
+   "tables": [
+    [
+     [
+      9,
+      1
+     ],
+     [
+      8,
+      2
+     ]
+    ]
+   ],
+   "chi2": 0.373,
+   "p": 0.5416,
+   "mh_odds_ratio": 2.25,
+   "exact_stratified_p": 1.0
+  }
+ },
+ "secondary": {
+  "cmh_resnet18_vs_load_only": {
+   "tables": [
+    [
+     [
+      9,
+      1
+     ],
+     [
+      9,
+      1
+     ]
+    ]
+   ],
+   "chi2": 0.0,
+   "p": 1.0,
+   "mh_odds_ratio": 1.0,
+   "exact_stratified_p": 1.0
+  }
+ },
+ "max_block": null,
+ "sensitivity_independent_pairs": {
+  "pairs": [
+   "V0103F"
+  ],
+  "tables": [
+   [
+    [
+     9,
+     1
+    ],
+    [
+     8,
+     2
+    ]
+   ]
+  ],
+  "chi2": 0.373,
+  "p": 0.5416,
+  "mh_odds_ratio": 2.25,
+  "exact_stratified_p": 1.0
+ },
+ "prediction": {
+  "V0103F": {
+   "control_rate": 0.8,
+   "injection_rate": 0.9,
+   "diff": 0.1,
+   "band": "high",
+   "prediction_holds": true
+  }
+ }
+}

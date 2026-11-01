@@ -1,0 +1,132 @@
+{
+ "run": "XF_V0103_r3_load_only",
+ "meta": {
+  "mode": "load_only",
+  "rate": null,
+  "start": null,
+  "duration": null,
+  "yaml": "/home/anish/ORB_SLAM3/Examples/Monocular/EuRoC.yaml",
+  "relay": null,
+  "mono_exit": "0"
+ },
+ "counts_log": {
+  "new_map": 3,
+  "merge": 1,
+  "loop_detected": 3,
+  "fail_track_local_map": 62,
+  "injected": 0,
+  "abort_near": 195,
+  "sophus_crash": 0,
+  "final_stats_printed": 1
+ },
+ "kfs_per_map": [
+  464,
+  528,
+  0
+ ],
+ "kf_total": 992,
+ "mono_image_delivered": 5030,
+ "mono_image_dropped": 1,
+ "mono_drop_pct": 0.02,
+ "cpu_mean": {
+  "gpu_util_mean": 3.6,
+  "Mono": 145.4,
+  "load": 17.3
+ },
+ "gpu_mem_max_mb": 866.0,
+ "counts_events": {
+  "new_map": 3,
+  "merge": 1,
+  "loop_detected": 3,
+  "correction": 3,
+  "injected": 0,
+  "abort_near": 195,
+  "proposal": 0,
+  "sophus_crash": 0,
+  "lost": 62,
+  "reset_map": 0
+ },
+ "traj_kfs_final_map": 0,
+ "prop_src": "final",
+ "prop": {
+  "abort_near_dbow2": 195,
+  "accepted_loop_dbow2": 3,
+  "accepted_merge_dbow2": 1,
+  "n_dbow2_stage0": 195,
+  "n_dbow2_stage1": 51,
+  "n_dbow2_stage2": 1188,
+  "n_dbow2_stage3": 12,
+  "n_dbow2_stage4": 4,
+  "n_detect_calls": 991,
+  "us_dbow2_stage0": 8501,
+  "us_dbow2_stage1": 54391,
+  "us_dbow2_stage2": 2186911,
+  "us_dbow2_stage3": 61589,
+  "us_dbow2_stage4": 36895,
+  "us_detect_total": 3317436,
+  "queued": 0,
+  "pending_loop": 0,
+  "pending_merge": 0
+ },
+ "accepted": [
+  {
+   "list": "merge",
+   "src": "dbow2",
+   "ext_cand": "0",
+   "matchedKF": "382",
+   "curKF": "558",
+   "t": "1403715900.934058"
+  },
+  {
+   "list": "loop",
+   "src": "dbow2",
+   "ext_cand": "0",
+   "matchedKF": "593",
+   "curKF": "932",
+   "t": "1403715968.934058"
+  },
+  {
+   "list": "loop",
+   "src": "dbow2",
+   "ext_cand": "0",
+   "matchedKF": "567",
+   "curKF": "951",
+   "t": "1403715979.884058"
+  },
+  {
+   "list": "loop",
+   "src": "dbow2",
+   "ext_cand": "0",
+   "matchedKF": "519",
+   "curKF": "977",
+   "t": "1403715986.6840582"
+  }
+ ],
+ "session_events": [
+  "[SESSION] ChangeDataset requested"
+ ],
+ "session_bounds": [
+  [
+   1403715273.262143,
+   1403715418.812143
+  ],
+  [
+   1403715886.584058,
+   1403715993.984058
+  ]
+ ],
+ "live_maps": [
+  {
+   "map_id": 1,
+   "kfs": 679,
+   "t0": 1403715273.26,
+   "t1": 1403715990.88,
+   "kfs_per_session": [
+    266,
+    413
+   ],
+   "ate_sim3_m": 0.4417,
+   "ate_n": 676
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+[WARN] [1793541924.876377]: Inbound TCP/IP connection failed: connection from sender terminated before handshake header received. 0 bytes were received. Please check sender for additional details.
+Exception in thread Thread-6:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/psutil/_common.py", line 341, in wrapper
+    ret = self._cache[fun]
+KeyError: <function Process.memory_info at 0x7fec04c13dc0>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/anish/mono-slam-cnn-loop-closure/tools/diag/monitor.py", line 137, in resources
+    cpu = p.cpu_percent(None); rss = p.memory_info().rss / 2 ** 20
+  File "/usr/lib/python3/dist-packages/psutil/_common.py", line 348, in wrapper
+    ret = self._cache[fun] = fun(self)
+AttributeError: 'Process' object has no attribute '_cache'
+Exception in thread Thread-8:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/anish/mono-slam-cnn-loop-closure/tools/diag/monitor.py", line 124, in gpu_reader
+    wR.writerow([f'{time.time():.3f}', f'{bag_time():.3f}', 'GPU', -1, u, m])
+ValueError: I/O operation on closed file.
