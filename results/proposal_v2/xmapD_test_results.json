@@ -1,0 +1,2593 @@
+{
+ "pairs": {
+  "V0103": {
+   "arms": {
+    "none": {
+     "n": 10,
+     "merged": 7,
+     "merge_counts": [
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      2,
+      1,
+      1
+     ],
+     "src": {
+      "ext": 0,
+      "dbow2": 8
+     },
+     "midrun_crashes": 0,
+     "ate_spanning_merged": [
+      null,
+      0.1188,
+      null,
+      null,
+      0.1831,
+      null,
+      null
+     ],
+     "ate_session1": [
+      0.0958,
+      0.0955,
+      0.0948,
+      0.0962,
+      0.0954,
+      0.095,
+      0.0953,
+      0.0944,
+      0.0949,
+      0.0955
+     ],
+     "ate_session2": [
+      0.1089,
+      0.0639,
+      0.0619,
+      0.112,
+      0.0692,
+      0.0693,
+      0.1543,
+      0.2074,
+      0.0649,
+      0.0695
+     ],
+     "detect_ms_per_kf": [
+      3.281,
+      3.477,
+      3.022,
+      3.486,
+      3.329,
+      3.337,
+      3.449,
+      3.316,
+      3.536,
+      3.608
+     ],
+     "first_merge_t_into_s2": [
+      null,
+      57.0,
+      null,
+      13.8,
+      59.8,
+      60.1,
+      null,
+      14.3,
+      55.9,
+      53.8
+     ],
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0
+    },
+    "load_only": {
+     "n": 10,
+     "merged": 6,
+     "merge_counts": [
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0
+     ],
+     "src": {
+      "ext": 0,
+      "dbow2": 6
+     },
+     "midrun_crashes": 1,
+     "ate_spanning_merged": [
+      0.9137,
+      null,
+      null,
+      null,
+      0.4142,
+      0.0921
+     ],
+     "ate_session1": [
+      0.0949,
+      0.0965,
+      0.0948,
+      0.0955,
+      0.0956,
+      0.0951,
+      0.1065,
+      0.0952,
+      0.0954,
+      0.0955
+     ],
+     "ate_session2": [
+      0.0729,
+      1.0403,
+      0.3974,
+      0.0664,
+      0.0623,
+      0.0735,
+      0.4461,
+      0.1614,
+      0.0775,
+      0.4151
+     ],
+     "detect_ms_per_kf": [
+      3.2,
+      3.509,
+      3.678,
+      3.369,
+      3.416,
+      3.583,
+      3.964,
+      3.563,
+      3.501,
+      3.778
+     ],
+     "first_merge_t_into_s2": [
+      null,
+      14.1,
+      null,
+      25.8,
+      58.8,
+      55.8,
+      14.0,
+      null,
+      13.8,
+      null
+     ],
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0
+    },
+    "resnet18": {
+     "n": 10,
+     "merged": 10,
+     "merge_counts": [
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+      2
+     ],
+     "src": {
+      "ext": 7,
+      "dbow2": 7
+     },
+     "midrun_crashes": 1,
+     "ate_spanning_merged": [
+      0.0828,
+      0.381,
+      0.1595,
+      null,
+      0.1131,
+      0.6875,
+      0.3295,
+      null,
+      0.1217,
+      0.0981
+     ],
+     "ate_session1": [
+      0.0951,
+      0.0982,
+      0.1057,
+      null,
+      0.0925,
+      0.1259,
+      0.0967,
+      0.0945,
+      0.0959,
+      0.0958
+     ],
+     "ate_session2": [
+      0.0635,
+      0.4747,
+      0.1649,
+      null,
+      0.1111,
+      0.678,
+      0.3622,
+      0.4197,
+      0.1365,
+      0.0897
+     ],
+     "detect_ms_per_kf": [
+      4.101,
+      3.69,
+      3.949,
+      3.998,
+      3.972,
+      3.656,
+      3.827,
+      4.332,
+      3.484,
+      3.925
+     ],
+     "first_merge_t_into_s2": [
+      53.5,
+      14.0,
+      14.1,
+      52.0,
+      13.9,
+      22.9,
+      89.3,
+      60.0,
+      14.2,
+      58.8
+     ],
+     "ext_failed_attempts": 1071,
+     "ext_failed_ms": 3593.2
+    }
+   },
+   "runs": {
+    "XD_V0103_r1_none": {
+     "exit": "139",
+     "crash_midrun": false,
+     "merges": 0,
+     "merged": false,
+     "accepted": [
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 790,
+       "curKF": 913,
+       "t_into_s2": 85.5,
+       "gt_dist_ang": [
+        1.18,
+        49.3
+       ]
+      }
+     ],
+     "n_kf_logged": 970,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0958,
+      0.1089
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.281,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2363.7,
+     "prop": null,
+     "first_merge_t_into_s2": null
+    },
+    "XD_V0103_r2_none": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 526,
+       "curKF": 806,
+       "t_into_s2": 57.0,
+       "gt_dist_ang": [
+        0.51,
+        24.0
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 578,
+       "curKF": 922,
+       "t_into_s2": 85.0,
+       "gt_dist_ang": [
+        0.72,
+        37.0
+       ]
+      }
+     ],
+     "n_kf_logged": 972,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0955,
+      0.0639
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.477,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2531.6,
+     "prop": null,
+     "first_merge_t_into_s2": 57.0
+    },
+    "XD_V0103_r3_none": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 0,
+     "merged": false,
+     "accepted": [
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 548,
+       "curKF": 853,
+       "t_into_s2": 58.5,
+       "gt_dist_ang": [
+        0.76,
+        11.9
+       ]
+      }
+     ],
+     "n_kf_logged": 1007,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0948,
+      0.0619
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.022,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2167.6,
+     "prop": null,
+     "first_merge_t_into_s2": null
+    },
+    "XD_V0103_r4_none": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 224,
+       "curKF": 530,
+       "t_into_s2": 13.8,
+       "gt_dist_ang": [
+        0.39,
+        17.7
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 519,
+       "curKF": 789,
+       "t_into_s2": 57.3,
+       "gt_dist_ang": [
+        0.48,
+        29.3
+       ]
+      }
+     ],
+     "n_kf_logged": 944,
+     "ate_spanning_map": 0.1188,
+     "ate_per_session": [
+      0.0962,
+      0.112
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.486,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2373.2,
+     "prop": null,
+     "first_merge_t_into_s2": 13.8
+    },
+    "XD_V0103_r5_none": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 531,
+       "curKF": 811,
+       "t_into_s2": 59.8,
+       "gt_dist_ang": [
+        0.87,
+        12.7
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 566,
+       "curKF": 924,
+       "t_into_s2": 85.0,
+       "gt_dist_ang": [
+        0.72,
+        37.0
+       ]
+      }
+     ],
+     "n_kf_logged": 974,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0954,
+      0.0692
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.329,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2362.4,
+     "prop": null,
+     "first_merge_t_into_s2": 59.8
+    },
+    "XD_V0103_r6_none": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 571,
+       "curKF": 844,
+       "t_into_s2": 60.1,
+       "gt_dist_ang": [
+        0.72,
+        19.8
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 597,
+       "curKF": 940,
+       "t_into_s2": 82.0,
+       "gt_dist_ang": [
+        0.36,
+        51.0
+       ]
+      }
+     ],
+     "n_kf_logged": 1005,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.095,
+      0.0693
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.337,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2457.2,
+     "prop": null,
+     "first_merge_t_into_s2": 60.1
+    },
+    "XD_V0103_r7_none": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 0,
+     "merged": false,
+     "accepted": [
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 519,
+       "curKF": 967,
+       "t_into_s2": 91.8,
+       "gt_dist_ang": [
+        0.13,
+        8.5
+       ]
+      }
+     ],
+     "n_kf_logged": 1020,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0953,
+      0.1543
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.449,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2618.7,
+     "prop": null,
+     "first_merge_t_into_s2": null
+    },
+    "XD_V0103_r8_none": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 2,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 209,
+       "curKF": 540,
+       "t_into_s2": 14.3,
+       "gt_dist_ang": [
+        0.31,
+        20.5
+       ]
+      },
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 526,
+       "curKF": 776,
+       "t_into_s2": 53.7,
+       "gt_dist_ang": [
+        0.45,
+        23.9
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 514,
+       "curKF": 961,
+       "t_into_s2": 99.1,
+       "gt_dist_ang": [
+        0.51,
+        10.8
+       ]
+      }
+     ],
+     "n_kf_logged": 977,
+     "ate_spanning_map": 0.1831,
+     "ate_per_session": [
+      0.0944,
+      0.2074
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.316,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2368.7,
+     "prop": null,
+     "first_merge_t_into_s2": 14.3
+    },
+    "XD_V0103_r9_none": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 516,
+       "curKF": 793,
+       "t_into_s2": 55.9,
+       "gt_dist_ang": [
+        1.06,
+        25.3
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 566,
+       "curKF": 898,
+       "t_into_s2": 83.6,
+       "gt_dist_ang": [
+        0.62,
+        50.1
+       ]
+      }
+     ],
+     "n_kf_logged": 956,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0949,
+      0.0649
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.536,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2539.7,
+     "prop": null,
+     "first_merge_t_into_s2": 55.9
+    },
+    "XD_V0103_r10_none": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 529,
+       "curKF": 794,
+       "t_into_s2": 53.8,
+       "gt_dist_ang": [
+        0.55,
+        23.4
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 583,
+       "curKF": 912,
+       "t_into_s2": 83.6,
+       "gt_dist_ang": [
+        0.62,
+        50.1
+       ]
+      }
+     ],
+     "n_kf_logged": 976,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0955,
+      0.0695
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.608,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2663.7,
+     "prop": null,
+     "first_merge_t_into_s2": 53.8
+    },
+    "XD_V0103_r1_load_only": {
+     "exit": "139",
+     "crash_midrun": false,
+     "merges": 0,
+     "merged": false,
+     "accepted": [
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 553,
+       "curKF": 644,
+       "t_into_s2": 25.5,
+       "gt_dist_ang": [
+        1.53,
+        8.6
+       ]
+      }
+     ],
+     "n_kf_logged": 935,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0949,
+      0.0729
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.2,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2180.7,
+     "prop": null,
+     "first_merge_t_into_s2": null
+    },
+    "XD_V0103_r2_load_only": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 217,
+       "curKF": 548,
+       "t_into_s2": 14.1,
+       "gt_dist_ang": [
+        0.17,
+        18.1
+       ]
+      }
+     ],
+     "n_kf_logged": 1019,
+     "ate_spanning_map": 0.9137,
+     "ate_per_session": [
+      0.0965,
+      1.0403
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.509,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2568.1,
+     "prop": null,
+     "first_merge_t_into_s2": 14.1
+    },
+    "XD_V0103_r3_load_only": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 0,
+     "merged": false,
+     "accepted": [
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 497,
+       "curKF": 787,
+       "t_into_s2": 53.7,
+       "gt_dist_ang": [
+        0.45,
+        23.9
+       ]
+      }
+     ],
+     "n_kf_logged": 1059,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0948,
+      0.3974
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.678,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2880.3,
+     "prop": null,
+     "first_merge_t_into_s2": null
+    },
+    "XD_V0103_r4_load_only": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 572,
+       "curKF": 621,
+       "t_into_s2": 25.8,
+       "gt_dist_ang": [
+        1.34,
+        19.1
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 562,
+       "curKF": 938,
+       "t_into_s2": 92.4,
+       "gt_dist_ang": [
+        0.23,
+        17.5
+       ]
+      }
+     ],
+     "n_kf_logged": 991,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0955,
+      0.0664
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.369,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2480.1,
+     "prop": null,
+     "first_merge_t_into_s2": 25.8
+    },
+    "XD_V0103_r5_load_only": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 542,
+       "curKF": 816,
+       "t_into_s2": 58.8,
+       "gt_dist_ang": [
+        0.78,
+        20.0
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 581,
+       "curKF": 909,
+       "t_into_s2": 83.6,
+       "gt_dist_ang": [
+        0.62,
+        50.1
+       ]
+      }
+     ],
+     "n_kf_logged": 973,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0956,
+      0.0623
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.416,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2447.4,
+     "prop": null,
+     "first_merge_t_into_s2": 58.8
+    },
+    "XD_V0103_r6_load_only": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 518,
+       "curKF": 767,
+       "t_into_s2": 55.8,
+       "gt_dist_ang": [
+        0.42,
+        23.7
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 518,
+       "curKF": 921,
+       "t_into_s2": 91.1,
+       "gt_dist_ang": [
+        0.56,
+        34.4
+       ]
+      }
+     ],
+     "n_kf_logged": 962,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0951,
+      0.0735
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.583,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2625.9,
+     "prop": null,
+     "first_merge_t_into_s2": 55.8
+    },
+    "XD_V0103_r7_load_only": {
+     "exit": "0",
+     "crash_midrun": true,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 230,
+       "curKF": 525,
+       "t_into_s2": 14.0,
+       "gt_dist_ang": [
+        0.17,
+        9.7
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 569,
+       "curKF": 947,
+       "t_into_s2": 88.0,
+       "gt_dist_ang": [
+        0.71,
+        15.8
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 511,
+       "curKF": 952,
+       "t_into_s2": 92.0,
+       "gt_dist_ang": [
+        0.22,
+        8.1
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 501,
+       "curKF": 983,
+       "t_into_s2": 99.5,
+       "gt_dist_ang": [
+        0.28,
+        4.3
+       ]
+      }
+     ],
+     "n_kf_logged": 988,
+     "ate_spanning_map": 0.4142,
+     "ate_per_session": [
+      0.1065,
+      0.4461
+     ],
+     "drop_pct": 0.02,
+     "detect_ms_per_kf": 3.964,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2907.8,
+     "prop": null,
+     "first_merge_t_into_s2": 14.0
+    },
+    "XD_V0103_r8_load_only": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 0,
+     "merged": false,
+     "accepted": [
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 508,
+       "curKF": 953,
+       "t_into_s2": 91.6,
+       "gt_dist_ang": [
+        0.37,
+        13.0
+       ]
+      }
+     ],
+     "n_kf_logged": 1003,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0952,
+      0.1614
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.563,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2679.2,
+     "prop": null,
+     "first_merge_t_into_s2": null
+    },
+    "XD_V0103_r9_load_only": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 221,
+       "curKF": 529,
+       "t_into_s2": 13.8,
+       "gt_dist_ang": [
+        0.39,
+        17.7
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 518,
+       "curKF": 806,
+       "t_into_s2": 59.2,
+       "gt_dist_ang": [
+        0.39,
+        11.4
+       ]
+      }
+     ],
+     "n_kf_logged": 900,
+     "ate_spanning_map": 0.0921,
+     "ate_per_session": [
+      0.0954,
+      0.0775
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.501,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 2321.0,
+     "prop": null,
+     "first_merge_t_into_s2": 13.8
+    },
+    "XD_V0103_r10_load_only": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 0,
+     "merged": false,
+     "accepted": [
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 516,
+       "curKF": 868,
+       "t_into_s2": 59.3,
+       "gt_dist_ang": [
+        0.43,
+        10.1
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 656,
+       "curKF": 901,
+       "t_into_s2": 68.7,
+       "gt_dist_ang": [
+        0.59,
+        9.2
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 613,
+       "curKF": 997,
+       "t_into_s2": 86.5,
+       "gt_dist_ang": [
+        0.86,
+        11.7
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 509,
+       "curKF": 1093,
+       "t_into_s2": 99.1,
+       "gt_dist_ang": [
+        0.5,
+        12.0
+       ]
+      }
+     ],
+     "n_kf_logged": 1125,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0955,
+      0.4151
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.778,
+     "ext_failed_attempts": 0,
+     "ext_failed_ms": 0.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "3": {
+       "n": 0,
+       "ms": 0.0
+      }
+     },
+     "dbow2_eval_ms": 3125.9,
+     "prop": null,
+     "first_merge_t_into_s2": null
+    },
+    "XD_V0103_r1_resnet18": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 2,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 526,
+       "curKF": 773,
+       "t_into_s2": 53.5,
+       "gt_dist_ang": [
+        0.86,
+        28.6
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 572,
+       "curKF": 887,
+       "t_into_s2": 83.6,
+       "gt_dist_ang": [
+        0.56,
+        56.5
+       ]
+      },
+      {
+       "list": "merge",
+       "src": "ext",
+       "matchedKF": 110,
+       "curKF": 895,
+       "t_into_s2": 87.5,
+       "gt_dist_ang": [
+        0.83,
+        27.5
+       ]
+      }
+     ],
+     "n_kf_logged": 914,
+     "ate_spanning_map": 0.0828,
+     "ate_per_session": [
+      0.0951,
+      0.0635
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 4.101,
+     "ext_failed_attempts": 100,
+     "ext_failed_ms": 358.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 68,
+       "ms": 136.6
+      },
+      "3": {
+       "n": 32,
+       "ms": 221.5
+      }
+     },
+     "dbow2_eval_ms": 2522.5,
+     "prop": {
+      "abort_near": 24,
+      "abort_near_dbow2": 173,
+      "accepted_loop_dbow2": 1,
+      "accepted_merge": 1,
+      "accepted_merge_dbow2": 1,
+      "drop_dup_with_dbow2": 26,
+      "geom_pass_best": 1,
+      "n_dbow2_stage0": 173,
+      "n_dbow2_stage1": 16,
+      "n_dbow2_stage2": 1149,
+      "n_dbow2_stage3": 16,
+      "n_dbow2_stage4": 2,
+      "n_detect_calls": 913,
+      "n_ext_stage0": 24,
+      "n_ext_stage2": 68,
+      "n_ext_stage3": 32,
+      "n_ext_stage4": 1,
+      "received": 151,
+      "redirect_hops": 64,
+      "redirected": 43,
+      "sim3_fail": 100,
+      "to_loop_list": 24,
+      "to_merge_list": 101,
+      "us_dbow2_stage0": 9099,
+      "us_dbow2_stage1": 16355,
+      "us_dbow2_stage2": 2384177,
+      "us_dbow2_stage3": 93891,
+      "us_dbow2_stage4": 18935,
+      "us_detect_total": 3743828,
+      "us_ext_stage0": 4655,
+      "us_ext_stage2": 136575,
+      "us_ext_stage3": 221453,
+      "us_ext_stage4": 10320,
+      "queued": 0,
+      "pending_loop": 0,
+      "pending_merge": 0
+     },
+     "first_merge_t_into_s2": 53.5,
+     "xmap_proposals_with_gt": 152,
+     "xmap_proposals_correct_2m45": 144
+    },
+    "XD_V0103_r2_resnet18": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 221,
+       "curKF": 517,
+       "t_into_s2": 14.0,
+       "gt_dist_ang": [
+        0.2,
+        10.7
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 540,
+       "curKF": 848,
+       "t_into_s2": 76.3,
+       "gt_dist_ang": [
+        0.56,
+        16.0
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "ext",
+       "matchedKF": 117,
+       "curKF": 875,
+       "t_into_s2": 87.2,
+       "gt_dist_ang": [
+        0.87,
+        10.9
+       ]
+      }
+     ],
+     "n_kf_logged": 900,
+     "ate_spanning_map": 0.381,
+     "ate_per_session": [
+      0.0982,
+      0.4747
+     ],
+     "drop_pct": 0.04,
+     "detect_ms_per_kf": 3.69,
+     "ext_failed_attempts": 82,
+     "ext_failed_ms": 317.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 46,
+       "ms": 70.2
+      },
+      "3": {
+       "n": 36,
+       "ms": 246.8
+      }
+     },
+     "dbow2_eval_ms": 2133.8,
+     "prop": {
+      "abort_near": 12,
+      "abort_near_dbow2": 185,
+      "accepted_loop": 1,
+      "accepted_loop_dbow2": 1,
+      "accepted_merge_dbow2": 1,
+      "drop_dup_with_dbow2": 9,
+      "geom_pass_best": 1,
+      "n_dbow2_stage0": 185,
+      "n_dbow2_stage1": 37,
+      "n_dbow2_stage2": 1057,
+      "n_dbow2_stage3": 16,
+      "n_dbow2_stage4": 2,
+      "n_detect_calls": 899,
+      "n_ext_stage0": 12,
+      "n_ext_stage2": 46,
+      "n_ext_stage3": 36,
+      "n_ext_stage4": 1,
+      "received": 104,
+      "redirect_hops": 25,
+      "redirected": 22,
+      "sim3_fail": 82,
+      "to_loop_list": 62,
+      "to_merge_list": 33,
+      "us_dbow2_stage0": 17856,
+      "us_dbow2_stage1": 40777,
+      "us_dbow2_stage2": 1970622,
+      "us_dbow2_stage3": 86219,
+      "us_dbow2_stage4": 18327,
+      "us_detect_total": 3317126,
+      "us_ext_stage0": 151,
+      "us_ext_stage2": 70207,
+      "us_ext_stage3": 246826,
+      "us_ext_stage4": 15295,
+      "queued": 0,
+      "pending_loop": 0,
+      "pending_merge": 0
+     },
+     "first_merge_t_into_s2": 14.0,
+     "xmap_proposals_with_gt": 103,
+     "xmap_proposals_correct_2m45": 99
+    },
+    "XD_V0103_r3_resnet18": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 221,
+       "curKF": 528,
+       "t_into_s2": 14.1,
+       "gt_dist_ang": [
+        0.14,
+        5.1
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "ext",
+       "matchedKF": 113,
+       "curKF": 938,
+       "t_into_s2": 87.5,
+       "gt_dist_ang": [
+        0.82,
+        33.5
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 570,
+       "curKF": 941,
+       "t_into_s2": 91.0,
+       "gt_dist_ang": [
+        0.69,
+        21.2
+       ]
+      }
+     ],
+     "n_kf_logged": 965,
+     "ate_spanning_map": 0.1595,
+     "ate_per_session": [
+      0.1057,
+      0.1649
+     ],
+     "drop_pct": 0.36,
+     "detect_ms_per_kf": 3.949,
+     "ext_failed_attempts": 109,
+     "ext_failed_ms": 361.7,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 1,
+       "ms": 0.8
+      },
+      "2": {
+       "n": 71,
+       "ms": 127.5
+      },
+      "3": {
+       "n": 37,
+       "ms": 233.4
+      }
+     },
+     "dbow2_eval_ms": 2499.2,
+     "prop": {
+      "abort_near": 17,
+      "abort_near_dbow2": 189,
+      "accepted_loop": 1,
+      "accepted_loop_dbow2": 1,
+      "accepted_merge_dbow2": 1,
+      "bow_fail": 1,
+      "drop_dup_with_dbow2": 17,
+      "geom_pass_best": 1,
+      "n_dbow2_stage0": 189,
+      "n_dbow2_stage1": 39,
+      "n_dbow2_stage2": 1107,
+      "n_dbow2_stage3": 40,
+      "n_dbow2_stage4": 2,
+      "n_detect_calls": 964,
+      "n_ext_stage0": 17,
+      "n_ext_stage1": 1,
+      "n_ext_stage2": 71,
+      "n_ext_stage3": 37,
+      "n_ext_stage4": 1,
+      "received": 144,
+      "redirect_hops": 62,
+      "redirected": 37,
+      "sim3_fail": 108,
+      "to_loop_list": 92,
+      "to_merge_list": 35,
+      "us_dbow2_stage0": 10493,
+      "us_dbow2_stage1": 42422,
+      "us_dbow2_stage2": 2171432,
+      "us_dbow2_stage3": 244905,
+      "us_dbow2_stage4": 29928,
+      "us_detect_total": 3806930,
+      "us_ext_stage0": 262,
+      "us_ext_stage1": 795,
+      "us_ext_stage2": 127526,
+      "us_ext_stage3": 233367,
+      "us_ext_stage4": 12618,
+      "queued": 0,
+      "pending_loop": 0,
+      "pending_merge": 0
+     },
+     "first_merge_t_into_s2": 14.1,
+     "xmap_proposals_with_gt": 141,
+     "xmap_proposals_correct_2m45": 137
+    },
+    "XD_V0103_r4_resnet18": {
+     "exit": "134",
+     "crash_midrun": true,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "ext",
+       "matchedKF": 397,
+       "curKF": 762,
+       "t_into_s2": 52.0,
+       "gt_dist_ang": [
+        0.8,
+        6.6
+       ]
+      }
+     ],
+     "n_kf_logged": 766,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      null,
+      null
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.998,
+     "ext_failed_attempts": 83,
+     "ext_failed_ms": 328.0,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 0,
+       "ms": 0.0
+      },
+      "2": {
+       "n": 47,
+       "ms": 95.0
+      },
+      "3": {
+       "n": 36,
+       "ms": 233.0
+      }
+     },
+     "dbow2_eval_ms": 2115.4,
+     "prop": {
+      "abort_near_dbow2": 193,
+      "drop_dup_with_dbow2": 16,
+      "n_dbow2_stage0": 193,
+      "n_dbow2_stage1": 23,
+      "n_dbow2_stage2": 952,
+      "n_dbow2_stage3": 18,
+      "n_detect_calls": 759,
+      "n_ext_stage2": 47,
+      "n_ext_stage3": 36,
+      "received": 99,
+      "redirect_hops": 22,
+      "redirected": 19,
+      "sim3_fail": 83,
+      "to_merge_list": 83,
+      "us_dbow2_stage0": 8074,
+      "us_dbow2_stage1": 32826,
+      "us_dbow2_stage2": 1952066,
+      "us_dbow2_stage3": 122417,
+      "us_detect_total": 3034710,
+      "us_ext_stage2": 95038,
+      "us_ext_stage3": 232955,
+      "queued": 0,
+      "pending_loop": 0,
+      "pending_merge": 0
+     },
+     "first_merge_t_into_s2": 52.0,
+     "xmap_proposals_with_gt": 104,
+     "xmap_proposals_correct_2m45": 100
+    },
+    "XD_V0103_r5_resnet18": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 216,
+       "curKF": 519,
+       "t_into_s2": 13.9,
+       "gt_dist_ang": [
+        0.3,
+        14.8
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 507,
+       "curKF": 790,
+       "t_into_s2": 59.3,
+       "gt_dist_ang": [
+        0.42,
+        10.3
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "ext",
+       "matchedKF": 119,
+       "curKF": 901,
+       "t_into_s2": 86.5,
+       "gt_dist_ang": [
+        0.78,
+        4.4
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 605,
+       "curKF": 909,
+       "t_into_s2": 94.0,
+       "gt_dist_ang": [
+        0.63,
+        25.9
+       ]
+      }
+     ],
+     "n_kf_logged": 933,
+     "ate_spanning_map": 0.1131,
+     "ate_per_session": [
+      0.0925,
+      0.1111
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.972,
+     "ext_failed_attempts": 93,
+     "ext_failed_ms": 358.8,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 3,
+       "ms": 2.4
+      },
+      "2": {
+       "n": 50,
+       "ms": 92.4
+      },
+      "3": {
+       "n": 40,
+       "ms": 264.0
+      }
+     },
+     "dbow2_eval_ms": 2423.0,
+     "prop": {
+      "abort_near": 24,
+      "abort_near_dbow2": 198,
+      "accepted_loop": 1,
+      "accepted_loop_dbow2": 2,
+      "accepted_merge_dbow2": 1,
+      "bow_fail": 3,
+      "drop_dup_with_dbow2": 12,
+      "geom_pass_best": 1,
+      "n_dbow2_stage0": 198,
+      "n_dbow2_stage1": 45,
+      "n_dbow2_stage2": 1068,
+      "n_dbow2_stage3": 21,
+      "n_dbow2_stage4": 3,
+      "n_detect_calls": 931,
+      "n_ext_stage0": 24,
+      "n_ext_stage1": 3,
+      "n_ext_stage2": 50,
+      "n_ext_stage3": 40,
+      "n_ext_stage4": 1,
+      "received": 130,
+      "redirect_hops": 34,
+      "redirected": 27,
+      "sim3_fail": 90,
+      "to_loop_list": 92,
+      "to_merge_list": 26,
+      "us_dbow2_stage0": 22896,
+      "us_dbow2_stage1": 48972,
+      "us_dbow2_stage2": 2198429,
+      "us_dbow2_stage3": 124333,
+      "us_dbow2_stage4": 28324,
+      "us_detect_total": 3698360,
+      "us_ext_stage0": 8005,
+      "us_ext_stage1": 2421,
+      "us_ext_stage2": 92356,
+      "us_ext_stage3": 264041,
+      "us_ext_stage4": 13185,
+      "queued": 0,
+      "pending_loop": 0,
+      "pending_merge": 0
+     },
+     "first_merge_t_into_s2": 13.9,
+     "xmap_proposals_with_gt": 127,
+     "xmap_proposals_correct_2m45": 124
+    },
+    "XD_V0103_r6_resnet18": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "ext",
+       "matchedKF": 119,
+       "curKF": 621,
+       "t_into_s2": 22.9,
+       "gt_dist_ang": [
+        0.48,
+        31.9
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 614,
+       "curKF": 835,
+       "t_into_s2": 87.6,
+       "gt_dist_ang": [
+        0.9,
+        12.5
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 565,
+       "curKF": 841,
+       "t_into_s2": 92.9,
+       "gt_dist_ang": [
+        0.42,
+        9.7
+       ]
+      }
+     ],
+     "n_kf_logged": 878,
+     "ate_spanning_map": 0.6875,
+     "ate_per_session": [
+      0.1259,
+      0.678
+     ],
+     "drop_pct": 0.1,
+     "detect_ms_per_kf": 3.656,
+     "ext_failed_attempts": 95,
+     "ext_failed_ms": 294.2,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 8,
+       "ms": 12.4
+      },
+      "2": {
+       "n": 60,
+       "ms": 104.7
+      },
+      "3": {
+       "n": 27,
+       "ms": 177.1
+      }
+     },
+     "dbow2_eval_ms": 2124.9,
+     "prop": {
+      "abort_near": 26,
+      "abort_near_dbow2": 188,
+      "accepted_loop_dbow2": 2,
+      "accepted_merge": 1,
+      "bow_fail": 8,
+      "drop_dup_with_dbow2": 11,
+      "geom_pass_best": 1,
+      "n_dbow2_stage0": 188,
+      "n_dbow2_stage1": 49,
+      "n_dbow2_stage2": 959,
+      "n_dbow2_stage3": 21,
+      "n_dbow2_stage4": 2,
+      "n_detect_calls": 877,
+      "n_ext_stage0": 26,
+      "n_ext_stage1": 8,
+      "n_ext_stage2": 60,
+      "n_ext_stage3": 27,
+      "n_ext_stage4": 1,
+      "received": 133,
+      "redirect_hops": 56,
+      "redirected": 44,
+      "sim3_fail": 87,
+      "to_loop_list": 55,
+      "to_merge_list": 67,
+      "us_dbow2_stage0": 17397,
+      "us_dbow2_stage1": 54993,
+      "us_dbow2_stage2": 1915251,
+      "us_dbow2_stage3": 118649,
+      "us_dbow2_stage4": 18636,
+      "us_detect_total": 3206564,
+      "us_ext_stage0": 12061,
+      "us_ext_stage1": 12422,
+      "us_ext_stage2": 104688,
+      "us_ext_stage3": 177097,
+      "us_ext_stage4": 12644,
+      "queued": 0,
+      "pending_loop": 0,
+      "pending_merge": 0
+     },
+     "first_merge_t_into_s2": 22.9,
+     "xmap_proposals_with_gt": 131,
+     "xmap_proposals_correct_2m45": 125
+    },
+    "XD_V0103_r7_resnet18": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 2,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 552,
+       "curKF": 868,
+       "t_into_s2": 66.5,
+       "gt_dist_ang": [
+        0.87,
+        6.1
+       ]
+      },
+      {
+       "list": "merge",
+       "src": "ext",
+       "matchedKF": 279,
+       "curKF": 983,
+       "t_into_s2": 89.3,
+       "gt_dist_ang": [
+        1.01,
+        5.4
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 945,
+       "curKF": 1009,
+       "t_into_s2": 96.0,
+       "gt_dist_ang": [
+        0.69,
+        10.7
+       ]
+      },
+      {
+       "list": "merge",
+       "src": "ext",
+       "matchedKF": 464,
+       "curKF": 1024,
+       "t_into_s2": 101.9,
+       "gt_dist_ang": [
+        0.42,
+        5.6
+       ]
+      }
+     ],
+     "n_kf_logged": 1060,
+     "ate_spanning_map": 0.3295,
+     "ate_per_session": [
+      0.0967,
+      0.3622
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.827,
+     "ext_failed_attempts": 172,
+     "ext_failed_ms": 476.6,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 6,
+       "ms": 4.2
+      },
+      "2": {
+       "n": 128,
+       "ms": 218.8
+      },
+      "3": {
+       "n": 38,
+       "ms": 253.5
+      }
+     },
+     "dbow2_eval_ms": 2564.0,
+     "prop": {
+      "abort_near": 8,
+      "abort_near_dbow2": 154,
+      "accepted_loop_dbow2": 2,
+      "accepted_merge": 2,
+      "bow_fail": 6,
+      "drop_dup_with_dbow2": 26,
+      "geom_pass_best": 2,
+      "n_dbow2_stage0": 154,
+      "n_dbow2_stage1": 48,
+      "n_dbow2_stage2": 1257,
+      "n_dbow2_stage3": 25,
+      "n_dbow2_stage4": 2,
+      "n_detect_calls": 1058,
+      "n_ext_stage0": 8,
+      "n_ext_stage1": 6,
+      "n_ext_stage2": 128,
+      "n_ext_stage3": 38,
+      "n_ext_stage4": 2,
+      "received": 208,
+      "redirect_hops": 86,
+      "redirected": 60,
+      "sim3_fail": 166,
+      "to_loop_list": 8,
+      "to_merge_list": 174,
+      "us_dbow2_stage0": 22200,
+      "us_dbow2_stage1": 44947,
+      "us_dbow2_stage2": 2341460,
+      "us_dbow2_stage3": 138018,
+      "us_dbow2_stage4": 17338,
+      "us_detect_total": 4048810,
+      "us_ext_stage0": 64,
+      "us_ext_stage1": 4241,
+      "us_ext_stage2": 218777,
+      "us_ext_stage3": 253537,
+      "us_ext_stage4": 20511,
+      "queued": 0,
+      "pending_loop": 0,
+      "pending_merge": 0
+     },
+     "first_merge_t_into_s2": 89.3,
+     "xmap_proposals_with_gt": 200,
+     "xmap_proposals_correct_2m45": 192
+    },
+    "XD_V0103_r8_resnet18": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 2,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 514,
+       "curKF": 800,
+       "t_into_s2": 60.0,
+       "gt_dist_ang": [
+        0.38,
+        19.3
+       ]
+      },
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 566,
+       "curKF": 971,
+       "t_into_s2": 86.0,
+       "gt_dist_ang": [
+        0.95,
+        17.1
+       ]
+      }
+     ],
+     "n_kf_logged": 1049,
+     "ate_spanning_map": null,
+     "ate_per_session": [
+      0.0945,
+      0.4197
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 4.332,
+     "ext_failed_attempts": 156,
+     "ext_failed_ms": 487.4,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 6,
+       "ms": 3.1
+      },
+      "2": {
+       "n": 98,
+       "ms": 167.9
+      },
+      "3": {
+       "n": 52,
+       "ms": 316.4
+      }
+     },
+     "dbow2_eval_ms": 3033.2,
+     "prop": {
+      "abort_near": 40,
+      "abort_near_dbow2": 229,
+      "accepted_merge_dbow2": 2,
+      "bow_fail": 6,
+      "drop_dup_with_dbow2": 26,
+      "n_dbow2_stage0": 229,
+      "n_dbow2_stage1": 23,
+      "n_dbow2_stage2": 1372,
+      "n_dbow2_stage3": 37,
+      "n_dbow2_stage4": 2,
+      "n_detect_calls": 1048,
+      "n_ext_stage0": 40,
+      "n_ext_stage1": 6,
+      "n_ext_stage2": 98,
+      "n_ext_stage3": 52,
+      "received": 222,
+      "redirect_hops": 57,
+      "redirected": 40,
+      "sim3_fail": 150,
+      "to_loop_list": 40,
+      "to_merge_list": 156,
+      "us_dbow2_stage0": 33596,
+      "us_dbow2_stage1": 20421,
+      "us_dbow2_stage2": 2747458,
+      "us_dbow2_stage3": 211891,
+      "us_dbow2_stage4": 19787,
+      "us_detect_total": 4539784,
+      "us_ext_stage0": 7953,
+      "us_ext_stage1": 3102,
+      "us_ext_stage2": 167899,
+      "us_ext_stage3": 316381,
+      "queued": 0,
+      "pending_loop": 0,
+      "pending_merge": 0
+     },
+     "first_merge_t_into_s2": 60.0,
+     "xmap_proposals_with_gt": 222,
+     "xmap_proposals_correct_2m45": 213
+    },
+    "XD_V0103_r9_resnet18": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 1,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "ext",
+       "matchedKF": 211,
+       "curKF": 529,
+       "t_into_s2": 14.2,
+       "gt_dist_ang": [
+        0.34,
+        20.0
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "ext",
+       "matchedKF": 275,
+       "curKF": 778,
+       "t_into_s2": 89.6,
+       "gt_dist_ang": [
+        0.92,
+        6.3
+       ]
+      }
+     ],
+     "n_kf_logged": 798,
+     "ate_spanning_map": 0.1217,
+     "ate_per_session": [
+      0.0959,
+      0.1365
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.484,
+     "ext_failed_attempts": 67,
+     "ext_failed_ms": 279.4,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 3,
+       "ms": 1.8
+      },
+      "2": {
+       "n": 30,
+       "ms": 51.1
+      },
+      "3": {
+       "n": 34,
+       "ms": 226.5
+      }
+     },
+     "dbow2_eval_ms": 1799.8,
+     "prop": {
+      "abort_near": 18,
+      "abort_near_dbow2": 216,
+      "accepted_loop": 1,
+      "accepted_merge": 1,
+      "bow_fail": 3,
+      "drop_dup_with_dbow2": 10,
+      "geom_pass_best": 2,
+      "n_dbow2_stage0": 216,
+      "n_dbow2_stage1": 32,
+      "n_dbow2_stage2": 839,
+      "n_dbow2_stage3": 13,
+      "n_detect_calls": 797,
+      "n_ext_stage0": 18,
+      "n_ext_stage1": 3,
+      "n_ext_stage2": 30,
+      "n_ext_stage3": 34,
+      "n_ext_stage4": 2,
+      "received": 97,
+      "redirect_hops": 40,
+      "redirected": 29,
+      "sim3_fail": 64,
+      "to_loop_list": 54,
+      "to_merge_list": 33,
+      "us_dbow2_stage0": 40113,
+      "us_dbow2_stage1": 32287,
+      "us_dbow2_stage2": 1642976,
+      "us_dbow2_stage3": 84387,
+      "us_detect_total": 2776917,
+      "us_ext_stage0": 7671,
+      "us_ext_stage1": 1787,
+      "us_ext_stage2": 51061,
+      "us_ext_stage3": 226510,
+      "us_ext_stage4": 19735,
+      "queued": 0,
+      "pending_loop": 0,
+      "pending_merge": 0
+     },
+     "first_merge_t_into_s2": 14.2,
+     "xmap_proposals_with_gt": 98,
+     "xmap_proposals_correct_2m45": 95
+    },
+    "XD_V0103_r10_resnet18": {
+     "exit": "0",
+     "crash_midrun": false,
+     "merges": 2,
+     "merged": true,
+     "accepted": [
+      {
+       "list": "merge",
+       "src": "dbow2",
+       "matchedKF": 532,
+       "curKF": 808,
+       "t_into_s2": 58.8,
+       "gt_dist_ang": [
+        0.68,
+        17.2
+       ]
+      },
+      {
+       "list": "loop",
+       "src": "dbow2",
+       "matchedKF": 573,
+       "curKF": 916,
+       "t_into_s2": 85.0,
+       "gt_dist_ang": [
+        0.62,
+        48.0
+       ]
+      },
+      {
+       "list": "merge",
+       "src": "ext",
+       "matchedKF": 274,
+       "curKF": 923,
+       "t_into_s2": 89.4,
+       "gt_dist_ang": [
+        0.98,
+        5.5
+       ]
+      }
+     ],
+     "n_kf_logged": 942,
+     "ate_spanning_map": 0.0981,
+     "ate_per_session": [
+      0.0958,
+      0.0897
+     ],
+     "drop_pct": 0.0,
+     "detect_ms_per_kf": 3.925,
+     "ext_failed_attempts": 114,
+     "ext_failed_ms": 332.1,
+     "ext_failed_by_stage": {
+      "1": {
+       "n": 2,
+       "ms": 1.1
+      },
+      "2": {
+       "n": 86,
+       "ms": 154.8
+      },
+      "3": {
+       "n": 26,
+       "ms": 176.2
+      }
+     },
+     "dbow2_eval_ms": 2447.4,
+     "prop": {
+      "abort_near": 17,
+      "abort_near_dbow2": 175,
+      "accepted_loop_dbow2": 1,
+      "accepted_merge": 1,
+      "accepted_merge_dbow2": 1,
+      "bow_fail": 2,
+      "drop_dup_with_dbow2": 15,
+      "geom_pass_best": 1,
+      "n_dbow2_stage0": 175,
+      "n_dbow2_stage1": 43,
+      "n_dbow2_stage2": 1213,
+      "n_dbow2_stage3": 12,
+      "n_dbow2_stage4": 2,
+      "n_detect_calls": 941,
+      "n_ext_stage0": 17,
+      "n_ext_stage1": 2,
+      "n_ext_stage2": 86,
+      "n_ext_stage3": 26,
+      "n_ext_stage4": 1,
+      "received": 147,
+      "redirect_hops": 27,
+      "redirected": 18,
+      "sim3_fail": 112,
+      "to_loop_list": 17,
+      "to_merge_list": 115,
+      "us_dbow2_stage0": 1381,
+      "us_dbow2_stage1": 44138,
+      "us_dbow2_stage2": 2314830,
+      "us_dbow2_stage3": 70272,
+      "us_dbow2_stage4": 16799,
+      "us_detect_total": 3693004,
+      "us_ext_stage0": 6632,
+      "us_ext_stage1": 1130,
+      "us_ext_stage2": 154776,
+      "us_ext_stage3": 176155,
+      "us_ext_stage4": 14552,
+      "queued": 0,
+      "pending_loop": 0,
+      "pending_merge": 0
+     },
+     "first_merge_t_into_s2": 58.8,
+     "xmap_proposals_with_gt": 149,
+     "xmap_proposals_correct_2m45": 139
+    }
+   },
+   "tests": {
+    "resnet18_vs_none": {
+     "table": [
+      [
+       10,
+       0
+      ],
+      [
+       7,
+       3
+      ]
+     ],
+     "fisher_p": 0.2105,
+     "mannwhitney_p": 0.0425
+    },
+    "time_to_first_merge_resnet18_vs_none": {
+     "n": [
+      10,
+      10
+     ],
+     "mannwhitney_p": 0.1036
+    },
+    "detect_ms_per_kf_resnet18_vs_none": {
+     "median": [
+      3.937,
+      3.393
+     ],
+     "mannwhitney_p": 0.0004
+    },
+    "resnet18_vs_load_only": {
+     "table": [
+      [
+       10,
+       0
+      ],
+      [
+       6,
+       4
+      ]
+     ],
+     "fisher_p": 0.0867,
+     "mannwhitney_p": 0.0067
+    },
+    "time_to_first_merge_resnet18_vs_load_only": {
+     "n": [
+      10,
+      10
+     ],
+     "mannwhitney_p": 0.3234
+    },
+    "detect_ms_per_kf_resnet18_vs_load_only": {
+     "median": [
+      3.937,
+      3.536
+     ],
+     "mannwhitney_p": 0.0091
+    }
+   },
+   "independent": true,
+   "injection_outcomes_total": {
+    "abort_near": 186,
+    "abort_near_dbow2": 1900,
+    "accepted_loop_dbow2": 10,
+    "accepted_merge": 6,
+    "accepted_merge_dbow2": 7,
+    "drop_dup_with_dbow2": 168,
+    "geom_pass_best": 10,
+    "n_dbow2_stage0": 1900,
+    "n_dbow2_stage1": 355,
+    "n_dbow2_stage2": 10973,
+    "n_dbow2_stage3": 219,
+    "n_dbow2_stage4": 17,
+    "n_detect_calls": 9187,
+    "n_ext_stage0": 186,
+    "n_ext_stage2": 684,
+    "n_ext_stage3": 358,
+    "n_ext_stage4": 10,
+    "received": 1435,
+    "redirect_hops": 473,
+    "redirected": 339,
+    "sim3_fail": 1042,
+    "to_loop_list": 444,
+    "to_merge_list": 823,
+    "us_dbow2_stage0": 183105,
+    "us_dbow2_stage1": 378138,
+    "us_dbow2_stage2": 21638701,
+    "us_dbow2_stage3": 1294982,
+    "us_dbow2_stage4": 168074,
+    "us_detect_total": 35866033,
+    "us_ext_stage0": 47454,
+    "us_ext_stage2": 1218903,
+    "us_ext_stage3": 2348322,
+    "us_ext_stage4": 118860,
+    "queued": 0,
+    "pending_loop": 0,
+    "pending_merge": 0,
+    "accepted_loop": 4,
+    "bow_fail": 29,
+    "n_ext_stage1": 29,
+    "us_ext_stage1": 25898
+   },
+   "xmap_live_precision_2m45": [
+    1368,
+    1427
+   ]
+  }
+ },
+ "primary": {
+  "cmh_resnet18_vs_none": {
+   "tables": [
+    [
+     [
+      10,
+      0
+     ],
+     [
+      7,
+      3
+     ]
+    ]
+   ],
+   "chi2": 3.353,
+   "p": 0.0671,
+   "mh_odds_ratio": "inf",
+   "exact_stratified_p": 0.2105
+  }
+ },
+ "secondary": {
+  "cmh_resnet18_vs_load_only": {
+   "tables": [
+    [
+     [
+      10,
+      0
+     ],
+     [
+      6,
+      4
+     ]
+    ]
+   ],
+   "chi2": 4.75,
+   "p": 0.0293,
+   "mh_odds_ratio": "inf",
+   "exact_stratified_p": 0.0867
+  }
+ },
+ "max_block": null,
+ "sensitivity_independent_pairs": {
+  "pairs": [
+   "V0103"
+  ],
+  "tables": [
+   [
+    [
+     10,
+     0
+    ],
+    [
+     7,
+     3
+    ]
+   ]
+  ],
+  "chi2": 3.353,
+  "p": 0.0671,
+  "mh_odds_ratio": "inf",
+  "exact_stratified_p": 0.2105
+ },
+ "prediction": {
+  "V0103": {
+   "control_rate": 0.7,
+   "injection_rate": 1.0,
+   "diff": 0.3,
+   "band": "middle",
+   "prediction_holds": null
+  }
+ }
+}
